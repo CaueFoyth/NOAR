@@ -1,0 +1,144 @@
+/*# sourceMappingURL=index.css.map */
+:root {
+  --fundo: #33338d;
+}
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-image: url(/static/img/fundo1.jpg);
+
+}
+
+main input {
+  margin-top: 2rem;
+  width: 80%;
+  border: 0;
+  background-color: var(--fundo);
+  color: #fff;
+  height: 17%;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Inter;
+}
+
+main input::placeholder {
+  color: #fff;
+}
+
+.glass {
+background: rgba(255, 255, 255, 0);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.4px);
+-webkit-backdrop-filter: blur(3.4px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  scale: 90%;
+}
+
+.meio{
+  margin-top: 2rem;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.button {
+  font-size: 18px;  
+  margin-top: 30%;
+  width: 50%;
+  border: 0;
+  background-color: var(--fundo);
+  color: #fff;
+  height: 15%;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
+-webkit-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
+-moz-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+  width: 100%;
+  align-items: center;
+  
+}
+
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 45px;
+  transition: 0.3s;
+  pointer-events: none;
+  left: 10%;
+}
+
+.input {
+  width: 80%;
+  height: 55px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  background-color: var(--fundo);
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0,0,0,1),
+  -1px -1px 6px rgba(255, 255, 255, 0.4),
+  inset 3px 3px 10px rgba(0,0,0,1),
+  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.texto{
+  color: var(--fundo);
+  text-decoration: none;
+  margin-top: 3%;
+}
