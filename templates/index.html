@@ -9,19 +9,22 @@
     <title>NOAR</title>
 </head>
 <body>
-    <main class="flex-column">
+    <main>
         <div class="glass">
           <!-- Cabecalho -->
           <header id="cabecalho">
             <img src="../static/img/noar_pequena.png" alt="Logo">
           </header>
-          <form action="" class="meio">
+          {% if message %}
+              <p class="message"> {{ message }}</p>
+          {% endif %}
+          <form action="/submit" method="POST" class="meio">
             <div class="container">
-              <input required="" type="text" name="text" class="input">
+              <input type="text" name="cpf" class="input">
               <label class="label">Insira seu CPF</label>
             </div>
             <div class="container">
-              <input required="" type="password" name="text" class="input">
+              <input type="password" name="senha" class="input">
               <label class="label">Insira sua senha</label>
             </div>
     
