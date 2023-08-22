@@ -1,44 +1,39 @@
-# pip install flask pymysql
+# pip install flask pymysql flask_mysqldb mysqlclient
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, url_for, session
+from flask_mysqldb import MySQL
 import pymysql
+import MySQLdb.cursors
+import re
 
 app = Flask(__name__)
+mysql = MySQL(app)
 
-db_config = {
-    'host' : 'localhost',
-    'user' : 'root',
-    'password' : '',
-    'database' : 'noar'
-}
+app.secret_key= ''
+app.config['MYSQL_HOST'] =  'localhost'
+app.config['MYSQL_USER'] =  'root'
+app.config['MYSQL_PASSWORD'] =  ''
+app.config['MYSQL_DB'] =  'noar'
 
-db_conn = pymysql.connect(**db_config)
-cursor = db_conn.cursor()
-
-@app.route('/')
+@app.route('/', methods=["POST" , "GET"])
 def index():
     return render_template('index.html')
 
-@app.route('/users', methods=["GET"])
-def get_items():
-    try:
-        cursor.execute('SELECT cpf, senha FROM login')
-        login = [{'cpf' : cpf, 'senha': senha} for cpf, senha in cursor.fetchall()]
-        return jsonify(login)
-    except Exception as e:
-        return jsonify({'error' : str(e)})
-
-@app.route('/submit', methods=["POST"])
+@app.route('/submit', methods=["POST" , "GET"])
 def submit():   
     if request.method == "POST":
         cpf = request.form["cpf"]
-        senha = request.form["senha"]
-        cursor.execute('INSERT INTO login VALUES (%s, %s)', (cpf, senha))
-        db_conn.commit()
+        senha = request.form["senha"]   
         if cpf == '' or senha == '':
             return render_template('index.html', message="Informe os dados")
-        return "Vai se fude" 
-
+        else:
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM login WHERE cpf_sos = % s AND senha_sos = % s', (cpf,senha))
+            user = cursor.fetchone()
+            if user:
+                if user['adm'] == 1:
+                    return render_template('adm.html')
+                return "sex"
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)
