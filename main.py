@@ -37,9 +37,11 @@ def submit():
 
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
-    return render_template('adm.html')
-
-
+    if 'logado' in session:
+        cursor = mysql.connection.cursor(MySQL.cursors.DictCursor)
+        cursor.execute('SELECT * FROM login')
+        user = cursor.fetchall()
+    return render_template('adm.html', login = login)
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run

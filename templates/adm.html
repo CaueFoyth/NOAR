@@ -10,14 +10,16 @@
 </head>
 <body>
     
-    <div class="ola">
-        <form>
-            <input type="text"> <button id="alterar">alterar</button>
-            <input type="text"> <button id="excluir">excluir</button>
-            <br>
-            <input type="text"> <button id="Criar">Criar</button>
-        </form>
-    </div>
+<table>
+    <tbody>
+        {% for user in login %}
+        <tr>
+            <td>{{user.cpf_sos}}</td>
+            <td>{{user.senha_sos}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 </body>
 </html>
