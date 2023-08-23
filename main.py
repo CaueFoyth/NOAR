@@ -1,6 +1,6 @@
 # pip install flask flask_mysqldb mysqlclient
 
-from flask import Flask, render_template, request, jsonify, url_for, session
+from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 
@@ -33,8 +33,15 @@ def submit():
                 session['id_logado'] = user['id_sos']
                 session['cpf_logado'] = user['cpf_sos'] 
                 if user['adm'] == 1:
-                    return render_template('adm.html')
+                    return redirect(url_for("adm"))
                 return "sex"
+
+@app.route('/adm', methods=["POST" , "GET"])
+def adm():
+    return render_template('adm.html')
+
+
+
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)
