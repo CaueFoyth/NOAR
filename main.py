@@ -1,10 +1,8 @@
-# pip install flask pymysql flask_mysqldb mysqlclient
+# pip install flask flask_mysqldb mysqlclient
 
 from flask import Flask, render_template, request, jsonify, url_for, session
 from flask_mysqldb import MySQL
-import pymysql
 import MySQLdb.cursors
-import re
 
 app = Flask(__name__)
 mysql = MySQL(app)
@@ -31,6 +29,9 @@ def submit():
             cursor.execute('SELECT * FROM login WHERE cpf_sos = % s AND senha_sos = % s', (cpf,senha))
             user = cursor.fetchone()
             if user:
+                session['logado'] = True
+                session['id_logado'] = user['id_sos']
+                session['cpf_logado'] = user['cpf_sos'] 
                 if user['adm'] == 1:
                     return render_template('adm.html')
                 return "sex"
