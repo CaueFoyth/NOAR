@@ -34,7 +34,7 @@ def submit():
                 session['cpf_logado'] = user['cpf_sos'] 
                 if user['adm'] == 1:
                     return redirect(url_for("adm"))
-                return "sex"
+                return "Pagina principal de cadastro"
 
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
