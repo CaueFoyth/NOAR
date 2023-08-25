@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Ago-2023 às 14:57
+-- Tempo de geração: 25-Ago-2023 às 14:58
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -63,7 +63,15 @@ CREATE TABLE `ocorrencias` (
   `nome_acomp` varchar(45) NOT NULL,
   `idade_acomp` int(3) NOT NULL,
   `cpf_acomp` varchar(45) NOT NULL,
-  `sexo_acomp` varchar(45) NOT NULL
+  `sexo_acomp` varchar(45) NOT NULL,
+  `causado_animais` int(1) NOT NULL,
+  `com_transporte` int(1) NOT NULL,
+  `deslizamento` int(1) NOT NULL,
+  `emergencia_medica` int(1) NOT NULL,
+  `queda_2m` int(1) NOT NULL,
+  `tentativa_suicidio` int(1) NOT NULL,
+  `queda_propria_altura` int(1) NOT NULL,
+  `afogamento` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
