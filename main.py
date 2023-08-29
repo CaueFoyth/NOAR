@@ -7,8 +7,6 @@ import MySQLdb.cursors
 app = Flask(__name__)
 mysql = MySQL(app)
 
-logado = 0
-
 app.secret_key = 'abcd2123445'  
 app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
@@ -32,7 +30,7 @@ def login():
             cursor.execute('SELECT * FROM login WHERE cpf_sos = % s AND senha_sos = % s', (cpf,senha))
             user = cursor.fetchone()
             if user:
-                logado = 1
+                session['logado'] = True
                 # session['id_sos'] = user['id_sos']
                 # session['nome_sos'] = user['nome_sos']
                 # session['email_sos'] = user['email_sos']
@@ -44,30 +42,9 @@ def login():
                 mesage = 'Senha ou email incorreto'
                 return render_template('index.html', mesage = mesage)
 
-
-# @app.route('/submit', methods=["POST" , "GET"])
-# def submit():   
-#     if request.method == "POST":
-#         cpf = request.form["cpf"]
-#         senha = request.form["senha"]   
-#         if cpf == '' or senha == '':
-#             return render_template('index.html', message="Informe os dados")
-#         else:
-#             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#             cursor.execute('SELECT * FROM login WHERE cpf_sos = % s AND senha_sos = % s', (cpf,senha))
-#             user = cursor.fetchone()
-#             if user:
-#                 session['logado'] = True
-#                 session['id_logado'] = user['id_sos']
-#                 session['cpf_logado'] = user['cpf_sos'] 
-#                 if user['adm'] == 1:
-#                     return redirect(url_for("adm"))
-#                 return "Pagina principal de cadastro"
-#             return redirect(url_for("/"))
-
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
-    if logado == 1:
+    if 'logado' in session:
         # cursor = mysql.connection.cursor(MySQL.cursors.DictCursor)
         # cursor.execute('SELECT * FROM login')
         # user = cursor.fetchall()
