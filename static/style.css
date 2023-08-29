@@ -23,9 +23,9 @@ main input {
   width: 80%;
   border: 0;
   background-color: var(--fundo);
-  color: #fff;
+  color: var(--fundo);
   height: 17%;
-  border-radius: 12px;
+  border-radius: 30px;
   padding: 10px;
   font-size: 18px;
   font-family: Inter;
@@ -33,13 +33,14 @@ main input {
 
 main input::placeholder {
   color: #fff;
+  font-size: 20px;
 }
 
 .glass {
 background: rgba(255, 255, 255, 0);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(3.4px);
+backdrop-filter: blur(3px);
 -webkit-backdrop-filter: blur(3.4px);
 border: 1px solid rgba(255, 255, 255, 0.3);
   height: 100vh;
@@ -68,7 +69,7 @@ header img {
 
 .button {
   font-size: 18px;  
-  margin-top: 30%;
+  margin-top: 6%;
   width: 50%;
   border: 0;
   background-color: var(--fundo);
@@ -79,8 +80,8 @@ header img {
   cursor: pointer;
   color: #fff;
   box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
--webkit-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
--moz-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
+  -webkit-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
+  -moz-box-shadow: 5px 4px 24px 2px rgba(0,0,0,0.71);
 }
 
 .container {
@@ -88,14 +89,15 @@ header img {
   flex-direction: column;
   gap: 7px;
   position: relative;
-  color: white;
+  color: #000000;
   width: 100%;
   align-items: center;
   
 }
 
 .container .label {
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: bold ;
   padding-left: 10px;
   position: absolute;
   top: 45px;
@@ -114,36 +116,19 @@ header img {
   color: #fff;
   font-size: 15px;
   background-color: var(--fundo);
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4);
-}
-
-.input:focus {
-  border: 2px solid transparent;
-  color: #fff;
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4),
-  inset 3px 3px 10px rgba(0,0,0,1),
-  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
-}
-
-.container .input:valid ~ .label,
-.container .input:focus ~ .label {
-  transition: 0.3s;
-  padding-left: 2px;
-  transform: translateY(-35px);
-}
-
-.container .input:valid,
-.container .input:focus {
-  box-shadow: 3px 3px 10px rgba(0,0,0,1),
-  -1px -1px 6px rgba(255, 255, 255, 0.4),
-  inset 3px 3px 10px rgba(0,0,0,1),
-  inset -1px -1px 6px rgba(255, 255, 255, 0.4);
 }
 
 .texto{
-  color: var(--fundo);
+  color: var(--fundo) ;
+  margin-top: 5%;
+  font-size: 120%;
+  font-weight: bolder;
+}
+
+.texto:hover{
+  text-decoration: underline;
+}
+
+a {
   text-decoration: none;
-  margin-top: 3%;
 }

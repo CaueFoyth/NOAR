@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Ago-2023 às 14:58
+-- Tempo de geração: 29-Ago-2023 às 17:24
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -34,15 +34,15 @@ CREATE TABLE `login` (
   `adm` int(1) NOT NULL,
   `nome_sos` varchar(45) NOT NULL,
   `email_sos` varchar(45) NOT NULL,
-  `logado` int(1) NOT NULL
+  `telefone_sos` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `login`
 --
 
-INSERT INTO `login` (`id_sos`, `cpf_sos`, `senha_sos`, `adm`, `nome_sos`, `email_sos`, `logado`) VALUES
-(1, '125.413.329-12', '123', 0, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', 0);
+INSERT INTO `login` (`id_sos`, `cpf_sos`, `senha_sos`, `adm`, `nome_sos`, `email_sos`, `telefone_sos`) VALUES
+(1, '125.413.329-12', '123', 0, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '(47) 99756-6605');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,26 @@ CREATE TABLE `ocorrencias` (
   `queda_2m` int(1) NOT NULL,
   `tentativa_suicidio` int(1) NOT NULL,
   `queda_propria_altura` int(1) NOT NULL,
-  `afogamento` int(1) NOT NULL
+  `afogamento` int(1) NOT NULL,
+  `agressao` int(1) NOT NULL,
+  `atropelamento` int(1) NOT NULL,
+  `choque_eletrico` int(1) NOT NULL,
+  `desabamento` int(1) NOT NULL,
+  `domestico` int(1) NOT NULL,
+  `esportivo` int(1) NOT NULL,
+  `intoxicacao` int(1) NOT NULL,
+  `queda_bicicleta` int(1) NOT NULL,
+  `queda_moto` int(1) NOT NULL,
+  `queda_menos2` int(1) NOT NULL,
+  `trabalho` int(1) NOT NULL,
+  `transferencia` int(1) NOT NULL,
+  `dpoc` int(1) NOT NULL,
+  `inalacao_fumaca` int(1) NOT NULL,
+  `hiperglicemia` int(1) NOT NULL,
+  `hipoglicemia` int(1) NOT NULL,
+  `parto_emergencial` int(1) NOT NULL,
+  `gestante` int(1) NOT NULL,
+  `hemor_excessiva` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
