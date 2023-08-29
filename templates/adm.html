@@ -9,17 +9,33 @@
     <title>NOAR</title>
 </head>
 <body>
-    
-<table>
-    <tbody>
-        {% for user in login %}
-        <tr>
-            <td>{{user.cpf_sos}}</td>
-            <td>{{user.senha_sos}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    {% block body %}
+<h1>CRUD EM FLASK</h1>
 
+    <h2>Lista de bombeiros <button type="button" data-toggle = "modal" data-target="#mymodal">Adicionar socorrista</button></h2>
+
+    <table>
+
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+        </tr>
+
+        <tr>
+
+            <td>Caue </td>
+            <td>125.413.329-12</td>
+
+            <td>
+                <a href="" data-toggle="modal" data-target="#modaledit">Edit</a>
+                <a href="" onclick="return confirm('Você tem certeza?')">Deletar</a>
+            </td>
+        </tr>
+
+    </table>
+
+    
+
+{% endblock %}
 </body>
-</html>
+</html> 

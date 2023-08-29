@@ -34,7 +34,7 @@ def login():
                 # session['id_sos'] = user['id_sos']
                 # session['nome_sos'] = user['nome_sos']
                 # session['email_sos'] = user['email_sos']
-                # session['adm'] = user['adm']
+                # session['adm'] = user['adm']  
                 if user['adm'] == 1:
                     return redirect(url_for("adm"))            
                 return "cuzinho gostoso"
@@ -45,11 +45,9 @@ def login():
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
     if 'logado' in session:
-        # cursor = mysql.connection.cursor(MySQL.cursors.DictCursor)
-        # cursor.execute('SELECT * FROM login')
-        # user = cursor.fetchall()
         return render_template("adm.html")
     return redirect(url_for("index"))
+
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
