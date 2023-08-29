@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@300&display=swap");
+body {
+  margin: 0;
+}
+
+header {
+  background: #33338D;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 75px;
+  align-items: center;
+  border-radius: 0px 0px 15px 15px;
+}
+
+h1 {
+  margin: 0;
+  color: #Ffffff;
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+h2 {
+  margin: 0;
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: #33338D;
+  margin-left: 300px;
+  width: 250px;
+}
+
+.logo {
+  width: 123px;
+  height: 123px;
+  margin-top: 57px;
+  margin-right: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.usertable {
+  width: 1004px;
+  height: 645px;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.1647058824);
+  table-layout: auto;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.tablerow {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+}
+
+.tablehead {
+  display: flex;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 0;
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: #33338D;
+  width: 50px;
+  table-layout: fixed;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: #33338D;
+  width: 50px;
+}/*# sourceMappingURL=admSASS.css.map */
