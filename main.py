@@ -23,18 +23,19 @@ def login():
     if request.method == "POST":
         cpf = request.form['cpf']
         senha = request.form['senha']
+        
         if cpf == '' or senha == '':
             return render_template('index.html', message="Informe os dados")
         else:
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('SELECT * FROM login WHERE cpf_sos = % s AND senha_sos = % s', (cpf,senha))
+            cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha))
             user = cursor.fetchone()
             if user:
                 session['logado'] = True
                 # session['id_sos'] = user['id_sos']
                 # session['nome_sos'] = user['nome_sos']
                 # session['email_sos'] = user['email_sos']
-                # session['adm'] = user['adm']  
+                session['adm'] = user['adm']  
                 if user['adm'] == 1:
                     return redirect(url_for("adm"))            
                 return "cuzinho gostoso"
@@ -45,8 +46,28 @@ def login():
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
     if 'logado' in session:
-        return render_template("adm.html")
+        if session['adm'] == 1:
+            cursor = mysql.connection.cursor()
+            cursor.execute("SELECT * FROM login")
+            data = cursor.fetchall()
+            cursor.close()
+            return render_template("adm.html", login = data)
+        return redirect(url_for("index"))
     return redirect(url_for("index"))
+
+@app.route('/adicionar', methods=["POST", "GET"])
+def adicionar():
+    if request.method == "POST":
+            cpf2 = request.form['cpf']
+            adm2 = request.form['adm']
+            nome2 = request.form['nome']
+            email2 = request.form['email']
+            telefone2 = request.form['telefone']
+       
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
+            mysql.connection.commit()
+            return redirect(url_for("adm"))
 
 
 if __name__ == '__main__':
