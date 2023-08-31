@@ -11,8 +11,8 @@
     <header class="header">
       <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
     <section class="options">
-        <h1>Cadastrar novos Usuários</h1>
-        <h1>Gerenciar Ocorrências</h1>
+        <form><button>Cadastrar novos Usuários</button></form>
+        <form><button>Gerenciar Ocorrências</button></form>
     </section>
 
     <section class="headerlogo">
@@ -20,20 +20,90 @@
         <img src="images/logo_pequena.png" class="logo">
     </section>
     </header>
-    <main>
-        <h2>Usuários Cadastrados</h2>
-        <center>
-        <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
-            <table class="usertable">
-            <tr class="tablerow">
-                <th class="tablehead">
-                    <p>Nome</p>
-                    <p>CPF</p>
-                    <p>Operações</p>
-                </th>
-            </tr>
-            </table>
-        </center>
-    </main>
+    <center>
+        <div class="float_menu_adduser">
+            <form action="">
+                <section class="inputs">
+                    Cadastro de Usuários
+                    
+                    <br>
+            
+                    Nome:<input type="text" class="input_name">
+
+                    Cpf: <input type="text" class="input_cpf">
+                    E-Mail: <input type="text" class="input_email">
+                    Telefone: <input type="text" class="input_telefone">
+                    Adm: 
+                    <select class="input_adm">
+                        <option value="yes">Sim</option>
+                        <option value="no">Não</option>
+                    </select>
+                </section>
+            </form>
+        </div>
+        <div class="backgroundblur"></div>
+        <main>
+            <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
+                <table>
+                    <h2>Usuários Cadastrados</h2>
+                    <tr>
+                        <th class="tbheader_name">Nome</th>
+                        <th class="tbheader_cpf">CPF</th>
+                        <th class="tbheader_options">Operações</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+        </main>
+    </center>
 </body>
 </html>
+<script src="admPage.js"></script>

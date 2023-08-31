@@ -7,7 +7,41 @@ $preto: #00000053;
 body {
   margin: 0;
 }
-
+main
+{
+  width: 1004px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.float_menu_adduser
+{
+  background: $secundaria;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 250px;
+  right: 502px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px $preto;
+  display: flex;
+}
+.inputs
+{
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  font-family: "Mukta Vaani", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
 header {
   background: $primaria;
   display: flex;
@@ -16,9 +50,19 @@ header {
   height: 75px;
   align-items: center;
   border-radius: 0px 0px 15px 15px;
+  align-content: center;  
 }
-
-h1 {
+.options
+{
+  height: 36px;
+}
+form
+{
+  height: 36px;
+}
+button {
+  background: $primaria;
+  border: 0;
   margin: 0;
   color: $secundaria;
   font-family: "Mukta Vaani", sans-serif;
@@ -26,6 +70,7 @@ h1 {
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+  cursor: pointer;
 }
 
 h2 {
@@ -36,13 +81,12 @@ h2 {
   font-weight: 800;
   line-height: normal;
   color: $primaria;
-  margin-left: 300px;
   width: 250px;
 }
 
 .logo {
-  width: 123px;
-  height: 123px;
+  width: 100px;
+  height: 100px;
   margin-top: 57px;
   margin-right: 20px;
 }
@@ -53,55 +97,19 @@ h2 {
   width: 35%;
 }
 
-.usertable {
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background: #aaa8a853;
   width: 1004px;
-  height: 645px;
-  flex-shrink: 0;
-  background: #0000002a;
-  table-layout: auto;
-
-}
-/*# sourceMappingURL=tutorialSASS.css.map */
-table, th, td 
-{
-    border: 1px solid black;
-    border-collapse: collapse;
-    table-layout: auto;
-}
-p
-{
-    margin: 0;
-    border: 0;
-    padding: 0;
-}
-.tablerow
-{
-    display: flex;
-    text-align: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: 100%;
-}
-.tablehead
-{
-    display: flex;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    justify-content: space-evenly;
-    margin: 0;
-    font-family: "Mukta Vaani", sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    color: $primaria;
-    width: 50px;
-    table-layout: fixed;
+  height: 600px;
+  text-align: left;
 }
 
-h3
-{
+td, th {
+  border: 1px solid $primaria;
+  text-align: left;
   margin: 0;
   font-family: "Mukta Vaani", sans-serif;
   font-size: 20px;
@@ -109,5 +117,26 @@ h3
   font-weight: 800;
   line-height: normal;
   color: $primaria;
-  width: 50px;
+}
+
+tr:nth-child(even) {
+  background-color: #35333353;
+}
+.tbheader_name
+{
+  height: 0px;
+  width: 250px;
+  text-align: center;
+}
+.tbheader_cpf
+{
+  height: 0px;
+  width: 250px;
+  text-align: center;
+}
+.tbheader_options
+{
+  height: 0;
+  width: 504px;
+  text-align: center;
 }
