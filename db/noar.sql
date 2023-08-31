@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Ago-2023 às 17:24
+-- Tempo de geração: 31-Ago-2023 às 14:15
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -29,19 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `id_sos` int(11) NOT NULL,
-  `cpf_sos` varchar(45) NOT NULL,
-  `senha_sos` varchar(45) NOT NULL,
+  `cpf` varchar(45) NOT NULL,
+  `senha` varchar(45) NOT NULL,
   `adm` int(1) NOT NULL,
-  `nome_sos` varchar(45) NOT NULL,
-  `email_sos` varchar(45) NOT NULL,
-  `telefone_sos` varchar(45) NOT NULL
+  `nome` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `telefone` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `login`
 --
 
-INSERT INTO `login` (`id_sos`, `cpf_sos`, `senha_sos`, `adm`, `nome_sos`, `email_sos`, `telefone_sos`) VALUES
+INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
 (1, '125.413.329-12', '123', 0, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '(47) 99756-6605');
 
 -- --------------------------------------------------------
@@ -90,7 +90,41 @@ CREATE TABLE `ocorrencias` (
   `hipoglicemia` int(1) NOT NULL,
   `parto_emergencial` int(1) NOT NULL,
   `gestante` int(1) NOT NULL,
-  `hemor_excessiva` int(1) NOT NULL
+  `hemor_excessiva` int(1) NOT NULL,
+  `transp_aereo` int(1) NOT NULL,
+  `transp_clinico` int(1) NOT NULL,
+  `transp_emergencial` int(1) NOT NULL,
+  `transp_pos_trauma` int(1) NOT NULL,
+  `transp_samu` int(1) NOT NULL,
+  `transp_sem_remocao` int(1) NOT NULL,
+  `transp_outros` varchar(100) NOT NULL,
+  `problema_outros` varchar(100) NOT NULL,
+  `abs_r_s` int(1) NOT NULL,
+  `afundamento_cranio` int(1) NOT NULL,
+  `agitacao` int(1) NOT NULL,
+  `amnesia` int(1) NOT NULL,
+  `angina_peito` int(1) NOT NULL,
+  `apineia` int(1) NOT NULL,
+  `bradicardia` int(1) NOT NULL,
+  `bradipneia` int(1) NOT NULL,
+  `bronco_aspirando` int(1) NOT NULL,
+  `cafaleia` int(1) NOT NULL,
+  `cianose` int(1) NOT NULL,
+  `cianose_labios` int(1) NOT NULL,
+  `cianose_extremidade` int(1) NOT NULL,
+  `convulsao` int(1) NOT NULL,
+  `decorticacao` int(1) NOT NULL,
+  `deformidade` int(1) NOT NULL,
+  `descerebracao` int(1) NOT NULL,
+  `desmaio` int(1) NOT NULL,
+  `desvio_traqueia` int(1) NOT NULL,
+  `dispneia` int(1) NOT NULL,
+  `dor_local` int(1) NOT NULL,
+  `edema` int(1) NOT NULL,
+  `edema_labios` int(1) NOT NULL,
+  `edema_extremidade` int(1) NOT NULL,
+  `enfisema_subcutaneo` int(1) NOT NULL,
+  `estase_jugular` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
