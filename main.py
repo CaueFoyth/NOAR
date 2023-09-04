@@ -32,7 +32,7 @@ def login():
             user = cursor.fetchone()
             if user:
                 session['logado'] = True
-                # session['id_sos'] = user['id_sos']
+                session['id_sos'] = user['id_sos']
                 # session['nome_sos'] = user['nome_sos']
                 # session['email_sos'] = user['email_sos']
                 session['adm'] = user['adm']  
@@ -69,6 +69,13 @@ def adicionar():
             mysql.connection.commit()
             return redirect(url_for("adm"))
 
+@app.route('/deletar/<string:id>', methods = ['POST', 'GET'] )
+def deletar(id):
+    
+    cursor = mysql.connection.cursor()
+    cursor.execute("DELETE FROM login WHERE id_sos = %s", (id))
+    mysql.connection.commit()
+    return redirect(url_for("adm"))
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
