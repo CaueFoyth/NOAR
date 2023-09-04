@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página de Administrador</title>
     <link rel="stylesheet" href="styles/admSASS.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header class="header">
       <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
     <section class="options">
-        <form><button>Cadastrar novos Usuários</button></form>
+        <form><button onclick="Abrir()">Cadastrar novos Usuários</button></form>
         <form><button>Gerenciar Ocorrências</button></form>
     </section>
 
@@ -24,26 +26,40 @@
         <div class="float_menu_adduser">
             <form action="">
                 <section class="inputs">
-                    Cadastro de Usuários
+                    <div class="texto">
+                        <div class="left">
+                        Cadastro de Usuários 
+                        </div>
+
+                        <div class="right">
+                        <p onclick="Fechar()"><ion-icon class="close" name="close-circle-outline"></ion-icon></p>
+                        </div>
+                    </div>
                     
                     <br>
-            
-                    Nome:<input type="text" class="input_name">
-
-                    Cpf: <input type="text" class="input_cpf">
-                    E-Mail: <input type="text" class="input_email">
-                    Telefone: <input type="text" class="input_telefone">
-                    Adm: 
-                    <select class="input_adm">
+    
+                    <input type="text" class="input_name" placeholder=" &nbsp; Nome">
+                    <br>
+                    <input type="text" class="input_cpf" placeholder=" &nbsp; CPF">
+                    <br>
+                    <input type="text" class="input_email" placeholder=" &nbsp; E-Mail">
+                    <br>
+                    <input type="text" class="input_telefone" placeholder=" &nbsp; Telefone">
+                    <br> 
+                    Adm:
+                    <select class="input_adm"> 
                         <option value="yes">Sim</option>
-                        <option value="no">Não</option>
+                        <option value="no">Não</option> 
                     </select>
+                    <Br>
+                    <button class="confirm">Confirmar</button>
                 </section>
             </form>
         </div>
         <div class="backgroundblur"></div>
         <main>
             <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
+            <form action="">
                 <table>
                     <h2>Usuários Cadastrados</h2>
                     <tr>
@@ -102,6 +118,10 @@
                         <td></td>
                     </tr>
                 </table>
+<<<<<<< HEAD
+            </form>
+=======
+>>>>>>> 8c4508ec61d03dbeab90d6f7c2f53d2992434428
         </main>
     </center>
 </body>
