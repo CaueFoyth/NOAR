@@ -4,7 +4,7 @@ body {
 }
 
 main {
-  width: 1004px;
+  width: 1200px;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -16,7 +16,43 @@ main {
   height: 450px;
   position: absolute;
   top: 200px;
-  right: 650px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
+  display: none;
+}
+
+.read_profile_menu {
+  background: #Ffffff;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
+  display: none;
+}
+
+.update_profile_menu {
+  background: #Ffffff;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
+  display: none;
+}
+
+.delete_profile_menu {
+  background: #Ffffff;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
   border-radius: 15px;
   box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
   display: none;
@@ -37,6 +73,31 @@ main {
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+}
+
+.inputs_read {
+  width: 450px;
+  height: 450px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.read_data {
+  width: 190px;
+  height: 30px;
+  background: rgba(223, 222, 222, 0.3254901961);
+  border: solid 0.5px rgba(0, 0, 0, 0.2588235294);
+  border-radius: 10px;
 }
 
 .texto {
@@ -62,7 +123,7 @@ p {
   height: 50px;
 }
 
-.close {
+.button-close {
   scale: 150%;
   margin: 0;
   border: 0;
@@ -180,14 +241,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   background: rgba(170, 168, 168, 0.3254901961);
-  width: 1004px;
+  width: 1200px;
   height: 600px;
   text-align: left;
 }
 
 td, th {
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
-  text-align: left;
+  text-align: center;
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-size: 20px;

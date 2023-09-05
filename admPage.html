@@ -9,11 +9,11 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body>
+<body class="">
     <header class="header">
       <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
     <section class="options">
-        <form><button onclick="Abrir()">Cadastrar novos Usuários</button></form>
+        <button class="button-open" id="open">Cadastrar novos Usuários</button>
         <form><button>Gerenciar Ocorrências</button></form>
     </section>
 
@@ -22,109 +22,132 @@
         <img src="images/logo_pequena.png" class="logo">
     </section>
     </header>
-    <center>
-        <div class="float_menu_adduser" id="float_menu">
-            <form action="">
-                <section class="inputs">
-                    <div class="texto">
-                        <div class="left">
-                        Cadastro de Usuários 
-                        </div>
+    <div class="backgroundblur">
+            <center>     
+                <div class="float_menu_adduser" id="float_menu">
+                    <form action="">
+                        <section class="inputs">
+                            <div class="texto">
+                                <div class="left">
+                                Cadastro de Usuários 
+                                </div>
 
-                        <div class="right">
-                        <p onclick="Fechar()"><ion-icon class="close" name="close-circle-outline"></ion-icon></p>
-                        </div>
-                    </div>
-                    
-                    <br>
-    
-                    <input type="text" class="input_name" placeholder=" &nbsp; Nome">
-                    <br>
-                    <input type="text" class="input_cpf" placeholder=" &nbsp; CPF">
-                    <br>
-                    <input type="text" class="input_email" placeholder=" &nbsp; E-Mail">
-                    <br>
-                    <input type="text" class="input_telefone" placeholder=" &nbsp; Telefone">
-                    <br> 
-                    Adm:
-                    <select class="input_adm"> 
-                        <option value="yes">Sim</option>
-                        <option value="no">Não</option> 
-                    </select>
-                    <Br>
-                    <button class="confirm">Confirmar</button>
-                </section>
-            </form>
-        </div>
-        <div class="backgroundblur"></div>
-        <main>
-            <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
-            <form action="">
-                <table>
-                    <h2>Usuários Cadastrados</h2>
-                    <tr>
-                        <th class="tbheader_name">Nome</th>
-                        <th class="tbheader_cpf">CPF</th>
-                        <th class="tbheader_options">Operações</th>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td class="tbdata_options">    
-                            <button class="buttons_opt">Ver</button>
-                            <button class="buttons_opt">Alterar</button>
-                            <button class="buttons_opt">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </form>
-        </main>
-    </center>
+                                <div class="right">
+                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+            
+                            <input type="text" class="input_name" placeholder=" &nbsp; Nome">
+                            <br>
+                            <input type="text" class="input_cpf" placeholder=" &nbsp; CPF">
+                            <br>
+                            <input type="text" class="input_email" placeholder=" &nbsp; E-Mail">
+                            <br>
+                            <input type="text" class="input_telefone" placeholder=" &nbsp; Telefone">
+                            <br> 
+                            Adm:
+                            <select class="input_adm"> 
+                                <option value="yes">Sim</option>
+                                <option value="no">Não</option> 
+                            </select>
+                            <Br>
+                            <button class="confirm">Confirmar</button>
+                        </section>
+                    </form>
+                </div>
+                <div class="read_profile_menu" id="read_profile_menu">
+                    <form action="">
+                        <section class="inputs_read">
+                            <div class="texto">
+                                <div class="left">
+                                Perfil
+                                </div>
+
+                                <div class="right">
+                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
+                                </div>
+                            </div>
+
+                            <div class="read_data">Nome</div>
+                            <div class="read_data">CPF</div>
+                            <div class="read_data">E-Mail</div>
+                            <div class="read_data">Telefone</div>
+                            <div class="read_adm">Adm</div>
+
+                        </section>
+                    </form>
+                </div>
+            <main>
+                <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
+                <form action="">
+                    <table>
+                        <h2>Usuários Cadastrados</h2>
+                        <tr>
+                            <th class="tbheader_name">Nome</th>
+                            <th class="tbheader_cpf">CPF</th>
+                            <th class="tbheader_options">Operações</th>
+                        </tr>
+                        <tr>
+                            <td>Cauê Marchi Foyth</td>
+                            <td>125.413.329-12</td>
+                            <td class="tbdata_options">    
+                                <button class="buttons_opt" id="read">Ver</button>
+                                <button class="buttons_opt" id="update">Alterar</button>
+                                <button class="buttons_opt" id="delete">Excluir</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+            </main>
+        </center>
+    </div>
 </body>
 </html>
 <script src="admPage.js"></script>
