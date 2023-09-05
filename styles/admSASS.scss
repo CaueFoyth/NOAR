@@ -9,10 +9,22 @@ body {
 }
 main
 {
-  width: 1004px;
+  width: 1200px;
   margin: 0;
   padding: 0;
   text-align: left;
+}
+.background_blur
+{
+  background: #a29e9e82;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.8px);
+  -webkit-backdrop-filter: blur(11.8px);
+  border: 1px solid rgba(162, 158, 158, 0.3);
+  height: 100vh;
+  display: flex;
+  position: absolute;
 }
 .float_menu_adduser
 {
@@ -21,7 +33,7 @@ main
   height: 450px;
   position: absolute;
   top: 200px;
-  right: 650px;
+  right: 600px;
   border-radius: 15px;
   box-shadow: 0px 7px 7px 0px $preto;
   display: none;
@@ -66,7 +78,7 @@ p
   width: 50px;
   height: 50px;
 }
-.close
+.button-close
 {
   scale: 150%;
   margin: 0;
@@ -183,14 +195,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   background: #aaa8a853;
-  width: 1004px;
+  width: 1200px;
   height: 600px;
   text-align: left;
 }
 
 td, th {
   border: 1px solid $preto;
-  text-align: left;
+  text-align: center;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;

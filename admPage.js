@@ -1,29 +1,12 @@
-function Fechar() {
-    var elemento = document.getElementById("float_menu");
 
-    // Verifica o estado atual do display
-    var displayAtual = elemento.style.display;
-
-    if (displayAtual === "flex") {
-        // Caso o display estiver flex ele mudará para none.
-        elemento.style.display = "none";
-    } else {
-    
-        elemento.style.display = "flex";
+    document.getElementById("open").onclick = function(){
+        document.getElementById("float_menu").style.display = "flex";
+        document.getElementById("inputs").style.display = "flex";
+        document.getElementById("background_blur").style.height = "100vh";
     }
-}
 
-function Abrir() {
-    var elemento = document.getElementById("float_menu");
-
-    // Verifica o estado atual do display
-    var displayAtual = elemento.style.display;
-
-    if (displayAtual === "none") {
-        // Caso o display estiver none ele mudará para flex.
-        elemento.style.display = "flex";
-    } else {
-    
-        elemento.style.display = "none";
+    document.getElementById("close").onclick = function(){
+        document.getElementById("float_menu").style.display = "none";
+        document.getElementById("inputs").style.display = "none";
+        document.getElementById("background_blur").style.height = "0vh";
     }
-}
