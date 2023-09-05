@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocorrência</title>
+</head>
+<body>
+    <form>
+        <!--DADOS DA VÍTIMA-->
+        <h1>Nova Ocorrência</h1>
+        <br>
+        <h2>Dados da vítima</h2>
+        <br>
+        <input type="date" name="data">
+        <br>
+        <input type="radio"  name="sexo" value="Masculino">
+        <label for="sexo-m">Masculino</label><br>
+        <input type="radio"  name="sexo" value="Feminino">
+        <label for="sexo-f">Feminino</label>
+        <br>
+        <input type="text" name="nome" placeholder="Nome">
+        <br>
+        <input type="text" name="idade" placeholder="Idade">
+        <input type="text" name="cpf" placeholder="Cpf">
+        <br>
+        <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
+        <br>
+        <h3>Há acompanhante?</h3>
+        <input type="radio"  name="acompanhante" value="sim">
+        <label for="sim">Sim</label><br>
+        <input type="radio"  name="acompanhante" value="nao">
+        <label for="nao">Não</label>
+        <br>
+        <h3>Dados do acompanhante</h3>
+        <br>
+        <input type="text" name="nomeAcompanhante" placeholder="Nome">
+        <br>
+        <input type="text" name="idadeAcompanhante" placeholder="Idade">
+        <input type="text" name="cpfAcompanhante" placeholder="Cpf">
+        <br>
+        <input type="radio"  name="sexoAcompanhante" value="Masculino">
+        <label for="sexo-m">Masculino</label><br>
+        <input type="radio"  name="sexoAcompanhante" value="Feminino">
+        <label for="sexo-f">Feminino</label>
+        <br>
+        <!--TIPO DE OCORRÊNCIA-->
+        <h3>Tipo de Ocorrência</h3><br><h4>Pré-Hospitalar</h4>
+        <br>
+        <input type="checkbox" name="a1">Causado por animais
+        <br>
+        <input type="checkbox" name="a2">Com meio de Transporte
+        <br>
+        <input type="checkbox" name="a3">Desmoronamento/Deslizamento
+        <br>
+        <input type="checkbox" name="a4">Emergência Médica
+        <br>
+        <input type="checkbox" name="a5">Queda de Altura 2M
+        <br>
+        <input type="checkbox" name="a6">Tentativa de Suicídio
+        <br>
+        <input type="checkbox" name="a7">Queda própria altura
+        <br>
+        <input type="checkbox" name="a8">Afogamento
+        <br>
+        <input type="checkbox" name="a9">Agressão
+        <br>
+        <input type="checkbox" name="a10">Atropelamento
+        <br>
+        <input type="checkbox" name="a11">Choque Elétrico
+        <br>
+        <input type="checkbox" name="a12">Desabamento
+        <br>
+        <input type="checkbox" name="a13">Doméstico
+        <br>
+        <input type="checkbox" name="a14">Esportivo
+        <br>
+        <input type="checkbox" name="a15">Intoxicação
+        <br>
+        <input type="checkbox" name="a16">Queda Bicicleta
+        <br>
+        <input type="checkbox" name="a17">Queda Moto
+        <br>
+        <input type="checkbox" name="a18">Queda Nível &lt;2M
+        <br>
+        <input type="checkbox" name="a19">Trabalho
+        <br>
+        <input type="checkbox" name="a20">Transferência
+        <!--Problemas encontrados-->
+        <h3>Problemas encontrados</h3>
+        <br>
+        <input type="checkbox" name="b1">Respiratório
+        <input type="radio" name="b1a">DPOC
+        <input type="radio" name="b1b">Inalação de fumaça
+        <br>
+        <input type="checkbox" name="b2">Diabetes
+        <input type="radio" name="b2a">Hiperglicemia
+        <input type="radio" name="b2b">Hipoglicemia
+        <br>
+        <input type="checkbox" name="b3">Obstétrico
+        <input type="checkbox" name="b3a">Parto Emergencial
+        <input type="checkbox" name="b3b">Gestante
+        <input type="checkbox" name="b3c">Hemor. Excessiva
+        <br>
+        <input type="checkbox" name="b4">Transporte
+        <input type="checkbox" name="b4a">Aéreo
+        <input type="checkbox" name="b4b">Clínico
+        <input type="checkbox" name="b4c">Emergencial
+        <input type="checkbox" name="b4d">Pós-Trauma
+        <input type="checkbox" name="b4e">Samu
+        <input type="checkbox" name="b4f">Sem remoção
+        <input type="text" name="b4g" placeholder="Outros">
+        <br>
+        <input type="text" name="b5" placeholder="Outros">
+        <!--SINAIS E SINTOMAS-->
+        <h3>Sinais e Sintomas</h3>
+        <br>
+        <input type="checkbox" name="c1">Abdomen sensível ou rígido
+        <br>
+        <input type="checkbox" name="c2">Afundamento de crânio
+        <br>
+        <input type="checkbox" name="c3">Agitação
+        <br>
+        <input type="checkbox" name="c4">Amnésia
+        <br>
+        <input type="checkbox" name="c5">Angina de peito
+        <br>
+        <input type="checkbox" name="c6">Apinéia
+        <br>
+        <input type="checkbox" name="c7">Bradicardia
+        <br>
+        <input type="checkbox" name="c8">Bradipnéia
+        <br>
+        <input type="checkbox" name="c9">Bronco-Aspirando
+        <br>
+        <input type="checkbox" name="c10">Cefaléia
+        <br>
+        <input type="checkbox" name="c11">Cianose
+        <input type="radio" name="c11a">Lábios
+        <input type="radio" name="c11b">Extremidade
+        <br>
+        <input type="checkbox" name="c12">Convulsão
+        <br>
+        <input type="checkbox" name="c13">Decorticação
+        <br>
+        <input type="checkbox" name="c14">Deformidade
+        <br>
+        <input type="checkbox" name="c15">Descerebração
+        <br>
+        <input type="checkbox" name="c16">Desmaio
+        <br>
+        <input type="checkbox" name="c17">Desvio de traquéia
+        <br>
+        <input type="checkbox" name="c18">Dispnéia
+        <br>
+        <input type="checkbox" name="c19">Dor local
+        <br>
+        <input type="checkbox" name="c20">Edema
+        <input type="radio" name="c20a">Lábios
+        <input type="radio" name="c20b">Extremidade
+        <br>
+        <input type="checkbox" name="c21">Enfisema subcutâneo
+        <br>
+        <input type="checkbox" name="c22">Êstase de jugular
+        <br>
+        <input type="checkbox" name="c23">Face pálida
+        <br>
+        <input type="checkbox" name="c24">Hemorragia
+        <input type="radio" name="c24a">Interna
+        <input type="radio" name="c24b">Externa
+        <br>
+        <input type="checkbox" name="c25">Hipertensão
+        <br>
+        <input type="checkbox" name="c26">Hipotensão
+        <br>
+        <input type="checkbox" name="c27">Náuseas e Vômitos
+        <br>
+        <input type="checkbox" name="c28">Nasoragia
+        <br>
+        <input type="checkbox" name="c29">Óbito
+        <br>
+        <input type="checkbox" name="c30">Otorréia
+        <br>
+        <input type="checkbox" name="c31">Otorragia
+        <br>
+        <input type="checkbox" name="c32">O.V.A.C.E
+        <br>
+        <input type="checkbox" name="c33">Parada
+        <input type="radio" name="c33a">Cardíaca
+        <input type="radio" name="c33b">Respiratória
+        <br>
+        <input type="checkbox" name="c34">Priaprismo
+        <br>
+        <input type="checkbox" name="c35">Prurido na pele
+        <br>
+        <input type="checkbox" name="c36">Pupilas
+        <input type="radio" name="c36a">Anisocoria
+        <input type="radio" name="c36b">Isocoria
+        <input type="radio" name="c36c">Midriase
+        <input type="radio" name="c36d">Miose
+        <input type="radio" name="c36e">Reagente
+        <input type="radio" name="c36f">Não reagente
+        <br>
+        <input type="checkbox" name="c37">Sede
+        <br>
+        <input type="checkbox" name="c38">Sinal de battle
+        <br>
+        <input type="checkbox" name="c39">Sinal de guaxinim
+        <br>
+        <input type="checkbox" name="c40">Sudorese
+        <br>
+        <input type="checkbox" name="c41">Taquipnéia
+        <br>
+        <input type="checkbox" name="c42">Taquicardia
+        <br>
+        <input type="checkbox" name="c43">Tontura
+        <br>
+        <input type="text" name="c44" placeholder="Outros">
+        <!--AVALIAÇÃO DO PACIENTE-->
+        <h2>Avaliação do Paciente</h2>
+        <h3>Nível de consciência</h3>
+        <h4>Maiores de 5 anos</h4>
+        <h5>Abertura Ocular</h5>
+        Espontânea<input type="radio" name="ia1">4
+        <br>
+        Comando Verbal<input type="radio" name="ia2">3
+        <br>
+        Estímulo Doloroso<input type="radio" name="ia3">2
+        <br>
+        Nenhuma<input type="radio" name="ia4">1
+        <h5>Resposta Verbal</h5>
+        Orientado<input type="radio" name="ja1">5
+        <br>
+        Confuso<input type="radio" name="ja2">4
+        <br>
+        Palavras Inapropriadas<input type="radio" name="ja3">3
+        <br>
+        Palavras Incompreensíveis<input type="radio" name="ja4">2
+        <br>
+        Nenhuma<input type="radio" name="ja5">1
+        <h5>Resposta Motora</h5>
+        Obedece Comandos<input type="radio" name="ka1">6
+        <br>
+        Localiza Dor<input type="radio" name="ka2">5
+        <br>
+        Movimento de Retirada<input type="radio" name="ka3">4
+        <br>
+        Flexão Anormal<input type="radio" name="ka4">3
+        <br>
+        Extensão Anormal<input type="radio" name="ka5">2
+        <br>
+        Nenhuma<input type="radio" name="ka6">1
+        <h4>Menores de 5 anos</h4>
+        <h5>Abertura Ocular</h5>
+        Espontânea<input type="radio" name="ib1">4
+        <br>
+        Comando Verbal<input type="radio" name="ib2">3
+        <br>
+        Estímulo Doloroso<input type="radio" name="ib3">2
+        <br>
+        Nenhuma<input type="radio" name="ib4">1
+        <h5>Resposta Verbal</h5>
+        Orientado<input type="radio" name="jb1">5
+        <br>
+        Confuso<input type="radio" name="jb2">4
+        <br>
+        Palavras Inapropriadas<input type="radio" name="jb3">3
+        <br>
+        Palavras Incompreensíveis<input type="radio" name="jb4">2
+        <br>
+        Nenhuma<input type="radio" name="jb5">1
+        <h5>Resposta Motora</h5>
+        Obedece Comandos<input type="radio" name="kb1">6
+        <br>
+        Localiza Dor<input type="radio" name="kb2">5
+        <br>
+        Movimento de Retirada<input type="radio" name="kb3">4
+        <br>
+        Flexão Anormal<input type="radio" name="kb4">3
+        <br>
+        Extensão Anormal<input type="radio" name="kb5">2
+        <br>
+        Nenhuma<input type="radio" name="kb6">1
+        <!--Localização dos Traumas-->
+        <h3>Localização dos Traumas</h3>
+        <!--SINAIS VITAIS-->
+        <h3>Sinais Vitais</h3>
+        <input type="number" name="d1">x<input type="number" name="d12">mmHG
+        <br>
+        <input type="radio" name="d2">Normal
+        <input type="radio" name="d21">Anormal
+        <br>
+        <input type="number" name="d3" placeholder="Pulso">B.C.P.M
+        <br>
+        <input type="number" name="d4" placeholder="Respiração">M.R.M
+        <br>
+        <input type="number" name="d5" placeholder="Saturação %">
+        <input type="number" name="d6" placeholder="Temperatura °C">
+        <br>
+        <h4>Perfusão</h4>
+        <input type="radio" name="d7">&gt;2seg.
+        <input type="radio" name="d71">&lt;2seg.
+        <!--Forma de condução-->
+        <h3>Forma de condução</h3>
+        <input type="checkbox" name="e1">Deitada
+        <br>
+        <input type="checkbox" name="e2">Semi-Sentada
+        <br>
+        <input type="checkbox" name="e3">Sentada
+        <h4>Vítima era</h4>
+        <input type="checkbox" name="e4">Ciclista
+        <br>
+        <input type="checkbox" name="e5">Condutor Moto
+        <br>
+        <input type="checkbox" name="e6">Gestante
+        <br>
+        <input type="checkbox" name="e7">Pas. Ban. Frente
+        <br>
+        <input type="checkbox" name="e8">Pas. Moto
+        <br>
+        <input type="checkbox" name="e9">Condutor Carro
+        <br>
+        <input type="checkbox" name="e10">Clínico
+        <br>
+        <input type="checkbox" name="e11">Trauma
+        <br>
+        <input type="checkbox" name="e12">Pas. Ban. Trás
+        <br>
+        <input type="checkbox" name="e13">Pedestre
+        <!--Decisão Transporte-->
+        <h3>Decisão Transporte</h3>
+        <input type="radio" name="f1">Estável
+        <br>
+        <input type="radio" name="f2">Potencialmente instável
+        <br>
+        <input type="radio" name="f3">Instável
+        <br>
+        <input type="radio" name="f4">Crítico
+        <!--Equipe de atendimento-->
+        <h3>Equipe de atendimento</h3>
+        <input type="text" name="g1" placeholder="M">
+        <br>
+        <input type="text" name="g2" placeholder="S1">
+        <br>
+        <input type="text" name="g3" placeholder="S2">
+        <br>
+        <input type="text" name="g4" placeholder="S3">
+        <br>
+        <input type="text" name="g5" placeholder="Equipe">
+        <br>
+        <input type="text" name="g6" placeholder="Demandante">
+        <h4>Objetos recolhidos</h4>
+        <input type="text" name="g7">
+        <!--Informações da Ocorrência-->
+        <h3>Informações da Ocorrência</h3>
+        <input type="text" name="h1" placeholder="N° USB">
+        <input type="text" name="h2" placeholder="CÓD. IR">
+        <br>
+        <input type="text" name="h3" placeholder="N° Ocorrência">
+        <input type="text" name="h4" placeholder="CÓD. PS">
+        <br>
+        <input type="text" name="h5" placeholder="Desp.">
+        <br>
+        <input type="text" name="h6" placeholder="H. CH.">
+        <br>
+        <input type="text" name="h7" placeholder="KM Final">
+        <br>
+        <input type="text" name="h8" placeholder="CÓD. SIA/SUS">
+        <br>
+        <button>ENVIAR</button>
+    </form>
+    
+</body>
+</html>
