@@ -13,3 +13,8 @@
         document.getElementById("read_profile_menu").style.display = "flex";
         document.getElementById("inputs_read").style.display = "flex";
     }
+
+    document.getElementById("close-read").onclick = function(){
+        document.getElementById("read_profile_menu").style.display = "none";
+        document.getElementById("inputs_read").style.display = "none";   
+    }
