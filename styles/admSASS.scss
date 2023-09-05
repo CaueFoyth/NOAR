@@ -14,19 +14,43 @@ main
   padding: 0;
   text-align: left;
 }
-.background_blur
-{
-  background: #a29e9e82;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11.8px);
-  -webkit-backdrop-filter: blur(11.8px);
-  border: 1px solid rgba(162, 158, 158, 0.3);
-  height: 100vh;
-  display: flex;
-  position: absolute;
-}
 .float_menu_adduser
+{
+  background: $secundaria;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px $preto;
+  display: none;
+}
+.read_profile_menu
+{
+  background: $secundaria;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px $preto;
+  display: none;
+}
+.update_profile_menu
+{
+  background: $secundaria;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 200px;
+  right: 600px;
+  border-radius: 15px;
+  box-shadow: 0px 7px 7px 0px $preto;
+  display: none;
+}
+.delete_profile_menu
 {
   background: $secundaria;
   width: 450px;
@@ -54,6 +78,35 @@ main
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+}
+.inputs_read
+{
+  width: 450px;
+  height: 450px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.read_data  
+{
+  width: 190px;
+  height: 30px;
+  background: #dfdede53;
+  border: solid 0.5px #00000042;
+  border-radius: 10px;
+}
+.read_adm
+{
+
 }
 .texto
 {
