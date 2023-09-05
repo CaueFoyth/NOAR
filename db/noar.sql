@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Ago-2023 às 14:15
+-- Tempo de geração: 05-Set-2023 às 16:23
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -124,7 +124,32 @@ CREATE TABLE `ocorrencias` (
   `edema_labios` int(1) NOT NULL,
   `edema_extremidade` int(1) NOT NULL,
   `enfisema_subcutaneo` int(1) NOT NULL,
-  `estase_jugular` int(1) NOT NULL
+  `estase_jugular` int(1) NOT NULL,
+  `face_palida` int(1) NOT NULL,
+  `hemorragia` int(1) NOT NULL,
+  `hemo_int` int(1) NOT NULL,
+  `hemo_ext` int(1) NOT NULL,
+  `hipertensao` int(1) NOT NULL,
+  `hipotensao` int(1) NOT NULL,
+  `nausea_vomito` int(1) NOT NULL,
+  `nasoragia` int(1) NOT NULL,
+  `obito` int(1) NOT NULL,
+  `otorreia` int(1) NOT NULL,
+  `otorragia` int(1) NOT NULL,
+  `ovace` int(1) NOT NULL,
+  `parada_cardiaca` int(1) NOT NULL,
+  `parada_respiratoria` int(1) NOT NULL,
+  `priaprismo` int(1) NOT NULL,
+  `prurido_pele` int(1) NOT NULL,
+  `pupilas_anisocoria` int(1) NOT NULL,
+  `pupilas_isocoria` int(1) NOT NULL,
+  `pupilas_midriase` int(1) NOT NULL,
+  `pupilas_miose` int(1) NOT NULL,
+  `pupilas_reagente` int(1) NOT NULL,
+  `pupilas_nao_reagente` int(1) NOT NULL,
+  `sede` int(1) NOT NULL,
+  `sinal_battle` int(1) NOT NULL,
+  `sinal_guaxinim` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
