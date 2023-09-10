@@ -38,7 +38,7 @@ def login():
                 session['adm'] = user['adm']  
                 if user['adm'] == 1:
                     return redirect(url_for("adm"))            
-                return "cuzinho gostoso"
+                return "TESTE"
             else:
                 mesage = 'Senha ou email incorreto'
                 return render_template('index.html', mesage = mesage)
