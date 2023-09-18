@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Set-2023 às 16:23
+-- Tempo de geração: 18-Set-2023 às 14:59
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `noar`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `corpo`
+--
+
+CREATE TABLE `corpo` (
+  `id_corpo` int(11) NOT NULL,
+  `fk_ocorrencia` int(11) NOT NULL,
+  `adulto` int(1) NOT NULL,
+  `crianca` int(1) NOT NULL,
+  `frente` int(1) NOT NULL,
+  `costa` int(1) NOT NULL,
+  `local` varchar(100) NOT NULL,
+  `lado` varchar(100) NOT NULL,
+  `tipo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -149,12 +167,24 @@ CREATE TABLE `ocorrencias` (
   `pupilas_nao_reagente` int(1) NOT NULL,
   `sede` int(1) NOT NULL,
   `sinal_battle` int(1) NOT NULL,
-  `sinal_guaxinim` int(1) NOT NULL
+  `sinal_guaxinim` int(1) NOT NULL,
+  `sudorese` int(1) NOT NULL,
+  `taquipneia` int(1) NOT NULL,
+  `taquicardia` int(1) NOT NULL,
+  `tontura` int(1) NOT NULL,
+  `outros_sintomas` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices para tabela `corpo`
+--
+ALTER TABLE `corpo`
+  ADD PRIMARY KEY (`id_corpo`),
+  ADD KEY `fk_ocorrencia` (`fk_ocorrencia`);
 
 --
 -- Índices para tabela `login`
@@ -174,6 +204,12 @@ ALTER TABLE `ocorrencias`
 --
 
 --
+-- AUTO_INCREMENT de tabela `corpo`
+--
+ALTER TABLE `corpo`
+  MODIFY `id_corpo` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
@@ -188,6 +224,12 @@ ALTER TABLE `ocorrencias`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `corpo`
+--
+ALTER TABLE `corpo`
+  ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
 -- Limitadores para a tabela `ocorrencias`
