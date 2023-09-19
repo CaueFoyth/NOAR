@@ -1,71 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
-    <link rel="icon" href="../static/img/noar_pequena.png">
-    <title>NOAR</title>
-    <style>
-        .orelha
-        {
-            margin-left: 500px;
-            width: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    </style>
+    <title>Página de Administrador</title>
+    <link rel="stylesheet" href="../static/admSASS.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     {% block body %}
-<h1>CRUD EM FLASK</h1>
+    <header class="header">
+      <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
+    <section class="options">
+        <button class="button-open" id="open">Cadastrar novos Usuários</button>
+        <form><button>Gerenciar Ocorrências</button></form>
+    </section>
 
-    <h2>Lista de bombeiros <button type="button" data-toggle = "modal" data-target="#mymodal">Adicionar socorrista</button></h2>
+    <section class="headerlogo">
+        <!-- Logo da NOAR exibida no canto superior esquerdo da tela -->
+        <img src="../static/img/logo_pequena.png" class="logo">
+    </section>
+    </header>
+            <center>     
+                <div class="float_menu_adduser" id="float_menu">
+                    <form action="/adicionar" method="post">
+                        <section class="inputs">
+                            <div class="texto">
+                                <div class="left">
+                                Cadastro de Usuários 
+                                </div>
 
-    <table>
+                                <div class="right">
+                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+            
+                            <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
+                            <br>
+                            <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
+                            <br>
+                            <input type="text" class="input_email" name="email" placeholder=" &nbsp; E-Mail">
+                            <br>
+                            <input type="text" class="input_telefone" name="telefone" placeholder=" &nbsp; Telefone">
+                            <br> 
+                            Adm:
+                            <select name="adm" class="input_adm"> 
+                                <option value="yes">Sim</option>
+                                <option value="no">Não</option> 
+                            </select>
+                            <Br>
+                            <button class="confirm">Confirmar</button>
+                        </section>
+                    </form>
+                </div>
 
-        <tr>
-            <th>Nome</th>
-            <th>CPF</th>
-        </tr>
+                <div class="float_menu_update" id="float_menu_update">
+                    <form action="/adicionar" method="post">
+                        <section class="inputs">
+                            <div class="texto">
+                                <div class="left">
+                                Cadastro de Usuários 
+                                </div>
 
-        {% for row in login %}
-        <tr>
-            <td>{{row.4}}</td>
-            <td>{{row.1}}</td>
+                                <div class="right">
+                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
+                                </div>
+                            </div>
+                            
+                            <br>
+            
+                            <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
+                            <br>
+                            <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
+                            <br>
+                            <input type="text" class="input_email" name="email" placeholder=" &nbsp; E-Mail">
+                            <br>
+                            <input type="text" class="input_telefone" name="telefone" placeholder=" &nbsp; Telefone">
+                            <br> 
+                            Adm:
+                            <select name="adm" class="input_adm"> 
+                                <option value="yes">Sim</option>
+                                <option value="no">Não</option> 
+                            </select>
+                            <Br>
+                            <button class="confirm">Confirmar</button>
+                        </section>
+                    </form>
+                </div>
 
-            <td>
-                <a href="/update/{{ row.0 }}" data-toggle="modal" data-target="#modaledit{{row.0}}">Edit</a>
-                <a href="/deletar/{{ row.0 }}" onclick="return confirm('Você tem certeza?')">Deletar</a>
-            </td>
-        </tr>
+                <div class="read_profile_menu" id="read_profile_menu">
+                    <form action="">
+                        <div class="inputs_read" id="inputs_read">
+                            <div class="texto">
+                                <div class="left">
+                                Perfil
+                                </div>
 
-        {% endfor  %}
+                                <div class="right">
+                                <p><ion-icon id="close-read" class="button-close" name="close-circle-outline"></ion-icon></p>
+                                </div>
+                            </div>
 
-    </table>
+                            <div class="read_data">Nome</div>
+                            <div class="read_data">CPF</div>
+                            <div class="read_data">E-Mail</div>
+                            <div class="read_data">Telefone</div>
+                            <div class="read_adm">Adm</div>
 
-    <div class="orelha">
-        <form action="/adicionar" method="post">
-        <h2>Por favor coloque os dados</h2>
-        <p>nome:</p>
-        <input name="nome" type="text">
-        <p>email:</p>
-        <input name="email" type="text">
-        <p>cpf:</p>
-        <input name="cpf" type="text">
-        <p>telefone:</p>
-        <input name="telefone" type="text">
-        <p>adm:</p>
-        <input name="adm" type="text">
-        <button type="submit">Adicionar</button>
-        <button>Close</button>
-        </form>
-    </div>
-
-    
-
-{% endblock %}
+                        </div>
+                    </form>
+                </div>
+                <main>
+                    <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
+                    <form action="">
+                        <table>
+                            <h2>Usuários Cadastrados</h2>
+                            <tr>
+                                <th class="tbheader_name">Nome</th>
+                                <th class="tbheader_cpf">CPF</th>
+                                <th class="tbheader_options">Operações</th>
+                            </tr>
+                            {% for row in login %}
+                            <tr>
+                                <td>{{row.4}}</td>
+                                <td>{{row.1}}</td>
+                                <td class="tbdata_options">    
+                                    <button class="buttons_opt" id="read">Ver</button>
+                                    <a href="/update/{{ row.0 }}" data-toggle="modal" class="buttons_opt" id="update" data-target="#modaledit{{row.0}}">Edit</a>
+                                    <a href="/deletar/{{ row.0 }}" class="buttons_opt" id="delete" onclick="return confirm('Você tem certeza?')">Deletar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </form>
+                </main>
+            </center>
+        {% endblock %}
 </body>
-</html> 
+</html>
+<script src="../static/admPage.js"></script>
