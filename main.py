@@ -63,7 +63,11 @@ def adicionar():
             nome2 = request.form['nome']
             email2 = request.form['email']
             telefone2 = request.form['telefone']
-       
+            if adm2 == 'yes':
+                adm2 == 1
+            else:
+                adm2 == 0
+
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
             mysql.connection.commit()
@@ -73,7 +77,7 @@ def adicionar():
 def deletar(id):
     
     cursor = mysql.connection.cursor()
-    cursor.execute("DELETE FROM login WHERE id_sos = %s", (id))
+    cursor.execute("DELETE FROM login WHERE id_sos = {}".format(id))
     mysql.connection.commit()
     return redirect(url_for("adm"))
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/img/noar_pequena.png">
+    <title>NOAR</title>
+    <style>
+        .orelha
+        {
+            margin-left: 500px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    {% block body %}
+<h1>CRUD EM FLASK</h1>
+
+    <h2>Lista de bombeiros <button type="button" data-toggle = "modal" data-target="#mymodal">Adicionar socorrista</button></h2>
+
+    <table>
+
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+        </tr>
+
+        {% for row in login %}
+        <tr>
+            <td>{{row.4}}</td>
+            <td>{{row.1}}</td>
+
+            <td>
+                <a href="/update/{{ row.0 }}" data-toggle="modal" data-target="#modaledit{{row.0}}">Alterar</a>
+                <a href="/deletar/{{ row.0 }}" onclick="return confirm('Você tem certeza?')">Excluir</a>
+            </td>
+        </tr>
+
+        {% endfor  %}
+
+    </table>
+
+    <div class="orelha">
+        <form action="/adicionar" method="post">
+        <h2>Por favor coloque os dados</h2>
+        <p>nome:</p>
+        <input name="nome" type="text">
+        <p>email:</p>
+        <input name="email" type="text">
+        <p>cpf:</p>
+        <input name="cpf" type="text">
+        <p>telefone:</p>
+        <input name="telefone" type="text">
+        <p>adm:</p>
+        <input name="adm" type="text">
+        <button type="submit">Adicionar</button>
+        <button>Close</button>
+        </form>
+    </div>
+
+    
+
+{% endblock %}
+</body>
+</html> 

@@ -18,3 +18,13 @@
         document.getElementById("read_profile_menu").style.display = "none";
         document.getElementById("inputs_read").style.display = "none";   
     }
+
+    document.getElementById("update").onclick = function(){
+        document.getElementById("update_profile_menu").style.display = "flex";
+        document.getElementById("inputs_update").style.display = "flex";
+    }
+
+    document.getElementById("close-update").onclick = function(){
+        document.getElementById("update_profile_menu").style.display = "none";
+        document.getElementById("inputs_update").style.display = "none";   
+    }
