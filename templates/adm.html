@@ -97,7 +97,7 @@
                         <div class="inputs_update" id="inputs_update">
                             <div class="texto">
                                 <div class="left">
-                                Alterar Perfil
+                                &nbsp; &nbsp; &nbsp; &nbsp; Alterar Perfil
                                 </div>
 
                                 <div class="right">
@@ -105,6 +105,7 @@
                                 </div>
                             </div>
 
+                            <br>
                             <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
                             <br>
                             <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
@@ -125,19 +126,24 @@
                         <div class="inputs_read" id="inputs_read">
                             <div class="texto">
                                 <div class="left">
-                                Perfil
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Perfil
                                 </div>
 
                                 <div class="right">
                                 <p><ion-icon id="close-read" class="button-close" name="close-circle-outline"></ion-icon></p>
                                 </div>
                             </div>
-
+                            <br>
                             <div class="read_data">Nome</div>
+                            <br>
                             <div class="read_data">CPF</div>
+                            <br>
                             <div class="read_data">E-Mail</div>
+                            <br>
                             <div class="read_data">Telefone</div>
-                            <div class="read_adm">Adm</div>
+                            <br>
+                            <div class="read_adm">Adm:</div>
+                            Sim/Não
 
                         </div>
                     </form>
@@ -153,12 +159,12 @@
                                 <th class="tbheader_options">Operações</th>
                             </tr>
                             {% for row in login %}
-                            <tr>
+                            <tr class="tbrow_main">
                                 <td>{{row.4}}</td>
                                 <td>{{row.1}}</td>
-                                <td class="tbdata_options">    
-                                    <button class="buttons_opt" id="read">Ver</button>
-                                    <a href="/update/{{ row.0 }}" data-toggle="modal" class="buttons_opt" id="update" data-target="#modaledit{{row.0}}">Edit</a>
+                                <td class="tbdata_opt">    
+                                    <a class="buttons_opt" id="read">Ver</a>
+                                    <!-- <a href="/update/{{ row.0 }}" data-toggle="modal"--> <a class="buttons_opt" id="update">Alterar</a> <!-- data-target="#modaledit{{row.0}}">Edit</a> -->
                                     <a href="/deletar/{{ row.0 }}" class="buttons_opt" id="delete" onclick="return confirm('Você tem certeza?')">Deletar</a>
                                 </td>
                             </tr>

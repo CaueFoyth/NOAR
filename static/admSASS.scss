@@ -273,7 +273,20 @@ table {
   height: 600px;
   text-align: left;
 }
-
+tr
+{
+  border: 1px solid $preto;
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: $primaria;
+  justify-content: center;
+  align-items: center;
+}
 td, th {
   border: 1px solid $preto;
   text-align: center;
@@ -284,44 +297,56 @@ td, th {
   font-weight: 800;
   line-height: normal;
   color: $primaria;
-  height: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
 }
 
 tr:nth-child(even) {
   background-color: #35333353;
+  
 }
 .tbheader_name
 {
-  height: 0px;
+  height: 30px;
   width: 250px;
   text-align: center;
 }
 .tbheader_cpf
 {
-  height: 0px;
+  height: 30px;
   width: 250px;
   text-align: center;
 }
 .tbheader_options
 {
-  height: 0;
+  height: 30px;
   width: 504px;
   text-align: center;
 }
-.tbdata_options
-{ 
+.tbdata_opt
+{
   display: flex;
+  width: auto;
+  height: auto;
   flex-direction: row;
-  border: 0;
   justify-content: space-around;
   align-items: center;
+  border: 0;
+  height: 170px;
 }
 .buttons_opt
 {
   margin-top: 15px;
   border-radius: 15px;
   width: 100px;
+  height: auto;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   background: $primaria;
+}
+a
+{
+  cursor: pointer;
+  color: $secundaria;
 }
