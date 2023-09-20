@@ -28,3 +28,5 @@
         document.getElementById("update_profile_menu").style.display = "none";
         document.getElementById("inputs_update").style.display = "none";   
     }
+
+    

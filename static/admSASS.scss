@@ -267,10 +267,10 @@ h2 {
 table {
   font-family: 'Poppins', sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: auto;
   background: #aaa8a853;
   width: 1200px;
-  height: 600px;
+  height: auto;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -351,4 +351,11 @@ a
 {
   cursor: pointer;
   color: $secundaria;
+}
+.button-redirect
+{
+  font-size: 23px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
 }
