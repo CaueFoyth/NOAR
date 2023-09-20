@@ -81,6 +81,10 @@ def deletar(id):
     mysql.connection.commit()
     return redirect(url_for("adm"))
 
+@app.route('/ocorrencias', methods = ['POST', 'GET'])
+def ocorrencias():
+    return render_template("ocorrencias.html")
+
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)
