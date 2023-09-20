@@ -98,7 +98,7 @@ main
 }
 .read_data  
 {
-  width: 190px;
+  width: 65%;
   height: 30px;
   background: #dfdede53;
   border: solid 0.5px #00000042;
@@ -163,7 +163,7 @@ p
 .input_name
 {
   height: 30px;
-  width: 190px;
+  width: 65%;
   font-size: 18px;
   border: 1px solid $preto;
   border-radius: 10px;
@@ -172,7 +172,7 @@ p
 .input_cpf
 {
   height: 30px;
-  width: 190px;
+  width:  65%;
   font-size: 18px;
   border: 1px solid $preto;
   border-radius: 10px;
@@ -181,7 +181,7 @@ p
 .input_email
 {
   height: 30px;
-  width: 190px;
+  width:  65%;
   font-size: 18px;
   border: 1px solid $preto;
   border-radius: 10px;
@@ -190,7 +190,7 @@ p
 .input_telefone
 {
   height: 30px;
-  width: 190px;
+  width:  65%;
   font-size: 18px;
   border: 1px solid $preto;
   border-radius: 10px;
@@ -272,6 +272,8 @@ table {
   width: 1200px;
   height: 600px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 tr
 {

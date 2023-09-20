@@ -93,7 +93,7 @@ main {
 }
 
 .read_data {
-  width: 190px;
+  width: 65%;
   height: 30px;
   background: rgba(223, 222, 222, 0.3254901961);
   border: solid 0.5px rgba(0, 0, 0, 0.2588235294);
@@ -158,7 +158,7 @@ p {
 
 .input_name {
   height: 30px;
-  width: 190px;
+  width: 65%;
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
   border-radius: 10px;
@@ -167,7 +167,7 @@ p {
 
 .input_cpf {
   height: 30px;
-  width: 190px;
+  width: 65%;
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
   border-radius: 10px;
@@ -176,7 +176,7 @@ p {
 
 .input_email {
   height: 30px;
-  width: 190px;
+  width: 65%;
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
   border-radius: 10px;
@@ -185,7 +185,7 @@ p {
 
 .input_telefone {
   height: 30px;
-  width: 190px;
+  width: 65%;
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
   border-radius: 10px;
@@ -269,6 +269,8 @@ table {
   width: 1200px;
   height: 600px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 tr {
