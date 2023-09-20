@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+.estrutura {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3254901961);
+}
+
+.search {
+  height: 150px;
+  width: 150px;
+  background-color: #33338D;
+}/*# sourceMappingURL=ocorrencias.css.map */

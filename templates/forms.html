@@ -91,12 +91,16 @@
         <h3>Problemas encontrados</h3>
         <br>
         <input type="checkbox" name="b1">Respiratório
-        <input type="radio" name="b1a">DPOC
-        <input type="radio" name="b1b">Inalação de fumaça
+        <input type="radio" name="b1a" value="DPOC">
+        <label for="DPOC">DPOC</label>
+        <input type="radio" name="b1a" value="inalacao">
+        <label for="inalacao">Inalação de fumaça</label>
         <br>
         <input type="checkbox" name="b2">Diabetes
-        <input type="radio" name="b2a">Hiperglicemia
-        <input type="radio" name="b2b">Hipoglicemia
+        <input type="radio" name="b2a" value="Hiperglicemia">
+        <label for="Hiperglicemia">Hiperglicemia</label>
+        <input type="radio" name="b2a" value="Hipoglicemia">
+        <label for="Hipoglicemia">Hipoglicemia</label>
         <br>
         <input type="checkbox" name="b3">Obstétrico
         <input type="checkbox" name="b3a">Parto Emergencial
@@ -137,8 +141,10 @@
         <input type="checkbox" name="c10">Cefaléia
         <br>
         <input type="checkbox" name="c11">Cianose
-        <input type="radio" name="c11a">Lábios
-        <input type="radio" name="c11b">Extremidade
+        <input type="radio" name="c11a" value="Labios">
+        <label for="Labios">Lábios</label>
+        <input type="radio" name="c11a" value="Extremidade">
+        <label for="Extremidade">Extremidade</label>
         <br>
         <input type="checkbox" name="c12">Convulsão
         <br>
@@ -157,8 +163,10 @@
         <input type="checkbox" name="c19">Dor local
         <br>
         <input type="checkbox" name="c20">Edema
-        <input type="radio" name="c20a">Lábios
-        <input type="radio" name="c20b">Extremidade
+        <input type="radio" name="c20a" value="Labios">
+        <label for="Labios">Lábios</label>
+        <input type="radio" name="c20a" value="Extremidade">
+        <label for="Extremidade">Extremidade</label>
         <br>
         <input type="checkbox" name="c21">Enfisema subcutâneo
         <br>
@@ -167,8 +175,10 @@
         <input type="checkbox" name="c23">Face pálida
         <br>
         <input type="checkbox" name="c24">Hemorragia
-        <input type="radio" name="c24a">Interna
-        <input type="radio" name="c24b">Externa
+        <input type="radio" name="c24a" value="Interna">
+        <label for="Interna">Interna</label>
+        <input type="radio" name="c24a" value="Externa">
+        <label for="Externa">Externa</label>
         <br>
         <input type="checkbox" name="c25">Hipertensão
         <br>
@@ -187,20 +197,28 @@
         <input type="checkbox" name="c32">O.V.A.C.E
         <br>
         <input type="checkbox" name="c33">Parada
-        <input type="radio" name="c33a">Cardíaca
-        <input type="radio" name="c33b">Respiratória
+        <input type="radio" name="c33a" value="Cardiaca">
+        <label for="Cardiaca">Cardíaca</label>
+        <input type="radio" name="c33a" value="Respiratoria">
+        <label for="Respiratoria">Respiratória</label>
         <br>
         <input type="checkbox" name="c34">Priaprismo
         <br>
         <input type="checkbox" name="c35">Prurido na pele
         <br>
-        <input type="checkbox" name="c36">Pupilas
-        <input type="radio" name="c36a">Anisocoria
-        <input type="radio" name="c36b">Isocoria
-        <input type="radio" name="c36c">Midriase
-        <input type="radio" name="c36d">Miose
-        <input type="radio" name="c36e">Reagente
-        <input type="radio" name="c36f">Não reagente
+        <input type="checkbox" name="c36" >Pupilas
+        <input type="radio" name="c36a" value="Anisocoria">
+        <label for="Anisocoria">Anisocoria</label>
+        <input type="radio" name="c36a" value="Isocoria">
+        <label for="Isocoria">Isocoria</label>
+        <input type="radio" name="c36a" value="Midriase">
+        <label for="Midriase">Midriase</label>
+        <input type="radio" name="c36a" value="Miose">
+        <label for="Miose">Miose</label>
+        <input type="radio" name="c36a" value="Reagente">
+        <label for="Reagente">Reagente</label>
+        <input type="radio" name="c36a" value="Nao_reagente">
+        <label for="Nao_reagente">Não reagente</label>
         <br>
         <input type="checkbox" name="c37">Sede
         <br>
@@ -222,74 +240,76 @@
         <h3>Nível de consciência</h3>
         <h4>Maiores de 5 anos</h4>
         <h5>Abertura Ocular</h5>
-        Espontânea<input type="radio" name="ia1">4
+        Espontânea<input type="radio" name="ia" value="Espontanea">4
         <br>
-        Comando Verbal<input type="radio" name="ia2">3
+        Comando Verbal<input type="radio" name="ia" value="Comando_Verbal">3
         <br>
-        Estímulo Doloroso<input type="radio" name="ia3">2
+        Estímulo Doloroso<input type="radio" name="ia" value="Estimulo_Doloroso">2
         <br>
-        Nenhuma<input type="radio" name="ia4">1
+        Nenhuma<input type="radio" name="ia" value="Nenhuma">1
         <h5>Resposta Verbal</h5>
-        Orientado<input type="radio" name="ja1">5
+        Orientado<input type="radio" name="ja" value="Orientado">5
         <br>
-        Confuso<input type="radio" name="ja2">4
+        Confuso<input type="radio" name="ja">4
         <br>
-        Palavras Inapropriadas<input type="radio" name="ja3">3
+        Palavras Inapropriadas<input type="radio" name="ja" value="Palavras_Inapropriadas">3
         <br>
-        Palavras Incompreensíveis<input type="radio" name="ja4">2
+        Palavras Incompreensíveis<input type="radio" name="ja" value="Palavras_Incompreensiveis">2
         <br>
-        Nenhuma<input type="radio" name="ja5">1
+        Nenhuma<input type="radio" name="ja" value="Nenhuma">1
         <h5>Resposta Motora</h5>
-        Obedece Comandos<input type="radio" name="ka1">6
+        Obedece Comandos<input type="radio" name="ka" value="Obedece_Comandos">6
         <br>
-        Localiza Dor<input type="radio" name="ka2">5
+        Localiza Dor<input type="radio" name="ka" value="Localiza_Dor">5
         <br>
-        Movimento de Retirada<input type="radio" name="ka3">4
+        Movimento de Retirada<input type="radio" name="ka" value="Movimento_de_Retirada">4
         <br>
-        Flexão Anormal<input type="radio" name="ka4">3
+        Flexão Anormal<input type="radio" name="ka" value="Flexao_Anormal">3
         <br>
-        Extensão Anormal<input type="radio" name="ka5">2
+        Extensão Anormal<input type="radio" name="ka" value="Extensao_Anormal">2
         <br>
-        Nenhuma<input type="radio" name="ka6">1
+        Nenhuma<input type="radio" name="ka" value="Nenhuma">1
         <h4>Menores de 5 anos</h4>
         <h5>Abertura Ocular</h5>
-        Espontânea<input type="radio" name="ib1">4
+        Espontânea<input type="radio" name="ib" value="Espontanea">4
         <br>
-        Comando Verbal<input type="radio" name="ib2">3
+        Comando Verbal<input type="radio" name="ib" value="Comando_Verbal">3
         <br>
-        Estímulo Doloroso<input type="radio" name="ib3">2
+        Estímulo Doloroso<input type="radio" name="ib" value="Estimulo_Doloroso">2
         <br>
-        Nenhuma<input type="radio" name="ib4">1
+        Nenhuma<input type="radio" name="ib" value="Nenhuma">1
         <h5>Resposta Verbal</h5>
-        Orientado<input type="radio" name="jb1">5
+        Orientado<input type="radio" name="jb" value="Orientado">5
         <br>
-        Confuso<input type="radio" name="jb2">4
+        Confuso<input type="radio" name="jb">4
         <br>
-        Palavras Inapropriadas<input type="radio" name="jb3">3
+        Palavras Inapropriadas<input type="radio" name="jb" value="Palavras_Inapropriadas">3
         <br>
-        Palavras Incompreensíveis<input type="radio" name="jb4">2
+        Palavras Incompreensíveis<input type="radio" name="jb" value="Palavras_Incompreensiveis">2
         <br>
-        Nenhuma<input type="radio" name="jb5">1
+        Nenhuma<input type="radio" name="jb" value="Nenhuma">1
         <h5>Resposta Motora</h5>
-        Obedece Comandos<input type="radio" name="kb1">6
+        Obedece Comandos<input type="radio" name="kb" value="Obedece_Comandos">6
         <br>
-        Localiza Dor<input type="radio" name="kb2">5
+        Localiza Dor<input type="radio" name="kb" value="Localiza_Dor">5
         <br>
-        Movimento de Retirada<input type="radio" name="kb3">4
+        Movimento de Retirada<input type="radio" name="kb" value="Movimento_de_Retirada">4
         <br>
-        Flexão Anormal<input type="radio" name="kb4">3
+        Flexão Anormal<input type="radio" name="kb" value="Flexao_Anormal">3
         <br>
-        Extensão Anormal<input type="radio" name="kb5">2
+        Extensão Anormal<input type="radio" name="kb" value="Extensao_Anormal">2
         <br>
-        Nenhuma<input type="radio" name="kb6">1
+        Nenhuma<input type="radio" name="kb" value="Nenhuma">1
         <!--Localização dos Traumas-->
         <h3>Localização dos Traumas</h3>
         <!--SINAIS VITAIS-->
         <h3>Sinais Vitais</h3>
         <input type="number" name="d1">x<input type="number" name="d12">mmHG
         <br>
-        <input type="radio" name="d2">Normal
-        <input type="radio" name="d21">Anormal
+        <input type="radio" name="d2" value="Normal">
+        <label for="Normal">Normal</label>
+        <input type="radio" name="d2" value="Anormal">
+        <label for="Anormal">Anormal</label>
         <br>
         <input type="number" name="d3" placeholder="Pulso">B.C.P.M
         <br>
@@ -299,8 +319,10 @@
         <input type="number" name="d6" placeholder="Temperatura °C">
         <br>
         <h4>Perfusão</h4>
-        <input type="radio" name="d7">&gt;2seg.
-        <input type="radio" name="d71">&lt;2seg.
+        <input type="radio" name="d7" value="&gt;2seg.">
+        <label for="&gt;2seg.">&gt;2seg.</label>
+        <input type="radio" name="d7" value="&lt;2seg.">
+        <label for="&lt;2seg.">&lt;2seg.</label>
         <!--Forma de condução-->
         <h3>Forma de condução</h3>
         <input type="checkbox" name="e1">Deitada
@@ -330,13 +352,17 @@
         <input type="checkbox" name="e13">Pedestre
         <!--Decisão Transporte-->
         <h3>Decisão Transporte</h3>
-        <input type="radio" name="f1">Estável
+        <input type="radio" name="f1" value="Estavel">
+        <label for="Estavel">Estável</label>
         <br>
-        <input type="radio" name="f2">Potencialmente instável
+        <input type="radio" name="f1" value="Potencialmente_Instavel">
+        <label for="Potencialmente_Instavel">Potencialmente instável</label>
         <br>
-        <input type="radio" name="f3">Instável
+        <input type="radio" name="f1" value="Instavel">
+        <label for="Instavel">Instável</label>
         <br>
-        <input type="radio" name="f4">Crítico
+        <input type="radio" name="f1" value="Critico">
+        <label for="Critico">Crítico</label>
         <!--Equipe de atendimento-->
         <h3>Equipe de atendimento</h3>
         <input type="text" name="g1" placeholder="M">
@@ -569,7 +595,7 @@
         <h4>Alérgico a alguma coisa</h4>
         <input type="radio"  name="l5" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="l5" value="nao">
+        <input type="radio" name="l5" value="nao">
         <label for="nao">nao</label>
         <br>
         <input type="text" name="l5a" placeholder="Se sim, especifique">
@@ -672,6 +698,30 @@
         <label for="sim">sim</label><br>
         <input type="radio"  name="n7" value="nao">
         <label for="nao">nao</label>
+        <!--OBSERVAÇÕES IMPORTANTES-->
+        <h3>Observações Importantes</h3>
+        <input type="text"  name="o1">
+        <!--TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE-->
+        <h3>Termo de recusa de atendimento e/ou transporte</h3>
+        <p class="termo_recusa">EU <input type="text" name="o1"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o2"> INSCRITO NO CPF SOB N°<input type="text" name="o3"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
+        <br>
+        <input type="text"  name="o4" placeholder="Assinatura">
+        <br>
+        <input type="text"  name="o5" placeholder="Testemunha">
+        <br>
+        <input type="text"  name="o6" placeholder="Doc">
+        <br>
+        <input type="text"  name="o7" placeholder="Testemunha">
+        <br>
+        <input type="text"  name="o8" placeholder="Doc">
+        <p class="termo_recusa">GUARAMIRIM <input type="text"  name="o9"> DE <input type="text"  name="o10"> DE <input type="text"  name="o11"></p>
+        <!--DIVULGAR PARA A IMPRENSA-->
+        <h3>Divulgar para a imprensa</h3>
+        <input type="radio"  name="q1" value="sim">
+        <label for="sim">sim</label><br>
+        <input type="radio"  name="q2" value="nao">
+        <label for="nao">nao</label>
+        <br>
         <button>ENVIAR</button>
     </form>   
 </body>

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$primaria: #33338D;
+$secundaria: #Ffffff;
+$preto: #00000053;
+
+.estrutura
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $preto;
+}
+.search
+{
+    height: 150px;
+    width: 150px;
+    background-color: $primaria;
+}
