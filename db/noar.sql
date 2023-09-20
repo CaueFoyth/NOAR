@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Set-2023 às 14:59
+-- Tempo de geração: 20-Set-2023 às 17:31
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -175,6 +175,44 @@ CREATE TABLE `ocorrencias` (
   `outros_sintomas` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `queimadura`
+--
+
+CREATE TABLE `queimadura` (
+  `id_queimadura` int(11) NOT NULL,
+  `fk_ocorrencias` int(11) NOT NULL,
+  `cabeca_p` int(1) NOT NULL,
+  `pescoco_p` int(1) NOT NULL,
+  `tant_p` int(1) NOT NULL,
+  `tpos_p` int(1) NOT NULL,
+  `genit_p` int(1) NOT NULL,
+  `mid_p` int(1) NOT NULL,
+  `mie_p` int(1) NOT NULL,
+  `msd_p` int(1) NOT NULL,
+  `mse_p` int(1) NOT NULL,
+  `cabeca_s` int(1) NOT NULL,
+  `pescoco_s` int(1) NOT NULL,
+  `tant_s` int(1) NOT NULL,
+  `tpos_s` int(1) NOT NULL,
+  `genit_s` int(1) NOT NULL,
+  `mid_s` int(1) NOT NULL,
+  `mie_s` int(1) NOT NULL,
+  `msd_s` int(1) NOT NULL,
+  `mse_s` int(1) NOT NULL,
+  `cabeca_t` int(1) NOT NULL,
+  `pescoco_t` int(1) NOT NULL,
+  `tant_t` int(1) NOT NULL,
+  `tpos_t` int(1) NOT NULL,
+  `genit_t` int(1) NOT NULL,
+  `mid_t` int(1) NOT NULL,
+  `mie_t` int(1) NOT NULL,
+  `msd_t` int(1) NOT NULL,
+  `mse_t` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -200,6 +238,13 @@ ALTER TABLE `ocorrencias`
   ADD KEY `fk_sos` (`fk_sos`);
 
 --
+-- Índices para tabela `queimadura`
+--
+ALTER TABLE `queimadura`
+  ADD PRIMARY KEY (`id_queimadura`),
+  ADD KEY `fk_ocorrencias` (`fk_ocorrencias`);
+
+--
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -222,6 +267,12 @@ ALTER TABLE `ocorrencias`
   MODIFY `id_ocorrencia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `queimadura`
+--
+ALTER TABLE `queimadura`
+  MODIFY `id_queimadura` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restrições para despejos de tabelas
 --
 
@@ -236,6 +287,12 @@ ALTER TABLE `corpo`
 --
 ALTER TABLE `ocorrencias`
   ADD CONSTRAINT `fk_sos` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
+
+--
+-- Limitadores para a tabela `queimadura`
+--
+ALTER TABLE `queimadura`
+  ADD CONSTRAINT `fk_ocorrencias` FOREIGN KEY (`fk_ocorrencias`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
