@@ -4,18 +4,93 @@ $primaria: #33338D;
 $secundaria: #Ffffff;
 $preto: #00000053;
 
-.estrutura
+body
 {
-    height: 100%;
-    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    height: 135px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $preto;
 }
-.search
+
+.estrutura
 {
-    height: 150px;
-    width: 150px;
-    background-color: $primaria;
+    height: 600px;
+    width: 90%;
+    display: flex;
+    background-color: #0000003b;
+    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
+  
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid $primaria;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    color: #9DBFAF;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .searchTerm:focus{
+    color: $primaria;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid $primaria;
+    background: $primaria;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .search-icon
+  {
+    width: 25px;
+    height: 25px;
+  }
+
+  .content
+  {
+    width: 85%;
+    height: 75px;
+    background-color: #33338d60;
+    display: flex;
+    border-radius: 15px;
+    align-items: left;
+  }
+  .left-ret
+  {
+    height: 75px;
+    width: 3%;
+    background-color: $primaria;
+    border-radius: 15px 0 0 15px;
+  }
