@@ -5,17 +5,31 @@ body {
 }
 
 .header {
-  height: 135px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.seta {
+  position: absolute;
+  right: 1300px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (max-width: 360) {
+  .seta {
+    right: 600px;
+  }
+}
 .estrutura {
   height: 600px;
-  width: 90%;
+  width: 80%;
   display: flex;
-  background-color: rgba(0, 0, 0, 0.231372549);
+  background-color: rgba(112, 112, 112, 0.231372549);
   border-radius: 15px;
   justify-content: space-around;
   align-items: center;
@@ -58,9 +72,9 @@ body {
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
-  width: 30%;
+  width: 13.7rem;
   position: absolute;
-  top: 18%;
+  top: 17%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -71,7 +85,7 @@ body {
 }
 
 .content {
-  width: 85%;
+  width: 90%;
   height: 75px;
   background-color: rgba(51, 51, 141, 0.3764705882);
   display: flex;
@@ -81,7 +95,7 @@ body {
 
 .left-ret {
   height: 75px;
-  width: 3%;
+  width: 2.5rem;
   background-color: #33338D;
   border-radius: 15px 0 0 15px;
 }/*# sourceMappingURL=ocorrencias.css.map */
