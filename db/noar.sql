@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2023 às 17:31
+-- Tempo de geração: 21-Set-2023 às 14:55
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -61,6 +61,17 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
 (1, '125.413.329-12', '123', 0, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '(47) 99756-6605');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `objetos`
+--
+
+CREATE TABLE `objetos` (
+  `fk_oco` int(11) NOT NULL,
+  `obj` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -172,7 +183,24 @@ CREATE TABLE `ocorrencias` (
   `taquipneia` int(1) NOT NULL,
   `taquicardia` int(1) NOT NULL,
   `tontura` int(1) NOT NULL,
-  `outros_sintomas` varchar(100) NOT NULL
+  `outros_sintomas` varchar(100) NOT NULL,
+  `pressao_arterial` int(10) NOT NULL,
+  `normal_anormal` int(1) NOT NULL,
+  `pulso` varchar(45) NOT NULL,
+  `respiracao` varchar(45) NOT NULL,
+  `saturacao` varchar(45) NOT NULL,
+  `temperatura` varchar(45) NOT NULL,
+  `perf_menor` int(1) NOT NULL,
+  `perf_maior` int(1) NOT NULL,
+  `forma_conducao` int(1) NOT NULL,
+  `vitima_era` int(11) NOT NULL,
+  `decisao_transporte` int(1) NOT NULL,
+  `m` varchar(100) NOT NULL,
+  `s1` varchar(100) NOT NULL,
+  `s2` varchar(100) NOT NULL,
+  `s3` varchar(100) NOT NULL,
+  `equipe` varchar(100) NOT NULL,
+  `demandante` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -231,6 +259,12 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id_sos`);
 
 --
+-- Índices para tabela `objetos`
+--
+ALTER TABLE `objetos`
+  ADD KEY `fk_oco` (`fk_oco`);
+
+--
 -- Índices para tabela `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
@@ -281,6 +315,12 @@ ALTER TABLE `queimadura`
 --
 ALTER TABLE `corpo`
   ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `ocorrencias` (`id_ocorrencia`);
+
+--
+-- Limitadores para a tabela `objetos`
+--
+ALTER TABLE `objetos`
+  ADD CONSTRAINT `fk_oco` FOREIGN KEY (`fk_oco`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
 -- Limitadores para a tabela `ocorrencias`
