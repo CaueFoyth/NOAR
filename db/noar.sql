@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Set-2023 às 14:55
+-- Tempo de geração: 22-Set-2023 às 14:35
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -60,7 +60,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
-(1, '125.413.329-12', '123', 0, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '(47) 99756-6605');
+(1, '125.413.329-12', '123', 1, 'Cu', 'cauzitoscauzitoscraft@gmail.com', '(47) 99756-6605');
 
 -- --------------------------------------------------------
 
@@ -200,7 +200,61 @@ CREATE TABLE `ocorrencias` (
   `s2` varchar(100) NOT NULL,
   `s3` varchar(100) NOT NULL,
   `equipe` varchar(100) NOT NULL,
-  `demandante` varchar(100) NOT NULL
+  `demandante` varchar(100) NOT NULL,
+  `n_usb` varchar(100) NOT NULL,
+  `n_ocorrencia` varchar(100) NOT NULL,
+  `desp` varchar(100) NOT NULL,
+  `hch` varchar(100) NOT NULL,
+  `km_final` varchar(100) NOT NULL,
+  `cod_sias_sus` varchar(100) NOT NULL,
+  `cod_ir` int(1) NOT NULL,
+  `cod_ps` int(1) NOT NULL,
+  `aspiracao` int(1) NOT NULL,
+  `avaliacao_inicial` int(1) NOT NULL,
+  `avaliacao_dirigida` int(1) NOT NULL,
+  `chave_rautek` int(1) NOT NULL,
+  `candula_guedel` int(1) NOT NULL,
+  `desobstracao_va` int(1) NOT NULL,
+  `emprego_dea` int(1) NOT NULL,
+  `gerenciamento_riscos` int(1) NOT NULL,
+  `limpeza_ferimentos` int(1) NOT NULL,
+  `curativos` int(1) NOT NULL,
+  `compressivo` int(1) NOT NULL,
+  `encravamento` int(1) NOT NULL,
+  `ocular` int(1) NOT NULL,
+  `queimadura` int(1) NOT NULL,
+  `simples` int(1) NOT NULL,
+  `tres_pontas` int(1) NOT NULL,
+  `imobilizacoes` int(1) NOT NULL,
+  `membro_inf_dir` int(1) NOT NULL,
+  `membro_inf_esq` int(1) NOT NULL,
+  `membro_sup_dir` int(1) NOT NULL,
+  `membro_sup_esq` int(1) NOT NULL,
+  `quadril` int(1) NOT NULL,
+  `cervical` int(1) NOT NULL,
+  `maca_rodas` int(1) NOT NULL,
+  `maca_rigida` int(1) NOT NULL,
+  `ponte` int(1) NOT NULL,
+  `retirado_capacete` int(1) NOT NULL,
+  `rcp` int(1) NOT NULL,
+  `rolamento_noventa` int(1) NOT NULL,
+  `rolamento_cento_oitenta` int(1) NOT NULL,
+  `tomada_decisao` int(1) NOT NULL,
+  `tomada_choque` int(1) NOT NULL,
+  `uso_candula` int(1) NOT NULL,
+  `colar_tamanho` varchar(100) NOT NULL,
+  `uso_ked` int(1) NOT NULL,
+  `uso_ttf` int(1) NOT NULL,
+  `ventilacao_suporte` int(1) NOT NULL,
+  `oxigenioterapia` int(1) NOT NULL,
+  `reanimador` int(1) NOT NULL,
+  `meios_auxiliares` int(1) NOT NULL,
+  `celesc` int(1) NOT NULL,
+  `def_civil` int(1) NOT NULL,
+  `igp_pc` int(1) NOT NULL,
+  `policia` int(4) NOT NULL,
+  `samu` int(2) NOT NULL,
+  `cit` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

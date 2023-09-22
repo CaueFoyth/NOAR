@@ -83,7 +83,25 @@ def deletar(id):
 
 @app.route('/ocorrencias', methods = ['POST', 'GET'])
 def ocorrencias():
-    return render_template("ocorrencias.html")
+    if 'logado' in session:
+        if session['adm'] == 1:
+            return render_template("ocorrencias.html")
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
+@app.route('/alterar', methods = ['POST', 'GET'])
+def alterar():
+    if request.method == "POST":
+            cpf_alterar = request.form['cpf']
+            adm_alterar = request.form['adm']
+            nome_alterar = request.form['nome']
+            email_alterar = request.form['email']
+            telefone_alterar = request.form['telefone']
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("UPDATE login SET cpf=%s, adm=%s, nome=%s, email=%s, telefone=%s", (cpf_alterar, adm_alterar, nome_alterar, email_alterar, telefone_alterar))
+            mysql.connection.commit()
+            return redirect(url_for("adm"))
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
