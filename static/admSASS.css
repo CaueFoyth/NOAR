@@ -10,94 +10,19 @@ main {
   text-align: left;
 }
 
-.float_menu_adduser {
-  background: #Ffffff;
-  width: 450px;
-  height: 450px;
+.logo {
   position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
-  display: none;
-}
-
-.read_profile_menu {
-  background: #Ffffff;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
-  display: none;
-}
-
-.update_profile_menu {
-  background: #Ffffff;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
-  display: none;
-}
-
-.delete_profile_menu {
-  background: #Ffffff;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.3254901961);
-  display: none;
-}
-
-.inputs {
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
-
-.inputs_read {
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
+  top: -30px;
+  right: 0px;
 }
 
 .read_data {
   width: 65%;
   height: 30px;
-  background: rgba(223, 222, 222, 0.3254901961);
+  background: none;
   border: solid 0.5px rgba(0, 0, 0, 0.2588235294);
-  border-radius: 10px;
+  border-radius: 5px;
+  color: #000000;
 }
 
 .update_data {
@@ -106,23 +31,6 @@ main {
   background: rgba(223, 222, 222, 0.3254901961);
   border: solid 0.5px rgba(0, 0, 0, 0.2588235294);
   border-radius: 10px;
-}
-
-.inputs_update {
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
 }
 
 .texto {
@@ -208,11 +116,10 @@ header {
   background: #33338D;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   height: 75px;
   align-items: center;
   border-radius: 0px 0px 15px 15px;
-  align-content: center;
 }
 
 .options {
@@ -223,7 +130,7 @@ form {
   height: 36px;
 }
 
-button {
+.button-redirect {
   background: #33338D;
   border: 0;
   margin: 0;
@@ -236,6 +143,20 @@ button {
   font-family: "Poppins", sans-serif;
 }
 
+.button-open {
+  background: #33338D;
+  border: 0;
+  margin: 0;
+  color: #Ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+
 h2 {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -244,8 +165,7 @@ h2 {
   font-weight: 800;
   line-height: normal;
   color: #33338D;
-  width: 250px;
-  margin-top: 10px;
+  width: 500px;
 }
 
 .logo {
@@ -259,6 +179,10 @@ h2 {
   display: flex;
   justify-content: space-around;
   width: 35%;
+}
+
+.tbform {
+  color: #33338D;
 }
 
 table {
@@ -336,13 +260,19 @@ tr:nth-child(even) {
 }
 
 .buttons_opt {
-  margin-top: 15px;
   border-radius: 15px;
   width: 100px;
   height: auto;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   background: #33338D;
+  color: #Ffffff;
+  text-decoration: none;
+}
+
+.buttons_opt:hover {
+  text-decoration: none;
+  color: #Ffffff;
 }
 
 a {
@@ -351,8 +281,9 @@ a {
 }
 
 .button-redirect {
-  font-size: 23px;
+  font-size: 22px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   text-decoration: none;
+  color: #Ffffff;
 }/*# sourceMappingURL=admSASS.css.map */

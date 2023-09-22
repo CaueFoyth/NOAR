@@ -14,95 +14,21 @@ main
   padding: 0;
   text-align: left;
 }
-.float_menu_adduser
+.logo
 {
-  background: $secundaria;
-  width: 450px;
-  height: 450px;
   position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px $preto;
-  display: none;
+  top: -30px;
+  right: 0px;
 }
-.read_profile_menu
-{
-  background: $secundaria;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px $preto; 
-  display: none;
-}
-.update_profile_menu
-{
-  background: $secundaria;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px $preto;
-  display: none;
-}
-.delete_profile_menu
-{
-  background: $secundaria;
-  width: 450px;
-  height: 450px;
-  position: absolute;
-  top: 200px;
-  right: 600px;
-  border-radius: 15px;
-  box-shadow: 0px 7px 7px 0px $preto;
-  display: none;
-}
-.inputs
-{
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
-.inputs_read
-{
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
+
 .read_data  
 {
   width: 65%;
   height: 30px;
-  background: #dfdede53;
+  background: none;
   border: solid 0.5px #00000042;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: #000000;
 }
 .update_data  
 {
@@ -112,23 +38,7 @@ main
   border: solid 0.5px #00000042;
   border-radius: 10px;
 }
-.inputs_update
-{
-  width: 450px;
-  height: 450px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 0;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: normal;
-}
+
 .texto
 {
   display: flex;
@@ -212,12 +122,12 @@ header {
   background: $primaria;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   height: 75px;
   align-items: center;
-  border-radius: 0px 0px 15px 15px;
-  align-content: center;  
+  border-radius: 0px 0px 15px 15px;  
 }
+
 .options
 {
   height: 36px;
@@ -226,7 +136,7 @@ form
 {
   height: 36px;
 }
-button {
+.button-redirect {
   background: $primaria;
   border: 0;
   margin: 0;
@@ -238,6 +148,20 @@ button {
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
 }
+.button-open
+{
+  background: $primaria;
+  border: 0;
+  margin: 0;
+  color: $secundaria;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+}
 
 h2 {
   margin: 0;
@@ -247,8 +171,7 @@ h2 {
   font-weight: 800;
   line-height: normal;
   color: $primaria;
-  width: 250px;
-  margin-top: 10px;
+  width: 500px;
 }
 
 .logo {
@@ -264,6 +187,11 @@ h2 {
   width: 35%;
 }
 
+.tbform
+{
+  color: $primaria;
+}
+
 table {
   font-family: 'Poppins', sans-serif;
   border-collapse: collapse;
@@ -275,6 +203,7 @@ table {
   display: flex;
   flex-direction: column;
 }
+
 tr
 {
   border: 1px solid $preto;
@@ -289,6 +218,7 @@ tr
   justify-content: center;
   align-items: center;
 }
+
 td, th {
   border: 1px solid $preto;
   text-align: center;
@@ -308,24 +238,28 @@ tr:nth-child(even) {
   background-color: #35333353;
   
 }
+
 .tbheader_name
 {
   height: 30px;
   width: 250px;
   text-align: center;
 }
+
 .tbheader_cpf
 {
   height: 30px;
   width: 250px;
   text-align: center;
 }
+
 .tbheader_options
 {
   height: 30px;
   width: 504px;
   text-align: center;
 }
+
 .tbdata_opt
 {
   display: flex;
@@ -337,25 +271,35 @@ tr:nth-child(even) {
   border: 0;
   height: 170px;
 }
+
 .buttons_opt
 {
-  margin-top: 15px;
   border-radius: 15px;
   width: 100px;
   height: auto;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   background: $primaria;
+  color: $secundaria;
+  text-decoration: none;
 }
+.buttons_opt:hover
+{
+  text-decoration: none;
+  color: $secundaria;
+}
+
 a
 {
   cursor: pointer;
   color: $secundaria;
 }
+
 .button-redirect
 {
-  font-size: 23px;
+  font-size: 22px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   text-decoration: none;
+  color: $secundaria;
 }
