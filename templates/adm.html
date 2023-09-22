@@ -6,151 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Administrador</title>
     <link rel="stylesheet" href="../static/admSASS.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     {% block body %}
     <header class="header">
-      <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
-    <section class="options">
-        <button class="button-open" id="open">Cadastrar novos Usuários</button>
-        <form><a href="/ocorrencias" class="button-redirect">Gerenciar Ocorrências</a></form>
-    </section>
+        <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
+        <section class="options">
+            <button class="button-open" id="open">Cadastrar novos Usuários</button>
+            <form style="margin-top: 20px;"><a href="/ocorrencias" class="button-redirect">Gerenciar Ocorrências</a></form>
+        </section>
 
-    <section class="headerlogo">
-        <!-- Logo da NOAR exibida no canto superior esquerdo da tela -->
-        <img src="../static/img/logo_pequena.png" class="logo">
-    </section>
-    </header>
+        <section class="headerlogo">
+            <!-- Logo da NOAR exibida na canto superior esquerdo da tela -->
+            <img src="../static/img/logo_pequena.png" class="logo">
+        </section>
+        
+        </header>
             <center>     
-                <div class="float_menu_adduser" id="float_menu">
-                    <form action="/adicionar" method="post">
-                        <section class="inputs">
-                            <div class="texto">
-                                <div class="left">
-                                Cadastro de Usuários 
-                                </div>
-
-                                <div class="right">
-                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
-                                </div>
-                            </div>
-                            
-                            <br>
-            
-                            <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
-                            <br>
-                            <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
-                            <br>
-                            <input type="text" class="input_email" name="email" placeholder=" &nbsp; E-Mail">
-                            <br>
-                            <input type="text" class="input_telefone" name="telefone" placeholder=" &nbsp; Telefone">
-                            <br> 
-                            Adm:
-                            <select name="adm" class="input_adm"> 
-                                <option value="yes">Sim</option>
-                                <option value="no">Não</option> 
-                            </select>
-                            <Br>
-                            <button class="confirm">Confirmar</button>
-                        </section>
-                    </form>
-                </div>
-
-                <!-- <div class="float_menu_update" id="float_menu_update">
-                    <form action="/adicionar" method="post">
-                        <section class="inputs">
-                            <div class="texto">
-                                <div class="left">
-                                Cadastro de Usuários 
-                                </div>
-
-                                <div class="right">
-                                <p><ion-icon id="close" class="button-close" name="close-circle-outline"></ion-icon></p>
-                                </div>
-                            </div>
-                            
-                            <br>
-            
-                            <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
-                            <br>
-                            <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
-                            <br>
-                            <input type="text" class="input_email" name="email" placeholder=" &nbsp; E-Mail">
-                            <br>
-                            <input type="text" class="input_telefone" name="telefone" placeholder=" &nbsp; Telefone">
-                            <br> 
-                            Adm:
-                            <select name="adm" class="input_adm"> 
-                                <option value="yes">Sim</option>
-                                <option value="no">Não</option> 
-                            </select>
-                            <Br>
-                            <button class="confirm">Confirmar</button>
-                        </section>
-                    </form>
-                </div> -->
-
-                <div class="update_profile_menu" id="update_profile_menu">
-                    <form action="">
-                        <div class="inputs_update" id="inputs_update">
-                            <div class="texto">
-                                <div class="left">
-                                &nbsp; &nbsp; &nbsp; &nbsp; Alterar Perfil
-                                </div>
-
-                                <div class="right">
-                                <p><ion-icon id="close-update" class="button-close" name="close-circle-outline"></ion-icon></p>
-                                </div>
-                            </div>
-
-                            <br>
-                            <input type="text" class="input_name" name="nome" placeholder=" &nbsp; Nome">
-                            <br>
-                            <input type="text" class="input_cpf" name="cpf" placeholder=" &nbsp; CPF">
-                            <br>
-                            <input type="text" class="input_email" name="email" placeholder=" &nbsp; E-Mail">
-                            <br>
-                            <input type="text" class="input_telefone" name="telefone" placeholder=" &nbsp; Telefone">
-                            <br> 
-
-                            <button class="confirm">Confirmar</button>
-
-                        </div>
-                    </form>
-                </div>
-
-                <div class="read_profile_menu" id="read_profile_menu">
-                    <form action="">
-                        <div class="inputs_read" id="inputs_read">
-                            <div class="texto">
-                                <div class="left">
-                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Perfil
-                                </div>
-
-                                <div class="right">
-                                <p><ion-icon id="close-read" class="button-close" name="close-circle-outline"></ion-icon></p>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="read_data">Nome</div>
-                            <br>
-                            <div class="read_data">CPF</div>
-                            <br>
-                            <div class="read_data">E-Mail</div>
-                            <br>
-                            <div class="read_data">Telefone</div>
-                            <br>
-                            <div class="read_adm">Adm:</div>
-                            Sim/Não
-
-                        </div>
-                    </form>
-                </div>
                 <main>
                     <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
-                    <form action="">
+                    <form class="tbform" action="">
                         <table>
                             <h2>Usuários Cadastrados</h2>
                             <tr>
@@ -163,11 +42,119 @@
                                 <td>{{row.4}}</td>
                                 <td>{{row.1}}</td>
                                 <td class="tbdata_opt">    
-                                    <a class="buttons_opt" id="read">Ver</a>
-                                    <!-- <a href="/update/{{ row.0 }}" data-toggle="modal"--> <a class="buttons_opt" id="update">Alterar</a> <!-- data-target="#modaledit{{row.0}}">Edit</a> -->
-                                    <a href="/del   etar/{{ row.0 }}" class="buttons_opt" id="delete" onclick="return confirm('Você tem certeza?')" style="text-decoration: none;" >Deletar</a>
+                                    <a href="/ver/{{row.0}}" data-toggle="modal" data-target="#modalread{{row.0}}" class="buttons_opt" id="read">Ver</a>
+                                    <a href="/alterar/{{row.0}}" class="buttons_opt" id="alterar" data-toggle="modal" data-target="#modaledit{{row.0}}">Alterar</a>
+                                    <a href="/deletar/{{ row.0 }}" class="buttons_opt" id="deletar" onclick="return confirm('Você tem certeza?')" style="text-decoration: none;" >Deletar</a>
                                 </td>
                             </tr>
+
+                            <div id="modalread{{row.0}}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Ver Perfil</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form action="" method="POST">
+                                                <div class="form-group">
+                                                    <label>Nome:</label>
+                                                    <input type="hidden" name="id" value="{{row.0}}">
+                                                    <br>
+                                                    <label class="read_data"> &nbsp; {{row.4}}</label>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>E-Mail:</label>
+                                                    <br>
+                                                    <label class="read_data"> &nbsp; {{row.5}}</label>
+                                                </div>
+                                            
+                                                <div class="form-group">
+                                                    <label>CPF:</label>
+                                                    <br>
+                                                    <label class="read_data"> &nbsp;{{row.1}}</label>
+                                                </div>
+                                                
+                                                
+                                                <div class="form-group">
+                                                    <label>Telefone:</label>
+                                                    <br>
+                                                    <label class="read_data"> &nbsp;{{row.6}}</label>
+                                                </div>
+
+                                                
+                                                <div class="form-group">
+                                                    <label>Adm:</label>
+                                                    <br>
+                                                    <label class="read_data"> &nbsp;
+                                                        {% if row.3 == 1: %}
+                                                            Sim
+                                                        {% else %} 
+                                                            Não
+                                                        {% endif %}
+                                                    </label>
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Alterar Perfil</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form action="" method="POST">
+                                                <div class="form-group">
+                                                    <label>Nome:</label>
+                                                    <input type="hidden" name="id" value="{{row.0}}">
+                                                    <input type="text" class="form-control" name="nome" value="{{row.4}}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Email:</label>
+                                                    <input type="text" class="form-control" name="email" value="{{row.5}}">  
+                                                </div>
+                                            
+                                                <div class="form-group">
+                                                    <label>CPF:</label>
+                                                    <input type="text" class="form-control" name="cpf" value="{{row.1}}">  
+                                                </div>
+                                                
+                                                
+                                                <div class="form-group">
+                                                    <label>Telefone:</label>
+                                                    <input type="text" class="form-control" name="telefone" value="{{row.6}}">  
+                                                </div>
+
+                                                
+                                                <div class="form-group">
+                                                    <label>Adm:</label>
+                                                    <input type="text" class="form-control" name="adm" value="{{row.3}}">  
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary">Alterar</button>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             {% endfor %}
                         </table>
                     </form>
