@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Set-2023 às 14:35
+-- Tempo de geração: 26-Set-2023 às 17:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -254,7 +254,25 @@ CREATE TABLE `ocorrencias` (
   `igp_pc` int(1) NOT NULL,
   `policia` int(4) NOT NULL,
   `samu` int(2) NOT NULL,
-  `cit` varchar(100) NOT NULL
+  `cit` varchar(100) NOT NULL,
+  `atadura` int(1) NOT NULL,
+  `atadura_oito` int(1) NOT NULL,
+  `atadura_doze` int(1) NOT NULL,
+  `atadura_vinte` int(1) NOT NULL,
+  `atadura_qtd` int(11) NOT NULL,
+  `cateter` int(1) NOT NULL,
+  `cateter_tipo` varchar(100) NOT NULL,
+  `compressa` int(1) NOT NULL,
+  `compressa_qtd` int(11) NOT NULL,
+  `kits` int(1) NOT NULL,
+  `kits_h` int(1) NOT NULL,
+  `kits_p` int(1) NOT NULL,
+  `kits_q` int(1) NOT NULL,
+  `kits_qtd` int(1) NOT NULL,
+  `luvas` int(1) NOT NULL,
+  `luvas_qtd` int(11) NOT NULL,
+  `mascara` int(1) NOT NULL,
+  `mascara_qtd` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
