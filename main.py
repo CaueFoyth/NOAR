@@ -37,7 +37,7 @@ def login():
                 # session['email_sos'] = user['email_sos']
                 session['adm'] = user['adm']  
                 if user['adm'] == 1:
-                    return redirect(url_for("adm"))            
+                    return render_template('indoali.html')        
                 return "TESTE"
             else:
                 mesage = 'Senha ou email incorreto'
@@ -122,8 +122,6 @@ def alterarOc():
             return render_template("forms.html")
         return redirect(url_for("index"))
     return redirect(url_for("index"))
-
-
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
