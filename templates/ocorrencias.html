@@ -10,10 +10,19 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <center class="header">
-    <a href="/adm" class="seta"><img src="../static/img/seta.png" style="scale: 10%;"></a>
+    <img onclick="Retorna()" id="retorna" class="seta" src="../static/img/seta.png" style="scale: 10%;">
     <img class="logo" src="static/img/logo_pequena.png" style="scale: 35%"> 
+    <script>
+        function Retorna()
+            {
+                window.location.replace("/adm")
+            }
+    </script>
 </center>
+
+
 <body>  
+{% block body %}
     <center>
             <main class="estrutura">
                 <div class="wrap">
@@ -25,26 +34,47 @@
                     </div>
                  </div>
 
+                {% for row in ocorrencias %} 
                 <div class="content">
                     <div class="left-ret"></div>
-                </div> 
-                <div class="content">
-                    <div class="left-ret"></div>
-                </div> 
-                <div class="content">
-                    <div class="left-ret"></div>
-                </div> 
-                <div class="content">
-                    <div class="left-ret"></div>
-                </div> 
-                <div class="content">
-                    <div class="left-ret"></div>
-                </div> 
-                <div class="content">
-                    <div class="left-ret"></div>
-                </div> 
+                    <!-- Texto em baixo da div ("left-ret") -->
+
+                    {{row.1}}
+                    |
+                    {{row.4}}
+
+        
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    </div>
+                </div>
+                {% endfor %}
+
                 
               </main>
     </center>
+{% endblock %}
 </body>
 </html>

@@ -17,7 +17,17 @@
         <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
         <section class="options">
             <button class="button-open" id="open">Cadastrar novos Usuários</button>
-            <form style="margin-top: 20px;"><a href="/ocorrencias" class="button-redirect">Gerenciar Ocorrências</a></form>
+            <form action="/ocorrencias"><button onclick="Redirecionar()" class="button-redirect">Gerenciar Ocorrências</button></form>
+
+            <script>
+
+                function Redirecionar()
+                {
+                    window.location.replace("/ocorrencias")
+                }
+
+                </script>
+
         </section>
 
         <section class="headerlogo">

@@ -10,6 +10,13 @@ main {
   text-align: left;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
 .logo {
   position: absolute;
   top: -30px;
@@ -141,6 +148,7 @@ form {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
 }
 
 .button-open {
@@ -154,7 +162,6 @@ form {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  margin-top: 20px;
 }
 
 h2 {
