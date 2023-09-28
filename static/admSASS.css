@@ -293,4 +293,15 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: #Ffffff;
+}
+
+.select {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 15px;
+  border: rgba(0, 0, 0, 0.3254901961) solid 1px;
+  border-radius: 5px;
 }/*# sourceMappingURL=admSASS.css.map */
