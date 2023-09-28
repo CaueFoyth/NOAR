@@ -16,8 +16,18 @@
     <header class="header">
         <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
         <section class="options">
-            <button class="button-open" id="open">Cadastrar novos Usuários</button>
-            <form style="margin-top: 20px;"><a href="/ocorrencias" class="button-redirect">Gerenciar Ocorrências</a></form>
+            <form action="/adicionar"><a href="/adicionar" data-toggle="modal" data-target="#modaladd"><button class="button-open" id="open">Cadastrar novos Usuários</button></a></form>
+            <form action="/ocorrencias"><button onclick="Redirecionar()" class="button-redirect">Gerenciar Ocorrências</button></form>
+
+            <script>
+
+                function Redirecionar()
+                {
+                    window.location.replace("/ocorrencias")
+                }
+
+                </script>
+
         </section>
 
         <section class="headerlogo">
@@ -145,6 +155,59 @@
 
                                                 <div class="form-group">
                                                     <button class="btn btn-primary">Alterar</button>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="modaladd" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Cadastrar Usuários</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form action="/adicionar" method="POST">
+                                                <div class="form-group">
+                                                    <label>Nome:</label>
+                                                    <input type="text" class="form-control" name="nome">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Email:</label>
+                                                    <input type="text" class="form-control" name="email">  
+                                                </div>
+                                            
+                                                <div class="form-group">
+                                                    <label>CPF:</label>
+                                                    <input type="text" class="form-control" name="cpf">  
+                                                </div>
+                                                
+                                                
+                                                <div class="form-group">
+                                                    <label>Telefone:</label>
+                                                    <input type="text" class="form-control" name="telefone">  
+                                                </div>
+
+                                                
+                                                <div class="form-group">
+                                                    Adm:
+                                                    <br>
+                                                    <select class="select">
+                                                        <option value="y">Sim</option>
+                                                        <option value="n">Não</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary">Adicionar</button>
                                                 </div>
 
                                                 <div class="modal-footer">

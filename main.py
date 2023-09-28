@@ -85,7 +85,11 @@ def deletar(id):
 def ocorrencias():
     if 'logado' in session:
         if session['adm'] == 1:
-            return render_template("ocorrencias.html")
+            cursor = mysql.connection.cursor()
+            cursor.execute("SELECT * FROM ocorrencias_teste")
+            data = cursor.fetchall()
+            cursor.close()
+            return render_template("ocorrencias.html", ocorrencias = data)
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
@@ -103,6 +107,25 @@ def alterar():
             mysql.connection.commit()
             return redirect(url_for("adm"))
 
+@app.route('/ver', methods=["POST" , "GET"])
+def ver():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            return render_template("forms.html")
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
+@app.route('/alterarOc', methods=["POST" , "GET"])
+def alterarOc():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            return render_template("forms.html")
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
+
+
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)
+

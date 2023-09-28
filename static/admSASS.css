@@ -10,6 +10,13 @@ main {
   text-align: left;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
 .logo {
   position: absolute;
   top: -30px;
@@ -141,6 +148,7 @@ form {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
 }
 
 .button-open {
@@ -154,7 +162,6 @@ form {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  margin-top: 20px;
 }
 
 h2 {
@@ -286,4 +293,15 @@ a {
   font-weight: bold;
   text-decoration: none;
   color: #Ffffff;
+}
+
+.select {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 15px;
+  border: rgba(0, 0, 0, 0.3254901961) solid 1px;
+  border-radius: 5px;
 }/*# sourceMappingURL=admSASS.css.map */
