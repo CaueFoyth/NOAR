@@ -3,6 +3,13 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
+import os
+import smtplib
+from email.message import EmailMessage
+from shiu import email_email, senha_email
+
+EMAIL_ADDRES = email_email
+EMAIL_PASSWORD = senha_email
 
 app = Flask(__name__)
 mysql = MySQL(app)
@@ -37,7 +44,7 @@ def login():
                 # session['email_sos'] = user['email_sos']
                 session['adm'] = user['adm']  
                 if user['adm'] == 1:
-                    return render_template('indoali.html')        
+                    return render_template('confirmpage.html')        
                 return "TESTE"
             else:
                 mesage = 'Senha ou email incorreto'
@@ -67,7 +74,21 @@ def adicionar():
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
             mysql.connection.commit()
+
+            msg = EmailMessage()
+            msg['Subject'] = 'Acesso ao NOAR'
+            msg['From'] = email_email
+            msg['To'] = email2
+            msg.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR!')
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                smtp.login(EMAIL_ADDRES, EMAIL_PASSWORD)
+                smtp.send_message(msg)
             return redirect(url_for("adm"))
+
+@app.route('/senha', methods = ['POST', 'GET'] )
+def senha():
+        
+    return render_template("senha.html")
 
 @app.route('/deletar/<string:id>', methods = ['POST', 'GET'] )
 def deletar(id):
