@@ -140,6 +140,14 @@ def alterarOc():
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
+@app.route('/mainpage', methods=["POST" , "GET"])
+def mainpage():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            return render_template("mainpage.html")
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)

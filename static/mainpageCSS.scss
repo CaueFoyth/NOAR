@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$primaria: #33338D;
+$secundaria: #Ffffff;
+$preto: #00000053;
+
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden
+}
+
+.background
+{
+    width: 100%;
+    height: 80vh;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #Ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 10;
+
+}
+
+.header
+{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seta
+{
+  position: absolute;
+  right: 1300px;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  color: $primaria;
+}
+@media (max-width: 360)
+{
+  .seta
+  {
+    right: 600px;
+  }
+}
+    .estrutura
+    {
+        height: fit-content;
+        width: 90%;
+        display: flex;
+        background-color: #70707021;
+        border-radius: 15px;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+
+  .content
+  {
+    width: fit-content;
+    height: 75px;
+    background-color: #33338d60;
+    display: flex;
+    border-radius: 15px;
+    align-items: left;
+    align-items: center;
+    color: $secundaria;
+    font-weight: bolder;
+    font-size: 23px;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+  }
+  .left-ret
+  {
+    height: 75px;
+    width: 2.5rem;
+    background-color: $primaria;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .buttons-content
+  {
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .button-read
+  {
+    background: $primaria;
+    border: 0;
+    margin: 0;
+    color: $secundaria;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 15px;
+  }
+  .button-edit
+  {
+    background: $primaria;
+    border: 0;
+    margin: 0;
+    color: $secundaria;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 15px;
+  }
+
+  .see_all
+  {
+    background: $primaria;
+    border: 0;
+    margin: 0;
+    height: 50px;
+    color: $secundaria;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+  }
+  .nova_ocorrencia
+  {
+    background: #FFA3A3;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .new_register_button
+  {
+    background: #f83d3d;
+    border: 0;
+    margin: 0;
+    height: 50px;
+    width: 20%;
+    color: $secundaria;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+  }

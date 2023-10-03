@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/mainpageCSS.css">
+    <title>Página Inicial</title>
+</head>
+
+
+
+
+<body>  
+{% block body %}
+
+    <center>
+        <main class="background">
+
+            <center class="header">
+                <img class="logo" src="static/img/logo_pequena.png" style="scale: 35%"> 
+            </center>
+
+            <div class="estrutura">
+                <br>
+                <br>
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                </div>
+
+                <Br>
+                <Br>
+
+                <button onclick="Ocorrencias()" class="see_all">Ver todas as Ocorrências</button>
+
+                
+
+                <script>
+
+                    function Ocorrencias()
+                    {
+                        window.location.replace("/ocorrencias")
+                    }
+
+                </script>
+
+            </div>
+        </main>
+
+            
+
+            <div class="nova_ocorrencia">
+                <button onclick="NovaOcorrencia()" class="new_register_button">Registrar nova Ocorrência</button>
+
+                <script>
+
+                    function NovaOcorrencia()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                </script>
+
+            </div>
+        
+    </center>
+{% endblock %}
+</body>
+</html>
