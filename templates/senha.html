@@ -16,11 +16,23 @@
             <img src="../static/img/noar_pequena.png" alt="Logo">
           </header>
         
-        <form action="">
-            <input type="text" style="color: white;" id="cpf" name="cpf" onkeyup="ValidarCPF();" placeholder="Insira seu cpf">
-            <input type="text" name="senha" placeholder="Insira sua senha">
-            <button type="submit">Confirimar</button>
+    <center>
+        <form action="/senha" method="POST" class="meio">
+            <div class="container">
+              <h1>Crie sua nova senha!</h1>
+              <input type="text" id="cpf" name="cpf" class="input" onkeyup="ValidarCPF();"  placeholder="Insira seu CPF" required>
+            </div>
+            <div class="container">
+              <input type="password" name="senha" class="input" placeholder="Insira sua nova senha" required>
+            </div>
+            <div class="container">
+                <input type="password" name="senha_confirm" class="input" placeholder="Confirme sua nova senha" required>
+            </div>
+            
+            <button type="submit" class="button" style="width: 25%; height: 50px;" > Confirmar </button>
+
         </form>
+    </center>
 </body>
 <script>
     function ValidarCPF()
