@@ -37,7 +37,7 @@ def login():
                 # session['email_sos'] = user['email_sos']
                 session['adm'] = user['adm']  
                 if user['adm'] == 1:
-                    return render_template('indoali.html')        
+                    return render_template('confirmpage.html')        
                 return "TESTE"
             else:
                 mesage = 'Senha ou email incorreto'
