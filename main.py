@@ -87,7 +87,7 @@ def adicionar():
 
 @app.route('/senha', methods = ['POST', 'GET'] )
 def senha():
-    
+        
     return render_template("senha.html")
 
 @app.route('/deletar/<string:id>', methods = ['POST', 'GET'] )
