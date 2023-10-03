@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Set-2023 às 17:18
+-- Tempo de geração: 03-Out-2023 às 17:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -60,7 +60,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
-(1, '125.413.329-12', '123', 1, 'Cu', 'cauzitoscauzitoscraft@gmail.com', '(47) 99756-6605');
+(1, 'çço', '123', 1, 'çç', 'çç', 'çç'),
+(3, 'çç', 'çç', 0, 'çç', 'çç', 'çç');
 
 -- --------------------------------------------------------
 
@@ -113,13 +114,9 @@ CREATE TABLE `ocorrencias` (
   `queda_menos2` int(1) NOT NULL,
   `trabalho` int(1) NOT NULL,
   `transferencia` int(1) NOT NULL,
-  `dpoc` int(1) NOT NULL,
-  `inalacao_fumaca` int(1) NOT NULL,
-  `hiperglicemia` int(1) NOT NULL,
-  `hipoglicemia` int(1) NOT NULL,
-  `parto_emergencial` int(1) NOT NULL,
-  `gestante` int(1) NOT NULL,
-  `hemor_excessiva` int(1) NOT NULL,
+  `respiratorio` int(1) NOT NULL,
+  `diabetes` int(1) NOT NULL,
+  `obstetrico` int(1) NOT NULL,
   `transp_aereo` int(1) NOT NULL,
   `transp_clinico` int(1) NOT NULL,
   `transp_emergencial` int(1) NOT NULL,
@@ -364,7 +361,7 @@ ALTER TABLE `corpo`
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_sos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `ocorrencias`
