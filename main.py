@@ -79,7 +79,7 @@ def adicionar():
             msg['Subject'] = 'Acesso ao NOAR'
             msg['From'] = email_email
             msg['To'] = email2
-            msg.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR!')
+            msg.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR \n http://127.0.0.1:5000/senha \n Atenciosamente, equipe do NOAR!')
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
                 smtp.login(EMAIL_ADDRES, EMAIL_PASSWORD)
                 smtp.send_message(msg)
@@ -87,8 +87,24 @@ def adicionar():
 
 @app.route('/senha', methods = ['POST', 'GET'] )
 def senha():
+    errado = ''
+    if request.method == "POST":
+        cpf_confirma = request.form['cpf']
+        senha_nova = request.form['senha']
         
-    return render_template("senha.html")
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM login')
+        usuarios = cursor.fetchone()
+
+        if cpf_confirma in usuarios:
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("INSERT INTO login (senha) VALUES (%s)", (senha_nova))
+            mysql.connection.commit()
+            return redirect(url_for('/'))
+        else:
+            errado = 'CPF incorreto!'
+            return render_template('senha.html', errado = errado)
+    return render_template('senha.html', errado = errado)    
 
 @app.route('/deletar/<string:id>', methods = ['POST', 'GET'] )
 def deletar(id):
@@ -113,6 +129,7 @@ def ocorrencias():
 @app.route('/alterar', methods = ['POST', 'GET'])
 def alterar():
     if request.method == "POST":
+            id_alterar = request.form['id']
             cpf_alterar = request.form['cpf']
             adm_alterar = request.form['adm']
             nome_alterar = request.form['nome']
@@ -120,7 +137,7 @@ def alterar():
             telefone_alterar = request.form['telefone']
 
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("UPDATE login SET cpf=%s, adm=%s, nome=%s, email=%s, telefone=%s", (cpf_alterar, adm_alterar, nome_alterar, email_alterar, telefone_alterar))
+            cursor.execute("UPDATE login SET cpf=%s, adm=%s, nome=%s, email=%s, telefone=%s WHERE id_sos=%s", (cpf_alterar, adm_alterar, nome_alterar, email_alterar, telefone_alterar, id_alterar))
             mysql.connection.commit()
             return redirect(url_for("adm"))
 
