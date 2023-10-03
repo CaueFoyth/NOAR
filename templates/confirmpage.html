@@ -17,11 +17,28 @@
           </header>
 
           <div class="adm">
-            <button><a href="">Ir para a pagina de ocorrencias</a></button>
-          </div>
-          <br>
-          <div class="adm">
-            <button><a href="adm">Ir para a pagina de adm</a></button>
+            <button onclick="Redirecionar()" class="mainpage_direct">Ir para a pagina de adm</button>
+
+              <script>
+
+                function Redirecionar()
+                {
+                    window.location.replace("/adm")
+                }
+
+              </script>
+
+
+            <button onclick="RedirecionarADM()" class="adm_direct">Ir para a pagina de ocorrencias</button>
+
+              <script>
+
+                  function RedirecionarADM()
+                  {
+                      window.location.replace("/ocorrencias")
+                  }
+
+              </script>
           </div>
     
 </body>
