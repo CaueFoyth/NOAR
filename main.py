@@ -1,4 +1,4 @@
-# pip install flask flask_mysqldb mysqlclient
+# pip install Flask==2.3.3 flask_mysqldb mysqlclient
 
 from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
@@ -63,10 +63,6 @@ def adicionar():
             nome2 = request.form['nome']
             email2 = request.form['email']
             telefone2 = request.form['telefone']
-            if adm2 == 'yes':
-                adm2 == 1
-            else:
-                adm2 == 0
 
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
