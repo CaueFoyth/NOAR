@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+}
+
+input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+}
+
+input[type=radio] {
+  width: 24px;
+  height: 24px;
+}
+
+input[type=text] {
+  width: 400px;
+  height: 24px;
+}
+
+input[type=text]::-moz-placeholder {
+  font-size: 20px;
+}
+
+input[type=text]::placeholder {
+  font-size: 20px;
+}
+
+input[type=date] {
+  width: 400px;
+  height: 24px;
+}/*# sourceMappingURL=forms.css.map */

@@ -3,7 +3,6 @@
 from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
-import os
 import smtplib
 from email.message import EmailMessage
 from shiu import email_email, senha_email
@@ -167,7 +166,6 @@ def enviar():
         return redirect(url_for("gerenciar"))
 
     
-
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
     if 'logado' in session:
@@ -206,23 +204,28 @@ def adicionar():
 @app.route('/senha', methods = ['POST', 'GET'] )
 def senha():
     errado = ''
+    return render_template('senha.html', errado = errado)    
+
+@app.route('/senha_nova', methods = ['POST', 'GET'] )
+def senha_nova():
     if request.method == "POST":
         cpf_confirma = request.form['cpf']
         senha_nova = request.form['senha']
         
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM login')
+        cursor.execute('SELECT * FROM login WHERE cpf = "{}"'.format(cpf_confirma))
         usuarios = cursor.fetchone()
 
-        if cpf_confirma in usuarios:
-            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("INSERT INTO login (senha) VALUES (%s)", (senha_nova))
-            mysql.connection.commit()
-            return redirect(url_for('/'))
+        if usuarios:
+                cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+                cursor.execute("UPDATE login SET senha='{}' WHERE cpf='{}'".format(senha_nova, cpf_confirma))
+                mysql.connection.commit()
+                return redirect(url_for('index'))
         else:
             errado = 'CPF incorreto!'
             return render_template('senha.html', errado = errado)
-    return render_template('senha.html', errado = errado)    
+    
+
 
 @app.route('/deletar/<string:id>', methods = ['POST', 'GET'] )
 def deletar(id):

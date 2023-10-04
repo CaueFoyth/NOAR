@@ -17,7 +17,7 @@
           </header>
         
     <center>
-        <form action="/senha" method="POST" class="meio">
+        <form action="/senha_nova" method="POST" class="meio">
             <div class="container">
               <h1>Crie sua nova senha!</h1>
               <input type="text" id="cpf" name="cpf" class="input" onkeyup="ValidarCPF();"  placeholder="Insira seu CPF" required>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="container">
-                <input type="password" name="senha_confirm" class="input" placeholder="Confirme sua nova senha" required>
+                <input type="password" name="senha_confirma" class="input" placeholder="Confirme sua nova senha" required>
             </div>
 
             {% if errado %}
