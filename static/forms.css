@@ -12,4 +12,22 @@ input[type=checkbox] {
 input[type=radio] {
   width: 24px;
   height: 24px;
+}
+
+input[type=text] {
+  width: 400px;
+  height: 24px;
+}
+
+input[type=text]::-moz-placeholder {
+  font-size: 20px;
+}
+
+input[type=text]::placeholder {
+  font-size: 20px;
+}
+
+input[type=date] {
+  width: 400px;
+  height: 24px;
 }/*# sourceMappingURL=forms.css.map */
