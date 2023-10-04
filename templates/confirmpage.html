@@ -17,28 +17,40 @@
           </header>
 
           <div class="adm">
-            <button onclick="Redirecionar()" class="mainpage_direct">Ir para a pagina inicial</button>
+            
+            <div class="mainpagedirect">
 
-              <script>
+              <div class="text">
 
-                function Redirecionar()
-                {
-                    window.location.replace("/mainpage")
-                }
+                <h1 style="color: #000000;">Deseja ir para a página de administrador?</h1>
 
-              </script>
+              </div>
+
+              <div class="buttons">
+
+                <button onclick="Redirecionar()" class="mainpage_direct">Não</button>
+
+                  <script>
+
+                    function Redirecionar()
+                    {
+                        window.location.replace("/mainpage")
+                    }
+
+                  </script>
 
 
-            <button onclick="RedirecionarADM()" class="adm_direct">Ir para a pagina adm</button>
+                <button onclick="RedirecionarADM()" class="adm_direct">Sim</button>
 
-              <script>
+                  <script>
 
-                  function RedirecionarADM()
-                  {
-                      window.location.replace("/adm")
-                  }
+                      function RedirecionarADM()
+                      {
+                          window.location.replace("/adm")
+                      }
 
-              </script>
+                  </script>
+                </div>
           </div>
     
 </body>

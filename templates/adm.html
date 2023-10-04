@@ -138,7 +138,7 @@
                                             
                                                 <div class="form-group">
                                                     <label>CPF:</label>
-                                                    <input type="text" class="form-control" name="cpf" value="{{row.1}}">  
+                                                    <input type="text" class="form-control"  id="cpf" name="cpf" onkeyup="ValidarCPF();" value="{{row.1}}">  
                                                 </div>
                                                 
                                                 
@@ -172,7 +172,7 @@
                                         <div class="modal-header">
                                             <h4 class="modal-title">Cadastrar Usuários</h4>
                                         </div>
-
+                                        
                                         <div class="modal-body">
                                             <form action="/adicionar" method="POST">
                                                 <div class="form-group">
@@ -187,7 +187,7 @@
                                             
                                                 <div class="form-group">
                                                     <label>CPF:</label>
-                                                    <input type="text" class="form-control" name="cpf" required>  
+                                                    <input type="text" id="cpf" name="cpf" class="form-control" onkeyup="ValidarCPF()" required>  
                                                 </div>
                                                 
                                                 
@@ -225,5 +225,25 @@
             </center>
         {% endblock %}
 </body>
+<script>
+    function ValidarCPF()
+        {
+            //ACESSE O SITE regex101.com
+            expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+            texto = cpf.value;
+            if (texto.length==3)
+            {
+                cpf.value = texto + ".";
+            }
+            if (texto.length==7)
+            {
+                cpf.value = texto + ".";
+            }
+            if (texto.length==11)
+            {
+                cpf.value = texto + "-";
+            }
+        }
+</script>
+
 </html>
-<script src="../static/admPage.js"></script>
