@@ -1,11 +1,12 @@
-# pip install Flask==2.3.3 flask_mysqldb mysqlclient
+# pip install Flask==2.3.3 flask_mysqldb mysqlclient hashlib
 
 from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import smtplib
 from email.message import EmailMessage
-from shiu import email_email, senha_email
+from shiu import email_email, senha_email, email_sms
+from hashlib import sha256
 
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
@@ -33,8 +34,9 @@ def login():
         if cpf == '' or senha == '':
             return render_template('index.html', message="Informe os dados")
         else:
+            senha_veri = sha256(senha.encode()).hexdigest()
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha))
+            cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
             user = cursor.fetchone()
             if user:
                 session['logado'] = True
@@ -196,9 +198,18 @@ def adicionar():
             msg['From'] = email_email
             msg['To'] = email2
             msg.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR \n http://127.0.0.1:5000/senha \n Atenciosamente, equipe do NOAR!')
+            
+            msg2 = EmailMessage()
+            msg2['Subject'] = 'Acesso ao NOAR'
+            msg2['From'] = email_sms
+            msg2['To'] = email2
+            msg2.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR \n http://127.0.0.1:5000/senha \n Atenciosamente, equipe do NOAR!')
+            
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
                 smtp.login(EMAIL_ADDRES, EMAIL_PASSWORD)
                 smtp.send_message(msg)
+                smtp.send_message(msg2)
+
             return redirect(url_for("adm"))
 
 @app.route('/senha', methods = ['POST', 'GET'] )
@@ -217,8 +228,10 @@ def senha_nova():
         usuarios = cursor.fetchone()
 
         if usuarios:
+                senha_cr = sha256(senha_nova.encode()).hexdigest()
+
                 cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-                cursor.execute("UPDATE login SET senha='{}' WHERE cpf='{}'".format(senha_nova, cpf_confirma))
+                cursor.execute("UPDATE login SET senha='{}' WHERE cpf='{}'".format(senha_cr, cpf_confirma))
                 mysql.connection.commit()
                 return redirect(url_for('index'))
         else:

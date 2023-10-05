@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Out-2023 às 12:53
+-- Tempo de geração: 05-Out-2023 às 13:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -48,7 +48,7 @@ CREATE TABLE `corpo` (
 CREATE TABLE `login` (
   `id_sos` int(11) NOT NULL,
   `cpf` varchar(45) NOT NULL,
-  `senha` varchar(45) NOT NULL,
+  `senha` varchar(1000) NOT NULL,
   `adm` int(1) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
@@ -60,8 +60,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
-(1, '125.413.329-12', '123', 1, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '47997566605'),
-(7, '113.458.719-88', '', 0, 'Jônatas Rocha dos Santos', 'jonatas_r_santos@estudante.sesisenai.org.br', '47999999999');
+(1, '125.413.329-12', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 1, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '47997566605'),
+(7, '113.458.719-88', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 0, 'Jônatas Rocha dos Santos', 'jonatas_r_santos@estudante.sesisenai.org.br', '47999999999');
 
 -- --------------------------------------------------------
 
