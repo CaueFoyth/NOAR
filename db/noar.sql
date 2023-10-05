@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Out-2023 às 17:12
+-- Tempo de geração: 05-Out-2023 às 12:53
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -60,8 +60,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
-(1, 'çço', '123', 1, 'çç', 'çç', 'çç'),
-(3, 'çç', 'çç', 0, 'çç', 'çç', 'çç');
+(1, '125.413.329-12', '123', 1, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '47997566605'),
+(7, '113.458.719-88', '', 0, 'Jônatas Rocha dos Santos', 'jonatas_r_santos@estudante.sesisenai.org.br', '47999999999');
 
 -- --------------------------------------------------------
 
@@ -433,7 +433,7 @@ ALTER TABLE `corpo`
 -- AUTO_INCREMENT de tabela `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_sos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_sos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `ocorrencias`
