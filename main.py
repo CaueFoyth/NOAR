@@ -1,4 +1,4 @@
-# pip install Flask==2.3.3 flask_mysqldb mysqlclient hashlib
+# pip install Flask==2.3.3 flask_mysqldb==1.0.1 mysqlclient
 
 from flask import Flask, render_template, request, jsonify, url_for, redirect, session
 from flask_mysqldb import MySQL
@@ -12,13 +12,15 @@ EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
 
 app = Flask(__name__)
-mysql = MySQL(app)
+
 
 app.secret_key = 'abcd2123445'  
 app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
 app.config['MYSQL_PASSWORD'] =  ''
 app.config['MYSQL_DB'] =  'noar'
+
+mysql = MySQL(app)
 
 @app.route('/', methods=["POST" , "GET"])
 def index():
@@ -35,6 +37,7 @@ def login():
             return render_template('index.html', message="Informe os dados")
         else:
             senha_veri = sha256(senha.encode()).hexdigest()
+            
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
             user = cursor.fetchone()
@@ -229,7 +232,6 @@ def senha_nova():
 
         if usuarios:
                 senha_cr = sha256(senha_nova.encode()).hexdigest()
-
                 cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
                 cursor.execute("UPDATE login SET senha='{}' WHERE cpf='{}'".format(senha_cr, cpf_confirma))
                 mysql.connection.commit()
