@@ -92,17 +92,17 @@
         <!--Problemas encontrados-->
         <h3>Problemas encontrados</h3>
         <br>
-        <input type="checkbox" class="checkbox" name="b1">Respiratório
-        <input type="radio" name="b1a" value="DPOC">
-        <label for="DPOC">DPOC</label>
-        <input type="radio" name="b1a" value="inalacao">
-        <label for="inalacao">Inalação de fumaça</label>
+        <input type="checkbox" class="checkbox" name="b1" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
+        <input type="radio" name="b1a" id="respiratorio" value="DPOC">
+        <label for="DPOC" id="respiratorio1">DPOC</label>
+        <input type="radio" name="b1a" id="respiratorio2" value="inalacao">
+        <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
         <br>
-        <input type="checkbox" class="checkbox" name="b2">Diabetes
-        <input type="radio" name="b2a" value="Hiperglicemia">
-        <label for="Hiperglicemia">Hiperglicemia</label>
-        <input type="radio" name="b2a" value="Hipoglicemia">
-        <label for="Hipoglicemia">Hipoglicemia</label>
+        <input type="checkbox" class="checkbox" id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
+        <input type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
+        <label for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+        <input type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
+        <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
         <br>
         <input type="checkbox" class="checkbox" name="b3">Obstétrico
         <input type="checkbox" class="checkbox" name="b3a">Parto Emergencial
@@ -142,11 +142,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c10">Cefaléia
         <br>
-        <input type="checkbox" class="checkbox" name="c11">Cianose
-        <input type="radio" name="c11a" value="Labios">
-        <label for="Labios">Lábios</label>
-        <input type="radio" name="c11a" value="Extremidade">
-        <label for="Extremidade">Extremidade</label>
+        <input type="checkbox" class="checkbox" id="aparecercianose" onclick="aparecerCianose();" name="c11">Cianose
+        <input type="radio" id="cianose" name="c11a" value="Labios">
+        <label for="Labios" id="cianose1">Lábios</label>
+        <input type="radio" name="c11a" id="cianose2" value="Extremidade">
+        <label for="Extremidade" id="cianose3">Extremidade</label>
         <br>
         <input type="checkbox" class="checkbox" name="c12">Convulsão
         <br>
@@ -164,11 +164,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c19">Dor local
         <br>
-        <input type="checkbox" class="checkbox" name="c20">Edema
-        <input type="radio" name="c20a" value="Labios">
-        <label for="Labios">Lábios</label>
-        <input type="radio" name="c20a" value="Extremidade">
-        <label for="Extremidade">Extremidade</label>
+        <input type="checkbox" class="checkbox" id="apareceredema" onclick="aparecerEdema();" name="c20">Edema
+        <input type="radio" name="c20a" id="edema" value="Labios">
+        <label for="Labios" id="edema1">Lábios</label>
+        <input type="radio" name="c20a" id="edema2" value="Extremidade">
+        <label for="Extremidade" id="edema3">Extremidade</label>
         <br>
         <input type="checkbox" class="checkbox" name="c21">Enfisema subcutâneo
         <br>
@@ -176,11 +176,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c23">Face pálida
         <br>
-        <input type="checkbox" class="checkbox" name="c24">Hemorragia
-        <input type="radio" name="c24a" value="Interna">
-        <label for="Interna">Interna</label>
-        <input type="radio" name="c24a" value="Externa">
-        <label for="Externa">Externa</label>
+        <input type="checkbox" class="checkbox" id="aparecerhemorragia" onclick="aparecerHemorragia()" name="c24">Hemorragia
+        <input type="radio" name="c24a" id="hemorragia" value="Interna">
+        <label for="Interna" id="hemorragia1">Interna</label>
+        <input type="radio" name="c24a" value="Externa" id="hemorragia2">
+        <label for="Externa" id="hemorragia3">Externa</label>
         <br>
         <input type="checkbox" class="checkbox" name="c25">Hipertensão
         <br>
@@ -198,29 +198,29 @@
         <br>
         <input type="checkbox" class="checkbox" name="c32">O.V.A.C.E
         <br>
-        <input type="checkbox" class="checkbox" name="c33">Parada
-        <input type="radio" name="c33a" value="Cardiaca">
-        <label for="Cardiaca">Cardíaca</label>
-        <input type="radio" name="c33a" value="Respiratoria">
-        <label for="Respiratoria">Respiratória</label>
+        <input type="checkbox" class="checkbox" id="aparecerparada" onclick="aparecerParada()" name="c33">Parada
+        <input type="radio" id="parada" name="c33a" value="Cardiaca">
+        <label for="Cardiaca" id="parada1">Cardíaca</label>
+        <input type="radio" name="c33a" id="parada2" value="Respiratoria">
+        <label for="Respiratoria" id="parada3">Respiratória</label>
         <br>
         <input type="checkbox" class="checkbox" name="c34">Priaprismo
         <br>
         <input type="checkbox" class="checkbox" name="c35">Prurido na pele
         <br>
-        <input type="checkbox" class="checkbox" name="c36" >Pupilas
-        <input type="radio" name="c36a" value="Anisocoria">
-        <label for="Anisocoria">Anisocoria</label>
-        <input type="radio" name="c36a" value="Isocoria">
-        <label for="Isocoria">Isocoria</label>
-        <input type="radio" name="c36a" value="Midriase">
-        <label for="Midriase">Midriase</label>
-        <input type="radio" name="c36a" value="Miose">
-        <label for="Miose">Miose</label>
-        <input type="radio" name="c36a" value="Reagente">
-        <label for="Reagente">Reagente</label>
-        <input type="radio" name="c36a" value="Nao_reagente">
-        <label for="Nao_reagente">Não reagente</label>
+        <input type="checkbox" class="checkbox" id="aparecerpupilas" onclick="aparecerPupilas()" name="c36" >Pupilas
+        <input type="radio" name="c36a" id="pupilas" value="Anisocoria">
+        <label for="Anisocoria" id="pupilas1">Anisocoria</label>
+        <input type="radio" name="c36a" id="pupilas2" value="Isocoria">
+        <label for="Isocoria" id="pupilas3">Isocoria</label>
+        <input type="radio" name="c36a" id="pupilas4" value="Midriase">
+        <label for="Midriase" id="pupilas5">Midriase</label>
+        <input type="radio" name="c36a" id="pupilas6" value="Miose">
+        <label for="Miose" id="pupilas7">Miose</label>
+        <input type="radio" name="c36a" id="pupilas8" value="Reagente">
+        <label for="Reagente" id="pupilas9">Reagente</label>
+        <input type="radio" name="c36a" id="pupilas10" value="Nao_reagente">
+        <label for="Nao_reagente" id="pupilas11">Não reagente</label>
         <br>
         <input type="checkbox" class="checkbox" name="c37">Sede
         <br>
