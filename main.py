@@ -255,7 +255,7 @@ def ocorrencias():
     if 'logado' in session:
         if session['adm'] == 1:
             cursor = mysql.connection.cursor()
-            cursor.execute("SELECT * FROM ocorrencias_teste")
+            cursor.execute("SELECT * FROM ocorrencias")
             data = cursor.fetchall()
             cursor.close()
             return render_template("ocorrencias.html", ocorrencias = data)

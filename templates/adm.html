@@ -17,16 +17,16 @@
         <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
         <section class="options">
             <form action="/adicionar"><a href="/adicionar" data-toggle="modal" data-target="#modaladd"><button class="button-open" id="open">Cadastrar novos Usuários</button></a></form>
-            <form action="/ocorrencias"><button onclick="Redirecionar()" class="button-redirect">Gerenciar Ocorrências</button></form>
+            <form action="/ocorrencias"><a onclick="Redirecionar()" class="button-redirect">Gerenciar Ocorrências</a></form>
 
             <script>
-
+                
                 function Redirecionar()
                 {
                     window.location.replace("/ocorrencias")
                 }
-
-                </script>
+                
+            </script>
 
         </section>
 

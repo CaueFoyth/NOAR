@@ -4,6 +4,11 @@ $primaria: #33338D;
 $secundaria: #Ffffff;
 $preto: #00000053;
 
+a
+{
+  color: $secundaria;
+}
+
 body {
   margin: 0;
 }
@@ -12,7 +17,8 @@ main
   width: 1200px;
   margin: 0;
   padding: 0;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
 }
 
 .header
@@ -135,6 +141,7 @@ header {
   height: 75px;
   align-items: center;
   border-radius: 0px 0px 15px 15px;  
+  color: $secundaria;
 }
 
 .options
@@ -146,7 +153,7 @@ form
   height: 36px;
 }
 .button-redirect {
-  background: $primaria;
+  background: transparent;
   border: 0;
   margin: 0;
   color: $secundaria;
@@ -156,14 +163,13 @@ form
   line-height: normal;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
 }
 .button-open
 {
-  background: $primaria;
+  background: transparent;
   border: 0;
   margin: 0;
-  color: $secundaria;
+  color: $secundaria; 
   font-size: 20px;
   font-style: normal;
   font-weight: 800;
@@ -211,6 +217,28 @@ table {
   text-align: left;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: (1200px))
+{
+  table{
+     width: 1050px   
+  };
+
+}
+
+@media (max-width: (900px))
+{
+  table{
+     width: 750px   
+  };
+}
+
+@media (max-width: (600px))
+{
+  table{
+     width: 450px   
+  };
 }
 
 tr
@@ -304,14 +332,7 @@ a
   color: $secundaria;
 }
 
-.button-redirect
-{
-  font-size: 22px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  color: $secundaria;
-}
+
 .select
 {
   width: fit-content;

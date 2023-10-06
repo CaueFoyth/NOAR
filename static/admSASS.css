@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+a {
+  color: #Ffffff;
+}
+
 body {
   margin: 0;
 }
@@ -7,7 +11,8 @@ main {
   width: 1200px;
   margin: 0;
   padding: 0;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -127,6 +132,7 @@ header {
   height: 75px;
   align-items: center;
   border-radius: 0px 0px 15px 15px;
+  color: #Ffffff;
 }
 
 .options {
@@ -138,7 +144,7 @@ form {
 }
 
 .button-redirect {
-  background: #33338D;
+  background: transparent;
   border: 0;
   margin: 0;
   color: #Ffffff;
@@ -148,11 +154,10 @@ form {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
 }
 
 .button-open {
-  background: #33338D;
+  background: transparent;
   border: 0;
   margin: 0;
   color: #Ffffff;
@@ -204,6 +209,21 @@ table {
   flex-direction: column;
 }
 
+@media (max-width: 1200px) {
+  table {
+    width: 1050px;
+  }
+}
+@media (max-width: 900px) {
+  table {
+    width: 750px;
+  }
+}
+@media (max-width: 600px) {
+  table {
+    width: 450px;
+  }
+}
 tr {
   border: 1px solid rgba(0, 0, 0, 0.3254901961);
   text-align: center;
@@ -284,14 +304,6 @@ tr:nth-child(even) {
 
 a {
   cursor: pointer;
-  color: #Ffffff;
-}
-
-.button-redirect {
-  font-size: 22px;
-  font-family: "Poppins", sans-serif;
-  font-weight: bold;
-  text-decoration: none;
   color: #Ffffff;
 }
 
