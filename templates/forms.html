@@ -92,17 +92,17 @@
         <!--Problemas encontrados-->
         <h3>Problemas encontrados</h3>
         <br>
-        <input type="checkbox" class="checkbox" name="b1">Respiratório
-        <input type="radio" name="b1a" value="DPOC">
-        <label for="DPOC">DPOC</label>
-        <input type="radio" name="b1a" value="inalacao">
-        <label for="inalacao">Inalação de fumaça</label>
+        <input type="checkbox" class="checkbox" name="b1" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
+        <input type="radio" name="b1a" id="respiratorio" value="DPOC">
+        <label for="DPOC" id="respiratorio1">DPOC</label>
+        <input type="radio" name="b1a" id="respiratorio2" value="inalacao">
+        <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
         <br>
-        <input type="checkbox" class="checkbox" name="b2">Diabetes
-        <input type="radio" name="b2a" value="Hiperglicemia">
-        <label for="Hiperglicemia">Hiperglicemia</label>
-        <input type="radio" name="b2a" value="Hipoglicemia">
-        <label for="Hipoglicemia">Hipoglicemia</label>
+        <input type="checkbox" class="checkbox" id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
+        <input type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
+        <label for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+        <input type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
+        <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
         <br>
         <input type="checkbox" class="checkbox" name="b3">Obstétrico
         <input type="checkbox" class="checkbox" name="b3a">Parto Emergencial
@@ -142,11 +142,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c10">Cefaléia
         <br>
-        <input type="checkbox" class="checkbox" name="c11">Cianose
-        <input type="radio" name="c11a" value="Labios">
-        <label for="Labios">Lábios</label>
-        <input type="radio" name="c11a" value="Extremidade">
-        <label for="Extremidade">Extremidade</label>
+        <input type="checkbox" class="checkbox" id="aparecercianose" onclick="aparecerCianose();" name="c11">Cianose
+        <input type="radio" id="cianose" name="c11a" value="Labios">
+        <label for="Labios" id="cianose1">Lábios</label>
+        <input type="radio" name="c11a" id="cianose2" value="Extremidade">
+        <label for="Extremidade" id="cianose3">Extremidade</label>
         <br>
         <input type="checkbox" class="checkbox" name="c12">Convulsão
         <br>
@@ -164,11 +164,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c19">Dor local
         <br>
-        <input type="checkbox" class="checkbox" name="c20">Edema
-        <input type="radio" name="c20a" value="Labios">
-        <label for="Labios">Lábios</label>
-        <input type="radio" name="c20a" value="Extremidade">
-        <label for="Extremidade">Extremidade</label>
+        <input type="checkbox" class="checkbox" id="apareceredema" onclick="aparecerEdema();" name="c20">Edema
+        <input type="radio" name="c20a" id="edema" value="Labios">
+        <label for="Labios" id="edema1">Lábios</label>
+        <input type="radio" name="c20a" id="edema2" value="Extremidade">
+        <label for="Extremidade" id="edema3">Extremidade</label>
         <br>
         <input type="checkbox" class="checkbox" name="c21">Enfisema subcutâneo
         <br>
@@ -176,11 +176,11 @@
         <br>
         <input type="checkbox" class="checkbox" name="c23">Face pálida
         <br>
-        <input type="checkbox" class="checkbox" name="c24">Hemorragia
-        <input type="radio" name="c24a" value="Interna">
-        <label for="Interna">Interna</label>
-        <input type="radio" name="c24a" value="Externa">
-        <label for="Externa">Externa</label>
+        <input type="checkbox" class="checkbox" id="aparecerhemorragia" onclick="aparecerHemorragia()" name="c24">Hemorragia
+        <input type="radio" name="c24a" id="hemorragia" value="Interna">
+        <label for="Interna" id="hemorragia1">Interna</label>
+        <input type="radio" name="c24a" value="Externa" id="hemorragia2">
+        <label for="Externa" id="hemorragia3">Externa</label>
         <br>
         <input type="checkbox" class="checkbox" name="c25">Hipertensão
         <br>
@@ -198,29 +198,29 @@
         <br>
         <input type="checkbox" class="checkbox" name="c32">O.V.A.C.E
         <br>
-        <input type="checkbox" class="checkbox" name="c33">Parada
-        <input type="radio" name="c33a" value="Cardiaca">
-        <label for="Cardiaca">Cardíaca</label>
-        <input type="radio" name="c33a" value="Respiratoria">
-        <label for="Respiratoria">Respiratória</label>
+        <input type="checkbox" class="checkbox" id="aparecerparada" onclick="aparecerParada()" name="c33">Parada
+        <input type="radio" id="parada" name="c33a" value="Cardiaca">
+        <label for="Cardiaca" id="parada1">Cardíaca</label>
+        <input type="radio" name="c33a" id="parada2" value="Respiratoria">
+        <label for="Respiratoria" id="parada3">Respiratória</label>
         <br>
         <input type="checkbox" class="checkbox" name="c34">Priaprismo
         <br>
         <input type="checkbox" class="checkbox" name="c35">Prurido na pele
         <br>
-        <input type="checkbox" class="checkbox" name="c36" >Pupilas
-        <input type="radio" name="c36a" value="Anisocoria">
-        <label for="Anisocoria">Anisocoria</label>
-        <input type="radio" name="c36a" value="Isocoria">
-        <label for="Isocoria">Isocoria</label>
-        <input type="radio" name="c36a" value="Midriase">
-        <label for="Midriase">Midriase</label>
-        <input type="radio" name="c36a" value="Miose">
-        <label for="Miose">Miose</label>
-        <input type="radio" name="c36a" value="Reagente">
-        <label for="Reagente">Reagente</label>
-        <input type="radio" name="c36a" value="Nao_reagente">
-        <label for="Nao_reagente">Não reagente</label>
+        <input type="checkbox" class="checkbox" id="aparecerpupilas" onclick="aparecerPupilas()" name="c36" >Pupilas
+        <input type="radio" name="c36a" id="pupilas" value="Anisocoria">
+        <label for="Anisocoria" id="pupilas1">Anisocoria</label>
+        <input type="radio" name="c36a" id="pupilas2" value="Isocoria">
+        <label for="Isocoria" id="pupilas3">Isocoria</label>
+        <input type="radio" name="c36a" id="pupilas4" value="Midriase">
+        <label for="Midriase" id="pupilas5">Midriase</label>
+        <input type="radio" name="c36a" id="pupilas6" value="Miose">
+        <label for="Miose" id="pupilas7">Miose</label>
+        <input type="radio" name="c36a" id="pupilas8" value="Reagente">
+        <label for="Reagente" id="pupilas9">Reagente</label>
+        <input type="radio" name="c36a" id="pupilas10" value="Nao_reagente">
+        <label for="Nao_reagente" id="pupilas11">Não reagente</label>
         <br>
         <input type="checkbox" class="checkbox" name="c37">Sede
         <br>
@@ -607,29 +607,29 @@
         <h3>Forma de condução</h3>
         <input type="checkbox" class="checkbox" name="e1">Deitada
         <br>
-        <input type="checkbox" class="checkbox" name="e2">Semi-Sentada
+        <input type="checkbox" class="checkbox" name="e1">Semi-Sentada
         <br>
-        <input type="checkbox" class="checkbox" name="e3">Sentada
+        <input type="checkbox" class="checkbox" name="e1">Sentada
         <h4>Vítima era</h4>
-        <input type="checkbox" class="checkbox" name="e4">Ciclista
+        <input type="checkbox" class="checkbox" name="e2">Ciclista
         <br>
-        <input type="checkbox" class="checkbox" name="e5">Condutor Moto
+        <input type="checkbox" class="checkbox" name="e2">Condutor Moto
         <br>
-        <input type="checkbox" class="checkbox" name="e6">Gestante
+        <input type="checkbox" class="checkbox" name="e2">Gestante
         <br>
-        <input type="checkbox" class="checkbox" name="e7">Pas. Ban. Frente
+        <input type="checkbox" class="checkbox" name="e2">Pas. Ban. Frente
         <br>
-        <input type="checkbox" class="checkbox" name="e8">Pas. Moto
+        <input type="checkbox" class="checkbox" name="e2">Pas. Moto
         <br>
-        <input type="checkbox" class="checkbox" name="e9">Condutor Carro
+        <input type="checkbox" class="checkbox" name="e2">Condutor Carro
         <br>
-        <input type="checkbox" class="checkbox" name="e10">Clínico
+        <input type="checkbox" class="checkbox" name="e2">Clínico
         <br>
-        <input type="checkbox" class="checkbox" name="e11">Trauma
+        <input type="checkbox" class="checkbox" name="e2">Trauma
         <br>
-        <input type="checkbox" class="checkbox" name="e12">Pas. Ban. Trás
+        <input type="checkbox" class="checkbox" name="e2">Pas. Ban. Trás
         <br>
-        <input type="checkbox" class="checkbox" name="e13">Pedestre
+        <input type="checkbox" class="checkbox" name="e2">Pedestre
         <!--Decisão Transporte-->
         <h3>Decisão Transporte</h3>
         <input type="radio" name="f1" value="Estavel">
@@ -746,7 +746,7 @@
         <input type="checkbox" class="checkbox" name="j34">Uso de Cânula
         <br>
         <input type="checkbox" class="checkbox" name="j35">Uso Colar
-        <input type="text" name="j35a" placeholder="Tamanho">
+        <input type="text" name="j35" placeholder="Tamanho">
         <br>
         <input type="checkbox" class="checkbox" name="j36">Uso KED
         <br>
@@ -786,7 +786,7 @@
         <br>
         <input type="checkbox" class="checkbox" name="j47">CIT
         <br>
-        <input type="text" name="j48" placeholder="Outros">
+        <input type="text" name="j47" placeholder="Outros">
         <br>
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
         <h3>Materiais Utilizados Descartável</h3>
@@ -815,7 +815,7 @@
         <input type="text" name="k6qtd" placeholder="quantidade">
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h3>Materiais Utilizados deixados no hospital</h3>
-        <input type="checkbox" class="checkbox" name="k7">Base do Estabiliza
+        <input type="checkbox" class="checkbox" name="k7">Base do Estabiliza    
         <input type="text" name="k7qtd" placeholder="quantidade">
         <br>
         <input type="checkbox" class="checkbox" name="k8">Colar
@@ -983,18 +983,18 @@
         <input type="text"  name="o1">
         <!--TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE-->
         <h3>Termo de recusa de atendimento e/ou transporte</h3>
-        <p class="termo_recusa">EU <input type="text" name="o1"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o2"> INSCRITO NO CPF SOB N°<input type="text" name="o3"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
+        <p class="termo_recusa">EU <input type="text" name="o2"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o3"> INSCRITO NO CPF SOB N°<input type="text" name="o4"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
         <br>
-        <input type="text"  name="o4" placeholder="Assinatura">
+        <input type="text"  name="o5" placeholder="Assinatura">
         <br>
-        <input type="text"  name="o5" placeholder="Testemunha">
+        <input type="text"  name="o6" placeholder="Testemunha">
         <br>
-        <input type="text"  name="o6" placeholder="Doc">
+        <input type="text"  name="o7" placeholder="Doc">
         <br>
-        <input type="text"  name="o7" placeholder="Testemunha">
+        <input type="text"  name="o8" placeholder="Testemunha">
         <br>
-        <input type="text"  name="o8" placeholder="Doc">
-        <p class="termo_recusa">GUARAMIRIM <input type="text"  name="o9"> DE <input type="text"  name="o10"> DE <input type="text"  name="o11"></p>
+        <input type="text"  name="o9" placeholder="Doc">
+        <p class="termo_recusa">GUARAMIRIM <input type="text"  name="o10"> DE <input type="text"  name="o11"> DE <input type="text"  name="o12"></p>
         <!--DIVULGAR PARA A IMPRENSA-->
         <h3>Divulgar para a imprensa</h3>
         <input type="radio"  name="q1" value="sim">

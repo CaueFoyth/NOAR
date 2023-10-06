@@ -108,3 +108,167 @@ function meuCostas(){
     document.getElementById("elbow-left").style.display = "none";
     document.getElementById("hands-left").style.display = "none";
 }
+
+function aparecerRespiratorio() {
+    var checkBoxrespiratorio = document.getElementById("aparecerrespiratorio");
+    var textRespiratorio = document.getElementById("respiratorio");
+    var textRespiratorio1 = document.getElementById("respiratorio1");
+    var textRespiratorio2 = document.getElementById("respiratorio2");
+    var textRespiratorio3 = document.getElementById("respiratorio3");
+
+    if (checkBoxrespiratorio.checked == true){
+        textRespiratorio.style.display = "inline-flex";
+        textRespiratorio1.style.display = "inline-flex";
+        textRespiratorio2.style.display = "inline-flex";
+        textRespiratorio3.style.display = "inline-flex";
+      } else {
+        textRespiratorio.style.display = "none";
+        textRespiratorio1.style.display = "none";
+        textRespiratorio2.style.display = "none";
+        textRespiratorio3.style.display = "none";
+      }
+}
+
+function aparecerDiabetes() {
+    var checkBoxdiabetes = document.getElementById("aparecerdiabetes");
+    var textDiabetes = document.getElementById("diabetes");
+    var textDiabetes1 = document.getElementById("diabetes1");
+    var textDiabetes2 = document.getElementById("diabetes2");
+    var textDiabetes3 = document.getElementById("diabetes3");
+
+    if (checkBoxdiabetes.checked == true){
+        textDiabetes.style.display = "inline-flex";
+        textDiabetes1.style.display = "inline-flex";
+        textDiabetes2.style.display = "inline-flex";
+        textDiabetes3.style.display = "inline-flex";
+      } else {
+        textDiabetes.style.display = "none";
+        textDiabetes1.style.display = "none";
+        textDiabetes2.style.display = "none";
+        textDiabetes3.style.display = "none";
+      }
+}
+
+function aparecerCianose() {
+    var checkBoxcianose = document.getElementById("aparecercianose");
+    var textCianose = document.getElementById("cianose");
+    var textCianose1 = document.getElementById("cianose1");
+    var textCianose2 = document.getElementById("cianose2");
+    var textCianose3 = document.getElementById("cianose3");
+
+    if (checkBoxcianose.checked == true){
+        textCianose.style.display = "inline-flex";
+        textCianose1.style.display = "inline-flex";
+        textCianose2.style.display = "inline-flex";
+        textCianose3.style.display = "inline-flex";
+      } else {
+        textCianose.style.display = "none";
+        textCianose1.style.display = "none";
+        textCianose2.style.display = "none";
+        textCianose3.style.display = "none";
+      }
+}
+
+function aparecerEdema() {
+    var checkBoxedema = document.getElementById("apareceredema");
+    var textedema = document.getElementById("edema");
+    var textedema1 = document.getElementById("edema1");
+    var textedema2 = document.getElementById("edema2");
+    var textedema3 = document.getElementById("edema3");
+
+    if (checkBoxedema.checked == true){
+        textedema.style.display = "inline-flex";
+        textedema1.style.display = "inline-flex";
+        textedema2.style.display = "inline-flex";
+        textedema3.style.display = "inline-flex";
+      } else {
+        textedema.style.display = "none";
+        textedema1.style.display = "none";
+        textedema2.style.display = "none";
+        textedema3.style.display = "none";
+      }
+}
+
+function aparecerHemorragia() {
+    var checkBoxhemorragia = document.getElementById("aparecerhemorragia");
+    var texthemorragia = document.getElementById("hemorragia");
+    var texthemorragia1 = document.getElementById("hemorragia1");
+    var texthemorragia2 = document.getElementById("hemorragia2");
+    var texthemorragia3 = document.getElementById("hemorragia3");
+
+    if (checkBoxhemorragia.checked == true){
+        texthemorragia.style.display = "inline-flex";
+        texthemorragia1.style.display = "inline-flex";
+        texthemorragia2.style.display = "inline-flex";
+        texthemorragia3.style.display = "inline-flex";
+      } else {
+        texthemorragia.style.display = "none";
+        texthemorragia1.style.display = "none";
+        texthemorragia2.style.display = "none";
+        texthemorragia3.style.display = "none";
+      }
+}
+
+function aparecerParada() {
+    var checkBoxparada = document.getElementById("aparecerparada");
+    var textparada = document.getElementById("parada");
+    var textparada1 = document.getElementById("parada1");
+    var textparada2 = document.getElementById("parada2");
+    var textparada3 = document.getElementById("parada3");
+
+    if (checkBoxparada.checked == true){
+        textparada.style.display = "inline-flex";
+        textparada1.style.display = "inline-flex";
+        textparada2.style.display = "inline-flex";
+        textparada3.style.display = "inline-flex";
+      } else {
+        textparada.style.display = "none";
+        textparada1.style.display = "none";
+        textparada2.style.display = "none";
+        textparada3.style.display = "none";
+      }
+}
+
+function aparecerPupilas() {
+    var checkBoxparada = document.getElementById("aparecerpupilas");
+    var textpupila = document.getElementById("pupilas");
+    var textpupila1 = document.getElementById("pupilas1");
+    var textpupila2 = document.getElementById("pupilas2");
+    var textpupila3 = document.getElementById("pupilas3");
+    var textpupila4 = document.getElementById("pupilas4");
+    var textpupila5 = document.getElementById("pupilas5");
+    var textpupila6 = document.getElementById("pupilas6");
+    var textpupila7 = document.getElementById("pupilas7");
+    var textpupila8 = document.getElementById("pupilas8");
+    var textpupila9 = document.getElementById("pupilas9");
+    var textpupila10 = document.getElementById("pupilas10");
+    var textpupila11 = document.getElementById("pupilas11");
+
+    if (checkBoxparada.checked == true){
+        textpupila.style.display = "inline-flex";
+        textpupila1.style.display = "inline-flex";
+        textpupila2.style.display = "inline-flex";
+        textpupila3.style.display = "inline-flex";
+        textpupila4.style.display = "inline-flex";
+        textpupila5.style.display = "inline-flex";
+        textpupila6.style.display = "inline-flex";
+        textpupila7.style.display = "inline-flex";
+        textpupila8.style.display = "inline-flex";
+        textpupila9.style.display = "inline-flex";
+        textpupila10.style.display = "inline-flex";
+        textpupila11.style.display = "inline-flex";
+      } else {
+        textpupila.style.display = "none";
+        textpupila1.style.display = "none";
+        textpupila2.style.display = "none";
+        textpupila3.style.display = "none";
+        textpupila4.style.display = "none";
+        textpupila5.style.display = "none";
+        textpupila6.style.display = "none";
+        textpupila7.style.display = "none";
+        textpupila8.style.display = "none";
+        textpupila9.style.display = "none";
+        textpupila10.style.display = "none";
+        textpupila11.style.display = "none";
+      }
+}
