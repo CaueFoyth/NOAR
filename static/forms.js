@@ -272,3 +272,55 @@ function aparecerPupilas() {
         textpupila11.style.display = "none";
       }
 }
+
+function aparecerPolicia() {
+  var checkBoxparada = document.getElementById("aparecerpolicia");
+  var textpolicia = document.getElementById("policia");
+  var textpolicia1 = document.getElementById("policia1");
+  var textpolicia2 = document.getElementById("policia2");
+  var textpolicia3 = document.getElementById("policia3");
+  var textpolicia4 = document.getElementById("policia4");
+  var textpolicia5 = document.getElementById("policia5");
+  var textpolicia6 = document.getElementById("policia6");
+  var textpolicia7 = document.getElementById("policia7");
+
+  if (checkBoxparada.checked == true){
+    textpolicia.style.display = "inline-flex";
+    textpolicia1.style.display = "inline-flex";
+    textpolicia2.style.display = "inline-flex";
+    textpolicia3.style.display = "inline-flex";
+    textpolicia4.style.display = "inline-flex";
+    textpolicia5.style.display = "inline-flex";
+    textpolicia6.style.display = "inline-flex";
+    textpolicia7.style.display = "inline-flex";
+    } else {
+      textpolicia.style.display = "none";
+      textpolicia1.style.display = "none";
+      textpolicia2.style.display = "none";
+      textpolicia3.style.display = "none";
+      textpolicia4.style.display = "none";
+      textpolicia5.style.display = "none";
+      textpolicia6.style.display = "none";
+      textpolicia7.style.display = "none";
+    }
+}
+
+function aparecerSamu() {
+  var checkBoxparada = document.getElementById("aparecersamu");
+  var textsamu = document.getElementById("samu");
+  var textsamu1 = document.getElementById("samu1");
+  var textsamu2 = document.getElementById("samu2");
+  var textsamu3 = document.getElementById("samu3");
+
+  if (checkBoxparada.checked == true){
+    textsamu.style.display = "inline-flex";
+    textsamu1.style.display = "inline-flex";
+    textsamu2.style.display = "inline-flex";
+    textsamu3.style.display = "inline-flex";
+    } else {
+      textsamu.style.display = "none";
+      textsamu1.style.display = "none";
+      textsamu2.style.display = "none";
+      textsamu3.style.display = "none";
+    }
+}
