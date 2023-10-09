@@ -58,4 +58,12 @@ input[type=date] {
 
 #pupilas, #pupilas1, #pupilas2, #pupilas3, #pupilas4, #pupilas5, #pupilas6, #pupilas7, #pupilas8, #pupilas9, #pupilas10, #pupilas11 {
   display: none;
+}
+
+#policia, #policia1, #policia2, #policia3, #policia4, #policia5, #policia6, #policia7 {
+  display: none;
+}
+
+#samu, #samu1, #samu2, #samu3 {
+  display: none;
 }/*# sourceMappingURL=forms.css.map */
