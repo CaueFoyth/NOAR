@@ -32,10 +32,12 @@
             <a href="/senha" >
               <p class="texto">Esqueceu sua senha?</p>
             </a>
-            <button type="submit" class="button"> Entrar </button>
+
             {% if message %}
-              <p class="message"> {{ message }}</p>
+              <p class="message"> {{ message }}!</p>
             {% endif %}
+
+            <button type="submit" class="button"> Entrar </button>
 
           </form>
         </center>

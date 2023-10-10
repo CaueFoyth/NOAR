@@ -57,7 +57,7 @@ def login():
 @app.route('/gerenciar', methods =['GET', 'POST'])
 def gerenciar():
     if 'logado' in session:
-        return render_template('forms.html')
+        return render_template('mainpage.html')
     return redirect(url_for("index"))
 
 @app.route('/enviar', methods =['GET', 'POST'])
