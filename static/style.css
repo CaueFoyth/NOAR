@@ -113,6 +113,7 @@ header {
   box-shadow: 5px 4px 24px 2px rgba(0, 0, 0, 0.7098039216);
   -webkit-box-shadow: 5px 4px 24px 2px rgba(0, 0, 0, 0.7098039216);
   -moz-box-shadow: 5px 4px 24px 2px rgba(0, 0, 0, 0.7098039216);
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -242,4 +243,10 @@ a {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+}
+
+.message {
+  color: #ec2f2f;
+  font-size: large;
+  font-family: "Poppins", sans-serif;
 }/*# sourceMappingURL=style.css.map */

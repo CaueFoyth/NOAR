@@ -126,6 +126,7 @@
     box-shadow: 5px 4px 24px 2px #000000b5;
     -webkit-box-shadow: 5px 4px 24px 2px #000000b5;
     -moz-box-shadow: 5px 4px 24px 2px #000000b5;
+    font-family: 'Poppins', sans-serif;
   }
   
   .container {
@@ -258,4 +259,9 @@
     align-items: center;
     flex-direction: row;
   }
-  
+  .message
+  {
+    color: #ec2f2f;
+    font-size: large;
+    font-family: 'Poppins', sans-serif;
+  }
