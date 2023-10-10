@@ -40,7 +40,29 @@
                 <main>
                     <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->
                     <form class="form" action="">
+                        {% for row in perfil %}
+                        <div class="form-group">
+                            <label>Nome:</label>
+                            <input type="hidden" name="id" value="{{row.0}}">
+                            <input type="text" class="form-control" name="nome" value="{{row.4}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="text" class="form-control" name="email" value="{{row.5}}">  
+                        </div>
+                    
+                        <div class="form-group">
+                            <label>CPF:</label>
+                            <input type="text" class="form-control"  id="cpf" name="cpf" onkeyup="ValidarCPF();" value="{{row.1}}">  
+                        </div>
                         
+                        
+                        <div class="form-group">
+                            <label>Telefone:</label>
+                            <input type="text" class="form-control" name="telefone" value="{{row.6}}">  
+                        </div>
+                        {% endfor %}
                     </form>
                 </main>
             </center>
