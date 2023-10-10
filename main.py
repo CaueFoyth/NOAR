@@ -33,26 +33,23 @@ def login():
         cpf = request.form['cpf']
         senha = request.form['senha']
 
-        if cpf == '' or senha == '':
-            return render_template('index.html', message="Informe os dados")
-        else:
-            senha_veri = sha256(senha.encode()).hexdigest()
+        senha_veri = sha256(senha.encode()).hexdigest()
 
-            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
-            user = cursor.fetchone()
-            if user:
-                session['logado'] = True
-                session['id_sos'] = user['id_sos']
-                # session['nome_sos'] = user['nome_sos']
-                # session['email_sos'] = user['email_sos']
-                session['adm'] = user['adm']
-                if user['adm'] == 1:
-                    return render_template('confirmpage.html')
-                return redirect(url_for("gerenciar"))
-            else:
-                mesage = 'Senha ou email incorreto'
-                return render_template('index.html', mesage = mesage)
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
+        user = cursor.fetchone()
+        if user:
+            session['logado'] = True
+            session['id_sos'] = user['id_sos']
+            # session['nome_sos'] = user['nome_sos']
+            # session['email_sos'] = user['email_sos']
+            session['adm'] = user['adm']
+            if user['adm'] == 1:
+                return render_template('confirmpage.html')
+            return redirect(url_for("gerenciar"))
+        else:
+            mesage = 'Senha ou email incorreto'
+            return render_template('index.html', message = mesage)
 
 @app.route('/gerenciar', methods =['GET', 'POST'])
 def gerenciar():
@@ -466,6 +463,14 @@ def mainpage():
             return render_template("mainpage.html")
         return redirect(url_for("index"))
     return redirect(url_for("index"))
+
+# @app.route('/perfil', methods=["POST" , "GET"])
+# def mainpage():
+#     if 'logado' in session:
+#         if session['adm'] == 1:
+#             return render_template("perfil.html")
+#         return redirect(url_for("index"))
+#     return redirect(url_for("index"))
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run

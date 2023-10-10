@@ -11,6 +11,7 @@
     <title>NOAR</title>
 </head>
 <body>
+  {% block body %}
     <main>
         <div class="glass">
           <!-- Cabecalho -->
@@ -19,7 +20,6 @@
           </header>
         <center>
           
-
           <form action="/login" method="POST" class="meio">
             <div class="container">
               <h1>Faça seu login</h1>
@@ -33,10 +33,15 @@
               <p class="texto">Esqueceu sua senha?</p>
             </a>
             <button type="submit" class="button"> Entrar </button>
+            {% if message %}
+              <p class="message"> {{ message }}</p>
+            {% endif %}
+
           </form>
         </center>
         </div>
       </main>
+    {% endblock %}    
 </body>
 <script>
        function ValidarCPF()
