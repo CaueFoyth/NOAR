@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$primaria: #33338D;
+$secundaria: #Ffffff;
+$preto: #00000053;
+
+body {
+  padding: 0;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+main {
+  width: 50%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $secundaria;
+}
+
+.headtext {
+  color: #33338d;
+  font-family: "Poppins", sans-serif;
+}
+
+main input {
+  margin-top: 2rem;
+  width: 80%;
+  border: 0;
+  background-color: $secundaria;
+  border: solid 1px $primaria;
+  height: 17%;
+  color: $primaria;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+main input::-moz-placeholder {
+  color: #fff;
+  font-size: 20px;
+}
+
+main input::placeholder {
+  color: #fff;
+  font-size: 20px;
+}
+
+.glass {
+  background: #00000079;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid #6963634d;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+.logo
+{
+  position: absolute;
+  top: -30px;
+  right: 0px;
+}
+header {
+  background: $primaria;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 75px;
+  align-items: center;
+  border-radius: 0px 0px 15px 15px;  
+  color: $secundaria;
+}
+.button-redirect {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  color: $secundaria;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: $primaria;
+  width: 500px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 57px;
+  margin-right: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  width: 10%;
+}

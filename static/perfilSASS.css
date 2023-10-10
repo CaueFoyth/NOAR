@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+body {
+  padding: 0;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+main {
+  width: 50%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #Ffffff;
+}
+
+.headtext {
+  color: #33338d;
+  font-family: "Poppins", sans-serif;
+}
+
+main input {
+  margin-top: 2rem;
+  width: 80%;
+  border: 0;
+  background-color: #Ffffff;
+  border: solid 1px #33338D;
+  height: 17%;
+  color: #33338D;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+main input::-moz-placeholder {
+  color: #fff;
+  font-size: 20px;
+}
+
+main input::placeholder {
+  color: #fff;
+  font-size: 20px;
+}
+
+.glass {
+  background: rgba(0, 0, 0, 0.4745098039);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgba(105, 99, 99, 0.3019607843);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+.logo {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+}
+
+header {
+  background: #33338D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 75px;
+  align-items: center;
+  border-radius: 0px 0px 15px 15px;
+  color: #Ffffff;
+}
+
+.button-redirect {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  color: #Ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: #33338D;
+  width: 500px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 57px;
+  margin-right: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  width: 10%;
+}/*# sourceMappingURL=perfilSASS.css.map */
