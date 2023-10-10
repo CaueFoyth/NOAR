@@ -42,8 +42,10 @@ def login():
         if user:
             session['logado'] = True
             session['id_sos'] = user['id_sos']
-            # session['nome_sos'] = user['nome_sos']
-            # session['email_sos'] = user['email_sos']
+            session['nome'] = user['nome']
+            session['email'] = user['email']
+            session['telefone'] = user['telefone']
+            session['cpf'] = user['cpf']
             session['adm'] = user['adm']
             if user['adm'] == 1:
                 return render_template('confirmpage.html')
@@ -458,13 +460,17 @@ def mainpage():
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
-# @app.route('/perfil', methods=["POST" , "GET"])
-# def mainpage():
-#     if 'logado' in session:
-#         if session['adm'] == 1:
-#             return render_template("perfil.html")
-#         return redirect(url_for("index"))
-#     return redirect(url_for("index"))
+@app.route('/perfil', methods=["POST" , "GET"])
+def perfil():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            cursor = mysql.connection.cursor()
+            cursor.execute(f"SELECT * FROM login WHERE id_sos = {session['id_sos']}")
+            perfil = cursor.fetchall()
+            cursor.close()
+            return render_template("perfil.html", perfil = perfil)
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
