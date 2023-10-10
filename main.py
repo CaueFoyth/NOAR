@@ -11,8 +11,9 @@ from hashlib import sha256
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
 
-app = Flask(__name__)
 
+# Arquivo conecta
+app = Flask(__name__)
 
 app.secret_key = 'abcd2123445'
 app.config['MYSQL_HOST'] =  'localhost'
@@ -48,7 +49,7 @@ def login():
                 return render_template('confirmpage.html')
             return redirect(url_for("gerenciar"))
         else:
-            mesage = 'Senha ou email incorreto'
+            mesage = 'Senha ou cpf incorreto'
             return render_template('index.html', message = mesage)
 
 @app.route('/gerenciar', methods =['GET', 'POST'])
@@ -365,16 +366,9 @@ def adicionar():
             msg['To'] = email2
             msg.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR \n http://127.0.0.1:5000/senha \n Atenciosamente, equipe do NOAR!')
 
-            msg2 = EmailMessage()
-            msg2['Subject'] = 'Acesso ao NOAR'
-            msg2['From'] = email_sms
-            msg2['To'] = email2
-            msg2.set_content('Segue o link para o cadastro da sua senha para liberar o acesso ao NOAR \n http://127.0.0.1:5000/senha \n Atenciosamente, equipe do NOAR!')
-
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
                 smtp.login(EMAIL_ADDRES, EMAIL_PASSWORD)
                 smtp.send_message(msg)
-                smtp.send_message(msg2)
 
             return redirect(url_for("adm"))
 
