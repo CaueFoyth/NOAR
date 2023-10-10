@@ -7,7 +7,10 @@
     <title>NOAR</title>
     <link rel="stylesheet" href="../static/forms.css">
 </head>
-<body>
+<body>  
+    <header>
+        <p class="sumirTeste">exemplo</p>
+    </header>
 <center>
     <form action="/enviar" method="post"> 
         <!--DADOS DA VÍTIMA-->
@@ -15,7 +18,7 @@
         <br>
         <h2>Dados da vítima</h2>
         <br>
-        <input type="date" name="data">
+        <input type="date" name="data" required>
         <br>
         <input type="radio" name="sexo" value="Masculino">
         <label for="sexo-m">Masculino</label><br>

@@ -4,6 +4,12 @@ body {
   font-size: 24px;
 }
 
+.sumirTeste {
+  position: fixed;
+  left: 47%;
+  display: none;
+}
+
 input[type=checkbox] {
   width: 24px;
   height: 24px;
