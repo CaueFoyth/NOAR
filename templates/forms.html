@@ -12,7 +12,7 @@
         <p class="sumirTeste">exemplo</p>
     </header>
 <center>
-    <form action="/enviar" method="get"> 
+    <form action="/enviar" method="post"> 
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <br>
@@ -22,12 +22,12 @@
         <br>
         <input type="radio" name="sexo" value="Masculino">
         <label for="sexo-m">Masculino</label><br>
-        <input type="radio"  name="sexo" value="Feminino">
+        <input type="radio" name="sexo" value="Feminino">
         <label for="sexo-f">Feminino</label>
         <br>
         <input type="text" name="nome" placeholder="Nome">
         <br>
-        <input type="text" name="idade" placeholder="Idade">
+        <input type="number" name="idade" placeholder="Idade">
         <input type="text" name="cpf" placeholder="Cpf">
         <br>
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
