@@ -324,3 +324,88 @@ function aparecerSamu() {
       textsamu3.style.display = "none";
     }
 }
+
+function aparecerTransporte() {
+  var checkBoxparada = document.getElementById("aparecertransporte");
+  var texttransporte = document.getElementById("transporte");
+  var texttransporte1 = document.getElementById("transporte1");
+  var texttransporte2 = document.getElementById("transporte2");
+  var texttransporte3 = document.getElementById("transporte3");
+  var texttransporte4 = document.getElementById("transporte4");
+  var texttransporte5 = document.getElementById("transporte5");
+  var texttransporte6 = document.getElementById("transporte6");
+  var texttransporte7 = document.getElementById("transporte7");
+  var texttransporte8 = document.getElementById("transporte8");
+  var texttransporte9 = document.getElementById("transporte9");
+  var texttransporte10 = document.getElementById("transporte10");
+  var texttransporte11 = document.getElementById("transporte11");
+  var texttransporte12 = document.getElementById("transporte12");
+
+  if (checkBoxparada.checked == true){
+    texttransporte.style.display = "inline-flex";
+    texttransporte1.style.display = "inline-flex";
+    texttransporte2.style.display = "inline-flex";
+    texttransporte3.style.display = "inline-flex";
+    texttransporte4.style.display = "inline-flex";
+    texttransporte5.style.display = "inline-flex";
+    texttransporte6.style.display = "inline-flex";
+    texttransporte7.style.display = "inline-flex";
+    texttransporte8.style.display = "inline-flex";
+    texttransporte9.style.display = "inline-flex";
+    texttransporte10.style.display = "inline-flex";
+    texttransporte11.style.display = "inline-flex";
+    texttransporte12.style.display = "inline-flex";
+    } else {
+    texttransporte.style.display = "none";
+    texttransporte1.style.display = "none";
+    texttransporte2.style.display = "none";
+    texttransporte3.style.display = "none";
+    texttransporte4.style.display = "none";
+    texttransporte5.style.display = "none";
+    texttransporte6.style.display = "none";
+    texttransporte7.style.display = "none";
+    texttransporte8.style.display = "none";
+    texttransporte9.style.display = "none";
+    texttransporte10.style.display = "none";
+    texttransporte11.style.display = "none";
+    texttransporte12.style.display = "none";
+    }
+}
+
+ function aparecerAcompanhante() {
+  if (document.getElementById("apareceracompanhante").checked == true) {
+      acompanhante.style.display = "inline-flex";
+      acompanhante1.style.display = "inline-flex";
+      acompanhante2.style.display = "inline-flex";
+      acompanhante3.style.display = "inline-flex";
+      acompanhante4.style.display = "inline-flex";
+      acompanhante5.style.display = "inline-flex";
+      acompanhante6.style.display = "inline-flex";
+      acompanhante7.style.display = "inline-flex";
+
+  } else {
+    acompanhante.style.display = "none";
+    acompanhante1.style.display = "none";
+    acompanhante2.style.display = "none";
+    acompanhante3.style.display = "none";
+    acompanhante4.style.display = "none";
+    acompanhante5.style.display = "none";
+    acompanhante6.style.display = "none";
+    acompanhante7.style.display = "none";
+  } 
+}
+
+function naoaparecerAcompanhante() {
+  if (document.getElementById("naoapareceracompanhante").checked == true) {
+    acompanhante.style.display = "none";
+    acompanhante1.style.display = "none";
+    acompanhante2.style.display = "none";
+    acompanhante3.style.display = "none";
+    acompanhante4.style.display = "none";
+    acompanhante5.style.display = "none";
+    acompanhante6.style.display = "none";
+    acompanhante7.style.display = "none";
+
+} 
+}
+
