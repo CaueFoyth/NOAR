@@ -34,22 +34,22 @@
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
         <br>
         <h3>Há acompanhante?</h3>
-        <input type="radio"  name="acompanhante" value="sim">
+        <input type="radio"  name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()">
         <label for="sim">Sim</label><br>
-        <input type="radio"  name="acompanhante" value="nao">
+        <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()">
         <label for="nao">Não</label>
         <br>
-        <h3>Dados do acompanhante</h3>
+        <h3 id="acompanhante">Dados do acompanhante</h3>
         <br>
-        <input type="text" name="nomeAcompanhante" placeholder="Nome">
+        <input type="text" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante">
         <br>
-        <input type="text" name="idadeAcompanhante" placeholder="Idade">
-        <input type="text" name="cpfAcompanhante" placeholder="Cpf">
+        <input type="text" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante">
+        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante">
         <br>
-        <input type="radio"  name="sexoAcompanhante" value="Masculino">
-        <label for="sexo-m">Masculino</label><br>
-        <input type="radio"  name="sexoAcompanhante" value="Feminino">
-        <label for="sexo-f">Feminino</label>
+        <input type="radio"  name="sexoAcompanhante" id="acompanhante4" value="Masculino">
+        <label for="sexo-m" id="acompanhante5">Masculino</label><br>
+        <input type="radio"  name="sexoAcompanhante" id="acompanhante6" value="Feminino">
+        <label for="sexo-f" id="acompanhante7">Feminino</label>
         <br>
         <!--TIPO DE OCORRÊNCIA-->
         <h3>Tipo de Ocorrência</h3><h4>Pré-Hospitalar</h4>

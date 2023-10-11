@@ -371,3 +371,41 @@ function aparecerTransporte() {
     texttransporte12.style.display = "none";
     }
 }
+
+ function aparecerAcompanhante() {
+  if (document.getElementById("apareceracompanhante").checked == true) {
+      acompanhante.style.display = "inline-flex";
+      acompanhante1.style.display = "inline-flex";
+      acompanhante2.style.display = "inline-flex";
+      acompanhante3.style.display = "inline-flex";
+      acompanhante4.style.display = "inline-flex";
+      acompanhante5.style.display = "inline-flex";
+      acompanhante6.style.display = "inline-flex";
+      acompanhante7.style.display = "inline-flex";
+
+  } else {
+    acompanhante.style.display = "none";
+    acompanhante1.style.display = "none";
+    acompanhante2.style.display = "none";
+    acompanhante3.style.display = "none";
+    acompanhante4.style.display = "none";
+    acompanhante5.style.display = "none";
+    acompanhante6.style.display = "none";
+    acompanhante7.style.display = "none";
+  } 
+}
+
+function naoaparecerAcompanhante() {
+  if (document.getElementById("naoapareceracompanhante").checked == true) {
+    acompanhante.style.display = "none";
+    acompanhante1.style.display = "none";
+    acompanhante2.style.display = "none";
+    acompanhante3.style.display = "none";
+    acompanhante4.style.display = "none";
+    acompanhante5.style.display = "none";
+    acompanhante6.style.display = "none";
+    acompanhante7.style.display = "none";
+
+} 
+}
+
