@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOAR</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="../static/forms.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 <body>  
     <header>
@@ -19,9 +20,9 @@
         <br>
         <h2>Dados da vítima</h2>
         <br>
-        <input type="date" name="data" required>
+        <input type="date" id="data" name="data" autofocus data-autosave-url="http://127.0.0.1:5000/enviar" required>
         <br>
-        <input type="radio" name="sexo" value="Masculino">
+        <input type="radio" name="sexo" autofocus data-autosave-url="http://127.0.0.1:5000/enviar" value="Masculino">
         <label for="sexo-m">Masculino</label><br>
         <input type="radio" name="sexo" value="Feminino">
         <label for="sexo-f">Feminino</label>
@@ -1017,4 +1018,53 @@
 </center>
 </body>
 
+<!-- TESTE 2 -->
+<!-- <script type="text/javascript">
+    jQuery(document).ready(function(){
+        $(window).bind('beforeunload', function(){
+            
+            document.querySelectorAll("[data-autosave-url]"),array.forEach(inputField => {
+            inputField.addEventListener("change", async () => {
+                const name = inputField.getAttribute("name")
+                const value = inputField.value;
+                const url = inputField.dataset.autosaveUrl;
+                const formData = new FormData();
+                
+                const response = await fetch(url, {
+                method: "POST",
+                body: formData
+            }
+            );  
+            });
+            });
+
+            alert('BYE');
+            return false;
+        });
+    });
+</script> -->
+
+<!-- TESTE 1 -->
+<!-- <script>
+    window.onbeforeunload = function(){
+        document.querySelectorAll("[data-autosave-url]").forEach(inputField =>{
+        inputField.addEventListener("change", async () =>{
+            const name = inputField.getAttribute("name")
+            const value = inputField.value;
+            const url = inputField.dataset.autosaveUrl;
+            const formData = new FormData();
+
+            const response = await fetch(url, {
+                method: "POST",
+                body: formData
+            }
+            )
+        })
+
+    }
+    )
+        return "Deseja salvar as informações?"
+    }
+    
+</script> -->
 </html>
