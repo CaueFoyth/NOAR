@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Out-2023 às 13:18
+-- Tempo de geração: 11-Out-2023 às 17:13
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -83,8 +83,8 @@ CREATE TABLE `objetos` (
 CREATE TABLE `ocorrencias` (
   `id_ocorrencia` int(11) NOT NULL,
   `fk_sos` int(11) NOT NULL,
-  `data_oco` int(11) NOT NULL,
-  `nome_vit` int(11) NOT NULL,
+  `data_oco` varchar(45) NOT NULL,
+  `nome_vit` varchar(45) NOT NULL,
   `sexo_vit` varchar(45) NOT NULL,
   `idade_vit` int(3) NOT NULL,
   `cpf_vit` varchar(45) NOT NULL,

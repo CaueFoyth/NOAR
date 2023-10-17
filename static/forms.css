@@ -4,6 +4,12 @@ body {
   font-size: 24px;
 }
 
+.sumirTeste {
+  position: fixed;
+  left: 47%;
+  display: none;
+}
+
 input[type=checkbox] {
   width: 24px;
   height: 24px;
@@ -65,5 +71,13 @@ input[type=date] {
 }
 
 #samu, #samu1, #samu2, #samu3 {
+  display: none;
+}
+
+#transporte, #transporte1, #transporte2, #transporte3, #transporte4, #transporte5, #transporte6, #transporte7, #transporte8, #transporte9, #transporte10, #transporte11, #transporte12 {
+  display: none;
+}
+
+#acompanhante, #acompanhante1, #acompanhante2, #acompanhante3, #acompanhante4, #acompanhante5, #acompanhante6, #acompanhante7 {
   display: none;
 }/*# sourceMappingURL=forms.css.map */
