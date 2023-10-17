@@ -457,13 +457,11 @@ def mainpage():
 @app.route('/perfil', methods=["POST" , "GET"])
 def perfil():
     if 'logado' in session:
-        if session['adm'] == 1:
-            cursor = mysql.connection.cursor()
-            cursor.execute(f"SELECT * FROM login WHERE id_sos = {session['id_sos']}")
-            perfil = cursor.fetchall()
-            cursor.close()
-            return render_template("perfil.html", perfil = perfil)
-        return redirect(url_for("index"))
+        cursor = mysql.connection.cursor()
+        cursor.execute(f"SELECT * FROM login WHERE id_sos = {session['id_sos']}")
+        perfil = cursor.fetchall()
+        cursor.close()
+        return render_template("perfil.html", perfil = perfil)
     return redirect(url_for("index"))
 
 if __name__ == '__main__':
