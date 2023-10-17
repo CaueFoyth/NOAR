@@ -85,12 +85,12 @@ header {
 }
 @media (max-width: 520px) {
   .meio {
-    width: 65%;
+    width: 85%;
   }
 }
 @media (max-width: 350px) {
   .meio {
-    width: 80%;
+    width: 90%;
   }
 }
 @media (max-width: 280px) {
