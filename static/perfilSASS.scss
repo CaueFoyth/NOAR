@@ -4,32 +4,39 @@ $primaria: #33338D;
 $secundaria: #Ffffff;
 $preto: #00000053;
 
-body {
+.corpo{
   padding: 0;
   border: 0;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background: #33338D;
 }
 
-main {
+.estrutura {
   width: 50%;
   height: 75vh;
   display: flex;
+  position: absolute;
+  top: 75px;
+  right: 400px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px #0000004d;
   background-color: $secundaria;
 }
 
 .headtext {
   color: #33338d;
+  font-size: 25px;
   font-family: "Poppins", sans-serif;
 }
 
 main input {
   margin-top: 2rem;
-  width: 80%;
+  width: 100%;
   border: 0;
   background-color: $secundaria;
   border: solid 1px $primaria;
@@ -41,6 +48,117 @@ main input {
   font-family: "Poppins", sans-serif;
 }
 
+@media(max-width: 1200px)
+{
+  .estrutura{
+    width: 70%;
+    top: 90px;
+    height: 65vh;
+    right: 165px;
+  }
+
+  main input{
+    width: 90%;
+    height: 5%;
+  }
+  .logo
+  {
+    scale: 90%;
+  }  
+}
+
+@media(max-width: 800px)
+{
+  .estrutura{
+    width: 80%;
+    top: 90px;
+    height: 65vh;
+    right: 70px;
+  }
+
+  main input{
+    width: 80%;
+    height: 5%;
+  }
+  .logo
+  {
+    scale: 90%;
+  }  
+}
+
+@media(max-width: 580px)
+{
+  .estrutura{
+    width: 80%;
+    top: 90px;
+    height: 65vh;
+    right: 50px;
+  }
+
+  main input{
+    width: 0%;
+    height: 5%;
+  }
+  .logo
+  {
+    scale: 90%;
+  }  
+}
+
+@media(max-width: 360px)
+{
+  .estrutura{
+    width: 80%;
+    top: 90px;
+    height: 65vh;
+    right: 45px;
+  }
+
+  main input{
+    width: 50%;
+    height: 5%;
+  }
+  .logo
+  {
+    scale: 90%;
+  }  
+}
+
+@media(max-width: 360px)
+{
+  .estrutura{
+    width: 80%;
+    top: 90px;
+    height: 65vh;
+    right: 45px;
+  }
+
+  main input{
+    width: 50%;
+    height: 5%;
+  }
+  .logo
+  {
+    scale: 90%;
+  }  
+}
+
+.edit_profile{
+  background: $primaria;
+  border: 0;
+  border-radius: 5px;
+  width: 25%;
+  height: 7%;
+  color: $secundaria;
+  margin-top: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+.modal-backdrop
+{
+  display: none;
+}
 main input::-moz-placeholder {
   color: #fff;
   font-size: 20px;
@@ -52,45 +170,40 @@ main input::placeholder {
 }
 
 .glass {
-  background: #00000079;
+  background: #9c9c9c79;
   box-shadow: 0 4px 30px #0000001a;
   backdrop-filter: blur(10.2px);
   -webkit-backdrop-filter: blur(10.2px);
   border: 1px solid #6963634d;
+  width: 100%;
   height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.header
-{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-}
 .logo
 {
   position: absolute;
   top: -30px;
   right: 0px;
 }
-header {
+.options {
   background: $primaria;
+  height: 75px;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  height: 75px;
   align-items: center;
-  border-radius: 0px 0px 15px 15px;  
+  justify-content: left;
   color: $secundaria;
 }
 .button-redirect {
   background: transparent;
   border: 0;
   margin: 0;
+  width: fit-content;
   color: $secundaria;
-  font-size: 20px;
+  font-size: 17px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -116,8 +229,3 @@ h2 {
   margin-right: 20px;
 }
 
-.options {
-  display: flex;
-  justify-content: space-evenly;
-  width: 10%;
-}
