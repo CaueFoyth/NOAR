@@ -17,12 +17,10 @@
     <form action="/enviar" method="post"> 
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
-        <br>
         <h2>Dados da vítima</h2>
+        <input type="date" id="data" name="data" required>
         <br>
-        <input type="date" id="data" name="data" autofocus data-autosave-url="http://127.0.0.1:5000/enviar" required>
-        <br>
-        <input type="radio" name="sexo" autofocus data-autosave-url="http://127.0.0.1:5000/enviar" value="Masculino">
+        <input type="radio" name="sexo" value="Masculino">
         <label for="sexo-m">Masculino</label><br>
         <input type="radio" name="sexo" value="Feminino">
         <label for="sexo-f">Feminino</label>
@@ -30,7 +28,7 @@
         <input type="text" name="nome" placeholder="Nome">
         <br>
         <input type="number" name="idade" placeholder="Idade">
-        <input type="text" name="cpf" placeholder="Cpf">
+        <input type="number" name="cpf" placeholder="Cpf">
         <br>
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
         <br>
@@ -610,7 +608,7 @@
         <input type="number" name="d6" placeholder="Temperatura °C">
         <br>
         <h4>Perfusão</h4>
-        <input type="radio" name="d7" value="sim">
+        <input type="radio" name="d7a" value="sim">
         <label for="&gt;2seg.">&gt;2seg.</label>
         <input type="radio" name="d7a" value="sim">
         <label for="&lt;2seg.">&lt;2seg.</label>
@@ -756,8 +754,8 @@
         <br>
         <input type="checkbox"  name="j34" value="Sim">Uso de Cânula
         <br>
-        <input type="checkbox"  name="j35">Uso Colar
-        <input type="text" name="j35" placeholder="Tamanho">
+        <input type="checkbox"  id="usocolar" onclick="usoColar()" name="j35">Uso Colar
+        <input type="text" name="j35" id="usocolar1" placeholder="Tamanho">
         <br>
         <input type="checkbox"  name="j36" value="Sim">Uso KED
         <br>
@@ -765,11 +763,11 @@
         <br>
         <input type="checkbox"  name="j38" value="Sim">Ventilação Suporte
         <br>
-        <input type="checkbox"  name="j39">Oxigenioterapia
-        <input type="text" name="j39a" placeholder="LPM">
+        <input type="checkbox" id="usaroxigenioterapia" onclick="usarOxigenioterapia()" name="j39">Oxigenioterapia
+        <input type="text" id="oxigenioterapia" name="j39a" placeholder="LPM">
         <br>
-        <input type="checkbox"  name="j40">REANIMADOR
-        <input type="text" name="j40a" placeholder="LPM">
+        <input type="checkbox" id="usarreanimador" onclick="usarReanimador()" name="j40">REANIMADOR
+        <input type="text" id="reanimador" name="j40a" placeholder="LPM">
         <br>
         <input type="checkbox"  name="j41" value="Sim">Meios Auxiliares
         <br>
@@ -868,18 +866,18 @@
         <input type="text" name="l1" placeholder="O que aconteceu (Sinais e Sintomas)">
         <br>
         <h4>Aconteceu outras vezes?</h4>
-        <input type="radio"  name="l2" value="sim">
+        <input type="radio" id="aconteceuoutras" onclick="aconteceuOutras()" name="l2" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="l2" value="nao">
-        <label for="nao">nao</label>
+        <input type="radio" id="naoaconteceuoutras" onclick="naoAconteceuOutras()" name="l2" value="nao">
+        <label for="nao">não</label>
         <br>
-        <input type="text" name="l3" placeholder="A quanto tempo isso ocorreu?">
+        <input type="text" name="l3" id="aconteceuoutras1" placeholder="A quanto tempo isso ocorreu?">
         <br>
         <h4>Possui algum problema de saúde</h4>
         <input type="radio"  name="l4" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="l4" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <br>
         <input type="text" name="l4a" placeholder="Quais?">
         <br>
@@ -887,7 +885,7 @@
         <input type="radio"  name="l5" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio" name="l5" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <br>
         <input type="text" name="l5a" placeholder="Se sim, especifique">
         <br>
@@ -895,7 +893,7 @@
         <input type="radio"  name="l6" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="l6" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <input type="text" name="l6a" placeholder="Que horas?">
         <br>
         <!--ANAMNESE GESTACIONAL-->
@@ -905,14 +903,14 @@
         <input type="radio"  name="m2" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="m2" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <input type="text" name="m3" placeholder="Nome do médico">
         <br>
         <h4>É o primeiro filho?</h4>
         <input type="radio"  name="m4" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="m4" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <input type="text" name="m5" placeholder="Quantos?">
         <br>
         <input type="text" name="m6" placeholder="Que horas iniciaram as contrações?">
@@ -925,70 +923,70 @@
         <input type="radio"  name="m9" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="m9" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <br>
         <h4>Já houve ruptura da bolsa?</h4>
         <input type="radio"  name="m10" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="m10" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <br>
         <h4>Foi feito inspeção visual?</h4>
         <input type="radio"  name="m11" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="m11" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <br>
         <h4>Parto realizado?</h4>
-        <input type="radio"  name="m12" value="sim">
+        <input type="radio" id="aparecerparto" onclick="aparecerParto()" name="m12" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="m12" value="nao">
-        <label for="nao">nao</label>
-        <input type="text" name="m13" placeholder="Hora do nascimento">
+        <input type="radio" id="naoaparecerparto" onclick="naoAparecerParto()" name="m12" value="nao">
+        <label for="nao">não</label>
+        <input type="text" name="m13" id="parto" placeholder="Hora do nascimento">
         <br>
-        <h4>Sexo do bebe</h4>
-        <input type="radio"  name="m14" value="FEM">
-        <label for="FEM">FEM</label><br>
-        <input type="radio"  name="m14" value="MASC">
-        <label for="MASC">MASC</label>
-        <input type="text" name="m15" placeholder="Nome do bebe">
+        <h4 id="parto1">Sexo do bebe</h4>
+        <input id="parto2" type="radio"  name="m14" value="FEM">
+        <label id="parto3" for="FEM">FEM</label><br>
+        <input  id="parto4" type="radio"  name="m14" value="MASC">
+        <label id="parto5" for="MASC">MASC</label>
+        <input id="parto6" type="text" name="m15" placeholder="Nome do bebe">
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <h3>Avaliação da Cinemática</h3>
         <h4>Distúrbio de comportamento?</h4>
         <input type="radio"  name="n1" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n1" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Encontrado de capacete?</h4>
         <input type="radio"  name="n2" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n2" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Encontrado de cinto?</h4>
         <input type="radio"  name="n3" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n3" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Para-Brisas Avariado?</h4>
         <input type="radio"  name="n4" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n4" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Caminhando na cena?</h4>
         <input type="radio"  name="n5" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n5" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Painel Avariado?</h4>
         <input type="radio"  name="n6" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n6" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <h4>Volante Torcido?</h4>
         <input type="radio"  name="n7" value="sim">
         <label for="sim">sim</label><br>
         <input type="radio"  name="n7" value="nao">
-        <label for="nao">nao</label>
+        <label for="nao">não</label>
         <!--OBSERVAÇÕES IMPORTANTES-->
         <h3>Observações Importantes</h3>
         <input type="text"  name="o1">

@@ -409,3 +409,94 @@ function naoaparecerAcompanhante() {
 } 
 }
 
+function usoColar() {
+  var checkBoxparada = document.getElementById("usocolar");
+  var textusocolar = document.getElementById("usocolar1");
+
+  if (checkBoxparada.checked == true){
+    textusocolar.style.display = "inline-flex";
+    } else {
+      textusocolar.style.display = "none";
+}
+}
+
+function usarOxigenioterapia() {
+  var checkBoxparada = document.getElementById("usaroxigenioterapia");
+  var textoxigenioterapia = document.getElementById("oxigenioterapia");
+  
+  if (checkBoxparada.checked == true){
+    textoxigenioterapia.style.display = "inline-flex";
+    } else {
+      textoxigenioterapia.style.display = "none";
+}
+}
+
+function usarOxigenioterapia() {
+  var checkBoxparada = document.getElementById("usaroxigenioterapia");
+  var textoxigenioterapia = document.getElementById("oxigenioterapia");
+  
+  if (checkBoxparada.checked == true){
+    textoxigenioterapia.style.display = "inline-flex";
+    } else {
+      textoxigenioterapia.style.display = "none";
+}
+}
+
+function usarReanimador() {
+  var checkBoxparada = document.getElementById("usarreanimador");
+  var textreanimador = document.getElementById("reanimador");
+  
+  if (checkBoxparada.checked == true){
+    textreanimador.style.display = "inline-flex";
+    } else {
+      textreanimador.style.display = "none";
+}
+}
+
+function aparecerParto() {
+  if (document.getElementById("aparecerparto").checked == true) {
+      parto.style.display = "inline-flex";
+      parto1.style.display = "inline-flex";
+      parto2.style.display = "inline-flex";
+      parto3.style.display = "inline-flex";
+      parto4.style.display = "inline-flex";
+      parto5.style.display = "inline-flex";
+      parto6.style.display = "inline-flex";
+
+  } else {
+    parto.style.display = "none";
+    parto1.style.display = "none";
+    parto2.style.display = "none";
+    parto3.style.display = "none";
+    parto4.style.display = "none";
+    parto5.style.display = "none";
+    parto6.style.display = "none";
+  } 
+}
+
+function naoAparecerParto() {
+  if (document.getElementById("naoaparecerparto").checked == true) {
+    parto.style.display = "none";
+    parto1.style.display = "none";
+    parto2.style.display = "none";
+    parto3.style.display = "none";
+    parto4.style.display = "none";
+    parto5.style.display = "none";
+    parto6.style.display = "none";
+} 
+}
+
+function aconteceuOutras() {
+  if (document.getElementById("aconteceuoutras").checked == true) {
+    aconteceuoutras1.style.display = "inline-flex";
+
+  } else {
+    aconteceuoutras1.style.display = "none";
+  } 
+}
+
+function naoAconteceuOutras() {
+  if (document.getElementById("naoaconteceuoutras").checked == true) {
+    aconteceuoutras1.style.display = "none";
+} 
+}
