@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Out-2023 às 17:22
+-- Tempo de geração: 18/10/2023 às 17:16
 -- Versão do servidor: 10.4.28-MariaDB
--- versão do PHP: 8.2.4
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `corpo`
+-- Estrutura para tabela `corpo`
 --
 
 CREATE TABLE `corpo` (
@@ -42,7 +42,22 @@ CREATE TABLE `corpo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `login`
+-- Estrutura para tabela `dados da vítima`
+--
+
+CREATE TABLE `dados da vítima` (
+  `data_oco` varchar(15) NOT NULL,
+  `nome_vit` varchar(30) NOT NULL,
+  `sexo_vit` varchar(9) NOT NULL,
+  `idade_vit` int(3) NOT NULL,
+  `cpf_vit` varchar(15) NOT NULL,
+  `local_oco` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `login`
 --
 
 CREATE TABLE `login` (
@@ -56,7 +71,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `login`
+-- Despejando dados para a tabela `login`
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
@@ -66,7 +81,7 @@ INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `objetos`
+-- Estrutura para tabela `objetos`
 --
 
 CREATE TABLE `objetos` (
@@ -77,7 +92,7 @@ CREATE TABLE `objetos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `ocorrencias`
+-- Estrutura para tabela `ocorrencias`
 --
 
 CREATE TABLE `ocorrencias` (
@@ -195,75 +210,76 @@ CREATE TABLE `ocorrencias` (
   `temperatura` varchar(8) NOT NULL,
   `perf_menor` varchar(3) NOT NULL,
   `perf_maior` varchar(3) NOT NULL,
-  `forma_conducao` int(1) NOT NULL,
-  `vitima_era` int(11) NOT NULL,
-  `decisao_transporte` int(1) NOT NULL,
-  `m` varchar(100) NOT NULL,
-  `s1` varchar(100) NOT NULL,
-  `s2` varchar(100) NOT NULL,
-  `s3` varchar(100) NOT NULL,
+  `forma_conducao` varchar(30) NOT NULL,
+  `vitima_era` varchar(50) NOT NULL,
+  `decisao_transporte` varchar(25) NOT NULL,
+  `m` varchar(45) NOT NULL,
+  `s1` varchar(45) NOT NULL,
+  `s2` varchar(45) NOT NULL,
+  `s3` varchar(45) NOT NULL,
   `equipe` varchar(100) NOT NULL,
-  `demandante` varchar(100) NOT NULL,
-  `n_usb` varchar(100) NOT NULL,
-  `n_ocorrencia` varchar(100) NOT NULL,
-  `desp` varchar(100) NOT NULL,
-  `hch` varchar(100) NOT NULL,
-  `km_final` varchar(100) NOT NULL,
-  `cod_sias_sus` varchar(100) NOT NULL,
-  `cod_ir` int(1) NOT NULL,
-  `cod_ps` int(1) NOT NULL,
-  `aspiracao` int(1) NOT NULL,
-  `avaliacao_inicial` int(1) NOT NULL,
-  `avaliacao_dirigida` int(1) NOT NULL,
-  `chave_rautek` int(1) NOT NULL,
-  `candula_guedel` int(1) NOT NULL,
-  `desobstracao_va` int(1) NOT NULL,
-  `emprego_dea` int(1) NOT NULL,
-  `gerenciamento_riscos` int(1) NOT NULL,
-  `limpeza_ferimentos` int(1) NOT NULL,
-  `curativos` int(1) NOT NULL,
-  `compressivo` int(1) NOT NULL,
-  `encravamento` int(1) NOT NULL,
-  `ocular` int(1) NOT NULL,
-  `queimadura` int(1) NOT NULL,
-  `simples` int(1) NOT NULL,
-  `tres_pontas` int(1) NOT NULL,
-  `imobilizacoes` int(1) NOT NULL,
-  `membro_inf_dir` int(1) NOT NULL,
-  `membro_inf_esq` int(1) NOT NULL,
-  `membro_sup_dir` int(1) NOT NULL,
-  `membro_sup_esq` int(1) NOT NULL,
-  `quadril` int(1) NOT NULL,
-  `cervical` int(1) NOT NULL,
-  `maca_rodas` int(1) NOT NULL,
-  `maca_rigida` int(1) NOT NULL,
-  `ponte` int(1) NOT NULL,
-  `retirado_capacete` int(1) NOT NULL,
-  `rcp` int(1) NOT NULL,
-  `rolamento_noventa` int(1) NOT NULL,
-  `rolamento_cento_oitenta` int(1) NOT NULL,
-  `tomada_decisao` int(1) NOT NULL,
-  `tomada_choque` int(1) NOT NULL,
-  `uso_candula` int(1) NOT NULL,
-  `colar_tamanho` varchar(100) NOT NULL,
-  `uso_ked` int(1) NOT NULL,
-  `uso_ttf` int(1) NOT NULL,
-  `ventilacao_suporte` int(1) NOT NULL,
-  `oxigenioterapia` int(1) NOT NULL,
-  `reanimador` int(1) NOT NULL,
-  `meios_auxiliares` int(1) NOT NULL,
-  `celesc` int(1) NOT NULL,
-  `def_civil` int(1) NOT NULL,
-  `igp_pc` int(1) NOT NULL,
-  `policia` int(4) NOT NULL,
-  `samu` int(2) NOT NULL,
-  `cit` varchar(100) NOT NULL,
-  `atadura` int(1) NOT NULL,
-  `atadura_oito` int(1) NOT NULL,
-  `atadura_doze` int(1) NOT NULL,
-  `atadura_vinte` int(1) NOT NULL,
+  `demandante` varchar(50) NOT NULL,
+  `n_usb` varchar(50) NOT NULL,
+  `n_ocorrencia` varchar(50) NOT NULL,
+  `desp` varchar(50) NOT NULL,
+  `hch` varchar(50) NOT NULL,
+  `km_final` varchar(50) NOT NULL,
+  `cod_sias_sus` varchar(50) NOT NULL,
+  `cod_ir` varchar(50) NOT NULL,
+  `cod_ps` varchar(50) NOT NULL,
+  `aspiracao` varchar(3) NOT NULL,
+  `avaliacao_inicial` varchar(3) NOT NULL,
+  `avaliacao_dirigida` varchar(3) NOT NULL,
+  `avaliacao_continuada` varchar(3) NOT NULL,
+  `chave_rautek` varchar(3) NOT NULL,
+  `candula_guedel` varchar(3) NOT NULL,
+  `desobstracao_va` varchar(3) NOT NULL,
+  `emprego_dea` varchar(3) NOT NULL,
+  `gerenciamento_riscos` varchar(3) NOT NULL,
+  `limpeza_ferimentos` varchar(3) NOT NULL,
+  `curativos` varchar(3) NOT NULL,
+  `compressivo` varchar(3) NOT NULL,
+  `encravamento` varchar(3) NOT NULL,
+  `ocular` varchar(3) NOT NULL,
+  `queimadura` varchar(3) NOT NULL,
+  `simples` varchar(3) NOT NULL,
+  `tres_pontas` varchar(3) NOT NULL,
+  `imobilizacoes` varchar(3) NOT NULL,
+  `membro_inf_dir` varchar(3) NOT NULL,
+  `membro_inf_esq` varchar(3) NOT NULL,
+  `membro_sup_dir` varchar(3) NOT NULL,
+  `membro_sup_esq` varchar(3) NOT NULL,
+  `quadril` varchar(3) NOT NULL,
+  `cervical` varchar(3) NOT NULL,
+  `maca_rodas` varchar(3) NOT NULL,
+  `maca_rigida` varchar(3) NOT NULL,
+  `ponte` varchar(3) NOT NULL,
+  `retirado_capacete` varchar(3) NOT NULL,
+  `rcp` varchar(3) NOT NULL,
+  `rolamento_noventa` varchar(3) NOT NULL,
+  `rolamento_cento_oitenta` varchar(3) NOT NULL,
+  `tomada_decisao` varchar(3) NOT NULL,
+  `tomada_choque` varchar(3) NOT NULL,
+  `uso_candula` varchar(3) NOT NULL,
+  `colar_tamanho` varchar(35) NOT NULL,
+  `uso_ked` varchar(3) NOT NULL,
+  `uso_ttf` varchar(3) NOT NULL,
+  `ventilacao_suporte` varchar(3) NOT NULL,
+  `oxigenioterapia` varchar(45) NOT NULL,
+  `reanimador` varchar(45) NOT NULL,
+  `meios_auxiliares` varchar(3) NOT NULL,
+  `celesc` varchar(3) NOT NULL,
+  `def_civil` varchar(3) NOT NULL,
+  `igp_pc` varchar(3) NOT NULL,
+  `policia` varchar(15) NOT NULL,
+  `samu` varchar(12) NOT NULL,
+  `cit` varchar(60) NOT NULL,
+  `atadura` varchar(3) NOT NULL,
+  `atadura_oito` varchar(3) NOT NULL,
+  `atadura_doze` varchar(3) NOT NULL,
+  `atadura_vinte` varchar(3) NOT NULL,
   `atadura_qtd` int(11) NOT NULL,
-  `cateter` int(1) NOT NULL,
+  `cateter` int(3) NOT NULL,
   `cateter_tipo` varchar(100) NOT NULL,
   `compressa` int(1) NOT NULL,
   `compressa_qtd` int(11) NOT NULL,
@@ -351,24 +367,16 @@ CREATE TABLE `ocorrencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `ocorrencias`
+-- Despejando dados para a tabela `ocorrencias`
 --
 
-INSERT INTO `ocorrencias` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transp_aereo`, `transp_clinico`, `transp_emergencial`, `transp_pos_trauma`, `transp_samu`, `transp_sem_remocao`, `transp_outros`, `problema_outros`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidade`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema_labios`, `edema_extremidade`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemo_int`, `hemo_ext`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada_cardiaca`, `parada_respiratoria`, `priaprismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perf_menor`, `perf_maior`, `forma_conducao`, `vitima_era`, `decisao_transporte`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`, `n_usb`, `n_ocorrencia`, `desp`, `hch`, `km_final`, `cod_sias_sus`, `cod_ir`, `cod_ps`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `atadura`, `atadura_oito`, `atadura_doze`, `atadura_vinte`, `atadura_qtd`, `cateter`, `cateter_tipo`, `compressa`, `compressa_qtd`, `kits`, `kits_h`, `kits_p`, `kits_q`, `kits_qtd`, `luvas`, `luvas_qtd`, `mascara`, `mascara_qtd`, `base_estabilizada`, `base_qtd`, `colar`, `colar_n`, `colar_pp`, `colar_p`, `colar_m`, `colar_g`, `colar_outros`, `colar_qtd`, `coxins`, `coxins_qtd`, `ked`, `ked_adul`, `ked_infan`, `ked_qtd`, `maca_rigida_deixada`, `maca_qtd`, `ttf`, `ttf_adul`, `ttf_infan`, `ttf_qtd`, `tirante_aranha`, `tirante_aqtd`, `tirante_cabeca`, `tirante_cqtd`, `canula`, `canula_qtd`, `anamnese_emergencia`, `aconteceu_outra_vez`, `aconteceu_tempo`, `possui_problema`, `qual_problema`, `alergico_algo`, `alergico_oque`, `alimento_liquido`, `alimento_horas`, `anamnese_gestacional`, `pre_natal`, `nome_pre_natal`, `primeiro_filho`, `quantos_filhos`, `horas_contracao`, `duracao_contracao`, `intervalo_contracao`, `pressao_quadril`, `ruptura_bolsa`, `inspecao_visusal`, `parto_realizado`, `hora_nascimento`, `sexo_bebe`, `nome_bebe`, `disturbio_comport`, `encontrado_capacete`, `encontrado_cinto`, `para_brisa`, `caminhando_cena`, `painel_avariado`, `volante_torcido`, `observacao_importante`, `eu_nome`, `rg_numero`, `cpf_numero`, `assinatura`, `testemunha`, `doc`, `testemunha_dois`, `doc_dois`, `guaramirim_dia`, `guaramirim_mes`, `guaramirim_ano`, `divulgar_imprensa`) VALUES
-(1, 1, '2023-10-20', 'asd', 'Masculino', 12, '123123121212', '', '0', '', 0, '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(2, 1, '2023-10-19', 'Giovani', 'Masculino', 12, '123123123123', '123123', 'sim', '', 0, '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(3, 1, '2023-10-13', '123', 'Masculino', 123, '123', '123', 'Fal', '', 0, '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(4, 1, '2023-10-19', 'ca', 'Masculino', 12, '123123123123123', 'sdfsdfs', 'sim', '', 0, '', '', '', '', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(5, 1, '2023-10-05', 'Giovani', 'Masculino', 123, '123', '123ry', 'sim', '', 0, '', 'False', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(6, 1, '2023-10-19', 'Giovani', 'Masculino', 12, '123123123', 'rryyryr', 'sim', '12', 123, '123', 'Masculino', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', 'Fal', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(7, 1, '2023-10-07', 'Giovani', 'Masculino', 123, '123', '123', 'sim', '', 0, '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(8, 1, '2023-10-13', '123', 'Masculino', 123, '123', '123', 'sim', '123', 123, '123', 'Masculino', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'on', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0),
-(9, 1, '2023-10-19', '123', 'Masculino', 123, '123', '123', 'sim', '123', 123, '123', 'Masculino', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '', '', '', '', '', '', '', 0, '0', '', '', '', '', '0', '0', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0);
+INSERT INTO `ocorrencias` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transp_aereo`, `transp_clinico`, `transp_emergencial`, `transp_pos_trauma`, `transp_samu`, `transp_sem_remocao`, `transp_outros`, `problema_outros`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidade`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema_labios`, `edema_extremidade`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemo_int`, `hemo_ext`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada_cardiaca`, `parada_respiratoria`, `priaprismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perf_menor`, `perf_maior`, `forma_conducao`, `vitima_era`, `decisao_transporte`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`, `n_usb`, `n_ocorrencia`, `desp`, `hch`, `km_final`, `cod_sias_sus`, `cod_ir`, `cod_ps`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `atadura`, `atadura_oito`, `atadura_doze`, `atadura_vinte`, `atadura_qtd`, `cateter`, `cateter_tipo`, `compressa`, `compressa_qtd`, `kits`, `kits_h`, `kits_p`, `kits_q`, `kits_qtd`, `luvas`, `luvas_qtd`, `mascara`, `mascara_qtd`, `base_estabilizada`, `base_qtd`, `colar`, `colar_n`, `colar_pp`, `colar_p`, `colar_m`, `colar_g`, `colar_outros`, `colar_qtd`, `coxins`, `coxins_qtd`, `ked`, `ked_adul`, `ked_infan`, `ked_qtd`, `maca_rigida_deixada`, `maca_qtd`, `ttf`, `ttf_adul`, `ttf_infan`, `ttf_qtd`, `tirante_aranha`, `tirante_aqtd`, `tirante_cabeca`, `tirante_cqtd`, `canula`, `canula_qtd`, `anamnese_emergencia`, `aconteceu_outra_vez`, `aconteceu_tempo`, `possui_problema`, `qual_problema`, `alergico_algo`, `alergico_oque`, `alimento_liquido`, `alimento_horas`, `anamnese_gestacional`, `pre_natal`, `nome_pre_natal`, `primeiro_filho`, `quantos_filhos`, `horas_contracao`, `duracao_contracao`, `intervalo_contracao`, `pressao_quadril`, `ruptura_bolsa`, `inspecao_visusal`, `parto_realizado`, `hora_nascimento`, `sexo_bebe`, `nome_bebe`, `disturbio_comport`, `encontrado_capacete`, `encontrado_cinto`, `para_brisa`, `caminhando_cena`, `painel_avariado`, `volante_torcido`, `observacao_importante`, `eu_nome`, `rg_numero`, `cpf_numero`, `assinatura`, `testemunha`, `doc`, `testemunha_dois`, `doc_dois`, `guaramirim_dia`, `guaramirim_mes`, `guaramirim_ano`, `divulgar_imprensa`) VALUES
+(10, 1, '2023-11-03', 'erhe', 'Masculino', 123, '123123123', 'eth324', 'sim', 'fhrth', 123123, 'reher123h', 'Masculino', 'Sim', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'on', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Sexo', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, '', 0, '', 0, '', 0, '', '', 0, '', 0, 0, '', '', '', 0, 0, 0, 0, '', 0, '', 0, 0, 0, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `queimadura`
+-- Estrutura para tabela `queimadura`
 --
 
 CREATE TABLE `queimadura` (
@@ -408,40 +416,40 @@ CREATE TABLE `queimadura` (
 --
 
 --
--- Índices para tabela `corpo`
+-- Índices de tabela `corpo`
 --
 ALTER TABLE `corpo`
   ADD PRIMARY KEY (`id_corpo`),
   ADD KEY `fk_ocorrencia` (`fk_ocorrencia`);
 
 --
--- Índices para tabela `login`
+-- Índices de tabela `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_sos`);
 
 --
--- Índices para tabela `objetos`
+-- Índices de tabela `objetos`
 --
 ALTER TABLE `objetos`
   ADD KEY `fk_oco` (`fk_oco`);
 
 --
--- Índices para tabela `ocorrencias`
+-- Índices de tabela `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
   ADD PRIMARY KEY (`id_ocorrencia`),
   ADD KEY `fk_sos` (`fk_sos`);
 
 --
--- Índices para tabela `queimadura`
+-- Índices de tabela `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD PRIMARY KEY (`id_queimadura`),
   ADD KEY `fk_ocorrencias` (`fk_ocorrencias`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -460,7 +468,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT de tabela `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
-  MODIFY `id_ocorrencia` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_ocorrencia` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `queimadura`
@@ -469,29 +477,29 @@ ALTER TABLE `queimadura`
   MODIFY `id_queimadura` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `corpo`
+-- Restrições para tabelas `corpo`
 --
 ALTER TABLE `corpo`
   ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
--- Limitadores para a tabela `objetos`
+-- Restrições para tabelas `objetos`
 --
 ALTER TABLE `objetos`
   ADD CONSTRAINT `fk_oco` FOREIGN KEY (`fk_oco`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
--- Limitadores para a tabela `ocorrencias`
+-- Restrições para tabelas `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
   ADD CONSTRAINT `fk_sos` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Limitadores para a tabela `queimadura`
+-- Restrições para tabelas `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD CONSTRAINT `fk_ocorrencias` FOREIGN KEY (`fk_ocorrencias`) REFERENCES `ocorrencias` (`id_ocorrencia`);
