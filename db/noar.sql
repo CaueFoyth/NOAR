@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/10/2023 às 17:16
+-- Tempo de geração: 20/10/2023 às 14:34
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `noar`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `avaliação do paciente`
+--
+
+CREATE TABLE `avaliação do paciente` (
+  `abertura_ocular` varchar(18) NOT NULL,
+  `resposta_verbal` varchar(26) NOT NULL,
+  `resposta_motora` varchar(23) NOT NULL,
+  `abertura_ocular_menor` varchar(18) NOT NULL,
+  `resposta_verbal_menor` varchar(26) NOT NULL,
+  `resposta_motora_menor` varchar(23) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -52,6 +67,20 @@ CREATE TABLE `dados da vítima` (
   `idade_vit` int(3) NOT NULL,
   `cpf_vit` varchar(15) NOT NULL,
   `local_oco` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `há acompanhante`
+--
+
+CREATE TABLE `há acompanhante` (
+  `acompanhante` varchar(3) NOT NULL,
+  `nome_acomp` varchar(25) NOT NULL,
+  `idade_acomp` int(3) NOT NULL,
+  `cpf_acomp` varchar(15) NOT NULL,
+  `sexo_acomp` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -376,6 +405,29 @@ INSERT INTO `ocorrencias` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `s
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `problemas encontrados`
+--
+
+CREATE TABLE `problemas encontrados` (
+  `respiratorio` varchar(8) NOT NULL,
+  `diabetes` varchar(13) NOT NULL,
+  `obstetrico` varchar(3) NOT NULL,
+  `parto_emergencial` varchar(3) NOT NULL,
+  `gestante` varchar(3) NOT NULL,
+  `hemo_excessiva` varchar(3) NOT NULL,
+  `transp_aereo` varchar(3) NOT NULL,
+  `transp_clinico` varchar(3) NOT NULL,
+  `transp_emergencial` varchar(3) NOT NULL,
+  `transp_pos_trauma` varchar(3) NOT NULL,
+  `transp_samu` varchar(3) NOT NULL,
+  `transp_sem_remocao` varchar(3) NOT NULL,
+  `transp_outros` varchar(20) NOT NULL,
+  `problema_outros` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `queimadura`
 --
 
@@ -409,6 +461,113 @@ CREATE TABLE `queimadura` (
   `mie_t` int(1) NOT NULL,
   `msd_t` int(1) NOT NULL,
   `mse_t` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `sinais e sintomas`
+--
+
+CREATE TABLE `sinais e sintomas` (
+  `abs_r_s` varchar(3) NOT NULL,
+  `afundamento_cranio` varchar(3) NOT NULL,
+  `agitacao` varchar(3) NOT NULL,
+  `amnesia` varchar(3) NOT NULL,
+  `angina_peito` varchar(3) NOT NULL,
+  `apineia` varchar(3) NOT NULL,
+  `bradicardia` varchar(3) NOT NULL,
+  `bradipneia` varchar(3) NOT NULL,
+  `bronco_aspirando` varchar(3) NOT NULL,
+  `cefaleia` varchar(3) NOT NULL,
+  `cianose_labios` varchar(3) NOT NULL,
+  `cianose_extremidade` varchar(3) NOT NULL,
+  `convulsao` varchar(3) NOT NULL,
+  `decorticacao` varchar(3) NOT NULL,
+  `deformidade` varchar(3) NOT NULL,
+  `descerebracao` varchar(3) NOT NULL,
+  `desmaio` varchar(3) NOT NULL,
+  `desvio_traqueia` varchar(3) NOT NULL,
+  `dispneia` varchar(3) NOT NULL,
+  `dor_local` varchar(3) NOT NULL,
+  `edema_labios` varchar(3) NOT NULL,
+  `edema_extremidade` varchar(3) NOT NULL,
+  `enfisema_subcutaneo` varchar(3) NOT NULL,
+  `estase_jugular` varchar(3) NOT NULL,
+  `face_palida` varchar(3) NOT NULL,
+  `hemo_int` varchar(3) NOT NULL,
+  `hemo_ext` varchar(3) NOT NULL,
+  `hipertensao` varchar(3) NOT NULL,
+  `hipotensao` varchar(3) NOT NULL,
+  `nausea_vomito` varchar(3) NOT NULL,
+  `nasoragia` varchar(3) NOT NULL,
+  `obito` varchar(3) NOT NULL,
+  `otorreia` varchar(3) NOT NULL,
+  `otorragia` varchar(3) NOT NULL,
+  `ovace` varchar(3) NOT NULL,
+  `parada_cardiaca` varchar(3) NOT NULL,
+  `parada_respiratoria` varchar(3) NOT NULL,
+  `priaprismo` varchar(3) NOT NULL,
+  `prurido_pele` varchar(3) NOT NULL,
+  `pupilas_anisocoria` varchar(3) NOT NULL,
+  `pupilas_isocoria` varchar(3) NOT NULL,
+  `pupilas_midriase` varchar(3) NOT NULL,
+  `pupilas_miose` varchar(3) NOT NULL,
+  `pupilas_reagente` varchar(3) NOT NULL,
+  `pupilas_nao_reagente` varchar(3) NOT NULL,
+  `sede` varchar(3) NOT NULL,
+  `sinal_battle` varchar(3) NOT NULL,
+  `sinal_guaxinim` varchar(3) NOT NULL,
+  `sudorese` varchar(3) NOT NULL,
+  `taquipneia` varchar(3) NOT NULL,
+  `tontura` varchar(3) NOT NULL,
+  `outros_sintomas` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `sinais vitais`
+--
+
+CREATE TABLE `sinais vitais` (
+  `pressao_arterial` int(10) NOT NULL,
+  `normal_anormal` varchar(8) NOT NULL,
+  `pulso` varchar(8) NOT NULL,
+  `respiracao` varchar(18) NOT NULL,
+  `saturacao` varchar(8) NOT NULL,
+  `temperatura` varchar(8) NOT NULL,
+  `perf_menor` varchar(3) NOT NULL,
+  `perf_maior` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tipo de ocorrência`
+--
+
+CREATE TABLE `tipo de ocorrência` (
+  `causado_animais` varchar(3) NOT NULL,
+  `com_transporte` varchar(3) NOT NULL,
+  `deslizamento` varchar(3) NOT NULL,
+  `emergencia_medica` varchar(3) NOT NULL,
+  `queda_2m` varchar(3) NOT NULL,
+  `tentativa_suicidio` varchar(3) NOT NULL,
+  `queda_propria_altura` varchar(3) NOT NULL,
+  `afogamento` varchar(3) NOT NULL,
+  `agressao` varchar(3) NOT NULL,
+  `atropelamento` varchar(3) NOT NULL,
+  `choque_eletrico` varchar(3) NOT NULL,
+  `desabamento` varchar(3) NOT NULL,
+  `domestico` varchar(3) NOT NULL,
+  `esportivo` varchar(3) NOT NULL,
+  `intoxicacao` varchar(3) NOT NULL,
+  `queda_bicicleta` varchar(3) NOT NULL,
+  `queda_moto` varchar(3) NOT NULL,
+  `queda_menos2` varchar(3) NOT NULL,
+  `trabalho` varchar(3) NOT NULL,
+  `transferencia` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
