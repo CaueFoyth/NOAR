@@ -500,3 +500,81 @@ function naoAconteceuOutras() {
     aconteceuoutras1.style.display = "none";
 } 
 }
+
+function problemaSaude() {
+  if (document.getElementById("problemasaude").checked == true) {
+    problemasaude1.style.display = "inline-flex";
+
+  } else {
+    problemasaude1.style.display = "none";
+  } 
+}
+
+function naoProblemaSaude() {
+  if (document.getElementById("naoproblemasaude").checked == true) {
+    problemasaude1.style.display = "none";
+} 
+}
+
+function alergicoCoisa() {
+  if (document.getElementById("alergicocoisa").checked == true) {
+    alergicocoisa1.style.display = "inline-flex";
+
+  } else {
+    alergicocoisa1.style.display = "none";
+  } 
+}
+
+function naoAlergicoCoisa() {
+  if (document.getElementById("naoalergicocoisa").checked == true) {
+    alergicocoisa1.style.display = "none";
+} 
+}
+
+function algumAlimento() {
+  if (document.getElementById("algumalimento").checked == true) {
+    algumalimento1.style.display = "inline-flex";
+
+  } else {
+    algumalimento1.style.display = "none";
+  } 
+}
+
+function naoAlgumAlimento() {
+  if (document.getElementById("naoalgumalimento").checked == true) {
+    algumalimento1.style.display = "none";
+} 
+}
+
+function preNatal() {
+  if (document.getElementById("prenatal").checked == true) {
+    prenatal1.style.display = "inline-flex";
+
+  } else {
+    prenatal1.style.display = "none";
+  } 
+}
+
+function naoPreNatal() {
+  if (document.getElementById("naoprenatal").checked == true) {
+    prenatal1.style.display = "none";
+} 
+}
+
+function primeiroFilho() {
+  if (document.getElementById("primeirofilho").checked == true) {
+    primeirofilho1.style.display = "inline-flex";
+    primeirofilho2.style.display = "inline-flex";
+
+  } else {
+    primeirofilho1.style.display = "none";
+    primeirofilho2.style.display = "none";
+  } 
+}
+
+function naoPrimeiroFilho() {
+  if (document.getElementById("naoprimeirofilho").checked == true) {
+    primeirofilho1.style.display = "none";
+    primeirofilho2.style.display = "none";
+} 
+}

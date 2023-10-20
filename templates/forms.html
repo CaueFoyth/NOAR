@@ -803,29 +803,29 @@
         <input type="checkbox"  name="k1a" value="Sim">8
         <input type="checkbox"  name="k1b" value="Sim">12
         <input type="checkbox"  name="k1c" value="Sim">20
-        <input type="text" name="k1qtd" placeholder="quantidade">
+        <input type="text" name="k1qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k2" value="Sim">Cateter TP. OCÚLOS
-        <input type="text" name="k2qtd" placeholder="quantidade">
+        <input type="text" name="k2qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k3" value="Sim">Compressa Comum
-        <input type="text" name="k3qtd" placeholder="quantidade">
+        <input type="text" name="k3qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k4" value="Sim">Kit's
         <input type="checkbox"  name="k4a" value="Sim">H
         <input type="checkbox"  name="k4b" value="Sim">P
         <input type="checkbox"  name="k4c" value="Sim">Q
-        <input type="text" name="k4qtd" placeholder="quantidade">
+        <input type="text" name="k4qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k5" value="Sim">Luvas DESC. (Pares)
-        <input type="text" name="k5qtd" placeholder="quantidade">
+        <input type="text" name="k5qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k6" value="Sim">Máscara DESC.
-        <input type="text" name="k6qtd" placeholder="quantidade">
+        <input type="text" name="k6qtd" placeholder="Quantidade">
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h3>Materiais Utilizados deixados no hospital</h3>
         <input type="checkbox"  name="k7" value="Sim">Base do Estabiliza    
-        <input type="text" name="k7qtd" placeholder="quantidade">
+        <input type="text" name="k7qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k8" value="Sim">Colar
         <input type="checkbox"  name="k8a" value="Sim">N
@@ -834,32 +834,32 @@
         <input type="checkbox"  name="k8d" value="Sim">M
         <input type="checkbox"  name="k8e" value="Sim">G
         <input type="text" name="k8f" placeholder="_">
-        <input type="text" name="k8qtd" placeholder="quantidade">
+        <input type="text" name="k8qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k9" value="Sim">Coxins Estabiliza
-        <input type="text" name="k9qtd" placeholder="quantidade">
+        <input type="text" name="k9qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k10" value="Sim">KED
         <input type="checkbox"  name="k10a" value="Sim">ADUL.
         <input type="checkbox"  name="k10b" value="Sim">INFAN.
-        <input type="text" name="k10qtd" placeholder="quantidade">
+        <input type="text" name="k10qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k11" value="Sim">Maca Rigida
-        <input type="text" name="k11qtd" placeholder="quantidade">
+        <input type="text" name="k11qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k12" value="Sim">T.T.F
         <input type="checkbox"  name="k12a" value="Sim">ADUL.
         <input type="checkbox"  name="k12b" value="Sim">INFAN.
-        <input type="text" name="k12qtd" placeholder="quantidade">
+        <input type="text" name="k12qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k13" value="Sim">Tirante Aranha
-        <input type="text" name="k13qtd" placeholder="quantidade">
+        <input type="text" name="k13qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k14" value="Sim">Tirante de Cabeça
-        <input type="text" name="k14qtd" placeholder="quantidade">
+        <input type="text" name="k14qtd" placeholder="Quantidade">
         <br>
         <input type="checkbox"  name="k15" value="Sim">Cânula
-        <input type="text" name="k15qtd" placeholder="quantidade">
+        <input type="text" name="k15qtd" placeholder="Quantidade">
         <br>
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <h3>Anamnese da Emergência Médica</h3>
@@ -874,46 +874,46 @@
         <input type="text" name="l3" id="aconteceuoutras1" placeholder="A quanto tempo isso ocorreu?">
         <br>
         <h4>Possui algum problema de saúde</h4>
-        <input type="radio"  name="l4" value="sim">
+        <input type="radio" id="problemasaude" onclick="problemaSaude()" name="l4" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="l4" value="nao">
+        <input type="radio" id="naoproblemasaude" onclick="naoProblemaSaude()" name="l4" value="nao">
         <label for="nao">não</label>
         <br>
-        <input type="text" name="l4a" placeholder="Quais?">
+        <input type="text" id="problemasaude1" name="l4a" placeholder="Quais?">
         <br>
         <h4>Alérgico a alguma coisa</h4>
-        <input type="radio"  name="l5" value="sim">
+        <input type="radio" id="alergicocoisa" onclick="alergicoCoisa()" name="l5" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio" name="l5" value="nao">
+        <input type="radio" id="naoalergicocoisa" onclick="naoAlergicoCoisa()" name="l5" value="nao">
         <label for="nao">não</label>
         <br>
-        <input type="text" name="l5a" placeholder="Se sim, especifique">
+        <input type="text" name="l5a" id="alergicocoisa1" placeholder="Se sim, especifique">
         <br>
         <h4>Ingeriu algum alimento ou líquido >= 6 horas</h4>
-        <input type="radio"  name="l6" value="sim">
+        <input type="radio" id="algumalimento" onclick="algumAlimento()" name="l6" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="l6" value="nao">
+        <input type="radio" id="naoalgumalimento" onclick="naoAlgumAlimento()" name="l6" value="nao">
         <label for="nao">não</label>
-        <input type="text" name="l6a" placeholder="Que horas?">
+        <input type="text" name="l6a" id="algumalimento1" placeholder="Que horas?">
         <br>
         <!--ANAMNESE GESTACIONAL-->
         <h3>Anamnese Gestacional</h3>
         <input type="text" name="m1" placeholder="Período da gestação">
         <h4>Fez Pré-Natal</h4>
-        <input type="radio"  name="m2" value="sim">
+        <input type="radio" id="prenatal" onclick="preNatal()" name="m2" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="m2" value="nao">
+        <input type="radio" id="naoprenatal" onclick="naoPreNatal()" name="m2" value="nao">
         <label for="nao">não</label>
-        <input type="text" name="m3" placeholder="Nome do médico">
+        <input type="text" id="prenatal1" name="m3" placeholder="Nome do médico">
         <br>
         <h4>É o primeiro filho?</h4>
-        <input type="radio"  name="m4" value="sim">
+        <input type="radio" id="primeirofilho" onclick="primeiroFilho()" name="m4" value="sim">
         <label for="sim">sim</label><br>
-        <input type="radio"  name="m4" value="nao">
+        <input type="radio" id="naoprimeirofilho" onclick="naoPrimeiroFilho()" name="m4" value="nao">
         <label for="nao">não</label>
-        <input type="text" name="m5" placeholder="Quantos?">
+        <input type="text" name="m5" id="primeirofilho1" placeholder="Quantos?">
         <br>
-        <input type="text" name="m6" placeholder="Que horas iniciaram as contrações?">
+        <input type="text" name="m6" id="primeirofilho2" placeholder="Que horas iniciaram as contrações?">
         <br>
         <h4>Tempo das contrações</h4>
         <input type="text" name="m7" placeholder="Duração">
