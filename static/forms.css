@@ -126,4 +126,24 @@ input[type=date] {
 
 #aconteceuoutras1 {
   display: none;
+}
+
+#problemasaude1 {
+  display: none;
+}
+
+#alergicocoisa1 {
+  display: none;
+}
+
+#algumalimento1 {
+  display: none;
+}
+
+#prenatal1 {
+  display: none;
+}
+
+#primeirofilho1, #primeirofilho2 {
+  display: none;
 }/*# sourceMappingURL=forms.css.map */
