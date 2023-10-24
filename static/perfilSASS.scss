@@ -34,7 +34,7 @@ $preto: #00000053;
   font-family: "Poppins", sans-serif;
 }
 
-main input {
+.userdata{
   margin-top: 2rem;
   width: 100%;
   border: 0;
@@ -148,7 +148,7 @@ main input {
   border: 0;
   border-radius: 5px;
   width: 25%;
-  height: 7%;
+  height: 12%;
   color: $secundaria;
   margin-top: 20px;
   text-decoration: none;
@@ -157,7 +157,7 @@ main input {
 }
 .modal-backdrop
 {
-  display: none;
+  z-index: 0;
 }
 main input::-moz-placeholder {
   color: #fff;

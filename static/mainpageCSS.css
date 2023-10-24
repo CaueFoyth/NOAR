@@ -258,7 +258,7 @@ body {
 }
 
 .gerenciar_ocorrencias {
-  width: 90%;
+  width: 50%;
   height: 10%;
   display: flex;
   justify-content: space-around;
