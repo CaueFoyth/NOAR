@@ -26,24 +26,7 @@
     color: #33338d;
     font-family: 'Poppins', sans-serif;
   }
-  
-  main input {
-    margin-top: 2rem;
-    width: 80%;
-    border: 0;
-    background-color: $fundo;
-    height: 17%;
-    border-radius: 30px;
-    padding: 10px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  main input::placeholder {
-    color: #fff;
-    font-size: 20px;
-  }
-  
+
   .glass {
     background: #69636366;
     box-shadow: 0 4px 30px #0000001a;
@@ -52,66 +35,6 @@
     border: 1px solid #6963634d;
     height: 100vh;
   }
-  
-  header {
-    width: 100%;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-  }
-
-  
-  .meio{
-    margin-top: 2rem;
-    width: 30%;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    border: 0;
-    background-color: #fff;
-    box-shadow: 0 0 10px #0000008a;
-  }
-
-
-  @media (max-width: 1100px) 
-  {
-    .meio {
-      width: 45%;
-    }
-  }
-
-  @media (max-width: 950px) 
-  {
-    .meio {
-      width: 55%;
-    }
-  }
-
-  @media (max-width: 520px) 
-  {
-    .meio {
-      width: 85%;
-    }
-  }
-
-  @media (max-width: 350px) 
-  {
-    .meio {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 280px) 
-  {
-    .meio {
-      width: 90%;
-    }
-  }
-
-
 
   .button {
     font-size: 18px;  
@@ -184,7 +107,6 @@
   }
 
   .adm{
-    width: 1600px;
     height: 453px;
     display: flex;
     justify-content: center;
@@ -231,7 +153,7 @@
   .mainpagedirect
   {
     background-color: #fff;
-    width: 25%;
+    width: 35%;
     height: 30%;
     display: flex;
     justify-content: center;
@@ -266,4 +188,37 @@
     color: #ec2f2f;
     font-size: large;
     font-family: 'Poppins', sans-serif;
+  }
+
+  @media (max-width: 1000px) 
+  {
+    
+  }
+
+  @media (max-width: 950px) 
+  {
+    .meio {
+      width: 55%;
+    }
+  }
+
+  @media (max-width: 520px) 
+  {
+    .meio {
+      width: 85%;
+    }
+  }
+
+  @media (max-width: 350px) 
+  {
+    .meio {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 280px) 
+  {
+    .meio {
+      width: 90%;
+    }
   }
