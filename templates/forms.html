@@ -57,7 +57,7 @@
         <br>
         <input type="checkbox"  name="a2" value="Sim">Com meio de Transporte
         <br>
-        <input type="checkbox"  name="a3" value="Sim">Desmoronamento/Deslizamento
+        <input type="checkbox"  name="a3" value="Sim">Desmoronamento
         <br>
         <input type="checkbox"  name="a4" value="Sim">Emergência Médica
         <br>
@@ -108,8 +108,11 @@
         <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
         <br>
         <input type="checkbox"  name="b3" value="Sim">Obstétrico
+        <br>
         <input type="checkbox"  name="b3a" value="Sim">Parto Emergencial
+        <br>
         <input type="checkbox"  name="b3b" value="Sim">Gestante
+        <br>
         <input type="checkbox"  name="b3c" value="Sim">Hemor. Excessiva
         <br>
         <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4">Transporte
@@ -131,7 +134,7 @@
         <!--SINAIS E SINTOMAS-->
         <h3>Sinais e Sintomas</h3>
         <br>
-        <input type="checkbox"  name="c1" value="Sim">Abdomen sensível ou rígido
+        <input type="checkbox"  name="c1" value="Sim">Abdômen sensível ou rígido
         <br>
         <input type="checkbox"  name="c2" value="Sim">Afundamento de crânio
         <br>
@@ -617,9 +620,10 @@
         <br>
         <h4>Perfusão</h4>
         <input type="radio" name="d7a" value="sim">
-        <label for="&gt;2seg.">&gt;2seg.</label>
+        <label for="&gt;2seg.">Maior que 2seg.</label>
+        <br>
         <input type="radio" name="d7a" value="sim">
-        <label for="&lt;2seg.">&lt;2seg.</label>
+        <label for="&lt;2seg.">Menor que 2seg.</label>
         <!--Forma de condução-->
         <h3>Forma de condução</h3>
         <input type="checkbox"  name="e1" value="Deitada">Deitada
@@ -807,67 +811,67 @@
         <br>
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
         <h3>Materiais Utilizados Descartável</h3>
-        <input type="checkbox"  name="k1" value="Sim">Ataduras
-        <input type="checkbox"  name="k1a" value="Sim">8
-        <input type="checkbox"  name="k1b" value="Sim">12
-        <input type="checkbox"  name="k1c" value="Sim">20
-        <input type="text" name="k1qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k1" id="apareceratadura" onclick="aparecerAtadura()" value="Sim">Ataduras
+        <input type="checkbox"  name="k1a" id="atadura" value="Sim"><e id="atadura4">8</e>
+        <input type="checkbox"  name="k1b" id="atadura1" value="Sim"><e id="atadura5">12</e>
+        <input type="checkbox"  name="k1c" id="atadura2" value="Sim"><e id="atadura6">20</e>
+        <input type="text" name="k1qtd" id="atadura3" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k2" value="Sim">Cateter TP. OCÚLOS
-        <input type="text" name="k2qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k2" id="aparecercateter" onclick="aparecerCateter()" value="Sim">Cateter TP. ÓCULOS
+        <input type="text" name="k2qtd" id="cateter" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k3" value="Sim">Compressa Comum
-        <input type="text" name="k3qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k3" id="aparecercompressa" onclick="aparecerCompressa()" value="Sim">Compressa Comum
+        <input type="text" name="k3qtd" id="compressa" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k4" value="Sim">Kit's
-        <input type="checkbox"  name="k4a" value="Sim">H
-        <input type="checkbox"  name="k4b" value="Sim">P
-        <input type="checkbox"  name="k4c" value="Sim">Q
-        <input type="text" name="k4qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k4" id="aparecerkit" onclick="aparecerKit()" value="Sim">Kit's
+        <input type="checkbox"  name="k4a" id="kit" value="Sim"><e id="kit4">H</e>
+        <input type="checkbox"  name="k4b" id="kit1" value="Sim"><e id="kit5">P</e>
+        <input type="checkbox"  name="k4c" id="kit2" value="Sim"><e id="kit6">Q</e>
+        <input type="text" name="k4qtd" id="kit3" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k5" value="Sim">Luvas DESC. (Pares)
-        <input type="text" name="k5qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k5" id="aparecerluva" onclick="aparecerLuva()" value="Sim">Luvas DESC. (Pares)
+        <input type="text" name="k5qtd" id="luva" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k6" value="Sim">Máscara DESC.
-        <input type="text" name="k6qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k6" id="aparecermascara" onclick="aparecerMascara()" value="Sim">Máscara DESC.
+        <input type="text" name="k6qtd" id="mascara" placeholder="Quantidade">
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h3>Materiais Utilizados deixados no hospital</h3>
-        <input type="checkbox"  name="k7" value="Sim">Base do Estabiliza    
-        <input type="text" name="k7qtd" placeholder="Quantidade">
+        <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
+        <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k8" value="Sim">Colar
-        <input type="checkbox"  name="k8a" value="Sim">N
-        <input type="checkbox"  name="k8b" value="Sim">PP
-        <input type="checkbox"  name="k8c" value="Sim">P
-        <input type="checkbox"  name="k8d" value="Sim">M
-        <input type="checkbox"  name="k8e" value="Sim">G
-        <input type="text" name="k8f" placeholder="_">
-        <input type="text" name="k8qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k8" id="aparecercolar" onclick="aparecerColar()" value="Sim">Colar
+        <input type="checkbox"  name="k8a" id="colar" value="Sim"><e id="colar7">N</e>
+        <input type="checkbox"  name="k8b" id="colar1" value="Sim"><e id="colar8">PP</e>
+        <input type="checkbox"  name="k8c" id="colar2" value="Sim"><e id="colar9">P</e>
+        <input type="checkbox"  name="k8d" id="colar3" value="Sim"><e id="colar10">M</e>
+        <input type="checkbox"  name="k8e" id="colar4" value="Sim"><e id="colar11">G</e>
+        <input type="text" name="k8f" id="colar5" placeholder="Tamanho alternativo">
+        <input type="text" name="k8qtd" id="colar6" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k9" value="Sim">Coxins Estabiliza
-        <input type="text" name="k9qtd" placeholder="Quantidade">
+        <input type="checkbox" id="aparecercoxin" onclick="aparecerCoxin()" name="k9" value="Sim">Coxins Estabiliza
+        <input type="text" name="k9qtd" id="coxin" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k10" value="Sim">KED
-        <input type="checkbox"  name="k10a" value="Sim">ADUL.
-        <input type="checkbox"  name="k10b" value="Sim">INFAN.
-        <input type="text" name="k10qtd" placeholder="Quantidade">
+        <input type="checkbox" id="aparecerked" onclick="aparecerKed()" name="k10" value="Sim">KED
+        <input type="checkbox"  name="k10a" id="ked" value="Sim"><e id="ked3">ADUL.</e>
+        <input type="checkbox"  name="k10b" id="ked1" value="Sim"><e id="ked4">INFAN.</e>
+        <input type="text" name="k10qtd" id="ked2" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k11" value="Sim">Maca Rigida
-        <input type="text" name="k11qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rigida
+        <input type="text" name="k11qtd" id="maca" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k12" value="Sim">T.T.F
-        <input type="checkbox"  name="k12a" value="Sim">ADUL.
-        <input type="checkbox"  name="k12b" value="Sim">INFAN.
-        <input type="text" name="k12qtd" placeholder="Quantidade">
+        <input type="checkbox" id="aparecerttf" onclick="aparecerTtf()" name="k12" value="Sim">T.T.F
+        <input type="checkbox" id="ttf" name="k12a" value="Sim"><e id="ttf3">ADUL.</e>
+        <input type="checkbox" id="ttf1" name="k12b" value="Sim"><e id="ttf4">INFAN.</e>
+        <input type="text" id="ttf2" name="k12qtd" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k13" value="Sim">Tirante Aranha
-        <input type="text" name="k13qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k13" id="apareceraranha" onclick="aparecerAranha()" value="Sim">Tirante Aranha
+        <input type="text" name="k13qtd" id="aranha" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k14" value="Sim">Tirante de Cabeça
-        <input type="text" name="k14qtd" placeholder="Quantidade">
+        <input type="checkbox"  name="k14" id="aparecercabeca" onclick="aparecerCabeca()" value="Sim">Tirante de Cabeça
+        <input type="text" name="k14qtd" id="cabeca" placeholder="Quantidade">
         <br>
-        <input type="checkbox"  name="k15" value="Sim">Cânula
-        <input type="text" name="k15qtd" placeholder="Quantidade">
+        <input type="checkbox" id="aparecercanula" onclick="aparecerCanula()" name="k15" value="Sim">Cânula
+        <input type="text" name="k15qtd" id="canula" placeholder="Quantidade">
         <br>
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <h3>Anamnese da Emergência Médica</h3>
