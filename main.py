@@ -7,6 +7,7 @@ import smtplib
 from email.message import EmailMessage
 from shiu import email_email, senha_email
 from hashlib import sha256
+import string
 
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
@@ -406,6 +407,9 @@ def adicionar():
             email2 = request.form['email']
             telefone2 = request.form['telefone']
 
+            cpf2 = cpf2.translate(str.maketrans('', '', string.punctuation))
+
+            cpf2 = cpf2[0:3] + '.' + cpf2[3:6] + '.' + cpf2[6:9] + '-' + cpf2[9:]
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
             mysql.connection.commit()
@@ -479,10 +483,18 @@ def alterar():
             email_alterar = request.form['email']
             telefone_alterar = request.form['telefone']
 
+            cpf_alterar = cpf_alterar.translate(str.maketrans('', '', string.punctuation))
+
+            cpf_alterar = cpf_alterar[0:3] + '.' + cpf_alterar[3:6] + '.' + cpf_alterar[6:9] + '-' + cpf_alterar[9:]
+
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("UPDATE login SET cpf=%s, adm=%s, nome=%s, email=%s, telefone=%s WHERE id_sos=%s", (cpf_alterar, adm_alterar, nome_alterar, email_alterar, telefone_alterar, id_alterar))
             mysql.connection.commit()
             return redirect(url_for("adm"))
+
+@app.route('/confirmpage')
+def confirmpage():
+    return render_template("confirmpage.html")
 
 @app.route('/ver', methods=["POST" , "GET"])
 def ver():
