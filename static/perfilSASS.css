@@ -73,7 +73,7 @@
     scale: 90%;
   }
 }
-@media (max-width: 580px) {
+@media (max-width: 670px) {
   .estrutura {
     width: 80%;
     top: 90px;
@@ -83,12 +83,13 @@
   main input {
     width: 0%;
     height: 5%;
+    scale: 80%;
   }
   .logo {
     scale: 90%;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 520px) {
   .estrutura {
     width: 80%;
     top: 90px;
@@ -98,12 +99,16 @@
   main input {
     width: 50%;
     height: 5%;
+    scale: 65%;
+  }
+  .userdata {
+    margin-top: 1rem;
   }
   .logo {
     scale: 90%;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 420px) {
   .estrutura {
     width: 80%;
     top: 90px;
@@ -113,6 +118,29 @@
   main input {
     width: 50%;
     height: 5%;
+    scale: 55%;
+  }
+  .userdata {
+    margin-top: 0.5rem;
+  }
+  .logo {
+    scale: 90%;
+  }
+}
+@media (max-width: 360px) {
+  .estrutura {
+    width: 95%;
+    top: 90px;
+    height: 65vh;
+    right: 10px;
+  }
+  main input {
+    width: 50%;
+    height: 5%;
+    scale: 65%;
+  }
+  .userdata {
+    margin-top: 1rem;
   }
   .logo {
     scale: 90%;
