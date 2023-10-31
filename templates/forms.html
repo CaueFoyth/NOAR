@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="../static/forms.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
+<center>
 <body>  
     <header>
         <p class="sumirTeste">exemplo</p>
     </header>
-<center>
     <form action="/enviar" method="post"> 
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
@@ -98,6 +98,7 @@
         <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
         <input type="radio" name="b1a" id="respiratorio" value="DPOC">
         <label for="DPOC" id="respiratorio1">DPOC</label>
+        <br>
         <input type="radio" name="b1a" id="respiratorio2" value="inalacao">
         <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
         <br>
@@ -590,7 +591,7 @@
         <input type="text"  id="corpoFace" placeholder="Face">
         <input type="text"  id="corpoTipo" placeholder="Tipo">
         <br><br>
-        <table border="1">
+        <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
             <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
             <tr><td>Pescoço</td> <td><input type="radio" name="p2" value="pescoco_1"></td> <td><input type="radio" name="p2" value="pescoco_2"></td> <td><input type="radio" name="p2" value="pescoco_3"></td></tr>
@@ -1025,8 +1026,8 @@
         <br>
         <button type="submit">ENVIAR</button>
     </form>   
-</center>
 </body>
+</center>
 
 <!-- TESTE 2 -->
 <!-- <script type="text/javascript">
