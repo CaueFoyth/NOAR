@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/10/2023 às 13:32
+-- Tempo de geração: 31-Out-2023 às 13:36
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `acompanhante`
+-- Estrutura da tabela `acompanhante`
 --
 
 CREATE TABLE `acompanhante` (
@@ -37,7 +37,7 @@ CREATE TABLE `acompanhante` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `acompanhante`
+-- Extraindo dados da tabela `acompanhante`
 --
 
 INSERT INTO `acompanhante` (`fk_sos`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`) VALUES
@@ -162,12 +162,37 @@ INSERT INTO `acompanhante` (`fk_sos`, `acompanhante`, `nome_acomp`, `idade_acomp
 (1, 'Não', '', 0, '', 'Não'),
 (1, 'Não', '', 0, '', 'Não'),
 (1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'nao', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
+(1, 'Não', '', 0, '', 'Não'),
 (1, 'Não', '', 0, '', 'Não');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacaopaciente`
+-- Estrutura da tabela `avaliacaopaciente`
 --
 
 CREATE TABLE `avaliacaopaciente` (
@@ -181,7 +206,7 @@ CREATE TABLE `avaliacaopaciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `avaliacaopaciente`
+-- Extraindo dados da tabela `avaliacaopaciente`
 --
 
 INSERT INTO `avaliacaopaciente` (`fk_sos`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`) VALUES
@@ -226,12 +251,28 @@ INSERT INTO `avaliacaopaciente` (`fk_sos`, `abertura_ocular`, `resposta_verbal`,
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `corpo`
+-- Estrutura da tabela `corpo`
 --
 
 CREATE TABLE `corpo` (
@@ -249,7 +290,7 @@ CREATE TABLE `corpo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dadosdavitima`
+-- Estrutura da tabela `dadosdavitima`
 --
 
 CREATE TABLE `dadosdavitima` (
@@ -263,7 +304,7 @@ CREATE TABLE `dadosdavitima` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `dadosdavitima`
+-- Extraindo dados da tabela `dadosdavitima`
 --
 
 INSERT INTO `dadosdavitima` (`fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`) VALUES
@@ -389,12 +430,37 @@ INSERT INTO `dadosdavitima` (`fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idad
 (1, '2023-10-07', '', 'Não', 0, '', ''),
 (1, '2023-10-07', '', 'Não', 0, '', ''),
 (1, '2023-10-14', '', 'Não', 0, '', ''),
-(1, '2023-10-20', '', 'Não', 0, '', '');
+(1, '2023-10-20', '', 'Não', 0, '', ''),
+(1, '2023-10-20', '', 'Não', 0, '', ''),
+(1, '2023-11-03', '', 'Não', 0, '', ''),
+(1, '2023-10-12', '', 'Não', 0, '', ''),
+(1, '2023-10-12', '', 'Não', 0, '', ''),
+(1, '2023-10-21', '', 'Não', 0, '', ''),
+(1, '2023-10-21', '', 'Não', 0, '', ''),
+(1, '2023-10-31', '', 'Não', 0, '', ''),
+(1, '2023-11-03', '', 'Não', 0, '', ''),
+(1, '2023-11-06', '', 'Não', 0, '', ''),
+(1, '2023-11-02', '', 'Não', 0, '', ''),
+(1, '2023-10-25', '', 'Não', 0, '', ''),
+(1, '2023-10-27', '', 'Não', 0, '', ''),
+(1, '2023-10-26', '', 'Não', 0, '', ''),
+(1, '2023-10-18', '', 'Não', 0, '', ''),
+(1, '2023-10-28', '', 'Não', 0, '', ''),
+(1, '2023-10-25', '', 'Não', 0, '', ''),
+(1, '2023-10-24', '', 'Não', 0, '', ''),
+(1, '2023-10-06', '', 'Masculino', 0, '', ''),
+(1, '2023-10-25', '', 'Não', 0, '', ''),
+(1, '2023-10-24', '', 'Não', 0, '', ''),
+(1, '2023-10-28', '', 'Não', 0, '', ''),
+(1, '2023-10-20', '', 'Não', 0, '', ''),
+(1, '2023-10-24', '', 'Não', 0, '', ''),
+(1, '2023-10-21', '', 'Não', 0, '', ''),
+(1, '2023-10-19', '', 'Não', 0, '', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisaotransporte`
+-- Estrutura da tabela `decisaotransporte`
 --
 
 CREATE TABLE `decisaotransporte` (
@@ -403,18 +469,70 @@ CREATE TABLE `decisaotransporte` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `decisaotransporte`
+-- Extraindo dados da tabela `decisaotransporte`
 --
 
 INSERT INTO `decisaotransporte` (`fk_sos`, `decisao_transporte`) VALUES
 (1, 'Potencialmente_Instavel'),
 (1, 'Estavel'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
+(1, 'Não'),
 (1, 'Não');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `formadecondução`
+-- Estrutura da tabela `equipeatendimento`
+--
+
+CREATE TABLE `equipeatendimento` (
+  `fk_sos` int(5) NOT NULL,
+  `m` varchar(45) NOT NULL,
+  `s1` varchar(45) NOT NULL,
+  `s2` varchar(45) NOT NULL,
+  `s3` varchar(45) NOT NULL,
+  `equipe` varchar(100) NOT NULL,
+  `demandante` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `equipeatendimento`
+--
+
+INSERT INTO `equipeatendimento` (`fk_sos`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`) VALUES
+(1, 'Owsvaldo Cruz', 'Edson', 'Maicol', 'Newton', 'Albert aistein', 'Rowseal'),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', ''),
+(1, '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `formadecondução`
 --
 
 CREATE TABLE `formadecondução` (
@@ -423,7 +541,7 @@ CREATE TABLE `formadecondução` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `formadecondução`
+-- Extraindo dados da tabela `formadecondução`
 --
 
 INSERT INTO `formadecondução` (`fk_sos`, `forma_conducao`) VALUES
@@ -454,12 +572,64 @@ INSERT INTO `formadecondução` (`fk_sos`, `forma_conducao`) VALUES
 (1, '  '),
 (1, '  '),
 (1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
+(1, '  '),
 (1, '  ');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `login`
+-- Estrutura da tabela `informaçõesocorrência`
+--
+
+CREATE TABLE `informaçõesocorrência` (
+  `fk_sos` int(5) NOT NULL,
+  `n_usb` varchar(50) NOT NULL,
+  `cod_ir` varchar(50) NOT NULL,
+  `n_ocorrencia` varchar(50) NOT NULL,
+  `cod_ps` varchar(50) NOT NULL,
+  `desp` varchar(50) NOT NULL,
+  `hch` varchar(50) NOT NULL,
+  `km_final` varchar(50) NOT NULL,
+  `cod_sias_sus` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `informaçõesocorrência`
+--
+
+INSERT INTO `informaçõesocorrência` (`fk_sos`, `n_usb`, `cod_ir`, `n_ocorrencia`, `cod_ps`, `desp`, `hch`, `km_final`, `cod_sias_sus`) VALUES
+(1, '123', '1234', '321', '3214', '234', '3212', '5436457', '4674567'),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', ''),
+(1, '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `login`
 --
 
 CREATE TABLE `login` (
@@ -473,7 +643,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `login`
+-- Extraindo dados da tabela `login`
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
@@ -483,7 +653,7 @@ INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos`
+-- Estrutura da tabela `objetos`
 --
 
 CREATE TABLE `objetos` (
@@ -494,7 +664,7 @@ CREATE TABLE `objetos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `ocorrencias`
+-- Estrutura da tabela `ocorrencias`
 --
 
 CREATE TABLE `ocorrencias` (
@@ -769,7 +939,7 @@ CREATE TABLE `ocorrencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `ocorrencias`
+-- Extraindo dados da tabela `ocorrencias`
 --
 
 INSERT INTO `ocorrencias` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transp_aereo`, `transp_clinico`, `transp_emergencial`, `transp_pos_trauma`, `transp_samu`, `transp_sem_remocao`, `transp_outros`, `problema_outros`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidade`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema_labios`, `edema_extremidade`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemo_int`, `hemo_ext`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada_cardiaca`, `parada_respiratoria`, `priaprismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perf_menor`, `perf_maior`, `forma_conducao`, `vitima_era`, `decisao_transporte`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`, `n_usb`, `n_ocorrencia`, `desp`, `hch`, `km_final`, `cod_sias_sus`, `cod_ir`, `cod_ps`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `atadura`, `atadura_oito`, `atadura_doze`, `atadura_vinte`, `atadura_qtd`, `cateter`, `cateter_tipo`, `compressa`, `compressa_qtd`, `kits`, `kits_h`, `kits_p`, `kits_q`, `kits_qtd`, `luvas`, `luvas_qtd`, `mascara`, `mascara_qtd`, `base_estabilizada`, `base_qtd`, `colar`, `colar_n`, `colar_pp`, `colar_p`, `colar_m`, `colar_g`, `colar_outros`, `colar_qtd`, `coxins`, `coxins_qtd`, `ked`, `ked_adul`, `ked_infan`, `ked_qtd`, `maca_rigida_deixada`, `maca_qtd`, `ttf`, `ttf_adul`, `ttf_infan`, `ttf_qtd`, `tirante_aranha`, `tirante_aqtd`, `tirante_cabeca`, `tirante_cqtd`, `canula`, `canula_qtd`, `anamnese_emergencia`, `aconteceu_outra_vez`, `aconteceu_tempo`, `possui_problema`, `qual_problema`, `alergico_algo`, `alergico_oque`, `alimento_liquido`, `alimento_horas`, `anamnese_gestacional`, `pre_natal`, `nome_pre_natal`, `primeiro_filho`, `quantos_filhos`, `horas_contracao`, `duracao_contracao`, `intervalo_contracao`, `pressao_quadril`, `ruptura_bolsa`, `inspecao_visusal`, `parto_realizado`, `hora_nascimento`, `sexo_bebe`, `nome_bebe`, `disturbio_comport`, `encontrado_capacete`, `encontrado_cinto`, `para_brisa`, `caminhando_cena`, `painel_avariado`, `volante_torcido`, `observacao_importante`, `eu_nome`, `rg_numero`, `cpf_numero`, `assinatura`, `testemunha`, `doc`, `testemunha_dois`, `doc_dois`, `guaramirim_dia`, `guaramirim_mes`, `guaramirim_ano`, `divulgar_imprensa`) VALUES
@@ -778,13 +948,13 @@ INSERT INTO `ocorrencias` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `s
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `problemasencontrados`
+-- Estrutura da tabela `problemasencontrados`
 --
 
 CREATE TABLE `problemasencontrados` (
   `fk_sos` int(5) NOT NULL,
   `respiratorio` varchar(8) NOT NULL,
-  `diabetes` varchar(13) NOT NULL,
+  `diabetes` varchar(18) NOT NULL,
   `obstetrico` varchar(3) NOT NULL,
   `parto_emergencial` varchar(3) NOT NULL,
   `gestante` varchar(3) NOT NULL,
@@ -800,7 +970,7 @@ CREATE TABLE `problemasencontrados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `problemasencontrados`
+-- Extraindo dados da tabela `problemasencontrados`
 --
 
 INSERT INTO `problemasencontrados` (`fk_sos`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transp_aereo`, `transp_clinico`, `transp_emergencial`, `transp_pos_trauma`, `transp_samu`, `transp_sem_remocao`, `transp_outros`, `problema_outros`) VALUES
@@ -915,12 +1085,119 @@ INSERT INTO `problemasencontrados` (`fk_sos`, `respiratorio`, `diabetes`, `obste
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'fyukhiukyj'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Hiperglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Hipoglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Hiperglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Hipoglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'DPOC', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'DPOC', 'Hiperglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'DPOC', 'Hiperglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'inalacao', 'Hiperglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'inalacao', 'Hiperglicemia', 'Sim', 'Sim', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'DPOC', 'Hiperglicemia', 'Sim', 'Sim', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'inalacao', 'Hipoglicemia', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `queimadura`
+-- Estrutura da tabela `procedimentosefetuados`
+--
+
+CREATE TABLE `procedimentosefetuados` (
+  `fk_sos` int(5) NOT NULL,
+  `aspiracao` varchar(3) NOT NULL,
+  `avaliacao_inicial` varchar(3) NOT NULL,
+  `avaliacao_dirigida` varchar(3) NOT NULL,
+  `avaliacao_continuada` varchar(3) NOT NULL,
+  `chave_rautek` varchar(3) NOT NULL,
+  `candula_guedel` varchar(3) NOT NULL,
+  `desobstracao_va` varchar(3) NOT NULL,
+  `emprego_dea` varchar(3) NOT NULL,
+  `gerenciamento_riscos` varchar(3) NOT NULL,
+  `limpeza_ferimentos` varchar(3) NOT NULL,
+  `curativos` varchar(3) NOT NULL,
+  `compressivo` varchar(3) NOT NULL,
+  `encravamento` varchar(3) NOT NULL,
+  `ocular` varchar(3) NOT NULL,
+  `queimadura` varchar(3) NOT NULL,
+  `simples` varchar(3) NOT NULL,
+  `tres_pontas` varchar(3) NOT NULL,
+  `imobilizacoes` varchar(3) NOT NULL,
+  `membro_inf_dir` varchar(3) NOT NULL,
+  `membro_inf_esq` varchar(3) NOT NULL,
+  `membro_sup_dir` varchar(3) NOT NULL,
+  `membro_sup_esq` varchar(3) NOT NULL,
+  `quadril` varchar(3) NOT NULL,
+  `cervical` varchar(3) NOT NULL,
+  `maca_rodas` varchar(3) NOT NULL,
+  `maca_rigida` varchar(3) NOT NULL,
+  `ponte` varchar(3) NOT NULL,
+  `retirado_capacete` varchar(3) NOT NULL,
+  `rcp` varchar(3) NOT NULL,
+  `rolamento_noventa` varchar(3) NOT NULL,
+  `rolamento_cento_oitenta` varchar(3) NOT NULL,
+  `tomada_decisao` varchar(3) NOT NULL,
+  `tomada_choque` varchar(3) NOT NULL,
+  `uso_candula` varchar(3) NOT NULL,
+  `colar_tamanho` varchar(35) NOT NULL,
+  `uso_ked` varchar(3) NOT NULL,
+  `uso_ttf` varchar(3) NOT NULL,
+  `ventilacao_suporte` varchar(3) NOT NULL,
+  `oxigenioterapia` varchar(45) NOT NULL,
+  `reanimador` varchar(45) NOT NULL,
+  `meios_auxiliares` varchar(3) NOT NULL,
+  `celesc` varchar(3) NOT NULL,
+  `def_civil` varchar(3) NOT NULL,
+  `igp_pc` varchar(3) NOT NULL,
+  `policia` varchar(15) NOT NULL,
+  `samu` varchar(12) NOT NULL,
+  `cit` varchar(60) NOT NULL,
+  `procedimentos_outros` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `procedimentosefetuados`
+--
+
+INSERT INTO `procedimentosefetuados` (`fk_sos`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `procedimentos_outros`) VALUES
+(1, 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'on', 'Não', 'Sim', 'Não', 'on', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'on', 'on', 'Sim', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'on', 'Não', 'Não', 'Não', 'on', 'Não', 'Não', 'Não', 'Não', 'Não', 'on', 'on', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Civil', 'USA', 'Sim', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'PRF', 'USB', 'Sim', 'gabriel henrique wrgjiowrej');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `queimadura`
 --
 
 CREATE TABLE `queimadura` (
@@ -958,7 +1235,7 @@ CREATE TABLE `queimadura` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinaissintomas`
+-- Estrutura da tabela `sinaissintomas`
 --
 
 CREATE TABLE `sinaissintomas` (
@@ -1019,7 +1296,7 @@ CREATE TABLE `sinaissintomas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `sinaissintomas`
+-- Extraindo dados da tabela `sinaissintomas`
 --
 
 INSERT INTO `sinaissintomas` (`fk_sos`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidade`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema_labios`, `edema_extremidade`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemo_int`, `hemo_ext`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada_cardiaca`, `parada_respiratoria`, `priaprismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`) VALUES
@@ -1079,12 +1356,37 @@ INSERT INTO `sinaissintomas` (`fk_sos`, `abs_r_s`, `afundamento_cranio`, `agitac
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinaisvitais`
+-- Estrutura da tabela `sinaisvitais`
 --
 
 CREATE TABLE `sinaisvitais` (
@@ -1100,7 +1402,7 @@ CREATE TABLE `sinaisvitais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `sinaisvitais`
+-- Extraindo dados da tabela `sinaisvitais`
 --
 
 INSERT INTO `sinaisvitais` (`fk_sos`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perf_menor`, `perf_maior`) VALUES
@@ -1138,12 +1440,28 @@ INSERT INTO `sinaisvitais` (`fk_sos`, `pressao_arterial`, `normal_anormal`, `pul
 (1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
 (1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
 (1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
+(1, '/', 'Não', '', '', '', '', 'Não', 'Não'),
 (1, '/', 'Não', '', '', '', '', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipodeocorrencia`
+-- Estrutura da tabela `tipodeocorrencia`
 --
 
 CREATE TABLE `tipodeocorrencia` (
@@ -1171,7 +1489,7 @@ CREATE TABLE `tipodeocorrencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `tipodeocorrencia`
+-- Extraindo dados da tabela `tipodeocorrencia`
 --
 
 INSERT INTO `tipodeocorrencia` (`fk_sos`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`) VALUES
@@ -1292,12 +1610,37 @@ INSERT INTO `tipodeocorrencia` (`fk_sos`, `causado_animais`, `com_transporte`, `
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vitimaera`
+-- Estrutura da tabela `vitimaera`
 --
 
 CREATE TABLE `vitimaera` (
@@ -1315,11 +1658,27 @@ CREATE TABLE `vitimaera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `vitimaera`
+-- Extraindo dados da tabela `vitimaera`
 --
 
 INSERT INTO `vitimaera` (`fk_sos`, `Ciclista`, `CondutorMoto`, `Gestante`, `PasBanFrente`, `PasMoto`, `CondutorCarro`, `Clinico`, `Trauma`, `PasBanTras`, `Pedestre`) VALUES
 (1, 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim', 'Sim'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
 (1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
@@ -1331,40 +1690,40 @@ INSERT INTO `vitimaera` (`fk_sos`, `Ciclista`, `CondutorMoto`, `Gestante`, `PasB
 --
 
 --
--- Índices de tabela `corpo`
+-- Índices para tabela `corpo`
 --
 ALTER TABLE `corpo`
   ADD PRIMARY KEY (`id_corpo`),
   ADD KEY `fk_ocorrencia` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `login`
+-- Índices para tabela `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_sos`);
 
 --
--- Índices de tabela `objetos`
+-- Índices para tabela `objetos`
 --
 ALTER TABLE `objetos`
   ADD KEY `fk_oco` (`fk_oco`);
 
 --
--- Índices de tabela `ocorrencias`
+-- Índices para tabela `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
   ADD PRIMARY KEY (`id_ocorrencia`),
   ADD KEY `fk_sos` (`fk_sos`);
 
 --
--- Índices de tabela `queimadura`
+-- Índices para tabela `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD PRIMARY KEY (`id_queimadura`),
   ADD KEY `fk_ocorrencias` (`fk_ocorrencias`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -1392,29 +1751,29 @@ ALTER TABLE `queimadura`
   MODIFY `id_queimadura` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `corpo`
+-- Limitadores para a tabela `corpo`
 --
 ALTER TABLE `corpo`
   ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
--- Restrições para tabelas `objetos`
+-- Limitadores para a tabela `objetos`
 --
 ALTER TABLE `objetos`
   ADD CONSTRAINT `fk_oco` FOREIGN KEY (`fk_oco`) REFERENCES `ocorrencias` (`id_ocorrencia`);
 
 --
--- Restrições para tabelas `ocorrencias`
+-- Limitadores para a tabela `ocorrencias`
 --
 ALTER TABLE `ocorrencias`
   ADD CONSTRAINT `fk_sos` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `queimadura`
+-- Limitadores para a tabela `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD CONSTRAINT `fk_ocorrencias` FOREIGN KEY (`fk_ocorrencias`) REFERENCES `ocorrencias` (`id_ocorrencia`);
