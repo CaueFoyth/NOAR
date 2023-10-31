@@ -473,6 +473,18 @@ def ocorrencias():
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
+@app.route('/ocorrenciasADM', methods = ['POST', 'GET'])
+def ocorrenciasADM():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            cursor = mysql.connection.cursor()
+            cursor.execute("SELECT * FROM dadosdavitima")
+            data = cursor.fetchall()
+            cursor.close()
+            return render_template("ocorrenciasadm.html", dadosdavitima = data)
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
 @app.route('/alterar', methods = ['POST', 'GET'])
 def alterar():
     if request.method == "POST":
