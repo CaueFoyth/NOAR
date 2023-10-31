@@ -8,6 +8,8 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     width: 100%;
+    align-items: left;
+    justify-content: left;  
 }
 
 .sumirTeste {
@@ -139,5 +141,65 @@ input[type=date]{
 }
 
 #primeirofilho1, #primeirofilho2 {
+    display: none;
+}
+
+#atadura, #atadura1, #atadura2, #atadura3, #atadura4, #atadura5, #atadura6 {
+    display: none;
+}
+
+#cateter {
+    display: none;
+}
+
+#compressa {
+    display: none;
+}
+
+#kit, #kit1, #kit2, #kit3, #kit4, #kit5, #kit6 {
+    display: none;
+}
+
+#luva {
+    display: none;
+}
+
+#mascara {
+    display: none;
+}
+
+#base {
+    display: none;
+}
+
+#colar, #colar1, #colar2, #colar3, #colar4, #colar5, #colar6, #colar7, #colar8, #colar9, #colar10, #colar11 {
+    display: none;
+}
+
+#coxin {
+    display: none;
+}
+
+#ked, #ked1, #ked2, #ked3, #ked4 {
+    display: none;
+}
+
+#maca {
+    display: none;
+}
+
+#ttf, #ttf1, #ttf2, #ttf3, #ttf4 {
+    display: none;
+}
+
+#aranha {
+    display: none;
+}
+
+#cabeca {
+    display: none;
+}
+
+#canula {
     display: none;
 }

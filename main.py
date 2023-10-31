@@ -7,6 +7,7 @@ import smtplib
 from email.message import EmailMessage
 from shiu import email_email, senha_email
 from hashlib import sha256
+import string
 
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
@@ -178,7 +179,19 @@ def enviar():
         d7 = request.form.get('d7', 'Não')
         d7a = request.form.get('d7a', 'Não')
         e1 = request.form.get('e1', 'Não')
-        e2 = request.form.get('e2', 'Não')
+        e1a = request.form.get('e1a', 'Não')
+        e1b = request.form.get('e1b', 'Não')
+        e1c = request.form.get('e1c', 'Não')
+        e2a = request.form.get('e2a', 'Não')
+        e2b = request.form.get('e2b', 'Não')
+        e2c = request.form.get('e2c', 'Não')
+        e2d = request.form.get('e2d', 'Não')
+        e2e = request.form.get('e2e', 'Não')
+        e2f = request.form.get('e2f', 'Não')
+        e2g = request.form.get('e2g', 'Não')
+        e2h = request.form.get('e2h', 'Não')
+        e2i = request.form.get('e2i', 'Não')
+        e2j = request.form.get('e2j', 'Não')
         f1 = request.form.get('f1', 'Não')
         g1 = request.form.get('g1', 'Não')
         g2 = request.form.get('g2', 'Não')
@@ -332,7 +345,10 @@ def enviar():
         o12 = request.form.get('o12', 'Não')
         q1 = request.form.get('q1', 'Não')
 
-        d_1_2 = d1 + d12
+        d_1_2 = d1 + '/' + d12
+
+        e1 = e1a + ' ' + e1b + ' ' + e1c
+        e1 = e1.replace("Não", "")    
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         
@@ -348,10 +364,25 @@ def enviar():
         cursor.execute(f"INSERT INTO problemasencontrados (fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_clinico, transp_aereo, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros) VALUES ({session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO sinaissintomas (fk_sos, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia) VALUES ({session['id_sos']}, '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}')")
+        cursor.execute(f"INSERT INTO sinaissintomas (fk_sos, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas) VALUES ({session['id_sos']}, '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO avaliacaopaciente (fk_sos, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor) VALUES ({session['id_sos']}, '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO sinaisvitais (fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior) VALUES ({session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO formadecondução (fk_sos, forma_conducao) VALUES ({session['id_sos']}, '{e1}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO vitimaera (fk_sos, Ciclista, CondutorMoto, Gestante, PasBanFrente, PasMoto, CondutorCarro, Clinico, Trauma, PasBanTras, Pedestre) VALUES ({session['id_sos']}, '{e2a}', '{e2b}', '{e2c}', '{e2d}', '{e2e}', '{e2f}', '{e2g}', '{e2h}', '{e2i}', '{e2j}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO decisaotransporte (fk_sos, decisao_transporte) VALUES ({session['id_sos']}, '{f1}')")
         mysql.connection.commit()
         
-        # cursor.execute(f"INSERT INTO ocorrencias (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, queda_menos2, trabalho, transferencia, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_aereo, transp_clinico, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, 	perf_maior, forma_conducao, vitima_era, decisao_transporte, m, s1, s2, s3, equipe, demandante, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}', '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}', '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}', '{b1a}', '{b2}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}', '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', {c36g} '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}', '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}', '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}', '{e1}', '{e2}', '{f1}', '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}', '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}', '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39}', '{j40}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45}', '{j46}', '{j47}', '{k1}', '{k1a}', '{k1b}', '{k1c}', {k1qtd})")
+        # cursor.execute(f"INSERT INTO ocorrencias (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, quedaa_menos2, trabalho, transferencia, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_aereo, transp_clinico, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior, forma_conducao, vitima_era, decisao_transporte, m, s1, s2, s3, equipe, demandante, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}', '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}', '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}', '{b1a}', '{b2}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}', '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c36g}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}', '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}', '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}', '{e1}', '{e2}', '{f1}', '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}', '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}', '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39}', '{j40}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45}', '{j46}', '{j47}', '{k1}', '{k1a}', '{k1b}', '{k1c}', {k1qtd})")
     return redirect(url_for("ver"))
 
 
@@ -376,6 +407,9 @@ def adicionar():
             email2 = request.form['email']
             telefone2 = request.form['telefone']
 
+            cpf2 = cpf2.translate(str.maketrans('', '', string.punctuation))
+
+            cpf2 = cpf2[0:3] + '.' + cpf2[3:6] + '.' + cpf2[6:9] + '-' + cpf2[9:]
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("INSERT INTO login (cpf, adm, nome, email, telefone) VALUES (%s, %s, %s, %s, %s)", (cpf2, adm2, nome2, email2, telefone2))
             mysql.connection.commit()
@@ -461,10 +495,18 @@ def alterar():
             email_alterar = request.form['email']
             telefone_alterar = request.form['telefone']
 
+            cpf_alterar = cpf_alterar.translate(str.maketrans('', '', string.punctuation))
+
+            cpf_alterar = cpf_alterar[0:3] + '.' + cpf_alterar[3:6] + '.' + cpf_alterar[6:9] + '-' + cpf_alterar[9:]
+
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             cursor.execute("UPDATE login SET cpf=%s, adm=%s, nome=%s, email=%s, telefone=%s WHERE id_sos=%s", (cpf_alterar, adm_alterar, nome_alterar, email_alterar, telefone_alterar, id_alterar))
             mysql.connection.commit()
             return redirect(url_for("adm"))
+
+@app.route('/confirmpage')
+def confirmpage():
+    return render_template("confirmpage.html")
 
 @app.route('/ver', methods=["POST" , "GET"])
 def ver():

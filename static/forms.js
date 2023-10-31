@@ -578,3 +578,261 @@ function naoPrimeiroFilho() {
     primeirofilho2.style.display = "none";
 } 
 }
+
+function aparecerAtadura() {
+  var checkBoxdiabetes = document.getElementById("apareceratadura");
+  var textAtadura = document.getElementById("atadura");
+  var textAtadura1 = document.getElementById("atadura1");
+  var textAtadura2 = document.getElementById("atadura2");
+  var textAtadura3 = document.getElementById("atadura3");
+  var textAtadura4 = document.getElementById("atadura4");
+  var textAtadura5 = document.getElementById("atadura5");
+  var textAtadura6 = document.getElementById("atadura6");
+
+  if (checkBoxdiabetes.checked == true){
+      textAtadura.style.display = "inline-flex";
+      textAtadura1.style.display = "inline-flex";
+      textAtadura2.style.display = "inline-flex";
+      textAtadura3.style.display = "inline-flex";
+      textAtadura4.style.display = "inline-flex";
+      textAtadura5.style.display = "inline-flex";
+      textAtadura6.style.display = "inline-flex";
+    } else {
+      textAtadura.style.display = "none";
+      textAtadura1.style.display = "none";
+      textAtadura2.style.display = "none";
+      textAtadura3.style.display = "none";
+      textAtadura4.style.display = "none";
+      textAtadura5.style.display = "none";
+      textAtadura6.style.display = "none";
+    }
+}
+
+function aparecerCateter() {
+  var checkBoxdiabetes = document.getElementById("aparecercateter");
+  var textCateter = document.getElementById("cateter");
+
+  if (checkBoxdiabetes.checked == true){
+    textCateter.style.display = "inline-flex";
+    } else {
+      textCateter.style.display = "none";
+    }
+}
+
+function aparecerCompressa() {
+  var checkBoxdiabetes = document.getElementById("aparecercompressa");
+  var textCompressa = document.getElementById("compressa");
+
+  if (checkBoxdiabetes.checked == true){
+    textCompressa.style.display = "inline-flex";
+    } else {
+      textCompressa.style.display = "none";
+    }
+}
+
+function aparecerKit() {
+  var checkBoxdiabetes = document.getElementById("aparecerkit");
+  var textKit = document.getElementById("kit");
+  var textKit1 = document.getElementById("kit1");
+  var textKit2 = document.getElementById("kit2");
+  var textKit3 = document.getElementById("kit3");
+  var textKit4 = document.getElementById("kit4");
+  var textKit5 = document.getElementById("kit5");
+  var textKit6 = document.getElementById("kit6");
+
+  if (checkBoxdiabetes.checked == true){
+      textKit.style.display = "inline-flex";
+      textKit1.style.display = "inline-flex";
+      textKit2.style.display = "inline-flex";
+      textKit3.style.display = "inline-flex";
+      textKit4.style.display = "inline-flex";
+      textKit5.style.display = "inline-flex";
+      textKit6.style.display = "inline-flex";
+    } else {
+      textKit.style.display = "none";
+      textKit1.style.display = "none";
+      textKit2.style.display = "none";
+      textKit3.style.display = "none";
+      textKit4.style.display = "none";
+      textKit5.style.display = "none";
+      textKit6.style.display = "none";
+    }
+}
+
+function aparecerLuva() {
+  var checkBoxdiabetes = document.getElementById("aparecerluva");
+  var textLuva = document.getElementById("luva");
+
+  if (checkBoxdiabetes.checked == true){
+    textLuva.style.display = "inline-flex";
+    } else {
+      textLuva.style.display = "none";
+    }
+}
+
+function aparecerMascara() {
+  var checkBoxdiabetes = document.getElementById("aparecermascara");
+  var textMascara = document.getElementById("mascara");
+
+  if (checkBoxdiabetes.checked == true){
+    textMascara.style.display = "inline-flex";
+    } else {
+      textMascara.style.display = "none";
+    }
+}
+
+function aparecerBase() {
+  var checkBoxdiabetes = document.getElementById("aparecerbase");
+  var textBase = document.getElementById("base");
+
+  if (checkBoxdiabetes.checked == true){
+    textBase.style.display = "inline-flex";
+    } else {
+    textBase.style.display = "none";
+    }
+}
+
+function aparecerColar() {
+  var checkBoxdiabetes = document.getElementById("aparecercolar");
+  var textColar = document.getElementById("colar");
+  var textColar1 = document.getElementById("colar1");
+  var textColar2 = document.getElementById("colar2");
+  var textColar3 = document.getElementById("colar3");
+  var textColar4 = document.getElementById("colar4");
+  var textColar5 = document.getElementById("colar5");
+  var textColar6 = document.getElementById("colar6");
+  var textColar7 = document.getElementById("colar7");
+  var textColar8 = document.getElementById("colar8");
+  var textColar9 = document.getElementById("colar9");
+  var textColar10 = document.getElementById("colar10");
+  var textColar11 = document.getElementById("colar11");
+
+  if (checkBoxdiabetes.checked == true){
+      textColar.style.display = "inline-flex";
+      textColar1.style.display = "inline-flex";
+      textColar2.style.display = "inline-flex";
+      textColar3.style.display = "inline-flex";
+      textColar4.style.display = "inline-flex";
+      textColar5.style.display = "inline-flex";
+      textColar6.style.display = "inline-flex";
+      textColar7.style.display = "inline-flex";
+      textColar8.style.display = "inline-flex";
+      textColar9.style.display = "inline-flex";
+      textColar10.style.display = "inline-flex";
+      textColar11.style.display = "inline-flex";
+    } else {
+      textColar.style.display = "none";
+      textColar1.style.display = "none";
+      textColar2.style.display = "none";
+      textColar3.style.display = "none";
+      textColar4.style.display = "none";
+      textColar5.style.display = "none";
+      textColar6.style.display = "none";
+      textColar7.style.display = "none";
+      textColar8.style.display = "none";
+      textColar9.style.display = "none";
+      textColar10.style.display = "none";
+      textColar11.style.display = "none";
+    }
+}
+
+function aparecerCoxin() {
+  var checkBoxdiabetes = document.getElementById("aparecercoxin");
+  var textCoxin = document.getElementById("coxin");
+
+  if (checkBoxdiabetes.checked == true){
+    textCoxin.style.display = "inline-flex";
+    } else {
+      textCoxin.style.display = "none";
+    }
+}
+
+function aparecerKed() {
+  var checkBoxdiabetes = document.getElementById("aparecerked");
+  var textKed = document.getElementById("ked");
+  var textKed1 = document.getElementById("ked1");
+  var textKed2 = document.getElementById("ked2");
+  var textKed3 = document.getElementById("ked3");
+  var textKed4 = document.getElementById("ked4");
+
+  if (checkBoxdiabetes.checked == true){
+    textKed.style.display = "inline-flex";
+    textKed1.style.display = "inline-flex";
+    textKed2.style.display = "inline-flex";
+    textKed3.style.display = "inline-flex";
+    textKed4.style.display = "inline-flex";
+    } else {
+    textKed.style.display = "none";
+    textKed1.style.display = "none";
+    textKed2.style.display = "none";
+    textKed3.style.display = "none";
+    textKed4.style.display = "none";
+    }
+}
+
+function aparecerMaca() {
+  var checkBoxdiabetes = document.getElementById("aparecermaca");
+  var textMaca = document.getElementById("maca");
+
+  if (checkBoxdiabetes.checked == true){
+    textMaca.style.display = "inline-flex";
+    } else {
+    textMaca.style.display = "none";
+    }
+}
+
+function aparecerTtf() {
+  var checkBoxdiabetes = document.getElementById("aparecerttf");
+  var textTtf = document.getElementById("ttf");
+  var textTtf1 = document.getElementById("ttf1");
+  var textTtf2 = document.getElementById("ttf2");
+  var textTtf3 = document.getElementById("ttf3");
+  var textTtf4 = document.getElementById("ttf4");
+
+  if (checkBoxdiabetes.checked == true){
+    textTtf.style.display = "inline-flex";
+    textTtf1.style.display = "inline-flex";
+    textTtf2.style.display = "inline-flex";
+    textTtf3.style.display = "inline-flex";
+    textTtf4.style.display = "inline-flex";
+    } else {
+    textTtf.style.display = "none";
+    textTtf1.style.display = "none";
+    textTtf2.style.display = "none";
+    textTtf3.style.display = "none";
+    textTtf4.style.display = "none";
+    }
+}
+
+function aparecerAranha() {
+  var checkBoxdiabetes = document.getElementById("apareceraranha");
+  var textAranha = document.getElementById("aranha");
+
+  if (checkBoxdiabetes.checked == true){
+    textAranha.style.display = "inline-flex";
+    } else {
+    textAranha.style.display = "none";
+    }
+}
+
+function aparecerCabeca() {
+  var checkBoxdiabetes = document.getElementById("aparecercabeca");
+  var textCabeca = document.getElementById("cabeca");
+
+  if (checkBoxdiabetes.checked == true){
+    textCabeca.style.display = "inline-flex";
+    } else {
+      textCabeca.style.display = "none";
+    }
+}
+
+function aparecerCanula() {
+  var checkBoxdiabetes = document.getElementById("aparecercanula");
+  var textCanula = document.getElementById("canula");
+
+  if (checkBoxdiabetes.checked == true){
+    textCanula.style.display = "inline-flex";
+    } else {
+      textCanula.style.display = "none";
+    }
+}
