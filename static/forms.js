@@ -1,15 +1,3 @@
-    new Vue({
-el: "#app",
-data: () => ({
-    data_clicked_id: ""
-}),
-methods: {
-    part_clicked(val) {
-    this.data_clicked_id = val.target.getAttribute('id')
-    console.log(val.target.getAttribute('id'))
-    }
-}
-})
 
 function meuFrente(){
     //DESABILITAR COSTAS
@@ -27,24 +15,24 @@ function meuFrente(){
     document.getElementById("back-left").style.display = "none";
     document.getElementById("clavicule-left").style.display = "none";
     //APARECER FRENTE
-    document.getElementById("head").style.display = "block";
-    document.getElementById("face").style.display = "block";
-    document.getElementById("neck").style.display = "block";
-    document.getElementById("shoulder-left").style.display = "block";
-    document.getElementById("shoulder-right").style.display = "block";
-    document.getElementById("arm-left").style.display = "block";
-    document.getElementById("forearm-left").style.display = "block";
-    document.getElementById("arm-right").style.display = "block";
-    document.getElementById("forearm-right").style.display = "block";
-    document.getElementById("chest-left").style.display = "block";
-    document.getElementById("chest-right").style.display = "block";
-    document.getElementById("belly-left").style.display = "block";
-    document.getElementById("ribs-left").style.display = "block";
-    document.getElementById("belly-right").style.display = "block";
-    document.getElementById("belly").style.display = "block";
-    document.getElementById("ribs-right").style.display = "block";
-    document.getElementById("thigh-left").style.display = "block";
-    document.getElementById("innerthigh-left").style.display = "block";
+    document.getElementById("Cabeça").style.display = "block";
+    document.getElementById("Face").style.display = "block";
+    document.getElementById("Pescoço").style.display = "block";
+    document.getElementById("Ombro-Esquerdo").style.display = "block";
+    document.getElementById("Ombro-Direito").style.display = "block";
+    document.getElementById("Braço-Esquerdo").style.display = "block";
+    document.getElementById("Antebraço-Esquerdo").style.display = "block";
+    document.getElementById("Braço-Direito").style.display = "block";
+    document.getElementById("Antebraço-Direito").style.display = "block";
+    document.getElementById("Peito-Esquerdo").style.display = "block";
+    document.getElementById("Peito-Direito").style.display = "block";
+    document.getElementById("Barriga-Esquerda").style.display = "block";
+    document.getElementById("Costela-Esquerda").style.display = "block";
+    document.getElementById("Barriga-Direita").style.display = "block";
+    document.getElementById("Barriga").style.display = "block";
+    document.getElementById("Costela-Direita").style.display = "block";
+    document.getElementById("Coxa-Esquerda").style.display = "block";
+    document.getElementById("Adutor-Esquerdo").style.display = "block";
     document.getElementById("feet-left").style.display = "block";
     document.getElementById("calf-left").style.display = "block";
     document.getElementById("knee-left").style.display = "block";
@@ -76,24 +64,24 @@ function meuCostas(){
     document.getElementById("back-left").style.display = "block";
     document.getElementById("clavicule-left").style.display = "block";
     //DESABILITAR FRENTE
-    document.getElementById("head").style.display = "none";
-    document.getElementById("face").style.display = "none";
-    document.getElementById("neck").style.display = "none";
-    document.getElementById("shoulder-left").style.display = "none";
-    document.getElementById("shoulder-right").style.display = "none";
-    document.getElementById("arm-left").style.display = "none";
-    document.getElementById("forearm-left").style.display = "none";
-    document.getElementById("arm-right").style.display = "none";
-    document.getElementById("forearm-right").style.display = "none";
-    document.getElementById("chest-left").style.display = "none";
-    document.getElementById("chest-right").style.display = "none";
-    document.getElementById("belly-left").style.display = "none";
-    document.getElementById("ribs-left").style.display = "none";
-    document.getElementById("belly-right").style.display = "none";
-    document.getElementById("belly").style.display = "none";
-    document.getElementById("ribs-right").style.display = "none";
-    document.getElementById("thigh-left").style.display = "none";
-    document.getElementById("innerthigh-left").style.display = "none";
+    document.getElementById("Cabeça").style.display = "none";
+    document.getElementById("Face").style.display = "none";
+    document.getElementById("Pescoço").style.display = "none";
+    document.getElementById("Ombro-Esquerdo").style.display = "none";
+    document.getElementById("Ombro-Direito").style.display = "none";
+    document.getElementById("Braço-Esquerdo").style.display = "none";
+    document.getElementById("Antebraço-Esquerdo").style.display = "none";
+    document.getElementById("Braço-Direito").style.display = "none";
+    document.getElementById("Antebraço-Direito").style.display = "none";
+    document.getElementById("Peito-Esquerdo").style.display = "none";
+    document.getElementById("Peito-Direito").style.display = "none";
+    document.getElementById("Barriga-Esquerda").style.display = "none";
+    document.getElementById("Costela-Esquerda").style.display = "none";
+    document.getElementById("Barriga-Direita").style.display = "none";
+    document.getElementById("Barriga").style.display = "none";
+    document.getElementById("Costela-Direita").style.display = "none";
+    document.getElementById("Coxa-Esquerda").style.display = "none";
+    document.getElementById("Adutor-Esquerdo").style.display = "none";
     document.getElementById("feet-left").style.display = "none";
     document.getElementById("calf-left").style.display = "none";
     document.getElementById("knee-left").style.display = "none";
