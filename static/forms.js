@@ -1,16 +1,3 @@
-    new Vue({
-el: "#app",
-data: () => ({
-    data_clicked_id: ""
-}),
-methods: {
-    part_clicked(val) {
-    this.data_clicked_id = val.target.getAttribute('id')
-    console.log(val.target.getAttribute('id'))
-    }
-}
-})
-
 function meuFrente(){
     //DESABILITAR COSTAS
     document.getElementById("armback-left").style.display = "none";
