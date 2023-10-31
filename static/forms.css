@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 html {
   width: 100%;
@@ -5,10 +6,29 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  font-size: 24px;
+  font-size: 22px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  margin-left: 10px;
   width: 100%;
-  align-items: left;
-  justify-content: left;
+}
+
+svg {
+  margin-left: -20px;
+}
+
+h3 {
+  font-size: 28px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+h4 {
+  font-size: 22px;
 }
 
 .sumirTeste {
@@ -47,7 +67,7 @@ input[type=text]:active {
 }
 
 input[type=number] {
-  width: 40%;
+  width: 90%;
   height: 24px;
   border: none;
   border-bottom: solid 1px;
@@ -64,6 +84,17 @@ input[type=number]::placeholder {
 input[type=date] {
   width: 40%;
   height: 24px;
+}
+
+.tabela, th, td {
+  border-collapse: collapse; /*define a separação entre as bordas*/
+  text-align: left;
+  font-size: 18px;
+}
+
+.tabela1 {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 #respiratorio, #respiratorio1, #respiratorio2, #respiratorio3 {

@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+$primaria: #33338D;
+$secundaria: #Ffffff;
+$preto: #00000053;
+
+a{
+  color: $secundaria;
+}
+
+body{
+  margin: 0;
+}
+main{
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;  
+  align-items: center;
+}
+
+.logo
+{
+  position: absolute;
+  top: -30px;
+  right: 0px;
+}
+
+.read_data  
+{
+  width: 65%;
+  height: 30px;
+  background: none;
+  border: solid 0.5px #00000042;
+  border-radius: 5px;
+  color: #000000;
+}
+.update_data  
+{
+  width: 190px;
+  height: 30px;
+  background: #dfdede53;
+  border: solid 0.5px #00000042;
+  border-radius: 10px;
+}
+
+.texto
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 450px;
+  height: 30px;
+}
+p
+{
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+}
+.left
+{
+  margin-left: 115px;
+}
+.right 
+{
+  width: 50px;
+  height: 50px;
+}
+.button-close
+{
+  scale: 150%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  margin-top: 5px;
+}
+.input_name
+{
+  height: 30px;
+  width: 65%;
+  font-size: 18px;
+  border: 1px solid $preto;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.input_cpf
+{
+  height: 30px;
+  width:  65%;
+  font-size: 18px;
+  border: 1px solid $preto;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.input_email
+{
+  height: 30px;
+  width:  65%;
+  font-size: 18px;
+  border: 1px solid $preto;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.input_telefone
+{
+  height: 30px;
+  width:  65%;
+  font-size: 18px;
+  border: 1px solid $preto;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.input_adm
+{
+  height: 30px;
+  font-family: 'Poppins', sans-serif;
+  width: 70px;
+  text-align: center;
+}
+.confirm
+{
+  width: 150px;
+  border-radius: 10px;
+}
+header {
+  background: $primaria;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 75px;
+  align-items: center;
+  border-radius: 0px 0px 15px 15px;  
+  color: $secundaria;
+}
+
+.options
+{
+  height: 36px;
+}
+form
+{
+  height: 36px;
+}
+.button-redirect {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  color: $secundaria;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+.button-open
+{
+  background: transparent;
+  border: 0;
+  margin: 0;
+  color: $secundaria; 
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: $primaria;
+  width: 500px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 57px;
+  margin-right: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.tbform
+{
+  color: $primaria;
+}
+
+table {
+  font-family: 'Poppins', sans-serif;
+  border-collapse: collapse;
+  width: auto;
+  background: #aaa8a853;
+  width: 1200px;
+  height: auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: (1200px))
+{
+  table{
+     width: 1050px   
+  };
+
+}
+
+@media (max-width: (900px))
+{
+  table{
+     width: 750px   
+  };
+}
+
+@media (max-width: (600px))
+{
+  table{
+     width: 450px   
+  };
+}
+
+tr
+{
+  border: 1px solid $preto;
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: $primaria;
+  justify-content: center;
+  align-items: center;
+}
+
+td, th {
+  border: 1px solid $preto;
+  text-align: center;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: $primaria;
+  justify-content: center;
+  align-items: center;
+  width: 480px;
+}
+
+tr:nth-child(even) {
+  background-color: #35333353;
+  
+}
+
+.tbheader_name {
+  height: 30px;
+  width: 10%;
+  text-align: center;
+}
+
+.tbheader_cpf {
+  height: 30px;
+  width: 30%;
+  text-align: center;
+}
+
+.tbheader_type {
+  height: 30px;
+  width: 12%;
+  text-align: center;
+}
+
+.tbheader_local {
+  height: 30px;
+  width: 317px;
+  text-align: center;
+}
+
+.tbdata_opt
+{
+  display: flex;
+  width: 350px;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 0;
+  height: 170px;
+}
+
+.buttons_opt
+{
+  border-radius: 15px;
+  width: 100px;
+  height: auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  background: $primaria;
+  color: $secundaria;
+  text-decoration: none;
+}
+.buttons_opt:hover
+{
+  text-decoration: none;
+  color: $secundaria;
+}
+
+a
+{
+  cursor: pointer;
+  color: $secundaria;
+}
+
+
+.select
+{
+  width: fit-content;
+  text-align: center;
+  height: fit-content;
+  font-size: 15px;
+  border: $preto solid 1px;
+  border-radius: 5px;
+}

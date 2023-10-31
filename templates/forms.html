@@ -9,26 +9,26 @@
     <link rel="stylesheet" href="../static/forms.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
-<body>  
+<center>
+<body> 
     <header>
         <p class="sumirTeste">exemplo</p>
     </header>
-<center>
     <form action="/enviar" method="post"> 
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <h2>Dados da vítima</h2>
         <input type="date" id="data" name="data" required>
-        <br>
+        <br><br>
         <input type="radio" name="sexo" value="Masculino">
-        <label for="sexo-m">Masculino</label><br>
+        <label for="sexo-m">Macho escroto</label><br>
         <input type="radio" name="sexo" value="Feminino">
-        <label for="sexo-f">Feminino</label>
+        <label for="sexo-f">Objeto</label>
         <br>
         <input type="text" name="nome" placeholder="Nome">
         <br>
         <input type="number" name="idade" placeholder="Idade">
-        <input type="number" name="cpf" placeholder="Cpf">
+        <input type="text" name="cpf" placeholder="Cpf">
         <br>
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
         <br>
@@ -53,15 +53,15 @@
         <!--TIPO DE OCORRÊNCIA-->
         <h3>Tipo de Ocorrência</h3><h4>Pré-Hospitalar</h4>
         <br>
-        <input type="checkbox"  name="a1" value="Sim">Causado por animais
+        <input type="checkbox" name="a1" value="Sim">Causado por animais
         <br>
-        <input type="checkbox"  name="a2" value="Sim">Com meio de Transporte
+        <input type="checkbox" name="a2" value="Sim">Com meio de Transporte
         <br>
-        <input type="checkbox"  name="a3" value="Sim">Desmoronamento
+        <input type="checkbox" name="a3" value="Sim">Desmoronamento
         <br>
-        <input type="checkbox"  name="a4" value="Sim">Emergência Médica
+        <input type="checkbox" name="a4" value="Sim">Emergência Médica
         <br>
-        <input type="checkbox"  name="a5" value="Sim">Queda de Altura 2M
+        <input type="checkbox" name="a5" value="Sim">Queda de Altura 2M
         <br>
         <input type="checkbox"  name="a6" value="Sim">Tentativa de Suicídio
         <br>
@@ -98,6 +98,7 @@
         <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
         <input type="radio" name="b1a" id="respiratorio" value="DPOC">
         <label for="DPOC" id="respiratorio1">DPOC</label>
+        <br>
         <input type="radio" name="b1a" id="respiratorio2" value="inalacao">
         <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
         <br>
@@ -589,7 +590,7 @@
         <input type="text"  id="corpoFace" placeholder="Face">
         <input type="text"  id="corpoTipo" placeholder="Tipo">
         <br><br>
-        <table border="1">
+        <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
             <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
             <tr><td>Pescoço</td> <td><input type="radio" name="p2" value="pescoco_1"></td> <td><input type="radio" name="p2" value="pescoco_2"></td> <td><input type="radio" name="p2" value="pescoco_3"></td></tr>
@@ -815,29 +816,29 @@
         <input type="checkbox"  name="k1b" id="atadura1" value="Sim"><e id="atadura5">12</e>
         <input type="checkbox"  name="k1c" id="atadura2" value="Sim"><e id="atadura6">20</e>
         <input type="text" name="k1qtd" id="atadura3" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k2" id="aparecercateter" onclick="aparecerCateter()" value="Sim">Cateter TP. ÓCULOS
         <input type="text" name="k2qtd" id="cateter" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k3" id="aparecercompressa" onclick="aparecerCompressa()" value="Sim">Compressa Comum
         <input type="text" name="k3qtd" id="compressa" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k4" id="aparecerkit" onclick="aparecerKit()" value="Sim">Kit's
         <input type="checkbox"  name="k4a" id="kit" value="Sim"><e id="kit4">H</e>
         <input type="checkbox"  name="k4b" id="kit1" value="Sim"><e id="kit5">P</e>
         <input type="checkbox"  name="k4c" id="kit2" value="Sim"><e id="kit6">Q</e>
         <input type="text" name="k4qtd" id="kit3" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k5" id="aparecerluva" onclick="aparecerLuva()" value="Sim">Luvas DESC. (Pares)
         <input type="text" name="k5qtd" id="luva" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k6" id="aparecermascara" onclick="aparecerMascara()" value="Sim">Máscara DESC.
         <input type="text" name="k6qtd" id="mascara" placeholder="Quantidade">
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h3>Materiais Utilizados deixados no hospital</h3>
         <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
         <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k8" id="aparecercolar" onclick="aparecerColar()" value="Sim">Colar
         <input type="checkbox"  name="k8a" id="colar" value="Sim"><e id="colar7">N</e>
         <input type="checkbox"  name="k8b" id="colar1" value="Sim"><e id="colar8">PP</e>
@@ -846,30 +847,31 @@
         <input type="checkbox"  name="k8e" id="colar4" value="Sim"><e id="colar11">G</e>
         <input type="text" name="k8f" id="colar5" placeholder="Tamanho alternativo">
         <input type="text" name="k8qtd" id="colar6" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox" id="aparecercoxin" onclick="aparecerCoxin()" name="k9" value="Sim">Coxins Estabiliza
         <input type="text" name="k9qtd" id="coxin" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox" id="aparecerked" onclick="aparecerKed()" name="k10" value="Sim">KED
         <input type="checkbox"  name="k10a" id="ked" value="Sim"><e id="ked3">ADUL.</e>
         <input type="checkbox"  name="k10b" id="ked1" value="Sim"><e id="ked4">INFAN.</e>
         <input type="text" name="k10qtd" id="ked2" placeholder="Quantidade">
-        <br>
-        <input type="checkbox"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rigida
+        <br><br>
+        <input type="checkbox"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rígida
         <input type="text" name="k11qtd" id="maca" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox" id="aparecerttf" onclick="aparecerTtf()" name="k12" value="Sim">T.T.F
         <input type="checkbox" id="ttf" name="k12a" value="Sim"><e id="ttf3">ADUL.</e>
         <input type="checkbox" id="ttf1" name="k12b" value="Sim"><e id="ttf4">INFAN.</e>
         <input type="text" id="ttf2" name="k12qtd" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k13" id="apareceraranha" onclick="aparecerAranha()" value="Sim">Tirante Aranha
         <input type="text" name="k13qtd" id="aranha" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox"  name="k14" id="aparecercabeca" onclick="aparecerCabeca()" value="Sim">Tirante de Cabeça
         <input type="text" name="k14qtd" id="cabeca" placeholder="Quantidade">
-        <br>
+        <br><br>
         <input type="checkbox" id="aparecercanula" onclick="aparecerCanula()" name="k15" value="Sim">Cânula
+        <br>
         <input type="text" name="k15qtd" id="canula" placeholder="Quantidade">
         <br>
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
@@ -1024,24 +1026,8 @@
         <br>
         <button type="submit">ENVIAR</button>
     </form>   
-</center>
 </body>
 <script>
-        new Vue({
-el: "#app",
-data: () => ({
-    data_clicked_id: "",
-    lado: "",
-    face: ""
-}),
-methods: {
-    part_clicked(val) {
-    this.data_clicked_id = val.target.getAttribute('id')
-    console.log(val.target.getAttribute('id'))
-    var input2 = document.getElementById("corpoLado");
-    var input = document.getElementById("corpoLocal");
-    var input3 = document.getElementById("corpoFace");
-
     if (this.data_clicked_id === "Ombro-Esquerdo") {
         this.data_clicked_id = "Ombro";
         this.lado = "Esquerdo";
