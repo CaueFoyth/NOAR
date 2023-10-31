@@ -67,7 +67,7 @@ input[type=text]:active {
 }
 
 input[type=number] {
-  width: 40%;
+  width: 90%;
   height: 24px;
   border: none;
   border-bottom: solid 1px;
