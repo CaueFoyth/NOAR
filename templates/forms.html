@@ -1028,38 +1028,61 @@
     </form>   
 </body>
 <script>
+new Vue({
+el: "#app",
+data: () => ({
+    data_clicked_id: "",
+    lado: "",
+    face: ""
+}),
+methods: {
+    part_clicked(val) {
+    this.data_clicked_id = val.target.getAttribute('id')
+    console.log(val.target.getAttribute('id'))
+    var input2 = document.getElementById("corpoLado");
+    var input = document.getElementById("corpoLocal");
+    var input3 = document.getElementById("corpoFace");
+
     if (this.data_clicked_id === "Ombro-Esquerdo") {
         this.data_clicked_id = "Ombro";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Ombro-Direito") {
         this.data_clicked_id = "Ombro";
         this.lado = "Direito";
+        this.face= "Frente";
       }  
 
     if (this.data_clicked_id === "Braço-Esquerdo") {
         this.data_clicked_id = "Braço";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Braço-Direito") {
         this.data_clicked_id = "Braço";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Antebraço-Esquerdo") {
         this.data_clicked_id = "Antebraço";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Antebraço-Direito") {
         this.data_clicked_id = "Antebraço";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Peito-Direito") {
         this.data_clicked_id = "Peito";
         this.lado = "Direito";
+        this.face= "Frente";
       }     
     if (this.data_clicked_id === "Peito-Esquerdo") {
         this.data_clicked_id = "Peito";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Barriga-Direita") {
         this.data_clicked_id = "Barriga";
@@ -1088,18 +1111,22 @@
     if (this.data_clicked_id === "Adutor-Direito") {
         this.data_clicked_id = "Adutor";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Adutor-Esquerdo") {
         this.data_clicked_id = "Adutor";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }   
     if (this.data_clicked_id === "Pé-Direito") {
         this.data_clicked_id = "Pé";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Pé-Esquerdo") {
         this.data_clicked_id = "Pé";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Canela-Direita") {
         this.data_clicked_id = "Canela";
@@ -1112,18 +1139,22 @@
     if (this.data_clicked_id === "Joelho-Direito") {
         this.data_clicked_id = "Joelho";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Joelho-Esquerdo") {
         this.data_clicked_id = "Joelho";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Cotovelo-Direito") {
         this.data_clicked_id = "Cotovelo";
         this.lado = "Direito";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Cotovelo-Esquerdo") {
         this.data_clicked_id = "Cotovelo";
         this.lado = "Esquerdo";
+        this.face= "Frente";
       }
     if (this.data_clicked_id === "Mão-Direita") {
         this.data_clicked_id = "Mão";
@@ -1133,11 +1164,20 @@
         this.data_clicked_id = "Mão";
         this.lado = "Esquerda";
       }
+    if (this.data_clicked_id === "armback-left") {
+        this.data_clicked_id = "Braço";
+        this.lado = "Esquerdo";
+        this.face= "Costa";
+      }
+    if (this.data_clicked_id === "armback-right") {
+        this.data_clicked_id = "Braço";
+        this.lado = "Direito";
+        this.face= "Costa";
+      }  
     input.value = this.data_clicked_id;
     input2.value = this.lado;
 
     if (this.data_clicked_id === "Cabeça" || "Face" || "Pescoço" || "Barriga" || "Virílha") {
-        this.face = "Frente";
         this.lado = ""
       }
     input3.value = this.face;
