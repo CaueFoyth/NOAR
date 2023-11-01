@@ -33,19 +33,19 @@ function meuFrente(){
     document.getElementById("Costela-Direita").style.display = "block";
     document.getElementById("Coxa-Esquerda").style.display = "block";
     document.getElementById("Adutor-Esquerdo").style.display = "block";
-    document.getElementById("feet-left").style.display = "block";
-    document.getElementById("calf-left").style.display = "block";
-    document.getElementById("knee-left").style.display = "block";
-    document.getElementById("thigh-right").style.display = "block";
-    document.getElementById("genitalia").style.display = "block";
-    document.getElementById("innerthigh-right").style.display = "block";
-    document.getElementById("right-feet").style.display = "block";
-    document.getElementById("calf-right").style.display = "block";
-    document.getElementById("knee-right").style.display = "block";
-    document.getElementById("elbow-right").style.display = "block";
-    document.getElementById("hand-right").style.display = "block";
-    document.getElementById("elbow-left").style.display = "block";
-    document.getElementById("hands-left").style.display = "block";
+    document.getElementById("Pé-Esquerdo").style.display = "block";
+    document.getElementById("Canela-Esquerda").style.display = "block";
+    document.getElementById("Joelho-Esquerdo").style.display = "block";
+    document.getElementById("Coxa-Direita").style.display = "block";
+    document.getElementById("Virílha").style.display = "block";
+    document.getElementById("Adutor-Direito").style.display = "block";
+    document.getElementById("Pé-Direito").style.display = "block";
+    document.getElementById("Canela-Direita").style.display = "block";
+    document.getElementById("Joelho-Direito").style.display = "block";
+    document.getElementById("Cotovelo-Direito").style.display = "block";
+    document.getElementById("Mão-Direita").style.display = "block";
+    document.getElementById("Cotovelo-Esquerdo").style.display = "block";
+    document.getElementById("Mão-Esquerda").style.display = "block";
 }
 
 function meuCostas(){
@@ -82,19 +82,19 @@ function meuCostas(){
     document.getElementById("Costela-Direita").style.display = "none";
     document.getElementById("Coxa-Esquerda").style.display = "none";
     document.getElementById("Adutor-Esquerdo").style.display = "none";
-    document.getElementById("feet-left").style.display = "none";
-    document.getElementById("calf-left").style.display = "none";
-    document.getElementById("knee-left").style.display = "none";
-    document.getElementById("thigh-right").style.display = "none";
-    document.getElementById("genitalia").style.display = "none";
-    document.getElementById("innerthigh-right").style.display = "none";
-    document.getElementById("right-feet").style.display = "none";
-    document.getElementById("calf-right").style.display = "none";
-    document.getElementById("knee-right").style.display = "none";
-    document.getElementById("elbow-right").style.display = "none";
-    document.getElementById("hand-right").style.display = "none";
-    document.getElementById("elbow-left").style.display = "none";
-    document.getElementById("hands-left").style.display = "none";
+    document.getElementById("Pé-Esquerdo").style.display = "none";
+    document.getElementById("Canela-Esquerda").style.display = "none";
+    document.getElementById("Joelho-Esquerdo").style.display = "none";
+    document.getElementById("Coxa-Direita").style.display = "none";
+    document.getElementById("Virílha").style.display = "none";
+    document.getElementById("Adutor-Direito").style.display = "none";
+    document.getElementById("Pé-Direito").style.display = "none";
+    document.getElementById("Canela-Direita").style.display = "none";
+    document.getElementById("Joelho-Direito").style.display = "none";
+    document.getElementById("Cotovelo-Direito").style.display = "none";
+    document.getElementById("Mão-Direita").style.display = "none";
+    document.getElementById("Cotovelo-Esquerdo").style.display = "none";
+    document.getElementById("Mão-Esquerda").style.display = "none";
 }
 
 function aparecerRespiratorio() {
