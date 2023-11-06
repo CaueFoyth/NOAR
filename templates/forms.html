@@ -530,17 +530,17 @@
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 44.742845,39.689035 5.48374,1.86457 2.27386,1.3378 2.74195,-1.74412 4.51804,-1.28077 0.90009,2.29721 0.675,3.4346 -0.81272,5.02838 -2.82636,0.16819 -4.11256,-1.67581 -1.00814,0.39118 -0.95849,-0.39888 -4.44053,1.94411 -2.77023,-0.51478 -0.95181,-6.15325 0.36754,-2.7864 z"
-                id="buttock" />
+                id="Nádegas" />
             <path
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 51.818445,37.309575 0.14418,2.97292 1.15984,-0.0241 0.048,-2.96488 2.80867,-0.81981 2.34029,-0.7541 1.34121,3.73319 -4.77886,1.36455 -2.33301,1.2158 -2.37536,-1.2333 -5.45663,-1.37716 1.51961,-3.95743 z"
-                id="loin" />
+                id="Lombar" />
             <path
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 51.733705,14.788555 0.53876,25.33066 0.48967,-0.0297 0.65658,-25.3387 -0.28147,-0.84188 -1.25059,-4.9e-4 z"
-                id="column" />
+                id="Coluna" />
             <path
                 style="opacity:1"
                 class="costasCorpo"
@@ -1043,6 +1043,17 @@ methods: {
     var input = document.getElementById("corpoLocal");
     var input3 = document.getElementById("corpoFace");
 
+    if (this.data_clicked_id === "Cabeça" || this.data_clicked_id === "Face" || this.data_clicked_id === "Pescoço" || this.data_clicked_id === "Barriga" || this.data_clicked_id === "Virílha") {
+    this.lado = "";
+    this.face = "Frente";
+}
+
+    if (this.data_clicked_id === "Nádegas" || this.data_clicked_id === "Lombar" || this.data_clicked_id === "Coluna") {
+        this.lado = "";
+        this.face = "Costas";
+    }
+
+    
     if (this.data_clicked_id === "Ombro-Esquerdo") {
         this.data_clicked_id = "Ombro";
         this.lado = "Esquerdo";
@@ -1087,26 +1098,32 @@ methods: {
     if (this.data_clicked_id === "Barriga-Direita") {
         this.data_clicked_id = "Barriga";
         this.lado = "Direita";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Barriga-Esquerda") {
         this.data_clicked_id = "Barriga";
         this.lado = "Esquerda";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Costela-Direita") {
         this.data_clicked_id = "Costela";
         this.lado = "Direita";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Costela-Esquerda") {
         this.data_clicked_id = "Costela";
         this.lado = "Esquerda";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Coxa-Direita") {
         this.data_clicked_id = "Coxa";
         this.lado = "Direita";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Coxa-Esquerda") {
         this.data_clicked_id = "Coxa";
         this.lado = "Esquerda";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Adutor-Direito") {
         this.data_clicked_id = "Adutor";
@@ -1131,10 +1148,12 @@ methods: {
     if (this.data_clicked_id === "Canela-Direita") {
         this.data_clicked_id = "Canela";
         this.lado = "Direita";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Canela-Esquerda") {
         this.data_clicked_id = "Canela";
         this.lado = "Esquerda";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Joelho-Direito") {
         this.data_clicked_id = "Joelho";
@@ -1159,10 +1178,12 @@ methods: {
     if (this.data_clicked_id === "Mão-Direita") {
         this.data_clicked_id = "Mão";
         this.lado = "Direita";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "Mão-Esquerda") {
         this.data_clicked_id = "Mão";
         this.lado = "Esquerda";
+        this.face = "Frente"
       }
     if (this.data_clicked_id === "armback-left") {
         this.data_clicked_id = "Braço";
@@ -1173,13 +1194,23 @@ methods: {
         this.data_clicked_id = "Braço";
         this.lado = "Direito";
         this.face= "Costa";
-      }  
+      }
+    if (this.data_clicked_id === "leg-left") {
+        this.data_clicked_id = "Perna";
+        this.lado = "Esquerda";
+        this.face= "Costa";
+      } 
+    if (this.data_clicked_id === "leg-right") {
+        this.data_clicked_id = "Perna";
+        this.lado = "Direita";
+        this.face= "Costa";
+      }    
+    
     input.value = this.data_clicked_id;
     input2.value = this.lado;
-
-    if (this.data_clicked_id === "Cabeça" || "Face" || "Pescoço" || "Barriga" || "Virílha") {
-        this.lado = ""
-      }
     input3.value = this.face;
+}
+}
+})
 </script>
 </html>
