@@ -481,6 +481,15 @@ def deletar(id):
     mysql.connection.commit()
     return redirect(url_for("adm"))
 
+
+@app.route('/deletarOc/<string:id>', methods = ['POST', 'GET'] )
+def deletarOc(id):
+        cursor = mysql.connection.cursor()
+        cursor.execute("DELETE FROM dadosdavitima WHERE id_ocorrencia = {}".format(id))
+        mysql.connection.commit()
+        return redirect(url_for("ocorrenciasADM"))
+
+
 @app.route('/ocorrencias', methods = ['POST', 'GET'])
 def ocorrencias():
     if 'logado' in session:
@@ -498,10 +507,10 @@ def ocorrenciasADM():
     if 'logado' in session:
         if session['adm'] == 1:
             cursor = mysql.connection.cursor()
-            cursor.execute("SELECT * FROM ocorrencias")
+            cursor.execute("SELECT * FROM dadosdavitima")
             data = cursor.fetchall()
             cursor.close()
-            return render_template("ocorrenciasadm.html", ocorrencias = data)
+            return render_template("ocorrenciasadm.html", dadosdavitima = data)
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
