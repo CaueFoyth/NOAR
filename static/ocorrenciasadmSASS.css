@@ -28,6 +28,15 @@ main {
   right: 0px;
 }
 
+.filtros {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 38px;
+}
+
 .read_data {
   width: 65%;
   height: 30px;
