@@ -1,11 +1,12 @@
 
 function meuFrente(){
-    //DESABILITAR COSTAS
+    //DESABILITAR COSTAS  
+    document.getElementById("clavicule-left").style.display = "none";
     document.getElementById("armback-left").style.display = "none";
     document.getElementById("leg-left").style.display = "none";
-    document.getElementById("buttock").style.display = "none";
-    document.getElementById("loin").style.display = "none";
-    document.getElementById("column").style.display = "none";
+    document.getElementById("Nádegas").style.display = "none";
+    document.getElementById("Lombar").style.display = "none";
+    document.getElementById("Coluna").style.display = "none";
     document.getElementById("head-back").style.display = "none";
     document.getElementById("nape").style.display = "none";
     document.getElementById("armback-right").style.display = "none";
@@ -14,6 +15,8 @@ function meuFrente(){
     document.getElementById("clavicule-right").style.display = "none";
     document.getElementById("back-left").style.display = "none";
     document.getElementById("clavicule-left").style.display = "none";
+
+    document.getElementById("app").style.marginLeft = "0px";
     //APARECER FRENTE
     document.getElementById("Cabeça").style.display = "block";
     document.getElementById("Face").style.display = "block";
@@ -35,7 +38,7 @@ function meuFrente(){
     document.getElementById("Adutor-Esquerdo").style.display = "block";
     document.getElementById("Pé-Esquerdo").style.display = "block";
     document.getElementById("Canela-Esquerda").style.display = "block";
-    document.getElementById("Joelho-Esquerdo").style.display = "block";
+    document.getElementById("Joelho-Esquerdo").style.display = "block";Lombar
     document.getElementById("Coxa-Direita").style.display = "block";
     document.getElementById("Virílha").style.display = "block";
     document.getElementById("Adutor-Direito").style.display = "block";
@@ -52,9 +55,9 @@ function meuCostas(){
     //APARECER COSTAS
     document.getElementById("armback-left").style.display = "block";
     document.getElementById("leg-left").style.display = "block";
-    document.getElementById("buttock").style.display = "block";
-    document.getElementById("loin").style.display = "block";
-    document.getElementById("column").style.display = "block";
+    document.getElementById("Nádegas").style.display = "block";
+    document.getElementById("Lombar").style.display = "block";
+    document.getElementById("Coluna").style.display = "block";
     document.getElementById("head-back").style.display = "block";
     document.getElementById("nape").style.display = "block";
     document.getElementById("armback-right").style.display = "block";
@@ -63,6 +66,9 @@ function meuCostas(){
     document.getElementById("clavicule-right").style.display = "block";
     document.getElementById("back-left").style.display = "block";
     document.getElementById("clavicule-left").style.display = "block";
+
+    document.getElementById("app").style.marginLeft = "-277px";
+    
     //DESABILITAR FRENTE
     document.getElementById("Cabeça").style.display = "none";
     document.getElementById("Face").style.display = "none";
