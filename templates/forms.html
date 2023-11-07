@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../static/forms.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
-<center>
 <body> 
     <header>
         <p class="sumirTeste">exemplo</p>
@@ -545,12 +544,12 @@
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 48.157455,6.3585449 0.44208,-0.14964 0.16111,0.16427 1.48163,4.0475101 2.32401,1.45118 2.39971,-1.52387 0.97577,-3.6896901 0.52752,-0.55908 0.23367,0.0981 0.24198,-3.34467 -2.03129,-2.31103004 -2.84509,-0.51629 -2.20422,0.52915 -1.93631,2.63077004 z"
-                id="head-back" />
+                id="cabeca-tras" />
             <path
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 52.369695,12.105075 -2.35767,-1.55045 -1.47119,-3.9514301 -0.60741,0.0403 0.27409,1.82447 0.97635,0.33932 0.7613,2.2157201 0.33017,1.06849 0.0895,2.14894 1.16448,0.008 0.10563,-0.70833 0.54716,-0.0606 z m 1.01793,1.47595 0.23768,0.64982 1.38107,-0.004 0.01,-2.38784 0.25971,-0.79061 0.57215,-2.1698001 0.76359,-0.41018 0.25158,-1.78416 -0.62859,0.0193 -1.08488,3.8998101 -2.39725,1.46684 0.2768,1.48507 z"
-                id="nape" />
+                id="Nuca" />
             <path
                 id="armback-right"
                 class="costasCorpo"
@@ -958,10 +957,10 @@
         <input type="text" name="m13" id="parto" placeholder="Hora do nascimento">
         <br>
         <h4 id="parto1">Sexo do bebe</h4>
-        <input id="parto2" type="radio"  name="m14" value="FEM">
-        <label id="parto3" for="FEM">FEM</label><br>
         <input  id="parto4" type="radio"  name="m14" value="MASC">
         <label id="parto5" for="MASC">MASC</label>
+        <input id="parto2" type="radio"  name="m14" value="FEM">
+        <label id="parto3" for="FEM">FEM</label><br>
         <input id="parto6" type="text" name="m15" placeholder="Nome do bebe">
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <h3>Avaliação da Cinemática</h3>
@@ -1016,7 +1015,7 @@
         <input type="text"  name="o8" placeholder="Testemunha">
         <br>
         <input type="text"  name="o9" placeholder="Doc">
-        <p class="termo_recusa">GUARAMIRIM <input type="text"  name="o10"> DE <input type="text"  name="o11"> DE <input type="text"  name="o12"></p>
+        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text"  name="o12" style="width: 30px;"></p>
         <!--DIVULGAR PARA A IMPRENSA-->
         <h3>Divulgar para a imprensa</h3>
         <input type="radio"  name="q1" value="sim">
@@ -1048,7 +1047,7 @@ methods: {
     this.face = "Frente";
 }
 
-    if (this.data_clicked_id === "Nádegas" || this.data_clicked_id === "Lombar" || this.data_clicked_id === "Coluna") {
+    if (this.data_clicked_id === "Nádegas" || this.data_clicked_id === "Lombar" || this.data_clicked_id === "Coluna" || this.   data_clicked_id === "Nuca") {
         this.lado = "";
         this.face = "Costas";
     }
@@ -1204,7 +1203,32 @@ methods: {
         this.data_clicked_id = "Perna";
         this.lado = "Direita";
         this.face= "Costa";
-      }    
+      }
+    if (this.data_clicked_id === "cabeca-tras") {
+        this.data_clicked_id = "Cabeça";
+        this.lado = "";
+        this.face= "Costa";
+      }
+    if (this.data_clicked_id === "back-left") {
+        this.data_clicked_id = "Costas";
+        this.lado = "Esquerda";
+        this.face= "Costas";
+      } 
+    if (this.data_clicked_id === "back-right") {
+        this.data_clicked_id = "Costas";
+        this.lado = "Direita";
+        this.face= "Costas";
+      }
+    if (this.data_clicked_id === "clavicule-left") {
+        this.data_clicked_id = "Trapézio";
+        this.lado = "Esquerda";
+        this.face= "Costas";
+      } 
+    if (this.data_clicked_id === "clavicule-right") {
+        this.data_clicked_id = "Trapézio";
+        this.lado = "Direita";
+        this.face= "Costas";
+      }          
     
     input.value = this.data_clicked_id;
     input2.value = this.lado;
