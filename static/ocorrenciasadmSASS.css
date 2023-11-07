@@ -331,4 +331,13 @@ a {
   font-size: 15px;
   border: rgba(0, 0, 0, 0.3254901961) solid 1px;
   border-radius: 5px;
+}
+
+.form-select {
+  width: 80%;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.2470588235);
+  color: #495057;
+  border-radius: 5px;
+  margin-bottom: 3px;
 }/*# sourceMappingURL=ocorrenciasadmSASS.css.map */

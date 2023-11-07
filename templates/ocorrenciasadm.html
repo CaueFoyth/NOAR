@@ -48,10 +48,10 @@
                         <table>
                             <h2>Ocorrências Registradas</h2>
                             <div class="filtros">
-                                <input id="input-busca" style="height: 38px; width: 90%;" type="text" class="form-control mt-3 mb-3" placeholder="O que você procura?" data-target="#filtros">
+                                <input id="input-busca" style="height: 38px; width: 90%;" type="text" class="form-control mb-2" placeholder="O que você procura?" data-target="#filtros">
 
                     
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filtroModal">
+                                <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#filtroModal">
                                     Filtros
                                 </button>
                                 
@@ -59,16 +59,148 @@
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                        <h5 class="modal-title" id="filtroModal">Modal title</h5>
+                                        <h5 class="modal-title" id="filtroModal">Filtros</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         </div>
                                         <div class="modal-body">
-                                        ...
+                                            <select class="form-select" id="form_select" aria-label="Default select example">
+                                                <option selected>Filtrar por:</option>
+                                                <option value="1" id="code_oc">Código da Ocorrência</option>
+                                                <option value="2" id="victim_oc">Vítima da Ocorrência</option>
+                                                <option value="3" id="date_oc">Data da Ocorrência</option>
+                                                <option value="4" id="local_oc">Local da Ocorrência</option>
+                                                <option value="5" id_="type_oc">Tipo da Ocorrência</option>
+                                                <option value="6" id="signal_oc">Sinais e Sintomas</option>
+                                                <option value="7" id="problem_oc">Problemas Encontrados</option>
+                                                <option value="8" id="victimwas_oc">Vítima Era</option>
+                                              </select>
+
+                                            
+
+                                            <select class="form-select" style="display: none;" id="form_select_signal">
+                                                <option selected>Filtrar por:</option>
+                                                <option value="1">Abdômen sensível ou rígido</option>
+                                                <option value="2">Afundamento de crânio</option>
+                                                <option value="3">Agitação</option>
+                                                <option value="4">Amnésia</option>
+                                                <option value="5">Angina de peito</option>
+                                                <option value="6">Apinéia</option>
+                                                <option value="7">Queda própria altura</option>
+                                                <option value="8">Afogamento</option>
+                                                <option value="9">Agressão</option>
+                                                <option value="10">Atropelamento</option>
+                                                <option value="11">Bradicardia</option>
+                                                <option value="12">Bradipnéia</option>
+                                                <option value="13">Bronco-Aspirando</option>
+                                                <option value="14">Cefaléia</option>
+                                                <option value="15">Cianose</option>
+                                                <option value="16">Convulsão</option>
+                                                <option value="17">Decorticação</option>
+                                                <option value="18">Deformidade</option>
+                                                <option value="19">Descerebração</option>
+                                                <option value="20">Desmaio</option>
+                                                <option value="21">Desvio de traquéia</option>
+                                                <option value="22">Dispnéia</option>
+                                                <option value="23">Dor local</option>
+                                                <option value="24">Edema</option>
+                                                <option value="25">Enfisema subcutâneo</option>
+                                                <option value="26">Êstase de jugular</option>
+                                                <option value="27">Face pálida</option>
+                                                <option value="28">Hemorragia</option>
+                                                <option value="29">Hipertensão</option>
+                                                <option value="30">Hipotensão</option>
+                                                <option value="31">Náuseas e Vômitos</option>
+                                                <option value="32">Nasoragia</option>
+                                                <option value="33">Óbito</option>
+                                                <option value="34">Otorréia</option>
+                                                <option value="35">Otorragia</option>
+                                                <option value="36">O.V.A.C.E</option>
+                                                <option value="37">Parada</option>
+                                                <option value="38">Priaprismo</option>
+                                                <option value="39">Prurido na pele</option>
+                                                <option value="40">Pupilas</option>
+                                                <option value="41">Sede</option>
+                                                <option value="42">Sinal de battle</option>
+                                                <option value="43">Sinal de guaxinim</option>
+                                                <option value="44">Sudorese</option>
+                                                <option value="45">Taquipnéia</option>
+                                                <option value="46">Taquicardia</option>
+                                                <option value="47">Tontura</option>
+                                                <option value="48">Outros Sintomas</option>
+                                            </select>
+
+                                            
+
+                                            <select class="form-select" style="display: none;" id="form_select_type">
+                                                <option selected>Filtrar por:</option>
+                                                <option value="1">Causado por animais</option>
+                                                <option value="2">Com meio de Transporte</option>
+                                                <option value="3">Desmoronamento</option>
+                                                <option value="4">Emergência Médica</option>
+                                                <option value="5">Queda de Altura 2M</option>
+                                                <option value="6">Tentativa de Suicídio</option>
+                                                <option value="7">Queda própria altura</option>
+                                                <option value="8">Afogamento</option>
+                                                <option value="9">Agressão</option>
+                                                <option value="10">Atropelamento</option>
+                                                <option value="11">Choque Elétrico</option>
+                                                <option value="12">Desabamento</option>
+                                                <option value="13">Doméstico</option>
+                                                <option value="14">Esportivo</option>
+                                                <option value="15">Intoxicação</option>
+                                                <option value="16">Queda Bicicleta</option>
+                                                <option value="17">Queda Moto</option>
+                                                <option value="18">Queda Nível <2M</option>
+                                                <option value="19">Trabalho</option>
+                                                <option value="20">Transferência</option>
+                                            </select>
+
+                                            <select class="form-select" style="display: none;" id="form_select_problems">
+                                                <option selected>Filtrar por:</option>
+                                                <option value="1">Respiratório</option>
+                                                <option value="2">DPOC</option>
+                                                <option value="3">Inalação de Fumaça</option>
+                                                <option value="4">Diabetes</option>
+                                                <option value="5">Hiperglicemia</option>
+                                                <option value="6">Hipoglicemia</option>
+                                                <option value="7">Obstétrico</option>
+                                                <option value="8">Parto Emergencial</option>
+                                                <option value="9">Gestante</option>
+                                                <option value="10">Hemorragia Excessiva</option>
+                                                <option value="11">Transporte</option>
+                                                <option value="12">Clínico</option>
+                                                <option value="13">Aéreo</option>
+                                                <option value="14">Emergencial</option>
+                                                <option value="15">Pós-Trauma</option>
+                                                <option value="16">SAMU</option>
+                                                <option value="17">Sem Remoção</option>
+                                                <option value="18">Outro transporte</option>
+                                                <option value="19">Outros Problemas</option>
+                                            </select>
+
+                                            <select class="form-select" style="display: none;" id="form_select_victimwas">
+                                                <option selected>Filtrar por:</option>
+                                                <option value="1">Ciclista</option>
+                                                <option value="2">Condutor de moto</option>
+                                                <option value="3">Gestante</option>
+                                                <option value="4">Passegeiro do banco da Frente</option>
+                                                <option value="5">Passegeiro Moto</option>
+                                                <option value="6">Condutor do Carro</option>
+                                                <option value="7">Clínico</option>
+                                                <option value="8">Trauma</option>
+                                                <option value="9">Passeiro banco de trás</option>
+                                                <option value="10">Pedestre</option>
+                                            </select>
+
+                                            <input type="text" id="filter_text" class="form-control mt-3 mb-3" placeholder="Nome do ">
+                                            <input type="text" id="filter_text_other" style="display: none;" class="form-control mt-3 mb-3" placeholder="Outros Transportes:>
+                                            <input type="text" id="filter_text_other_problems" style="display: none;" class="form-control mt-3 mb-3" placeholder="Outros Problemas:">
+                                            <input type="text" id="filter_text_other_signal" style="display: none;" class="form-control mt-3 mb-3" placeholder="Outros Sinais ou Sintomas:">
+
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                         <button type="button" class="btn btn-primary">Filtrar</button>
                                         </div>
                                     </div>
@@ -80,7 +212,7 @@
                             <thead>
                                 <tr>
                                     <th class="tbheader_name">Código</th>
-                                    <th class="tbheader_cpf">Paciente</th>
+                                    <th class="tbheader_cpf">Vítima</th>
                                     <th class="tbheader_type">Data</th>
                                     <th class="tbheader_local">Local</th>
                                     <th class="tbheader_options">Operações</th>
@@ -91,9 +223,9 @@
                                 
                                 <tr class="tbrow_main">
                                     <td class="tbheader_name">{{row.0}}</td>
-                                    <td class="tbheader_cpf">{{row.3}}</td>
-                                    <td class="tbheader_type">{{row.2 }}</td>
-                                    <td class="tbheader_local">{{row.7}}</td>
+                                    <td class="tbheader_cpf">{{row.2}}</td>
+                                    <td class="tbheader_type">{{row.1}}</td>
+                                    <td class="tbheader_local">{{row.6}}</td>
                                     <td class="tbdata_opt">    
                                         <a href="/ver/{{row.0}}" data-toggle="modal" data-target="#modalread{{row.0}}" class="buttons_opt" id="read">Ver</a>
                                         <a href="/alterar/{{row.0}}" class="buttons_opt" id="alterar" data-toggle="modal" data-target="#modaledit{{row.0}}">Alterar</a>
@@ -135,6 +267,78 @@
                 }
             }
         });
+
+        // Função para atualizar o placeholder do input com base na opção selecionada
+document.getElementById('form_select').addEventListener('change', function() {
+    var selectedOptionValue = this.value; // Obtém o valor da opção selecionada
+    var inputPlaceholder = ''; // Inicializa a variável para o placeholder
+
+    // Verifica o valor da opção selecionada e define o placeholder correspondente
+    switch (selectedOptionValue) {
+        case '1':
+            inputPlaceholder = 'Filtrar por: Código da Ocorrência';
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '2':
+            inputPlaceholder = 'Filtrar por: Vítima da Ocorrência';
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '3':
+            inputPlaceholder = 'Filtrar por: Data da Ocorrência';
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '4':
+            inputPlaceholder = 'Filtrar por: Local da Ocorrência';
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '5':
+            inputPlaceholder = 'Filtrar por: Tipo da Ocorrência';
+            document.getElementById("form_select_type").style.display = "flex";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '6':
+            inputPlaceholder = 'Filtrar por: Sinais e Sintomas';
+            document.getElementById("form_select_signal").style.display = "flex";
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '7':
+            inputPlaceholder = 'Filtrar por: Problemas Encontrados';
+            document.getElementById("form_select_problems").style.display = "flex";
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_victimwas").style.display = "none";
+            break;
+        case '8':
+            inputPlaceholder = 'Filtrar por: Vítima Era';
+            document.getElementById("form_select_victimwas").style.display = "flex";
+            document.getElementById("form_select_type").style.display = "none";
+            document.getElementById("form_select_signal").style.display = "none";
+            document.getElementById("form_select_problems").style.display = "none";
+            break;   
+        default:
+            inputPlaceholder = 'Nome do ';
+    }
+
+    // Atualiza o placeholder do input
+    document.getElementById('filter_text').setAttribute('placeholder', inputPlaceholder);
+});
+
 </script>
 
 </html>
