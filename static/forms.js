@@ -7,8 +7,8 @@ function meuFrente(){
     document.getElementById("Nádegas").style.display = "none";
     document.getElementById("Lombar").style.display = "none";
     document.getElementById("Coluna").style.display = "none";
-    document.getElementById("head-back").style.display = "none";
-    document.getElementById("nape").style.display = "none";
+    document.getElementById("cabeca-tras").style.display = "none";
+    document.getElementById("Nuca").style.display = "none";
     document.getElementById("armback-right").style.display = "none";
     document.getElementById("leg-right").style.display = "none";
     document.getElementById("back-right").style.display = "none";
@@ -58,8 +58,8 @@ function meuCostas(){
     document.getElementById("Nádegas").style.display = "block";
     document.getElementById("Lombar").style.display = "block";
     document.getElementById("Coluna").style.display = "block";
-    document.getElementById("head-back").style.display = "block";
-    document.getElementById("nape").style.display = "block";
+    document.getElementById("cabeca-tras").style.display = "block";
+    document.getElementById("Nuca").style.display = "block";
     document.getElementById("armback-right").style.display = "block";
     document.getElementById("leg-right").style.display = "block";
     document.getElementById("back-right").style.display = "block";
