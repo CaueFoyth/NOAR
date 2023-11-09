@@ -8,6 +8,11 @@ from email.message import EmailMessage
 from shiu import email_email, senha_email
 from hashlib import sha256
 import string
+from werkzeug.utils import secure_filename
+import os
+#import magic
+import urllib.request
+from datetime import datetime
 
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
@@ -21,6 +26,13 @@ app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
 app.config['MYSQL_PASSWORD'] =  ''
 app.config['MYSQL_DB'] =  'noar'
+UPLOAD_FOLDER = 'static/uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+  
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+  
+def allowed_file(filename):
+ return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 mysql = MySQL(app)
 
@@ -352,6 +364,17 @@ def enviar():
         e1 = e1.replace("Não", "")    
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        now = datetime.now()
+
+        files = request.files.getlist('files[]')
+        #print(files)
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                cursor.execute("INSERT INTO images (file_name, uploaded_on) VALUES (%s, %s)",[filename, now])
+                mysql.connection.commit()
+            print(file)
         
         cursor.execute(f"INSERT INTO dadosdavitima (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}')")
         mysql.connection.commit()
