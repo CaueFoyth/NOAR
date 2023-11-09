@@ -8,6 +8,11 @@ from email.message import EmailMessage
 from shiu import email_email, senha_email
 from hashlib import sha256
 import string
+from werkzeug.utils import secure_filename
+import os
+#import magic
+import urllib.request
+from datetime import datetime
 
 EMAIL_ADDRES = email_email
 EMAIL_PASSWORD = senha_email
@@ -21,6 +26,13 @@ app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
 app.config['MYSQL_PASSWORD'] =  ''
 app.config['MYSQL_DB'] =  'noar'
+UPLOAD_FOLDER = 'static/uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+  
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+  
+def allowed_file(filename):
+ return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 mysql = MySQL(app)
 
@@ -169,6 +181,37 @@ def enviar():
         ib = request.form.get('ib', 'Não')
         jb = request.form.get('jb', 'Não')
         kb = request.form.get('kb', 'Não')
+        z1 = request.form.get('z1', 'Não')
+        z2 = request.form.get('z2', 'Não')
+        z3 = request.form.get('z3', 'Não')
+        z4 = request.form.get('z4', 'Não')
+        p1 = request.form.get('p1', 'Não')
+        p2 = request.form.get('p2', 'Não')
+        p3 = request.form.get('p3', 'Não')
+        p4 = request.form.get('p4', 'Não')
+        p5 = request.form.get('p5', 'Não')
+        p6 = request.form.get('p6', 'Não')
+        p7 = request.form.get('p7', 'Não')
+        p8 = request.form.get('p8', 'Não')
+        p9 = request.form.get('p9', 'Não')
+        p10 = request.form.get('p10', 'Não')
+        p11 = request.form.get('p11', 'Não')
+        p12 = request.form.get('p12', 'Não')
+        p13 = request.form.get('p13', 'Não')
+        p14 = request.form.get('p14', 'Não')
+        p15 = request.form.get('p15', 'Não')
+        p16 = request.form.get('p16', 'Não')
+        p17 = request.form.get('p17', 'Não')
+        p18 = request.form.get('p18', 'Não')
+        p19 = request.form.get('p19', 'Não')
+        p20 = request.form.get('p20', 'Não')
+        p21 = request.form.get('p21', 'Não')
+        p22 = request.form.get('p22', 'Não')
+        p23 = request.form.get('p23', 'Não')
+        p24 = request.form.get('p24', 'Não')
+        p25 = request.form.get('p25', 'Não')
+        p26 = request.form.get('p26', 'Não')
+        p27 = request.form.get('p27', 'Não')
         d1 = request.form.get('d1', 'Não')
         d12 = request.form.get('d12', 'Não')
         d2 = request.form.get('d2', 'Não')
@@ -352,6 +395,17 @@ def enviar():
         e1 = e1.replace("Não", "")    
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        now = datetime.now()
+
+        files = request.files.getlist('files[]')
+        #print(files)
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                cursor.execute("INSERT INTO images (file_name, uploaded_on) VALUES (%s, %s)",[filename, now])
+                mysql.connection.commit()
+            print(file)
         
         cursor.execute(f"INSERT INTO dadosdavitima (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}')")
         mysql.connection.commit()
@@ -371,8 +425,11 @@ def enviar():
         cursor.execute(f"INSERT INTO avaliacaopaciente (fk_sos, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor) VALUES ({session['id_sos']}, '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}')")
         mysql.connection.commit()
 
-        # cursor.execute(f"INSERT INTO corpo (fk_sos, ) VALUES ({session['id_sos']}, '{}')")
-        # mysql.connection.commit()
+        cursor.execute(f"INSERT INTO corpo (fk_sos, local, lado, FrenteOuCostas, tipo) VALUES ({session['id_sos']}, '{z1}', '{z2}', '{z3}', '{z4}')")
+        mysql.connection.commit()
+
+        cursor.execute(f"INSERT INTO queimadura (fk_sos, cabeca_p, cabeca_s, cabeca_t, pescoco_p, pescoco_s, pescoco_t, tant_p, tant_s, tant_t, tpos_p, tpos_s, tpos_t, genit_p, genit_s, genit_t, mid_p, mid_s, mid_t, mie_p, mie_s, mie_t, msd_p, msd_s, msd_t, mse_p, mse_s, mse_t) VALUES ({session['id_sos']}, '{p1}', '{p2}', '{p3}', '{p4}', '{p5}', '{p6}', '{p7}', '{p8}', '{p9}', '{p10}', '{p11}', '{p12}', '{p13}', '{p14}', '{p15}', '{p16}', '{p17}', '{p18}', '{p19}', '{p20}', '{p21}', '{p22}', '{p23}', '{p24}', '{p25}', '{p26}', '{p27}')")
+        mysql.connection.commit()
 
         cursor.execute(f"INSERT INTO sinaisvitais (fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior) VALUES ({session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}')")
         mysql.connection.commit()
@@ -421,7 +478,7 @@ def enviar():
         mysql.connection.commit()
 
         # cursor.execute(f"INSERT INTO ocorrencias (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, quedaa_menos2, trabalho, transferencia, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_aereo, transp_clinico, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior, forma_conducao, vitima_era, decisao_transporte, m, s1, s2, s3, equipe, demandante, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}', '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}', '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}', '{b1a}', '{b2}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}', '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c36g}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}', '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}', '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}', '{e1}', '{e2}', '{f1}', '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}', '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}', '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39}', '{j40}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45}', '{j46}', '{j47}', '{k1}', '{k1a}', '{k1b}', '{k1c}', {k1qtd})")
-    return redirect(url_for("ver"))
+    return redirect(url_for("AddOcorrencia"))
 
 
 @app.route('/adm', methods=["POST" , "GET"])
@@ -555,8 +612,8 @@ def alterar():
 def confirmpage():
     return render_template("confirmpage.html")
 
-@app.route('/ver', methods=["POST" , "GET"])
-def ver():
+@app.route('/AddOcorrencia', methods=["POST" , "GET"])
+def AddOcorrencia   ():
     if 'logado' in session:
         if session['adm'] == 1:
             return render_template("forms.html")
@@ -588,6 +645,7 @@ def perfil():
         cursor.close()
         return render_template("perfil.html", perfil = perfil)
     return redirect(url_for("index"))
+
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
