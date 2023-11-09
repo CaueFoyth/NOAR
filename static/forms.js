@@ -38,7 +38,7 @@ function meuFrente(){
     document.getElementById("Adutor-Esquerdo").style.display = "block";
     document.getElementById("Pé-Esquerdo").style.display = "block";
     document.getElementById("Canela-Esquerda").style.display = "block";
-    document.getElementById("Joelho-Esquerdo").style.display = "block";Lombar
+    document.getElementById("Joelho-Esquerdo").style.display = "block";
     document.getElementById("Coxa-Direita").style.display = "block";
     document.getElementById("Virílha").style.display = "block";
     document.getElementById("Adutor-Direito").style.display = "block";
@@ -67,7 +67,7 @@ function meuCostas(){
     document.getElementById("back-left").style.display = "block";
     document.getElementById("clavicule-left").style.display = "block";
 
-    document.getElementById("app").style.marginLeft = "-277px";
+    document.getElementById("app").style.marginLeft = "-275px";
     
     //DESABILITAR FRENTE
     document.getElementById("Cabeça").style.display = "none";
