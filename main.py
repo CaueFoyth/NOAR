@@ -646,6 +646,7 @@ def perfil():
         return render_template("perfil.html", perfil = perfil)
     return redirect(url_for("index"))
 
+
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
     app.run(debug=True)
