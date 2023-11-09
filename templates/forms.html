@@ -13,7 +13,7 @@
     <header>
         <p class="sumirTeste">exemplo</p>
     </header>
-    <form action="/enviar" method="post"> 
+    <form action="/enviar" enctype="multipart/form-data" method="post"> 
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <h2>Dados da vítima</h2>
@@ -584,22 +584,22 @@
         </svg>
         </div>
         </div>
-        <input type="text"  id="corpoLocal" placeholder="Local">
-        <input type="text"  id="corpoLado" placeholder="Lado">
-        <input type="text"  id="corpoFace" placeholder="Face">
-        <input type="text"  id="corpoTipo" placeholder="Tipo">
+        <input type="text" name="z1"  id="corpoLocal" placeholder="Local">
+        <input type="text" name="z2"  id="corpoLado" placeholder="Lado">
+        <input type="text" name="z3"  id="corpoFace" placeholder="Frente ou costas">
+        <input type="text" name="z4"  id="corpoTipo" placeholder="Tipo">
         <br><br>
         <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
-            <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
-            <tr><td>Pescoço</td> <td><input type="radio" name="p2" value="pescoco_1"></td> <td><input type="radio" name="p2" value="pescoco_2"></td> <td><input type="radio" name="p2" value="pescoco_3"></td></tr>
-            <tr><td>T. Ant.</td> <td><input type="radio" name="p3" value="ant_1"></td> <td><input type="radio" name="p3" value="ant_2"></td> <td><input type="radio" name="p3" value="ant_3"></td></tr>
-            <tr><td>T. Post.</td> <td><input type="radio" name="p4" value="post_1"></td> <td><input type="radio" name="p4" value="post_2"></td> <td><input type="radio" name="p4" value="post_3"></td></tr>
-            <tr><td>Genital</td> <td><input type="radio" name="p5" value="genital_1"></td> <td><input type="radio" name="p5" value="genital_2"></td> <td><input type="radio" name="p5" value="genital_3"></td></tr>
-            <tr><td>M.I.D.</td> <td><input type="radio" name="p6" value="mid_1"></td> <td><input type="radio" name="p6" value="mid_2"></td> <td><input type="radio" name="p6" value="mid_3"></td></tr>
-            <tr><td>M.I.E.</td> <td><input type="radio" name="p7" value="mie_1"></td> <td><input type="radio" name="p7" value="mie_2"></td> <td><input type="radio" name="p7" value="mie_3"></td></tr>
-            <tr><td>M.S.D.</td> <td><input type="radio" name="p8" value="msd_1"></td> <td><input type="radio" name="p8" value="msd_2"></td> <td><input type="radio" name="p8" value="msd_3"></td></tr>
-            <tr><td>M.S.E.</td> <td><input type="radio" name="p9" value="mse_1"></td> <td><input type="radio" name="p9" value="mse_2"></td> <td><input type="radio" name="p9" value="mse_3"></td></tr>
+            <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="Sim"></td> <td><input type="radio" name="p2" value="Sim"></td> <td><input type="radio" name="p3" value="Sim"></td></tr>
+            <tr><td>Pescoço</td> <td><input type="radio" name="p4" value="Sim"></td> <td><input type="radio" name="p5" value="Sim"></td> <td><input type="radio" name="p6" value="Sim"></td></tr>
+            <tr><td>T. Ant.</td> <td><input type="radio" name="p7" value="Sim"></td> <td><input type="radio" name="p8" value="Sim"></td> <td><input type="radio" name="p9" value="Sim"></td></tr>
+            <tr><td>T. Post.</td> <td><input type="radio" name="p10" value="Sim"></td> <td><input type="radio" name="p11" value="Sim"></td> <td><input type="radio" name="p12" value="Sim"></td></tr>
+            <tr><td>Genital</td> <td><input type="radio" name="p13" value="Sim"></td> <td><input type="radio" name="p14" value="Sim"></td> <td><input type="radio" name="p15" value="Sim"></td></tr>
+            <tr><td>M.I.D.</td> <td><input type="radio" name="p16" value="Sim"></td> <td><input type="radio" name="p17" value="Sim"></td> <td><input type="radio" name="p18" value="Sim"></td></tr>
+            <tr><td>M.I.E.</td> <td><input type="radio" name="p19" value="Sim"></td> <td><input type="radio" name="p20" value="Sim"></td> <td><input type="radio" name="p21" value="Sim"></td></tr>
+            <tr><td>M.S.D.</td> <td><input type="radio" name="p22" value="Sim"></td> <td><input type="radio" name="p23" value="Sim"></td> <td><input type="radio" name="p24" value="Sim"></td></tr>
+            <tr><td>M.S.E.</td> <td><input type="radio" name="p25" value="Sim"></td> <td><input type="radio" name="p26" value="Sim"></td> <td><input type="radio" name="p27" value="Sim"></td></tr>
          </table>
         <!--SINAIS VITAIS-->
         <h3>Sinais Vitais</h3>
@@ -1023,10 +1023,31 @@
         <input type="radio"  name="q1" value="nao">
         <label for="nao">nao</label>
         <br>
+        <label>Insira a imagens da ocorrência: </label>
+        <br>
+        <input type="file" name="files[]" id="fileInput" multiple >
+        <br>
         <button type="submit">ENVIAR</button>
     </form>   
 </body>
 <script>
+    $(document).ready(function(){
+ // File type validation
+    $("#fileInput").change(function(){
+        var fileLength = this.files.length;
+        var match= ["image/jpeg","image/png","image/jpg","image/gif"];
+        var i;
+        for(i = 0; i < fileLength; i++){ 
+            var file = this.files[i];
+            var imagefile = file.type;
+            if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]) || (imagefile==match[3]))){
+                alert('Insira imagens no formato(JPEG/JPG/PNG/GIF).');
+                $("#fileInput").val('');
+                return false;
+            }
+        }
+    });
+});
 new Vue({
 el: "#app",
 data: () => ({
