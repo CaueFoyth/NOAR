@@ -397,18 +397,21 @@ def enviar():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         now = datetime.now()
 
+        cursor.execute(f"INSERT INTO dadosdavitima (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}')")
+        mysql.connection.commit()
+
+        cursor.execute('SELECT id_ocorrencia FROM dadosdavitima ORDER BY id_ocorrencia DESC LIMIT 1')
+        oco = cursor.fetchone()
+    
         files = request.files.getlist('files[]')
         #print(files)
         for file in files:
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                cursor.execute("INSERT INTO images (file_name, uploaded_on) VALUES (%s, %s)",[filename, now])
+                cursor.execute(f"INSERT INTO images (fk_ocorrencia, fk_sos, file_name, uploaded_on) VALUES ({oco} ,{session['id_sos']} ,'{filename}', {now})")
                 mysql.connection.commit()
             print(file)
-        
-        cursor.execute(f"INSERT INTO dadosdavitima (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}')")
-        mysql.connection.commit()
 
         cursor.execute(f"INSERT INTO acompanhante (fk_sos, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp) VALUES ({session['id_sos']}, '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}')")
         mysql.connection.commit()

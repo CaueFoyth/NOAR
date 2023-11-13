@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/11/2023 às 20:55
+-- Tempo de geração: 13/11/2023 às 21:44
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -150,6 +150,29 @@ CREATE TABLE `dadosdavitima` (
   `cpf_vit` varchar(15) NOT NULL,
   `local_oco` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `dadosdavitima`
+--
+
+INSERT INTO `dadosdavitima` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`) VALUES
+(1, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(2, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(3, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(4, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(5, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(6, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(7, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(8, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(9, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(10, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(11, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(12, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(13, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(14, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(15, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(16, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
+(17, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca');
 
 -- --------------------------------------------------------
 
@@ -825,7 +848,7 @@ ALTER TABLE `vitimaera`
 -- AUTO_INCREMENT de tabela `dadosdavitima`
 --
 ALTER TABLE `dadosdavitima`
-  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restrições para tabelas despejadas
