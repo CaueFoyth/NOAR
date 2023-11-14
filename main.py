@@ -402,6 +402,7 @@ def enviar():
 
         cursor.execute('SELECT id_ocorrencia FROM dadosdavitima ORDER BY id_ocorrencia DESC LIMIT 1')
         oco = cursor.fetchone()
+        id_ocorrencia = oco['id_ocorrencia']
     
         files = request.files.getlist('files[]')
         #print(files)
@@ -409,87 +410,101 @@ def enviar():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                cursor.execute(f"INSERT INTO images (fk_ocorrencia, fk_sos, file_name, uploaded_on) VALUES ({oco} ,{session['id_sos']} ,'{filename}', {now})")
+                cursor.execute(f"INSERT INTO images (fk_ocorrencia, fk_sos, file_name) VALUES ({id_ocorrencia} ,{session['id_sos']} ,'{filename}')")
                 mysql.connection.commit()
             print(file)
 
-        cursor.execute(f"INSERT INTO acompanhante (fk_sos, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp) VALUES ({session['id_sos']}, '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}')")
+        cursor.execute(f"INSERT INTO acompanhante (fk_ocorrencia, fk_sos, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO tipodeocorrencia (fk_sos, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, queda_menos2, trabalho, transferencia) VALUES ({session['id_sos']}, '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}')")
+        cursor.execute(f"INSERT INTO tipodeocorrencia (fk_ocorrencia, fk_sos, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, queda_menos2, trabalho, transferencia) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO problemasencontrados (fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_clinico, transp_aereo, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros) VALUES ({session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}')")
+        cursor.execute(f"INSERT INTO problemasencontrados (fk_ocorrencia, fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_clinico, transp_aereo, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO sinaissintomas (fk_sos, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas) VALUES ({session['id_sos']}, '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}')")
+        cursor.execute(f"INSERT INTO sinaissintomas (fk_ocorrencia, fk_sos, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO avaliacaopaciente (fk_sos, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor) VALUES ({session['id_sos']}, '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}')")
+        cursor.execute(f"INSERT INTO avaliacaopaciente (fk_ocorrencia, fk_sos, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO corpo (fk_sos, local, lado, FrenteOuCostas, tipo) VALUES ({session['id_sos']}, '{z1}', '{z2}', '{z3}', '{z4}')")
+        cursor.execute(f"INSERT INTO corpo (fk_ocorrencia ,fk_sos, local, lado, FrenteOuCostas, tipo) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{z1}', '{z2}', '{z3}', '{z4}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO queimadura (fk_sos, cabeca_p, cabeca_s, cabeca_t, pescoco_p, pescoco_s, pescoco_t, tant_p, tant_s, tant_t, tpos_p, tpos_s, tpos_t, genit_p, genit_s, genit_t, mid_p, mid_s, mid_t, mie_p, mie_s, mie_t, msd_p, msd_s, msd_t, mse_p, mse_s, mse_t) VALUES ({session['id_sos']}, '{p1}', '{p2}', '{p3}', '{p4}', '{p5}', '{p6}', '{p7}', '{p8}', '{p9}', '{p10}', '{p11}', '{p12}', '{p13}', '{p14}', '{p15}', '{p16}', '{p17}', '{p18}', '{p19}', '{p20}', '{p21}', '{p22}', '{p23}', '{p24}', '{p25}', '{p26}', '{p27}')")
+        cursor.execute(f"INSERT INTO queimadura (fk_ocorrencia, fk_sos, cabeca_p, cabeca_s, cabeca_t, pescoco_p, pescoco_s, pescoco_t, tant_p, tant_s, tant_t, tpos_p, tpos_s, tpos_t, genit_p, genit_s, genit_t, mid_p, mid_s, mid_t, mie_p, mie_s, mie_t, msd_p, msd_s, msd_t, mse_p, mse_s, mse_t) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{p1}', '{p2}', '{p3}', '{p4}', '{p5}', '{p6}', '{p7}', '{p8}', '{p9}', '{p10}', '{p11}', '{p12}', '{p13}', '{p14}', '{p15}', '{p16}', '{p17}', '{p18}', '{p19}', '{p20}', '{p21}', '{p22}', '{p23}', '{p24}', '{p25}', '{p26}', '{p27}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO sinaisvitais (fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior) VALUES ({session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}')")
+        cursor.execute(f"INSERT INTO sinaisvitais (fk_ocorrencia, fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO formadecondução (fk_sos, forma_conducao) VALUES ({session['id_sos']}, '{e1}')")
+        cursor.execute(f"INSERT INTO formadecondução (fk_ocorrencia, fk_sos, forma_conducao) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{e1}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO vitimaera (fk_sos, Ciclista, CondutorMoto, Gestante, PasBanFrente, PasMoto, CondutorCarro, Clinico, Trauma, PasBanTras, Pedestre) VALUES ({session['id_sos']}, '{e2a}', '{e2b}', '{e2c}', '{e2d}', '{e2e}', '{e2f}', '{e2g}', '{e2h}', '{e2i}', '{e2j}')")
+        cursor.execute(f"INSERT INTO vitimaera (fk_ocorrencia, fk_sos, Ciclista, CondutorMoto, Gestante, PasBanFrente, PasMoto, CondutorCarro, Clinico, Trauma, PasBanTras, Pedestre) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{e2a}', '{e2b}', '{e2c}', '{e2d}', '{e2e}', '{e2f}', '{e2g}', '{e2h}', '{e2i}', '{e2j}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO decisaotransporte (fk_sos, decisao_transporte) VALUES ({session['id_sos']}, '{f1}')")
+        cursor.execute(f"INSERT INTO decisaotransporte (fk_ocorrencia, fk_sos, decisao_transporte) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{f1}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO equipeatendimento (fk_sos, m, s1, s2, s3, equipe, demandante) VALUES ({session['id_sos']}, '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}' )")
+        cursor.execute(f"INSERT INTO equipeatendimento (fk_ocorrencia, fk_sos, m, s1, s2, s3, equipe, demandante) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}' )")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO informaçõesocorrência (fk_sos, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus) VALUES ({session['id_sos']}, '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}')")
+        cursor.execute(f"INSERT INTO informaçõesocorrência (fk_ocorrencia ,fk_sos, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO procedimentosefetuados (fk_sos, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, procedimentos_outros) VALUES ({session['id_sos']}, '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39a}', '{j40a}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45a}', '{j46a}', '{j47}', '{j48}')")
+        cursor.execute(f"INSERT INTO procedimentosefetuados (fk_ocorrencia ,fk_sos, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, procedimentos_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39a}', '{j40a}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45a}', '{j46a}', '{j47}', '{j48}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO materiaisdescartável (fk_sos, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd, cateter, cateter_qtd, compressa, compressa_qtd, kits, kits_h, kits_p, kits_q, kits_qtd, luvas, luvas_qtd, mascara, mascara_qtd) VALUES ({session['id_sos']}, '{k1}', '{k1a}', '{k1b}', '{k1c}', '{k1qtd}', '{k2}', '{k2qtd}', '{k3}', '{k3qtd}', '{k4}', '{k4a}', '{k4b}', '{k4c}', '{k4qtd}', '{k5}', '{k5qtd}', '{k6}', '{k6qtd}')")
+        cursor.execute(f"INSERT INTO materiaisdescartável (fk_ocorrencia ,fk_sos, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd, cateter, cateter_qtd, compressa, compressa_qtd, kits, kits_h, kits_p, kits_q, kits_qtd, luvas, luvas_qtd, mascara, mascara_qtd) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{k1}', '{k1a}', '{k1b}', '{k1c}', '{k1qtd}', '{k2}', '{k2qtd}', '{k3}', '{k3qtd}', '{k4}', '{k4a}', '{k4b}', '{k4c}', '{k4qtd}', '{k5}', '{k5qtd}', '{k6}', '{k6qtd}')")
         mysql.connection.commit()
 
 
-        cursor.execute(f"INSERT INTO materiaisdeixadoshospital (fk_sos, base_estabilizada, base_qtd, colar, colar_n, colar_pp, colar_p, colar_m, colar_g, colar_outros, colar_qtd, coxins, coxins_qtd, ked, ked_adul, ked_infan, ked_qtd, maca_rigida_deixada, maca_qtd, ttf, ttf_adul, ttf_infan, ttf_qtd, tirante_aranha, tirante_aqtd, tirante_cabeca, tirante_cqtd, canula, canula_qtd) VALUES ({session['id_sos']}, '{k7}', '{k7qtd}', '{k8}', '{k8a}', '{k8b}', '{k8c}', '{k8d}', '{k8e}', '{k8f}', '{k8qtd}', '{k9}', '{k9qtd}', '{k10}', '{k10a}', '{k10b}', '{k10qtd}', '{k11}', '{k11qtd}', '{k12}', '{k12a}', '{k12b}', '{k12qtd}', '{k13}', '{k13qtd}', '{k14}', '{k14qtd}', '{k15}', '{k15qtd}')")
+        cursor.execute(f"INSERT INTO materiaisdeixadoshospital (fk_ocorrencia ,fk_sos, base_estabilizada, base_qtd, colar, colar_n, colar_pp, colar_p, colar_m, colar_g, colar_outros, colar_qtd, coxins, coxins_qtd, ked, ked_adul, ked_infan, ked_qtd, maca_rigida_deixada, maca_qtd, ttf, ttf_adul, ttf_infan, ttf_qtd, tirante_aranha, tirante_aqtd, tirante_cabeca, tirante_cqtd, canula, canula_qtd) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{k7}', '{k7qtd}', '{k8}', '{k8a}', '{k8b}', '{k8c}', '{k8d}', '{k8e}', '{k8f}', '{k8qtd}', '{k9}', '{k9qtd}', '{k10}', '{k10a}', '{k10b}', '{k10qtd}', '{k11}', '{k11qtd}', '{k12}', '{k12a}', '{k12b}', '{k12qtd}', '{k13}', '{k13qtd}', '{k14}', '{k14qtd}', '{k15}', '{k15qtd}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO anamneseemergência (fk_sos, anamnese_emergencia, aconteceu_outra_vez, aconteceu_tempo, possui_problema, qual_problema, alergico_algo, alergico_oque, alimento_liquido, alimento_horas) VALUES ({session['id_sos']}, '{l1}', '{l2}', '{l3}', '{l4}', '{l4a}', '{l5}', '{l5a}', '{l6}', '{l6a}')")
+        cursor.execute(f"INSERT INTO anamneseemergência (fk_ocorrencia ,fk_sos, anamnese_emergencia, aconteceu_outra_vez, aconteceu_tempo, possui_problema, qual_problema, alergico_algo, alergico_oque, alimento_liquido, alimento_horas) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{l1}', '{l2}', '{l3}', '{l4}', '{l4a}', '{l5}', '{l5a}', '{l6}', '{l6a}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO AnamneseGestacional (fk_sos, anamnese_gestacional, pre_natal, nome_pre_natal, primeiro_filho, quantos_filhos, horas_contracao, duracao_contracao, intervalo_contracao, pressao_quadril, ruptura_bolsa, inspecao_visusal, parto_realizado, hora_nascimento, sexo_bebe, nome_bebe) VALUES ({session['id_sos']}, '{m1}', '{m2}', '{m3}', '{m4}', '{m5}', '{m6}', '{m7}', '{m8}', '{m9}', '{m10}', '{m11}', '{m12}', '{m13}', '{m14}', '{m15}')")
+        cursor.execute(f"INSERT INTO AnamneseGestacional (fk_ocorrencia ,fk_sos, anamnese_gestacional, pre_natal, nome_pre_natal, primeiro_filho, quantos_filhos, horas_contracao, duracao_contracao, intervalo_contracao, pressao_quadril, ruptura_bolsa, inspecao_visusal, parto_realizado, hora_nascimento, sexo_bebe, nome_bebe) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{m1}', '{m2}', '{m3}', '{m4}', '{m5}', '{m6}', '{m7}', '{m8}', '{m9}', '{m10}', '{m11}', '{m12}', '{m13}', '{m14}', '{m15}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO avaliacaocinematica (fk_sos, disturbio_comport, encontrado_capacete, encontrado_cinto, para_brisa, caminhando_cena, painel_avariado, volante_torcido) VALUES ({session['id_sos']}, '{n1}', '{n2}', '{n3}', '{n4}', '{n5}', '{n6}', '{n7}')")
+        cursor.execute(f"INSERT INTO avaliacaocinematica (fk_ocorrencia ,fk_sos, disturbio_comport, encontrado_capacete, encontrado_cinto, para_brisa, caminhando_cena, painel_avariado, volante_torcido) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{n1}', '{n2}', '{n3}', '{n4}', '{n5}', '{n6}', '{n7}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO observacoesimportantes (fk_sos, observacao_importante) VALUES ({session['id_sos']}, '{o1}' )")
+        cursor.execute(f"INSERT INTO observacoesimportantes (fk_ocorrencia ,fk_sos, observacao_importante) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{o1}' )")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO termoderecusa (fk_sos, eu_nome, rg_numero, cpf_numero, assinatura, testemunha, doc, testemunha_dois, doc_dois, guaramirim_dia, guaramirim_mes, guaramirim_ano) VALUES ({session['id_sos']}, '{o2}', '{o3}', '{o4}', '{o5}', '{o6}', '{o7}', '{o8}', '{o9}', '{o10}', '{o11}', '{o12}')")
+        cursor.execute(f"INSERT INTO termoderecusa (fk_ocorrencia ,fk_sos, eu_nome, rg_numero, cpf_numero, assinatura, testemunha, doc, testemunha_dois, doc_dois, guaramirim_dia, guaramirim_mes, guaramirim_ano) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{o2}', '{o3}', '{o4}', '{o5}', '{o6}', '{o7}', '{o8}', '{o9}', '{o10}', '{o11}', '{o12}')")
         mysql.connection.commit()
         
-        cursor.execute(f"INSERT INTO divulgarparaimprensa (fk_sos, divulgar_imprensa) VALUES ({session['id_sos']}, '{q1}' )")
+        cursor.execute(f"INSERT INTO divulgarparaimprensa (fk_ocorrencia ,fk_sos, divulgar_imprensa) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{q1}' )")
         mysql.connection.commit()
 
         # cursor.execute(f"INSERT INTO ocorrencias (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco, acompanhante, nome_acomp, idade_acomp, cpf_acomp, sexo_acomp, causado_animais, com_transporte, deslizamento, emergencia_medica, queda_2m, tentativa_suicidio, queda_propria_altura, afogamento, agressao, atropelamento, choque_eletrico, desabamento, domestico, esportivo, intoxicacao, queda_bicicleta, queda_moto, quedaa_menos2, trabalho, transferencia, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transp_aereo, transp_clinico, transp_emergencial, transp_pos_trauma, transp_samu, transp_sem_remocao, transp_outros, problema_outros, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose_labios, cianose_extremidade, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema_labios, edema_extremidade, enfisema_subcutaneo, estase_jugular, face_palida, hemo_int, hemo_ext, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada_cardiaca, parada_respiratoria, priaprismo, prurido_pele, pupilas_anisocoria, pupilas_isocoria, pupilas_midriase, pupilas_miose, pupilas_reagente, pupilas_nao_reagente, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_sintomas, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior, forma_conducao, vitima_era, decisao_transporte, m, s1, s2, s3, equipe, demandante, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}', '{acompanhante}', '{nomeAcompanhante}', '{idadeAcompanhante}', '{cpfAcompanhante}', '{sexoAcompanhante}', '{a1}', '{a2}', '{a3}', '{a4}', '{a5}', '{a6}', '{a7}', '{a8}', '{a9}', '{a10}', '{a11}', '{a12}', '{a13}', '{a14}', '{a15}', '{a16}', '{a17}', '{a18}', '{a19}', '{a20}', '{b1a}', '{b2}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b4b}', '{b4c}', '{b4d}', '{b4e}', '{b4f}', '{b4g}', '{b5}', '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c11b}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c20b}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c24b}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c33b}', '{c34}', '{c35}', '{c36a}', '{c36b}', '{c36c}', '{c36d}', '{c36e}', '{c36f}', '{c36g}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}', '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}', '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}', '{e1}', '{e2}', '{f1}', '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}', '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}', '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39}', '{j40}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45}', '{j46}', '{j47}', '{k1}', '{k1a}', '{k1b}', '{k1c}', {k1qtd})")
     return redirect(url_for("AddOcorrencia"))
 
+@app.route('/enviarPerfilImagem', methods=["POST" , "GET"])
+def enviarPerfilImagem():
+    if 'logado' in session:
+        files = request.files.getlist('files[]')
+        #print(files)
+        for file in files:
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                cursor.execute(f"UPDATE login SET perfil = '{filename}' WHERE id_sos = {session['id_sos']}")
+                mysql.connection.commit()
+
+        return redirect(url_for("perfil"))
+    return redirect(url_for("index"))
 
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
     if 'logado' in session:
         if session['adm'] == 1:
             cursor = mysql.connection.cursor()
-            cursor.execute("SELECT * FROM login")
+            cursor.execute(f"SELECT * FROM login WHERE id_sos <> {session['id_sos']}")
             data = cursor.fetchall()
             cursor.close()
             return render_template("adm.html", login = data)

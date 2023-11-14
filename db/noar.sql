@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/11/2023 às 21:44
+-- Tempo de geração: 14/11/2023 às 02:01
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -37,6 +37,13 @@ CREATE TABLE `acompanhante` (
   `sexo_acomp` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `acompanhante`
+--
+
+INSERT INTO `acompanhante` (`fk_ocorrencia`, `fk_sos`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`) VALUES
+(1, 1, 'Não', '', 0, '', 'Não');
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +63,13 @@ CREATE TABLE `anamneseemergência` (
   `alimento_liquido` varchar(3) NOT NULL,
   `alimento_horas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `anamneseemergência`
+--
+
+INSERT INTO `anamneseemergência` (`fk_ocorrencia`, `fk_sos`, `anamnese_emergencia`, `aconteceu_outra_vez`, `aconteceu_tempo`, `possui_problema`, `qual_problema`, `alergico_algo`, `alergico_oque`, `alimento_liquido`, `alimento_horas`) VALUES
+(1, 1, '', 'Não', '', 'Não', '', 'Não', '', 'Não', '');
 
 -- --------------------------------------------------------
 
@@ -83,6 +97,13 @@ CREATE TABLE `anamnesegestacional` (
   `nome_bebe` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `anamnesegestacional`
+--
+
+INSERT INTO `anamnesegestacional` (`fk_ocorrencia`, `fk_sos`, `anamnese_gestacional`, `pre_natal`, `nome_pre_natal`, `primeiro_filho`, `quantos_filhos`, `horas_contracao`, `duracao_contracao`, `intervalo_contracao`, `pressao_quadril`, `ruptura_bolsa`, `inspecao_visusal`, `parto_realizado`, `hora_nascimento`, `sexo_bebe`, `nome_bebe`) VALUES
+(1, 1, '', 'Não', '', 'Não', '', '', '', '', 'Não', 'Não', 'Não', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +122,13 @@ CREATE TABLE `avaliacaocinematica` (
   `volante_torcido` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `avaliacaocinematica`
+--
+
+INSERT INTO `avaliacaocinematica` (`fk_ocorrencia`, `fk_sos`, `disturbio_comport`, `encontrado_capacete`, `encontrado_cinto`, `para_brisa`, `caminhando_cena`, `painel_avariado`, `volante_torcido`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
@@ -118,6 +146,13 @@ CREATE TABLE `avaliacaopaciente` (
   `resposta_motora_menor` varchar(23) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `avaliacaopaciente`
+--
+
+INSERT INTO `avaliacaopaciente` (`fk_ocorrencia`, `fk_sos`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +168,13 @@ CREATE TABLE `corpo` (
   `lado` varchar(20) NOT NULL,
   `tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `corpo`
+--
+
+INSERT INTO `corpo` (`fk_ocorrencia`, `fk_sos`, `AdultoOuCrianca`, `FrenteOuCostas`, `local`, `lado`, `tipo`) VALUES
+(1, 1, '', 'Não', 'Não', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
@@ -156,23 +198,7 @@ CREATE TABLE `dadosdavitima` (
 --
 
 INSERT INTO `dadosdavitima` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`) VALUES
-(1, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(2, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(3, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(4, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(5, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(6, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(7, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(8, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(9, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(10, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(11, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(12, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(13, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(14, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(15, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(16, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca'),
-(17, 1, '2023-11-13', 'teste', 'Masculino', 12, '125.413.329-12', 'rua ca');
+(1, 1, '2023-11-02', '', 'Não', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -186,6 +212,13 @@ CREATE TABLE `decisaotransporte` (
   `decisao_transporte` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `decisaotransporte`
+--
+
+INSERT INTO `decisaotransporte` (`fk_ocorrencia`, `fk_sos`, `decisao_transporte`) VALUES
+(1, 1, 'Não');
+
 -- --------------------------------------------------------
 
 --
@@ -197,6 +230,13 @@ CREATE TABLE `divulgarparaimprensa` (
   `fk_sos` int(9) NOT NULL,
   `divulgar_imprensa` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `divulgarparaimprensa`
+--
+
+INSERT INTO `divulgarparaimprensa` (`fk_ocorrencia`, `fk_sos`, `divulgar_imprensa`) VALUES
+(1, 1, 'Não');
 
 -- --------------------------------------------------------
 
@@ -215,6 +255,13 @@ CREATE TABLE `equipeatendimento` (
   `demandante` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `equipeatendimento`
+--
+
+INSERT INTO `equipeatendimento` (`fk_ocorrencia`, `fk_sos`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`) VALUES
+(1, 1, '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -227,6 +274,13 @@ CREATE TABLE `formadecondução` (
   `forma_conducao` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `formadecondução`
+--
+
+INSERT INTO `formadecondução` (`fk_ocorrencia`, `fk_sos`, `forma_conducao`) VALUES
+(1, 1, '  ');
+
 -- --------------------------------------------------------
 
 --
@@ -236,10 +290,15 @@ CREATE TABLE `formadecondução` (
 CREATE TABLE `images` (
   `fk_ocorrencia` int(9) NOT NULL,
   `fk_sos` int(11) NOT NULL,
-  `file_name` varchar(255) NOT NULL,
-  `uploaded_on` datetime NOT NULL,
-  `status` enum('1','0') NOT NULL DEFAULT '1'
+  `file_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Despejando dados para a tabela `images`
+--
+
+INSERT INTO `images` (`fk_ocorrencia`, `fk_sos`, `file_name`) VALUES
+(1, 1, 'perfil.jpg');
 
 -- --------------------------------------------------------
 
@@ -260,6 +319,13 @@ CREATE TABLE `informaçõesocorrência` (
   `cod_sias_sus` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `informaçõesocorrência`
+--
+
+INSERT INTO `informaçõesocorrência` (`fk_ocorrencia`, `fk_sos`, `n_usb`, `cod_ir`, `n_ocorrencia`, `cod_ps`, `desp`, `hch`, `km_final`, `cod_sias_sus`) VALUES
+(1, 1, '', '', '', '', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -273,16 +339,17 @@ CREATE TABLE `login` (
   `adm` int(1) NOT NULL,
   `nome` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `telefone` varchar(45) NOT NULL
+  `telefone` varchar(45) NOT NULL,
+  `perfil` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `login`
 --
 
-INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`) VALUES
-(1, '125.413.329-12', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 1, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '47997566605'),
-(7, '113.458.719-88', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 0, 'Jônatas Rocha dos Santos', 'jonatas_r_santos@estudante.sesisenai.org.br', '47999999999');
+INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`, `perfil`) VALUES
+(1, '125.413.329-12', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 1, 'Cauê Marchi Foyth', 'foythcaue@gmail.com', '47997566605', ''),
+(7, '113.458.719-88', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 0, 'Jônatas Rocha dos Santos', 'jonatas_r_santos@estudante.sesisenai.org.br', '47999999999', '');
 
 -- --------------------------------------------------------
 
@@ -323,6 +390,13 @@ CREATE TABLE `materiaisdeixadoshospital` (
   `canula_qtd` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `materiaisdeixadoshospital`
+--
+
+INSERT INTO `materiaisdeixadoshospital` (`fk_ocorrencia`, `fk_sos`, `base_estabilizada`, `base_qtd`, `colar`, `colar_n`, `colar_pp`, `colar_p`, `colar_m`, `colar_g`, `colar_outros`, `colar_qtd`, `coxins`, `coxins_qtd`, `ked`, `ked_adul`, `ked_infan`, `ked_qtd`, `maca_rigida_deixada`, `maca_qtd`, `ttf`, `ttf_adul`, `ttf_infan`, `ttf_qtd`, `tirante_aranha`, `tirante_aqtd`, `tirante_cabeca`, `tirante_cqtd`, `canula`, `canula_qtd`) VALUES
+(1, 1, 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', '', 'Não', '', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -352,6 +426,13 @@ CREATE TABLE `materiaisdescartável` (
   `mascara_qtd` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `materiaisdescartável`
+--
+
+INSERT INTO `materiaisdescartável` (`fk_ocorrencia`, `fk_sos`, `atadura`, `atadura_oito`, `atadura_doze`, `atadura_vinte`, `atadura_qtd`, `cateter`, `cateter_qtd`, `compressa`, `compressa_qtd`, `kits`, `kits_h`, `kits_p`, `kits_q`, `kits_qtd`, `luvas`, `luvas_qtd`, `mascara`, `mascara_qtd`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '', 'Não', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -375,6 +456,13 @@ CREATE TABLE `observacoesimportantes` (
   `fk_sos` int(9) NOT NULL,
   `observacao_importante` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `observacoesimportantes`
+--
+
+INSERT INTO `observacoesimportantes` (`fk_ocorrencia`, `fk_sos`, `observacao_importante`) VALUES
+(1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -400,6 +488,13 @@ CREATE TABLE `problemasencontrados` (
   `transp_outros` varchar(20) NOT NULL,
   `problema_outros` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `problemasencontrados`
+--
+
+INSERT INTO `problemasencontrados` (`fk_ocorrencia`, `fk_sos`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transp_aereo`, `transp_clinico`, `transp_emergencial`, `transp_pos_trauma`, `transp_samu`, `transp_sem_remocao`, `transp_outros`, `problema_outros`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', '');
 
 -- --------------------------------------------------------
 
@@ -460,6 +555,13 @@ CREATE TABLE `procedimentosefetuados` (
   `procedimentos_outros` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `procedimentosefetuados`
+--
+
+INSERT INTO `procedimentosefetuados` (`fk_ocorrencia`, `fk_sos`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `procedimentos_outros`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', '', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -497,6 +599,13 @@ CREATE TABLE `queimadura` (
   `msd_t` varchar(3) NOT NULL,
   `mse_t` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `queimadura`
+--
+
+INSERT INTO `queimadura` (`fk_ocorrencia`, `fk_sos`, `cabeca_p`, `pescoco_p`, `tant_p`, `tpos_p`, `genit_p`, `mid_p`, `mie_p`, `msd_p`, `mse_p`, `cabeca_s`, `pescoco_s`, `tant_s`, `tpos_s`, `genit_s`, `mid_s`, `mie_s`, `msd_s`, `mse_s`, `cabeca_t`, `pescoco_t`, `tant_t`, `tpos_t`, `genit_t`, `mid_t`, `mie_t`, `msd_t`, `mse_t`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
@@ -562,6 +671,13 @@ CREATE TABLE `sinaissintomas` (
   `outros_sintomas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `sinaissintomas`
+--
+
+INSERT INTO `sinaissintomas` (`fk_ocorrencia`, `fk_sos`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose_labios`, `cianose_extremidade`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema_labios`, `edema_extremidade`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemo_int`, `hemo_ext`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada_cardiaca`, `parada_respiratoria`, `priaprismo`, `prurido_pele`, `pupilas_anisocoria`, `pupilas_isocoria`, `pupilas_midriase`, `pupilas_miose`, `pupilas_reagente`, `pupilas_nao_reagente`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -580,6 +696,13 @@ CREATE TABLE `sinaisvitais` (
   `perf_menor` varchar(3) NOT NULL,
   `perf_maior` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `sinaisvitais`
+--
+
+INSERT INTO `sinaisvitais` (`fk_ocorrencia`, `fk_sos`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perf_menor`, `perf_maior`) VALUES
+(1, 1, '/', 'Não', '', '', '', '', 'Não', 'Não');
 
 -- --------------------------------------------------------
 
@@ -602,6 +725,13 @@ CREATE TABLE `termoderecusa` (
   `guaramirim_mes` varchar(50) NOT NULL,
   `guaramirim_ano` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `termoderecusa`
+--
+
+INSERT INTO `termoderecusa` (`fk_ocorrencia`, `fk_sos`, `eu_nome`, `rg_numero`, `cpf_numero`, `assinatura`, `testemunha`, `doc`, `testemunha_dois`, `doc_dois`, `guaramirim_dia`, `guaramirim_mes`, `guaramirim_ano`) VALUES
+(1, 1, '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -634,6 +764,13 @@ CREATE TABLE `tipodeocorrencia` (
   `transferencia` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tipodeocorrencia`
+--
+
+INSERT INTO `tipodeocorrencia` (`fk_ocorrencia`, `fk_sos`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
@@ -654,6 +791,13 @@ CREATE TABLE `vitimaera` (
   `PasBanTras` varchar(3) NOT NULL,
   `Pedestre` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `vitimaera`
+--
+
+INSERT INTO `vitimaera` (`fk_ocorrencia`, `fk_sos`, `Ciclista`, `CondutorMoto`, `Gestante`, `PasBanFrente`, `PasMoto`, `CondutorCarro`, `Clinico`, `Trauma`, `PasBanTras`, `Pedestre`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
 
 --
 -- Índices para tabelas despejadas
@@ -848,7 +992,7 @@ ALTER TABLE `vitimaera`
 -- AUTO_INCREMENT de tabela `dadosdavitima`
 --
 ALTER TABLE `dadosdavitima`
-  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas

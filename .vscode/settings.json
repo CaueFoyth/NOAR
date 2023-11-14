@@ -1,3 +1,5 @@
 {
-    "screencastMode.fontSize": 20
+    "screencastMode.fontSize": 20,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.autoImportCompletions": true
 }
