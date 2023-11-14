@@ -518,6 +518,17 @@ def enviarPerfilImagem():
         return redirect(url_for("perfil"))
     return redirect(url_for("index"))
 
+@app.route('/alterarOc/<string:id>', methods=["POST", "GET"])
+def alterarOc(id):
+    if 'logado' in session:
+        if session['adm'] == 1:
+            cursor = mysql.connection.cursor()
+            cursor.execute(f"SELECT * FROM dadosdavitima WHERE id_ocorrencia = {id}")
+            data = cursor.fetchall()
+            return render_template("formAlterar.html")
+        return redirect(url_for("index"))  
+    return redirect(url_for("index"))    
+
 @app.route('/adm', methods=["POST" , "GET"])
 def adm():
     if 'logado' in session:
@@ -668,14 +679,6 @@ def confirmpage():
 
 @app.route('/AddOcorrencia', methods=["POST" , "GET"])
 def AddOcorrencia   ():
-    if 'logado' in session:
-        if session['adm'] == 1:
-            return render_template("forms.html")
-        return redirect(url_for("index"))
-    return redirect(url_for("index"))
-
-@app.route('/alterarOc', methods=["POST" , "GET"])
-def alterarOc():
     if 'logado' in session:
         if session['adm'] == 1:
             return render_template("forms.html")
