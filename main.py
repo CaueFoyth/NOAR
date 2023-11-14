@@ -487,14 +487,16 @@ def enviar():
 @app.route('/enviarPerfilImagem', methods=["POST" , "GET"])
 def enviarPerfilImagem():
     if 'logado' in session:
-        files = request.files.getlist('files[]')
-        #print(files)
-        for file in files:
-            if file and allowed_file(file.filename):
-                filename = secure_filename(file.filename)
-                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                cursor.execute(f"UPDATE login SET perfil = '{filename}' WHERE id_sos = {session['id_sos']}")
-                mysql.connection.commit()
+        if request.method == "POST":
+            cursor = mysql.connection.cursor()
+            files = request.files.getlist('files[]')
+            #print(files)
+            for file in files:
+                if file and allowed_file(file.filename):
+                    filename = secure_filename(file.filename)
+                    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                    cursor.execute(f"UPDATE login SET perfil = '{filename}' WHERE id_sos = {session['id_sos']}")
+                    mysql.connection.commit()
 
         return redirect(url_for("perfil"))
     return redirect(url_for("index"))
@@ -607,6 +609,23 @@ def ocorrenciasADM():
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
+@app.route('/alterar2', methods = ['POST', 'GET'])
+def alterar2():
+    if request.method == "POST":
+            id_alterar = request.form['id']
+            cpf_alterar = request.form['cpf']
+            nome_alterar = request.form['nome']
+            email_alterar = request.form['email']
+            telefone_alterar = request.form['telefone']
+
+            cpf_alterar = cpf_alterar.translate(str.maketrans('', '', string.punctuation))
+
+            cpf_alterar = cpf_alterar[0:3] + '.' + cpf_alterar[3:6] + '.' + cpf_alterar[6:9] + '-' + cpf_alterar[9:]
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute("UPDATE login SET cpf=%s, nome=%s, email=%s, telefone=%s WHERE id_sos=%s", (cpf_alterar, nome_alterar, email_alterar, telefone_alterar, id_alterar))
+            mysql.connection.commit()
+            return redirect(url_for("perfil"))
 @app.route('/alterar', methods = ['POST', 'GET'])
 def alterar():
     if request.method == "POST":
