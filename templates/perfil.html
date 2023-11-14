@@ -48,7 +48,7 @@
                         <form class="file-upload-form" action="/enviarPerfilImagem" method="POST" enctype="multipart/form-data">
                         <label>Alterar foto: </label>
                          <input type="file" name="files[]" id="fileInput" onchange="this.form.submit()">
-                    {% endif %}
+                         {% else %} 
                       {% endfor %}
                     <main class="estrutura">
                         <!-- Tabela de Usuários Cadastrados e botões de Ver, Alterar e Excluir-->

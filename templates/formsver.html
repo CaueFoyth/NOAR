@@ -6,131 +6,217 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOAR</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="../static/forms.css">
+    <link rel="stylesheet" href="../static/formsver.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 <body> 
+    {% block body %}
     <header>
         <p class="sumirTeste">exemplo</p>
     </header>
     <form action="/enviar" enctype="multipart/form-data" method="post"> 
         <!--DADOS DA VÍTIMA-->
-        <h1>Nova Ocorrência</h1>
+        {% for row in dadosdavitima %}
+        <h1>Ocorrência {{row.2}}</h1>
         <h2>Dados da vítima</h2>
-        <input type="date" id="data" name="data" required>
-        <br><br>
-        <input type="radio" name="sexo" value="Masculino">
-        <label for="sexo-m">Masculino</label><br>
-        <input type="radio" name="sexo" value="Feminino">
-        <label for="sexo-f">Feminino</label>
-        <br>
-        <input type="text" name="nome" placeholder="Nome">
-        <br>
-        <input type="number" name="idade" placeholder="Idade">
-        <input type="text" name="cpf" placeholder="Cpf">
-        <br>
-        <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
-        <br>
-        <h2>Há acompanhante?</h2>
-        <input type="radio"  name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()">
-        <label for="sim">Sim</label><br>
-        <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()">
-        <label for="nao">Não</label>
+        <div class="form-group">
+            <label>Dia da ocorrência:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sexo:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Nome:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Idade:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>CPF:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Localização da ocorrência:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        {% endfor %}
+        {% for row in acompanhante %}
         <br>
         <h2 id="acompanhante">Dados do acompanhante</h2>
+        <div class="form-group">
+            <label>Há acompanhante?:</label>
+            <input type="radio"  name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()" hidden checked>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        {% if row.2 == 'sim': %}
+        <div class="form-group">
+            <label>Nome do acompanhante:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Idade do acompanhante:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>CPF do acompanhante:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sexo do acompanhante:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
         <br>
-        <input type="text" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante">
-        <br>
-        <input type="text" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante">
-        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante">
-        <br>
-        <input type="radio"  name="sexoAcompanhante" id="acompanhante4" value="Masculino">
-        <label for="sexo-m" id="acompanhante5">Masculino</label><br>
-        <input type="radio"  name="sexoAcompanhante" id="acompanhante6" value="Feminino">
-        <label for="sexo-f" id="acompanhante7">Feminino</label>
-        <br>
+        {% endif %} 
+        {% endfor %}
         <!--TIPO DE OCORRÊNCIA-->
+        {% for row in tipodeocorrencia %}
         <h2>Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
-        <br>
-        <input type="checkbox" name="a1" value="Sim">Causado por animais
-        <br>
-        <input type="checkbox" name="a2" value="Sim">Com meio de Transporte
-        <br>
-        <input type="checkbox" name="a3" value="Sim">Desmoronamento
-        <br>
-        <input type="checkbox" name="a4" value="Sim">Emergência Médica
-        <br>
-        <input type="checkbox" name="a5" value="Sim">Queda de Altura 2M
-        <br>
-        <input type="checkbox"  name="a6" value="Sim">Tentativa de Suicídio
-        <br>
-        <input type="checkbox"  name="a7" value="Sim">Queda própria altura
-        <br>
-        <input type="checkbox"  name="a8" value="Sim">Afogamento
-        <br>
-        <input type="checkbox"  name="a9" value="Sim">Agressão
-        <br>
-        <input type="checkbox"  name="a10" value="Sim">Atropelamento
-        <br>
-        <input type="checkbox"  name="a11" value="Sim">Choque Elétrico
-        <br>
-        <input type="checkbox"  name="a12" value="Sim">Desabamento
-        <br>
-        <input type="checkbox"  name="a13" value="Sim">Doméstico
-        <br>
-        <input type="checkbox"  name="a14" value="Sim">Esportivo
-        <br>
-        <input type="checkbox"  name="a15" value="Sim">Intoxicação
-        <br>
-        <input type="checkbox"  name="a16" value="Sim">Queda Bicicleta
-        <br>
-        <input type="checkbox"  name="a17" value="Sim">Queda Moto
-        <br>
-        <input type="checkbox"  name="a18" value="Sim">Queda Nível &lt;2M
-        <br>
-        <input type="checkbox"  name="a19" value="Sim">Trabalho
-        <br>
-        <input type="checkbox"  name="a20" value="Sim">Transferência
+        <div class="form-group">
+            <label>Causado animais:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Com meio de transporte:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Delizamento:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Emergência médica:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queda de Altura 2M:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tentativa de Suicídio:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queda própria altura:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Afogamento:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Agressão:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Atropelamento:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        <div class="form-group">
+            <label>Choque elétrico:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Desabamento:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Doméstico:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Esportivo:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <div class="form-group">
+            <label>Intoxicação:</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queda bicicleta:</label>
+            <label class="read_data"> &nbsp; {{row.17}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queda moto:</label>
+            <label class="read_data"> &nbsp; {{row.18}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queda Nível &lt;2M:</label>
+            <label class="read_data"> &nbsp; {{row.19}}</label>
+        </div>
+        <div class="form-group">
+            <label>Trabalho:</label>
+            <label class="read_data"> &nbsp; {{row.20}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transferência:</label>
+            <label class="read_data"> &nbsp; {{row.21}}</label>
+        </div>
+        {% endfor %}
         <!--Problemas encontrados-->
+        {% for row in problemasencontrados %}
         <h2>Problemas encontrados</h2>
         <br>
-        <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
-        <input type="radio" name="b1a" id="respiratorio" value="DPOC">
-        <label for="DPOC" id="respiratorio1">DPOC</label>
-        <br>
-        <input type="radio" name="b1a" id="respiratorio2" value="inalação de fumaça">
-        <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
-        <br>
-        <input type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
-        <input type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
-        <label for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
-        <input type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
-        <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
-        <br>
-        <input type="checkbox"  name="b3" value="Sim">Obstétrico
-        <br>
-        <input type="checkbox"  name="b3a" value="Sim">Parto Emergencial
-        <br>
-        <input type="checkbox"  name="b3b" value="Sim">Gestante
-        <br>
-        <input type="checkbox"  name="b3c" value="Sim">Hemor. Excessiva
-        <br>
-        <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4">Transporte
-        <input type="radio" id="transporte" name="b4a" value="Sim">
-        <label for="clinico" id="transporte1">Clínico</label>
-        <input type="radio" id="transporte2" name="b4a" value="Sim">
-        <label for="aereo" id="transporte3">Aéreo</label>
-        <input type="radio" id="transporte4" name="b4a" value="Sim">
-        <label for="emergencial" id="transporte5">Emergencial</label>
-        <input type="radio" id="transporte6" name="b4a" value="Sim">
-        <label for="postrauma" id="transporte7">Pós-Trauma</label>
-        <input type="radio" id="transporte8" name="b4a" value="Sim">
-        <label for="samu" id="transporte9">Samu</label>
-        <input type="radio" id="transporte10" name="b4a" value="Sim">
-        <label for="semremocao" id="transporte11">Sem remoção</label>
-        <input type="text" id="transporte12" name="b4a" placeholder="Outros transportes">
-        <br>
-        <input type="text" name="b5" placeholder="Outros">
+        <div class="form-group">
+            <label>Problema respiratório:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Diabetes:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Obstétrico:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Parto Emergencial:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Gestante:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>hemorragia Excessiva:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte clínico:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte aéreo:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte emergencial:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte pós-trauma:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte samu:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Transporte sem remoção:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Outros transportes:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Outros problemas:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        {% endfor %}
         <!--SINAIS E SINTOMAS-->
         <h2>Sinais e Sintomas</h2>
         <br>
@@ -367,7 +453,7 @@
         }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-        <script src="../static/forms.js"></script>
+        <script src="../static/formsver.js"></script>
         <center>
             <div id="app">
             <div class="human-body">
@@ -1030,6 +1116,7 @@
         <br>
         <button type="submit">ENVIAR</button>
     </form>   
+    {% endblock %}
 </body>
 <script>
     $(document).ready(function(){

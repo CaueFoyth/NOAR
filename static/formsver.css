@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+html {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  width: 90%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+form {
+  width: 80%;
+}
+
+svg {
+  margin-left: 45px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+.sumirTeste {
+  position: fixed;
+  left: 47%;
+  display: none;
+}
+
+input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+}
+
+input[type=radio] {
+  width: 24px;
+  height: 24px;
+}
+
+input[type=text] {
+  width: 90%;
+  height: 24px;
+  border: none;
+  border-bottom: solid 1px;
+}
+
+input[type=text]::-moz-placeholder {
+  font-size: 20px;
+}
+
+input[type=text]::placeholder {
+  font-size: 20px;
+}
+
+input[type=text]:active {
+  border: none;
+}
+
+input[type=number] {
+  width: 90%;
+  height: 24px;
+  border: none;
+  border-bottom: solid 1px;
+}
+
+input[type=number]::-moz-placeholder {
+  font-size: 20px;
+}
+
+input[type=number]::placeholder {
+  font-size: 20px;
+}
+
+input[type=date] {
+  width: 40%;
+  height: 24px;
+}
+
+.tabela, th, td {
+  border-collapse: collapse; /*define a separação entre as bordas*/
+  text-align: left;
+  font-size: 18px;
+}
+
+.tabela1 {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+#respiratorio, #respiratorio1, #respiratorio2, #respiratorio3 {
+  display: none;
+}
+
+#diabetes, #diabetes1, #diabetes2, #diabetes3 {
+  display: none;
+}
+
+#cianose, #cianose1, #cianose2, #cianose3 {
+  display: none;
+}
+
+#edema, #edema1, #edema2, #edema3 {
+  display: none;
+}
+
+#hemorragia, #hemorragia1, #hemorragia2, #hemorragia3 {
+  display: none;
+}
+
+#parada, #parada1, #parada2, #parada3 {
+  display: none;
+}
+
+#pupilas, #pupilas1, #pupilas2, #pupilas3, #pupilas4, #pupilas5, #pupilas6, #pupilas7, #pupilas8, #pupilas9, #pupilas10, #pupilas11 {
+  display: none;
+}
+
+#policia, #policia1, #policia2, #policia3, #policia4, #policia5, #policia6, #policia7 {
+  display: none;
+}
+
+#samu, #samu1, #samu2, #samu3 {
+  display: none;
+}
+
+#transporte, #transporte1, #transporte2, #transporte3, #transporte4, #transporte5, #transporte6, #transporte7, #transporte8, #transporte9, #transporte10, #transporte11, #transporte12 {
+  display: none;
+}
+
+
+
+#usocolar1 {
+  display: none;
+}
+
+#oxigenioterapia {
+  display: none;
+}
+
+#reanimador {
+  display: none;
+}
+
+#parto, #parto1, #parto2, #parto3, #parto4, #parto5, #parto6 {
+  display: none;
+}
+
+#aconteceuoutras1 {
+  display: none;
+}
+
+#problemasaude1 {
+  display: none;
+}
+
+#alergicocoisa1 {
+  display: none;
+}
+
+#algumalimento1 {
+  display: none;
+}
+
+#prenatal1 {
+  display: none;
+}
+
+#primeirofilho1, #primeirofilho2 {
+  display: none;
+}
+
+#atadura, #atadura1, #atadura2, #atadura3, #atadura4, #atadura5, #atadura6 {
+  display: none;
+}
+
+#cateter {
+  display: none;
+}
+
+#compressa {
+  display: none;
+}
+
+#kit, #kit1, #kit2, #kit3, #kit4, #kit5, #kit6 {
+  display: none;
+}
+
+#luva {
+  display: none;
+}
+
+#mascara {
+  display: none;
+}
+
+#base {
+  display: none;
+}
+
+#colar, #colar1, #colar2, #colar3, #colar4, #colar5, #colar6, #colar7, #colar8, #colar9, #colar10, #colar11 {
+  display: none;
+}
+
+#coxin {
+  display: none;
+}
+
+#ked, #ked1, #ked2, #ked3, #ked4 {
+  display: none;
+}
+
+#maca {
+  display: none;
+}
+
+#ttf, #ttf1, #ttf2, #ttf3, #ttf4 {
+  display: none;
+}
+
+#aranha {
+  display: none;
+}
+
+#cabeca {
+  display: none;
+}
+
+#canula {
+  display: none;
+}/*# sourceMappingURL=forms.css.map */
