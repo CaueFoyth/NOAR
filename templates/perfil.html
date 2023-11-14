@@ -38,11 +38,14 @@
                 <div class="glass">
                     {% for row in perfil %}
                     {% if row.7 == '': %}
+                    <div class="card">
                         <form class="file-upload-form" action="/enviarPerfilImagem" method="POST" enctype="multipart/form-data">
-                        <label>Insira a imagens da ocorrência: </label>
-                         <br>
-                         <input type="file" name="files[]" id="fileInput" onchange="this.form.submit()">
-                      </form>
+                            <label class="custum-file-upload" for="file">Insira a imagens da ocorrência: </label>
+                             <br>
+                             <input type="file" name="files[]" id="fileInput" onchange="this.form.submit()">
+                        </form>    
+                    </div>
+  
                     {% else %} 
                         <img class="file-upload-form" src="/static/uploads/{{row.7}}" alt="">
                         <form class="file-upload-form" action="/enviarPerfilImagem" method="POST" enctype="multipart/form-data">
