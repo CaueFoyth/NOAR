@@ -27,7 +27,7 @@
         <input type="text" name="nome" placeholder="Nome">
         <br>
         <input type="number" name="idade" placeholder="Idade">
-        <input type="text" name="cpf" placeholder="Cpf">
+        <input type="text" name="cpf" placeholder="Cpf" id="cpf" onkeyup="ValidarCPF();">
         <br>
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
         <br>
@@ -42,7 +42,7 @@
         <input type="text" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante">
         <br>
         <input type="text" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante">
-        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante">
+        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante" onkeyup="ValidarCPF();">
         <br>
         <input type="radio"  name="sexoAcompanhante" id="acompanhante4" value="Masculino">
         <label for="sexo-m" id="acompanhante5">Masculino</label><br>
@@ -336,7 +336,7 @@
         }
 
         .human-body {
-        width: 207px;
+        width: 235px;
         position: relative;
         padding-top: 240px;
         height: 260px;
@@ -1016,7 +1016,7 @@
         <input type="text"  name="o8" placeholder="Testemunha">
         <br>
         <input type="text"  name="o9" placeholder="Doc">
-        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text"  name="o12" style="width: 30px;"></p>
+        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;" maxlength="2"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text" maxlength="4" name="o12" style="width: 30px;"></p>
         <!--DIVULGAR PARA A IMPRENSA-->
         <h2>Divulgar para a imprensa</h2>
         <input type="radio"  name="q1" value="sim">
@@ -1024,12 +1024,16 @@
         <input type="radio"  name="q1" value="nao">
         <label for="nao">nao</label>
         <br>
-        <label>Insira a imagens da ocorrência: </label>
         <br>
-        <input type="file" name="files[]" id="fileInput" multiple >
+        <label>Insira imagens da ocorrência: </label>
+        <br>
+        <input type="file" name="files[]" id="fileInput" multiple>
+        <br>
         <br>
         <button type="submit">ENVIAR</button>
-    </form>   
+    </form>
+    <br>  
+    <br>  
 </body>
 <script>
     $(document).ready(function(){
@@ -1074,7 +1078,6 @@ methods: {
         this.face = "Costas";
     }
 
-    
     if (this.data_clicked_id === "Ombro-Esquerdo") {
         this.data_clicked_id = "Ombro";
         this.lado = "Esquerdo";
@@ -1258,5 +1261,42 @@ methods: {
 }
 }
 })
+function ValidarCPF()
+    {
+        //ACESSE O SITE regex101.com
+        expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+        texto = cpf.value;
+        if (texto.length==3)
+        {
+            cpf.value = texto + ".";
+        }
+        if (texto.length==7)
+        {
+            cpf.value = texto + ".";
+        }
+        if (texto.length==11)
+        {
+            cpf.value = texto + "-";
+        }
+    }
+
+function ValidarCPF()
+    {
+        //ACESSE O SITE regex101.com
+        expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+        texto = acompanhante3.value;
+        if (texto.length==3)
+        {
+            acompanhante3.value = texto + ".";
+        }
+        if (texto.length==7)
+        {
+            acompanhante3.value = texto + ".";
+        }
+        if (texto.length==11)
+        {
+            acompanhante3.value = texto + "-";
+        }
+    }
 </script>
 </html>

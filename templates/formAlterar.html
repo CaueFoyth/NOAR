@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="../static/forms.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
-<body> 
+<body>
+    {% block body %}
     <header>
         <p class="sumirTeste">exemplo</p>
     </header>
@@ -17,24 +18,68 @@
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <h2>Dados da vítima</h2>
-        <input type="date" id="data" name="data" required>
+        {% for row in dadosdavitima %}
+        <input type="date" id="data" name="data" value="{{row.2}}" required>
         <br><br>
+
+        {% if row.4 == 'Não': %}
         <input type="radio" name="sexo" value="Masculino">
         <label for="sexo-m">Masculino</label><br>
         <input type="radio" name="sexo" value="Feminino">
         <label for="sexo-f">Feminino</label>
+        {% else %}
+        {% if row.4 == 'Masculino': %}
+        <input type="radio" name="sexo" value="Masculino" checked>
+        <label for="sexo-m">Masculino</label><br>
+        <input type="radio" name="sexo" value="Feminino">
+        <label for="sexo-f">Feminino</label>
+        {% else %}
+        <input type="radio" name="sexo" value="Masculino">
+        <label for="sexo-m">Masculino</label><br>
+        <input type="radio" name="sexo" value="Feminino" checked>
+        <label for="sexo-f">Feminino</label>
+        {% endif %}
+        {% endif %}
         <br>
+
+        {% if row.4 == '': %}
         <input type="text" name="nome" placeholder="Nome">
         <br>
+        {% else %}
+        <input type="text" name="nome" placeholder="Nome" value="{{row.3}}">
+        <br>
+        {% endif %}
+
+        {% if row.5 == '': %}
         <input type="number" name="idade" placeholder="Idade">
+        {% else %}
+        <input type="number" name="idade" placeholder="Idade" value="{{row.5}}">
+        {% endif %}
+
+        {% if row.6 == '': %}
         <input type="text" name="cpf" placeholder="Cpf">
+        {% else %}
+        <input type="text" name="cpf" placeholder="Cpf" value="{{row.6}}">
+        {% endif %}
+
         <br>
+
+        {% if row.7 == '': %}
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
+        {% else %}
+        <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência" value="{{row.7}}">
+        {% endif %}
+
         <br>
+        {% endfor %}
         <h2>Há acompanhante?</h2>
+
+        {% for row in acompanhante %}
+
+        {% if row.2 == 'Não' or row.2 == 'nao': %}
         <input type="radio"  name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()">
         <label for="sim">Sim</label><br>
-        <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()">
+        <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()" checked>
         <label for="nao">Não</label>
         <br>
         <h2 id="acompanhante">Dados do acompanhante</h2>
@@ -48,7 +93,42 @@
         <label for="sexo-m" id="acompanhante5">Masculino</label><br>
         <input type="radio"  name="sexoAcompanhante" id="acompanhante6" value="Feminino">
         <label for="sexo-f" id="acompanhante7">Feminino</label>
+        {% else %}
+        <input type="radio" name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()" checked>
+        <label for="sim">Sim</label><br>
+        <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()">
+        <label for="nao">Não</label>
         <br>
+        <h2 id="acompanhante" style="display: inline-flex;">Dados do acompanhante</h2>
+        <br>
+        <input type="text" style="display: inline-flex;" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante" value="{{row.3}}"> 
+        <br>
+        <input type="text" style="display: inline-flex;" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante" value="{{row.4}}">
+        <input type="text" style="display: inline-flex;" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante" value="{{row.5}}">
+        <br>
+
+        {% if row.6 == 'Não': %}
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino">
+        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino">
+        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
+        {% else %}
+        {% if row.6 == 'Masculino': %}
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino" checked>
+        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino">
+        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
+        {% else %}
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino">
+        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
+        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino" checked>
+        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        
+        <br>
+        {% endfor %}
         <!--TIPO DE OCORRÊNCIA-->
         <h2>Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
         <br>
@@ -1029,7 +1109,8 @@
         <input type="file" name="files[]" id="fileInput" multiple >
         <br>
         <button type="submit">ENVIAR</button>
-    </form>   
+    </form>
+    {% endblock %}   
 </body>
 <script>
     $(document).ready(function(){

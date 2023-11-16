@@ -1,4 +1,3 @@
-
 function meuFrente(){
     //DESABILITAR COSTAS  
     document.getElementById("clavicule-left").style.display = "none";
