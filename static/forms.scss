@@ -9,6 +9,7 @@ html{
 
 body {
     font-family: 'Poppins', sans-serif;
+    color: #333;
     font-size: 22px;
     width: 90%;
     align-items: center;
@@ -86,6 +87,20 @@ input[type=date]{
 .tabela1 {
    width: fit-content;
 }
+
+button {
+    width: 90px;
+    height: 40px;
+    border: none;
+    background-color: none;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:active {
+    color: rgb(0, 0, 255);
+} 
 
 #respiratorio, #respiratorio1, #respiratorio2, #respiratorio3 {
     display: none;

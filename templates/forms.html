@@ -118,17 +118,17 @@
         <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4">Transporte
         <input type="radio" id="transporte" name="b4a" value="Sim">
         <label for="clinico" id="transporte1">Clínico</label>
-        <input type="radio" id="transporte2" name="b4b" value="Sim">
+        <input type="radio" id="transporte2" name="b4a" value="Sim">
         <label for="aereo" id="transporte3">Aéreo</label>
-        <input type="radio" id="transporte4" name="b4c" value="Sim">
+        <input type="radio" id="transporte4" name="b4a" value="Sim">
         <label for="emergencial" id="transporte5">Emergencial</label>
-        <input type="radio" id="transporte6" name="b4d" value="Sim">
+        <input type="radio" id="transporte6" name="b4a" value="Sim">
         <label for="postrauma" id="transporte7">Pós-Trauma</label>
-        <input type="radio" id="transporte8" name="b4e" value="Sim">
+        <input type="radio" id="transporte8" name="b4a" value="Sim">
         <label for="samu" id="transporte9">Samu</label>
-        <input type="radio" id="transporte10" name="b4f" value="Sim">
+        <input type="radio" id="transporte10" name="b4a" value="Sim">
         <label for="semremocao" id="transporte11">Sem remoção</label>
-        <input type="text" id="transporte12" name="b4g" placeholder="Outros transportes">
+        <input type="text" id="transporte12" name="b4a" placeholder="Outros transportes">
         <br>
         <input type="text" name="b5" placeholder="Outros">
         <!--SINAIS E SINTOMAS-->
@@ -336,7 +336,7 @@
         }
 
         .human-body {
-        width: 207px;
+        width: 235px;
         position: relative;
         padding-top: 240px;
         height: 260px;
@@ -1016,7 +1016,7 @@
         <input type="text"  name="o8" placeholder="Testemunha">
         <br>
         <input type="text"  name="o9" placeholder="Doc">
-        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text"  name="o12" style="width: 30px;"></p>
+        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;" maxlength="2"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text" maxlength="4" name="o12" style="width: 30px;"></p>
         <!--DIVULGAR PARA A IMPRENSA-->
         <h2>Divulgar para a imprensa</h2>
         <input type="radio"  name="q1" value="sim">
@@ -1024,12 +1024,16 @@
         <input type="radio"  name="q1" value="nao">
         <label for="nao">nao</label>
         <br>
-        <label>Insira a imagens da ocorrência: </label>
         <br>
-        <input type="file" name="files[]" id="fileInput" multiple >
+        <label>Insira imagens da ocorrência: </label>
+        <br>
+        <input type="file" name="files[]" id="fileInput" multiple>
+        <br>
         <br>
         <button type="submit">ENVIAR</button>
-    </form>   
+    </form>
+    <br>  
+    <br>  
 </body>
 <script>
     $(document).ready(function(){
@@ -1074,7 +1078,6 @@ methods: {
         this.face = "Costas";
     }
 
-    
     if (this.data_clicked_id === "Ombro-Esquerdo") {
         this.data_clicked_id = "Ombro";
         this.lado = "Esquerdo";
