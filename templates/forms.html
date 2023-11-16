@@ -27,7 +27,7 @@
         <input type="text" name="nome" placeholder="Nome">
         <br>
         <input type="number" name="idade" placeholder="Idade">
-        <input type="text" name="cpf" placeholder="Cpf">
+        <input type="text" name="cpf" placeholder="Cpf" id="cpf" onkeyup="ValidarCPF();">
         <br>
         <input type="text" name="localizacaoDaOcorrencia" placeholder="Localização da Ocorrência">
         <br>
@@ -42,7 +42,7 @@
         <input type="text" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante">
         <br>
         <input type="text" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante">
-        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante">
+        <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante" onkeyup="ValidarCPF();">
         <br>
         <input type="radio"  name="sexoAcompanhante" id="acompanhante4" value="Masculino">
         <label for="sexo-m" id="acompanhante5">Masculino</label><br>
@@ -1258,5 +1258,42 @@ methods: {
 }
 }
 })
+function ValidarCPF()
+    {
+        //ACESSE O SITE regex101.com
+        expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+        texto = cpf.value;
+        if (texto.length==3)
+        {
+            cpf.value = texto + ".";
+        }
+        if (texto.length==7)
+        {
+            cpf.value = texto + ".";
+        }
+        if (texto.length==11)
+        {
+            cpf.value = texto + "-";
+        }
+    }
+
+function ValidarCPF()
+    {
+        //ACESSE O SITE regex101.com
+        expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+        texto = acompanhante3.value;
+        if (texto.length==3)
+        {
+            acompanhante3.value = texto + ".";
+        }
+        if (texto.length==7)
+        {
+            acompanhante3.value = texto + ".";
+        }
+        if (texto.length==11)
+        {
+            acompanhante3.value = texto + "-";
+        }
+    }
 </script>
 </html>
