@@ -831,5 +831,5 @@ function aparecerCanula() {
 }
 
 function aparecerAside() {
-  document.getElementsByClassName('aside').style.background-color ='#fff';
+  document.getElementsByClassName('aside').style.background ='#fff';
 }
