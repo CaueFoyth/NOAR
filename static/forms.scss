@@ -19,21 +19,17 @@ body {
     margin: 0;
 }
 
-.borda {
-    position: fixed;
-    border: #333 2px solid;
-    border-radius: 50%;
-    margin-top: 6%;
-    margin-left: -10%;
-}
+
 
 .burger {
-    padding: none;
+    position: fixed;
     width: 40px;
     height: 30px;
     background: transparent;
     cursor: pointer;
-    display: flex;
+    display: block;
+    margin-top: 6%;
+    margin-left: -10%;
   }
   
   .burger input {
@@ -163,45 +159,6 @@ button {
 button:active {
     color: rgb(0, 0, 255);
 } 
-
-.frente {
-    cursor: pointer;
-}
-
-.costas  {
-    cursor: pointer;
-}
-
-.human-body {
-width: 235px;
-position: relative;
-padding-top: 240px;
-height: 260px;
-display: block;
-}
-.human-body svg:hover {
-cursor: pointer;
-}
-.human-body svg path:hover {
-fill: #a80000;
-}
-
-.human-body svg {
-margin-top: -140px;
-fill: #000;
-}
-
-.costasCorpo{
-    display: none;
-}
-
-.frenteCorpo{
-    display: block;
-}
-
-#area #data {
-color: black;
-}
 
 #respiratorio, #respiratorio1, #respiratorio2, #respiratorio3 {
     display: none;
