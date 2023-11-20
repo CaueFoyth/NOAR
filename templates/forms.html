@@ -12,11 +12,13 @@
 <body> 
     <form action="/enviar" enctype="multipart/form-data" method="post"> 
         <label class="burger" for="burger">
-            <input type="checkbox" id="burger">
+            <input type="checkbox" id="burger" onclick="aparecerAside()">
             <span></span>
             <span></span>
             <span></span>
         </label>
+        <div class="aside">
+        </div>
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <h2>Dados da vítima</h2>

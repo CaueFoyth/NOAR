@@ -2,9 +2,9 @@
 
 html{
     width: 100%;
-    align-items: center;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 body {
@@ -14,12 +14,19 @@ body {
     width: 90%;
     align-items: center;
     display: flex;
+    margin: 0;
     justify-content: center;
     text-align: center;
-    margin: 0;
 }
 
-
+.aside {
+    left: 0;
+    display: flex;
+    position: fixed;
+    background-color: transparent;
+    width: 300px;
+    height: 100%;
+}
 
 .burger {
     position: fixed;
@@ -29,7 +36,7 @@ body {
     cursor: pointer;
     display: block;
     margin-top: 6%;
-    margin-left: -10%;
+    margin-left: 70%;
   }
   
   .burger input {
