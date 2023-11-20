@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: #33338D;
+  background: rgba(51, 51, 141, 0.2588235294);
 }
 
 .estrutura {
@@ -14,7 +14,7 @@
   display: flex;
   position: absolute;
   top: 75px;
-  right: 400px;
+  right: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -43,115 +43,12 @@
   font-family: "Poppins", sans-serif;
 }
 
-@media (max-width: 1200px) {
-  .estrutura {
-    width: 70%;
-    top: 90px;
-    height: 65vh;
-    right: 165px;
-  }
-  main input {
-    width: 90%;
-    height: 5%;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
-@media (max-width: 800px) {
-  .estrutura {
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 70px;
-  }
-  main input {
-    width: 80%;
-    height: 5%;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
-@media (max-width: 670px) {
-  .estrutura {
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 50px;
-  }
-  main input {
-    width: 0%;
-    height: 5%;
-    scale: 80%;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
-@media (max-width: 520px) {
-  .estrutura {
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 45px;
-  }
-  main input {
-    width: 50%;
-    height: 5%;
-    scale: 65%;
-  }
-  .userdata {
-    margin-top: 1rem;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
-@media (max-width: 420px) {
-  .estrutura {
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 45px;
-  }
-  main input {
-    width: 50%;
-    height: 5%;
-    scale: 55%;
-  }
-  .userdata {
-    margin-top: 0.5rem;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
-@media (max-width: 360px) {
-  .estrutura {
-    width: 95%;
-    top: 90px;
-    height: 65vh;
-    right: 10px;
-  }
-  main input {
-    width: 50%;
-    height: 5%;
-    scale: 65%;
-  }
-  .userdata {
-    margin-top: 1rem;
-  }
-  .logo {
-    scale: 90%;
-  }
-}
 .edit_profile {
   background: #33338D;
   border: 0;
   border-radius: 5px;
-  width: 25%;
-  height: 12%;
+  width: 20%;
+  height: 10%;
   color: #Ffffff;
   margin-top: 20px;
   text-decoration: none;
@@ -159,23 +56,9 @@
   text-align: center;
 }
 
-.modal-backdrop {
-  z-index: 0;
-}
-
-main input::-moz-placeholder {
-  color: #fff;
-  font-size: 20px;
-}
-
-main input::placeholder {
-  color: #fff;
-  font-size: 20px;
-}
-
 .glass {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background: rgba(156, 156, 156, 0.4745098039);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
   backdrop-filter: blur(10.2px);
@@ -196,18 +79,20 @@ main input::placeholder {
 }
 
 .card {
-  scale: 120%;
   display: flex;
-  flex-direction: row;
-  width: 190px;
+  position: absolute;
+  width: 20%;
   height: 254px;
-  border-radius: 20px;
+  left: 400px;
+  border-radius: 10px;
   background: #f5f5f5;
-  margin-left: 70%;
-  padding: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border: 2px solid #c3c6ce;
   transition: 0.5s ease-out;
   overflow: visible;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
 }
 
 .card-details {
@@ -235,24 +120,13 @@ main input::placeholder {
 }
 
 .text-body {
-  color: rgb(134, 134, 134);
+  color: #868686;
 }
 
 /*Text*/
 .text-title {
   font-size: 1.5em;
   font-weight: bold;
-}
-
-/*Hover*/
-.card:hover {
-  border-color: #008bf8;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-
-.card:hover .card-button {
-  transform: translate(-50%, 50%);
-  opacity: 1;
 }
 
 .logo {
@@ -303,4 +177,24 @@ h2 {
   height: 100px;
   margin-top: 57px;
   margin-right: 20px;
+}
+
+.botao {
+  width: 170px;
+  height: 38px;
+  padding-top: 8px;
+  background-color: #33338D;
+  justify-content: center;
+  align-items: center;
+  color: #Ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.file-upload-form {
+  max-width: 128px;
+  max-height: 128px;
+  border-radius: 50px;
 }/*# sourceMappingURL=perfilSASS.css.map */

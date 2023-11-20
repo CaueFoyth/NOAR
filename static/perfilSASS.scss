@@ -10,7 +10,7 @@ $preto: #00000053;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: #33338D;
+  background: #33338d42;
 }
 
 .estrutura {
@@ -19,13 +19,13 @@ $preto: #00000053;
   display: flex;
   position: absolute;
   top: 75px;
-  right: 400px;
+  right: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 4px 30px #0000004d;
-  background-color: $secundaria;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3019607843);
+  background-color: #Ffffff;
 }
 
 .headtext {
@@ -34,176 +34,63 @@ $preto: #00000053;
   font-family: "Poppins", sans-serif;
 }
 
-.userdata{
+
+.userdata {
   margin-top: 2rem;
   width: 100%;
   border: 0;
-  background-color: $secundaria;
-  border: solid 1px $primaria;
+  background-color: #Ffffff;
+  border: solid 1px #33338D;
   height: 17%;
-  color: $primaria;
+  color: #33338D;
   border-radius: 6px;
   padding: 10px;
   font-size: 18px;
   font-family: "Poppins", sans-serif;
 }
 
-@media(max-width: 1200px)
-{
-  .estrutura{
-    width: 70%;
-    top: 90px;
-    height: 65vh;
-    right: 165px;
-  }
-
-  main input{
-    width: 90%;
-    height: 5%;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-@media(max-width: 800px)
-{
-  .estrutura{
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 70px;
-  }
-
-  main input{
-    width: 80%;
-    height: 5%;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-@media(max-width: 670px)
-{
-  .estrutura{
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 50px;
-  }
-
-  main input{
-    width: 0%;
-    height: 5%;
-    scale: 80%;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-@media(max-width: 520px)
-{
-  .estrutura{
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 45px;
-  }
-
-  main input{
-    width: 50%;
-    height: 5%;
-    scale: 65%;
-  }
-  .userdata{
-    margin-top: 1rem;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-@media(max-width: 420px)
-{
-  .estrutura{
-    width: 80%;
-    top: 90px;
-    height: 65vh;
-    right: 45px;
-  }
-
-  main input{
-    width: 50%;
-    height: 5%;
-    scale: 55%;
-  }
-  .userdata{
-    margin-top: 0.5rem;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-@media(max-width: 360px)
-{
-  .estrutura{
-    width: 95%;
-    top: 90px;
-    height: 65vh;
-    right: 10px;
-  }
-
-  main input{
-    width: 50%;
-    height: 5%;
-    scale: 65%;
-  }
-  .userdata{
-    margin-top: 1rem;
-  }
-  .logo
-  {
-    scale: 90%;
-  }  
-}
-
-.edit_profile{
-  background: $primaria;
+.edit_profile {
+  background: #33338D;
   border: 0;
-  border-radius: 5px;
-  width: 25%;
-  height: 12%;
-  color: $secundaria;
+  border-radius: 5px; 
+  width: 20%;
+  height: 10%;
+  color: #Ffffff;
   margin-top: 20px;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
-}
-.modal-backdrop
-{
-  z-index: 0;
-}
-main input::-moz-placeholder {
-  color: #fff;
-  font-size: 20px;
+  
 }
 
-main input::placeholder {
-  color: #fff;
-  font-size: 20px;
+@media(max-width: 1200px)
+{
 }
+
+@media(max-width: 800px)
+{
+}
+
+@media(max-width: 670px)
+{
+}
+
+@media(max-width: 520px)
+{
+}
+
+@media(max-width: 420px)
+{
+}
+
+@media(max-width: 360px)
+{ 
+}
+
 
 .glass {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background: #9c9c9c79;
   box-shadow: 0 4px 30px #0000001a;
   backdrop-filter: blur(10.2px);
@@ -221,19 +108,22 @@ main input::placeholder {
   display: flex;
 }
 .card {
-  scale: 120%;
   display: flex;
-  flex-direction: row;
-  width: 190px;
+  position: absolute;
+  width: 20%;
   height: 254px;
-  border-radius: 20px;
+  left: 400px;
+  border-radius: 10px;
   background: #f5f5f5;
-  margin-left: 70%;
-  padding: 1.8rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border: 2px solid #c3c6ce;
   transition: 0.5s ease-out;
   overflow: visible;
+  box-shadow: 0 4px 30px #0000001a;
  }
+ 
  
  .card-details {
   color: black;
@@ -260,7 +150,7 @@ main input::placeholder {
  }
  
  .text-body {
-  color: rgb(134, 134, 134);
+  color: #868686;
  }
  
  /*Text*/
@@ -269,17 +159,6 @@ main input::placeholder {
   font-weight: bold;
  }
  
- /*Hover*/
- .card:hover {
-  border-color: #008bf8;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
- }
- 
- .card:hover .card-button {
-  transform: translate(-50%, 50%);
-  opacity: 1;
- }
-
 .logo
 {
   position: absolute;
@@ -327,4 +206,21 @@ h2 {
   margin-top: 57px;
   margin-right: 20px;
 }
-
+.botao{
+  width: 170px;
+  height: 38px;
+  padding-top: 8px;
+  background-color: $primaria;
+  justify-content: center;
+  align-items: center;
+  color: $secundaria;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.file-upload-form{
+  max-width: 128px;
+  max-height: 128px;
+  border-radius: 50px;
+}

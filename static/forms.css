@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 html {
   width: 100%;
-  align-items: center;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 body {
@@ -14,26 +14,29 @@ body {
   width: 90%;
   align-items: center;
   display: flex;
+  margin: 0;
   justify-content: center;
   text-align: center;
-  margin: 0;
 }
 
-.borda {
+.aside {
+  left: 0;
+  display: flex;
   position: fixed;
-  border: #333 2px solid;
-  border-radius: 50%;
-  margin-top: 6%;
-  margin-left: -10%;
+  background-color: transparent;
+  width: 300px;
+  height: 100%;
 }
 
 .burger {
-  padding: none;
+  position: fixed;
   width: 40px;
   height: 30px;
   background: transparent;
   cursor: pointer;
-  display: flex;
+  display: block;
+  margin-top: 6%;
+  margin-left: 70%;
 }
 
 .burger input {
@@ -173,28 +176,12 @@ button:active {
   color: rgb(0, 0, 255);
 }
 
-.frente {
-  cursor: pointer;
-}
-
-.costas {
-  cursor: pointer;
-}
-
 .human-body {
-  width: 235px;
+  width: 207px;
   position: relative;
   padding-top: 240px;
   height: 260px;
   display: block;
-}
-
-.human-body svg:hover {
-  cursor: pointer;
-}
-
-.human-body svg path:hover {
-  fill: #a80000;
 }
 
 .human-body svg {

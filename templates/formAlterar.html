@@ -16,9 +16,10 @@
     </header>
     <form action="/enviar" enctype="multipart/form-data" method="post"> 
         <!--DADOS DA VÍTIMA-->
-        <h1>Nova Ocorrência</h1>
-        <h2>Dados da vítima</h2>
+        
         {% for row in dadosdavitima %}
+        <h1>Ocorrência {{row.2}}</h1>
+        <h2>Dados da vítima</h2>
         <input type="date" id="data" name="data" value="{{row.2}}" required>
         <br><br>
 
@@ -130,67 +131,217 @@
         <br>
         {% endfor %}
         <!--TIPO DE OCORRÊNCIA-->
+        {% for row in tipodeocorrencia %}
         <h2>Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
         <br>
+        {% if row.2 == 'Não': %}
         <input type="checkbox" name="a1" value="Sim">Causado por animais
+        {% else %}
+        <input type="checkbox" name="a1" value="Sim" checked>Causado por animais
+        {% endif %}
         <br>
+
+        {% if row.3 == 'Não': %}
         <input type="checkbox" name="a2" value="Sim">Com meio de Transporte
+        {% else %}
+        <input type="checkbox" name="a2" value="Sim" checked>Com meio de Transporte
+        {% endif %}
         <br>
+
+        {% if row.4 == 'Não': %}
         <input type="checkbox" name="a3" value="Sim">Desmoronamento
+        {% else %}
+        <input type="checkbox" name="a3" value="Sim" checked>Desmoronamento
+        {% endif %}
         <br>
+
+        {% if row.4 == 'Não': %}
         <input type="checkbox" name="a4" value="Sim">Emergência Médica
+        {% else %}
+        <input type="checkbox" name="a4" value="Sim" checked>Emergência Médica
+        {% endif %}
         <br>
+
+        {% if row.5 == 'Não': %}
         <input type="checkbox" name="a5" value="Sim">Queda de Altura 2M
+        {% else %}
+        <input type="checkbox" name="a5" value="Sim" checked>Queda de Altura 2M
+        {% endif %}
         <br>
+
+        {% if row.6 == 'Não': %}
         <input type="checkbox"  name="a6" value="Sim">Tentativa de Suicídio
+        {% else %}
+        <input type="checkbox"  name="a6" value="Sim" checked>Tentativa de Suicídio
+        {% endif %}
         <br>
+
+        {% if row.7 == 'Não': %}
         <input type="checkbox"  name="a7" value="Sim">Queda própria altura
+        {% else %}
+        <input type="checkbox"  name="a7" value="Sim" checked>Queda própria altura
+        {% endif %}
         <br>
+        
+        {% if row.8 == 'Não': %}
         <input type="checkbox"  name="a8" value="Sim">Afogamento
+        {% else %}
+        <input type="checkbox"  name="a8" value="Sim" checked>Afogamento
+        {% endif %}
         <br>
+
+        {% if row.9 == 'Não': %}
         <input type="checkbox"  name="a9" value="Sim">Agressão
+        {% else %}
+        <input type="checkbox"  name="a9" value="Sim" checked>Agressão
+        {% endif %}
         <br>
+
+        {% if row.10 == 'Não': %}
         <input type="checkbox"  name="a10" value="Sim">Atropelamento
+        {% else %}
+        <input type="checkbox"  name="a10" value="Sim" checked>Atropelamento
+        {% endif %}
         <br>
+
+        {% if row.11 == 'Não': %}
         <input type="checkbox"  name="a11" value="Sim">Choque Elétrico
+        {% else %}
+        <input type="checkbox"  name="a11" value="Sim" checked>Choque Elétrico
+        {% endif %}
         <br>
+
+        {% if row.12 == 'Não': %}
         <input type="checkbox"  name="a12" value="Sim">Desabamento
+        {% else %}
+        <input type="checkbox"  name="a12" value="Sim" checked>Desabamento
+        {% endif %}
         <br>
+
+        {% if row.13 == 'Não': %}
         <input type="checkbox"  name="a13" value="Sim">Doméstico
+        {% else %}
+        <input type="checkbox"  name="a13" value="Sim" checked>Doméstico
+        {% endif %}
         <br>
+
+        {% if row.14 == 'Não': %}
         <input type="checkbox"  name="a14" value="Sim">Esportivo
+        {% else %}
+        <input type="checkbox"  name="a14" value="Sim" checked>Esportivo
+        {% endif %}
         <br>
+
+        {% if row.15 == 'Não': %}
         <input type="checkbox"  name="a15" value="Sim">Intoxicação
+        {% else %}
+        <input type="checkbox"  name="a15" value="Sim" checked>Intoxicação
+        {% endif %}
         <br>
+
+        {% if row.16 == 'Não': %}
         <input type="checkbox"  name="a16" value="Sim">Queda Bicicleta
+        {% else %}
+        <input type="checkbox"  name="a16" value="Sim" checked>Queda Bicicleta
+        {% endif %}
         <br>
+
+        {% if row.17 == 'Não': %}
         <input type="checkbox"  name="a17" value="Sim">Queda Moto
+        {% else %}
+        <input type="checkbox"  name="a17" value="Sim" checked>Queda Moto
+        {% endif %}
         <br>
+
+        {% if row.18 == 'Não': %}
         <input type="checkbox"  name="a18" value="Sim">Queda Nível &lt;2M
+        {% else %}
+        <input type="checkbox"  name="a18" value="Sim" checked>Queda Nível &lt;2M
+        {% endif %}
         <br>
+        
+        {% if row.19 == 'Não': %}
         <input type="checkbox"  name="a19" value="Sim">Trabalho
+        {% else %}
+        <input type="checkbox"  name="a19" value="Sim" checked>Trabalho
+        {% endif %}
         <br>
+
+        {% if row.20 == 'Não': %}
         <input type="checkbox"  name="a20" value="Sim">Transferência
+        {% else %}
+        <input type="checkbox"  name="a20" value="Sim" checked>Transferência
+        {% endif %}
+        {% endfor %}
         <!--Problemas encontrados-->
+
+        {% for row in problemasencontrados %}
         <h2>Problemas encontrados</h2>
         <br>
+
+        {% if row.2 == 'Não': %}
         <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
         <input type="radio" name="b1a" id="respiratorio" value="DPOC">
         <label for="DPOC" id="respiratorio1">DPOC</label>
         <br>
         <input type="radio" name="b1a" id="respiratorio2" value="inalacao">
         <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
+        {% else %}
+        {% if row.2 == 'inalação de fumaça': %}
+        <input style="display: inline-flex;" type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();" checked>Respiratório
+        <input style="display: inline-flex;" type="radio" name="b1a" id="respiratorio" value="DPOC">
+        <label style="display: inline-flex;" for="DPOC" id="respiratorio1">DPOC</label>
         <br>
-        <input type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
-        <input type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
-        <label for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
-        <input type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
-        <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
+        <input style="display: inline-flex;" type="radio" name="b1a" id="respiratorio2" value="inalacao" checked>
+        <label style="display: inline-flex;" for="inalacao" id="respiratorio3">Inalação de fumaça</label>
+        {% else %}
+        <input style="display: inline-flex;" type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();" checked>Respiratório
+        <input style="display: inline-flex;" type="radio" name="b1a" id="respiratorio" value="DPOC" checked>
+        <label style="display: inline-flex;" for="DPOC" id="respiratorio1">DPOC</label>
         <br>
+        <input style="display: inline-flex;" type="radio" name="b1a" id="respiratorio2" value="inalacao" checked>
+        <label style="display: inline-flex;" for="inalacao" id="respiratorio3">Inalação de fumaça</label>
+        {% endif %}
+        {% endif %}
+        <br>
+
+        {% if row.3 == 'Não': %}
+        <input style="display: inline-flex;" type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
+        <label style="display: inline-flex;" for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
+        <label style="display: inline-flex;" for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
+        {% else %}
+        {% if row.3 == 'Hiperglicemia': %}
+        <input style="display: inline-flex;" type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2" checked>Diabetes
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes" value="Hiperglicemia" checked>
+        <label style="display: inline-flex;" for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
+        <label style="display: inline-flex;" for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
+        {% else %}
+        <input style="display: inline-flex;" type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2" checked>Diabetes
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
+        <label style="display: inline-flex;" for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+        <input style="display: inline-flex;" type="radio" name="b2a" id="diabetes2" value="Hipoglicemia" checked>
+        <label style="display: inline-flex;" for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
+        {% endif %}
+        {% endif %}
+        <br>
+
+        {% if row.4 == 'Não': %}
         <input type="checkbox"  name="b3" value="Sim">Obstétrico
+        {% else %}
+        <input type="checkbox"  name="b3" value="Sim" checked>Obstétrico
+        {% endif %}
         <br>
+
+        {% if row.5 == 'Não': %}
         <input type="checkbox"  name="b3a" value="Sim">Parto Emergencial
+        {% else %}
+        <input type="checkbox"  name="b3a" value="Sim" checked>Parto Emergencial
+        {% endif %}
         <br>
+
         <input type="checkbox"  name="b3b" value="Sim">Gestante
         <br>
         <input type="checkbox"  name="b3c" value="Sim">Hemor. Excessiva
@@ -211,6 +362,7 @@
         <input type="text" id="transporte12" name="b4a" placeholder="Outros">
         <br>
         <input type="text" name="b5" placeholder="Outros">
+        {% endfor %}
         <!--SINAIS E SINTOMAS-->
         <h2>Sinais e Sintomas</h2>
         <br>
