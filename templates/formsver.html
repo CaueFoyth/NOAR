@@ -193,209 +193,225 @@
             <label class="read_data"> &nbsp; {{row.9}}</label>
         </div>
         {% endfor %}
+
+        {% for row in sinaissintomas %}
         <!--SINAIS E SINTOMAS-->
         <h2>Sinais e Sintomas</h2>
         <br>
-        <input type="checkbox"  name="c1" value="Sim">Abdômen sensível ou rígido
-        <br>
-        <input type="checkbox"  name="c2" value="Sim">Afundamento de crânio
-        <br>
-        <input type="checkbox"  name="c3" value="Sim">Agitação
-        <br>
-        <input type="checkbox"  name="c4" value="Sim">Amnésia
-        <br>
-        <input type="checkbox"  name="c5" value="Sim">Angina de peito
-        <br>
-        <input type="checkbox"  name="c6" value="Sim">Apinéia
-        <br>
-        <input type="checkbox"  name="c7" value="Sim">Bradicardia
-        <br>
-        <input type="checkbox"  name="c8" value="Sim">Bradipnéia
-        <br>
-        <input type="checkbox"  name="c9" value="Sim">Bronco-Aspirando
-        <br>
-        <input type="checkbox"  name="c10" value="Sim">Cefaléia 
-        <br>
-        <input type="checkbox"  id="aparecercianose" onclick="aparecerCianose();" name="c11">Cianose
-        <input type="radio" id="cianose" name="c11a" value="Sim">
-        <label for="Labios" id="cianose1">Lábios</label>
-        <input type="radio" name="c11b" id="cianose2" value="Sim">
-        <label for="Extremidade" id="cianose3">Extremidade</label>
-        <br>
-        <input type="checkbox"  name="c12" value="Sim">Convulsão
-        <br>
-        <input type="checkbox"  name="c13" value="Sim">Decorticação
-        <br>
-        <input type="checkbox"  name="c14" value="Sim">Deformidade
-        <br>
-        <input type="checkbox"  name="c15" value="Sim">Descerebração
-        <br>
-        <input type="checkbox"  name="c16" value="Sim">Desmaio
-        <br>
-        <input type="checkbox"  name="c17" value="Sim">Desvio de traquéia
-        <br>
-        <input type="checkbox"  name="c18" value="Sim">Dispnéia
-        <br>
-        <input type="checkbox"  name="c19" value="Sim">Dor local
-        <br>
-        <input type="checkbox"  id="apareceredema" onclick="aparecerEdema();" name="c20">Edema
-        <input type="radio" name="c20a" id="edema" value="Sim">
-        <label for="Labios" id="edema1">Lábios</label>
-        <input type="radio" name="c20b" id="edema2" value="Sim">
-        <label for="Extremidade" id="edema3">Extremidade</label>
-        <br>
-        <input type="checkbox"  name="c21" value="Sim">Enfisema subcutâneo
-        <br>
-        <input type="checkbox"  name="c22" value="Sim">Êstase de jugular
-        <br>
-        <input type="checkbox"  name="c23" value="Sim">Face pálida
-        <br>
-        <input type="checkbox"  id="aparecerhemorragia" onclick="aparecerHemorragia()" name="c24">Hemorragia
-        <input type="radio" name="c24a" id="hemorragia" value="Sim">
-        <label for="Interna" id="hemorragia1">Interna</label>
-        <input type="radio" name="c24b" id="hemorragia2" value="Sim">
-        <label for="Externa" id="hemorragia3">Externa</label>
-        <br>
-        <input type="checkbox"  name="c25" value="Sim">Hipertensão
-        <br>
-        <input type="checkbox"  name="c26" value="Sim">Hipotensão
-        <br>
-        <input type="checkbox"  name="c27" value="Sim">Náuseas e Vômitos
-        <br>
-        <input type="checkbox"  name="c28" value="Sim">Nasoragia
-        <br>
-        <input type="checkbox"  name="c29" value="Sim">Óbito
-        <br>
-        <input type="checkbox"  name="c30" value="Sim">Otorréia
-        <br>
-        <input type="checkbox"  name="c31" value="Sim">Otorragia
-        <br>
-        <input type="checkbox"  name="c32" value="Sim">O.V.A.C.E
-        <br>
-        <input type="checkbox"  id="aparecerparada" onclick="aparecerParada()" name="c33">Parada
-        <input type="radio" id="parada" name="c33a" value="Sim">
-        <label for="Cardiaca" id="parada1">Cardíaca</label>
-        <input type="radio" name="c33b" id="parada2" value="Sim">
-        <label for="Respiratoria" id="parada3">Respiratória</label>
-        <br>
-        <input type="checkbox"  name="c34" value="Sim">Priaprismo
-        <br>
-        <input type="checkbox"  name="c35" value="Sim">Prurido na pele
-        <br>
+        <div class="form-group">
+            <label>Abdômen sensível ou rígido:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Afundamento de crânio:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Agitação:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Amnésia:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Angina de peito:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Apinéia:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Bradicardia:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Bradipnéia:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Bronco-Aspirando:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cefaléia:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cianose:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Convulsão:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Decorticação:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Deformidade:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <div class="form-group">
+            <label>Descerebração:</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        <div class="form-group">
+            <label>Desmaio:</label>
+            <label class="read_data"> &nbsp; {{row.17}}</label>
+        </div>
+        <div class="form-group">
+            <label>Desvio de traquéia:</label>
+            <label class="read_data"> &nbsp; {{row.18}}</label>
+        </div>
+        <div class="form-group">
+            <label>Dispnéia:</label>
+            <label class="read_data"> &nbsp; {{row.19}}</label>
+        </div>
+        <div class="form-group">
+            <label>Dor local:</label>
+            <label class="read_data"> &nbsp; {{row.20}}</label>
+        </div>
+        <div class="form-group">
+            <label>Edema:</label>
+            <label class="read_data"> &nbsp; {{row.21}}</label>
+        </div>
+        <div class="form-group">
+            <label>Enfisema subcutâneo:</label>
+            <label class="read_data"> &nbsp; {{row.22}}</label>
+        </div>
+        <div class="form-group">
+            <label>Êstase de jugular:</label>
+            <label class="read_data"> &nbsp; {{row.23}}</label>
+        </div>
+        <div class="form-group">
+            <label>Face pálida:</label>
+            <label class="read_data"> &nbsp; {{row.24}}</label>
+        </div>
+        <div class="form-group">
+            <label>Hemorragia:</label>
+            <label class="read_data"> &nbsp; {{row.25}}</label>
+        </div>
+        <div class="form-group">
+            <label>Hipertensão:</label>
+            <label class="read_data"> &nbsp; {{row.26}}</label>
+        </div>
+        <div class="form-group">
+            <label>Hipotensão:</label>
+            <label class="read_data"> &nbsp; {{row.27}}</label>
+        </div>
+        <div class="form-group">
+            <label>Náuseas e Vômitos:</label>
+            <label class="read_data"> &nbsp; {{row.28}}</label>
+        </div>
+        <div class="form-group">
+            <label>Nasoragia:</label>
+            <label class="read_data"> &nbsp; {{row.29}}</label>
+        </div>
+        <div class="form-group">
+            <label>Óbito:</label>
+            <label class="read_data"> &nbsp; {{row.30}}</label>
+        </div>
+        <div class="form-group">
+            <label>Otorréia:</label>
+            <label class="read_data"> &nbsp; {{row.31}}</label>
+        </div>
+        <div class="form-group">
+            <label>Otorragia:</label>
+            <label class="read_data"> &nbsp; {{row.32}}</label>
+        </div>
+        <div class="form-group">
+            <label>O.V.A.C.E:</label>
+            <label class="read_data"> &nbsp; {{row.33}}</label>
+        </div>
+        <div class="form-group">
+            <label>Parada:</label>
+            <label class="read_data"> &nbsp; {{row.34}}</label>
+        </div>
+        <div class="form-group">
+            <label>Priaprismo:</label>
+            <label class="read_data"> &nbsp; {{row.35}}</label>
+        </div>
+        <div class="form-group">
+            <label>Prurido na pele:</label>
+            <label class="read_data"> &nbsp; {{row.36}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pupilas:</label>
+            <label class="read_data"> &nbsp; {{row.37}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sede:</label>
+            <label class="read_data"> &nbsp; {{row.38}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sinal de battle:</label>
+            <label class="read_data"> &nbsp; {{row.39}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sinal de guaxinim:</label>
+            <label class="read_data"> &nbsp; {{row.40}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sudorese:</label>
+            <label class="read_data"> &nbsp; {{row.41}}</label>
+        </div>
+        <div class="form-group">
+            <label>Taquipnéia:</label>
+            <label class="read_data"> &nbsp; {{row.42}}</label>
+        </div>
+        <div class="form-group">
+            <label>Taquicardia:</label>
+            <label class="read_data"> &nbsp; {{row.43}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tontura:</label>
+            <label class="read_data"> &nbsp; {{row.44}}</label>
+        </div>
+        <div class="form-group">
+            <label>Outros sinais ou sintomas:</label>
+            <label class="read_data"> &nbsp; {{row.45}}</label>
+        </div>
+        {% endfor %}    
 
-        <input type="checkbox"  id="aparecerpupilas" onclick="aparecerPupilas()" name="c36" >Pupilas
-
-        <input type="radio" name="c36a" id="pupilas" value="Sim">
-        <label for="Anisocoria" id="pupilas1">Anisocoria</label>
-
-        <input type="radio" name="c36b" id="pupilas2" value="Sim">
-        <label for="Isocoria" id="pupilas3">Isocoria</label>
-
-        <input type="radio" name="c36c" id="pupilas4" value="Sim">
-        <label for="Midriase" id="pupilas5">Midriase</label>
-
-        <input type="radio" name="c36d" id="pupilas6" value="Sim">
-        <label for="Miose" id="pupilas7">Miose</label>
-
-        <input type="radio" name="c36e" id="pupilas8" value="Sim">
-        <label for="Reagente" id="pupilas9">Reagente</label>
-
-        <input type="radio" name="c36f" id="pupilas10" value="Sim">
-        <label for="Nao_reagente" id="pupilas11">Não reagente</label>
-
-        <br>
-        <input type="checkbox"  name="c37" value="Sim">Sede
-        <br>
-        <input type="checkbox"  name="c38" value="Sim">Sinal de battle
-        <br>
-        <input type="checkbox"  name="c39" value="Sim">Sinal de guaxinim
-        <br>
-        <input type="checkbox"  name="c40" value="Sim">Sudorese
-        <br>
-        <input type="checkbox"  name="c41" value="Sim">Taquipnéia
-        <br>
-        <input type="checkbox"  name="c42" value="Sim">Taquicardia
-        <br>
-        <input type="checkbox"  name="c43" value="Sim">Tontura
-        <br>
-        <input type="text" name="c44" placeholder="Outros">
+        {% for row in avaliacaopaciente %}
         <!--AVALIAÇÃO DO PACIENTE-->
         <h2>Avaliação do Paciente</h2>
         <h2>Nível de consciência</h2>
         <h4>Maiores de 5 anos</h4>
-        <h5>Abertura Ocular</h5>
-        Espontânea<input type="radio" name="ia" value="Espontanea">4
-        <br>
-        Comando Verbal<input type="radio" name="ia" value="Comando_Verbal">3
-        <br>
-        Estímulo Doloroso<input type="radio" name="ia" value="Estimulo_Doloroso">2
-        <br>
-        Nenhuma<input type="radio" name="ia" value="Nenhuma">1
-        <h5>Resposta Verbal</h5>
-        Orientado<input type="radio" name="ja" value="Orientado">5
-        <br>
-        Confuso<input type="radio" name="ja" value="confuso">4
-        <br>
-        Palavras Inapropriadas<input type="radio" name="ja" value="Palavras_Inapropriadas">3
-        <br>
-        Palavras Incompreensíveis<input type="radio" name="ja" value="Palavras_Incompreensiveis">2
-        <br>
-        Nenhuma<input type="radio" name="ja" value="Nenhuma">1
-        <h5>Resposta Motora</h5>
-        Obedece Comandos<input type="radio" name="ka" value="Obedece_Comandos">6
-        <br>
-        Localiza Dor<input type="radio" name="ka" value="Localiza_Dor">5
-        <br>
-        Movimento de Retirada<input type="radio" name="ka" value="Movimento_de_Retirada">4
-        <br>
-        Flexão Anormal<input type="radio" name="ka" value="Flexao_Anormal">3
-        <br>
-        Extensão Anormal<input type="radio" name="ka" value="Extensao_Anormal">2
-        <br>
-        Nenhuma<input type="radio" name="ka" value="Nenhuma">1
+        <div class="form-group">
+            <label>Abertura Ocular:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Resposta Verbal:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Resposta Motora:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
         <h4>Menores de 5 anos</h4>
-        <h5>Abertura Ocular</h5>
-        Espontânea<input type="radio" name="ib" value="Espontanea">4
-        <br>
-        Comando Verbal<input type="radio" name="ib" value="Comando_Verbal">3
-        <br>
-        Estímulo Doloroso<input type="radio" name="ib" value="Estimulo_Doloroso">2
-        <br>
-        Nenhuma<input type="radio" name="ib" value="Nenhuma">1
-        <h5>Resposta Verbal</h5>
-        Orientado<input type="radio" name="jb" value="Orientado">5
-        <br>
-        Confuso<input type="radio" name="jb" value="confuso">4
-        <br>
-        Palavras Inapropriadas<input type="radio" name="jb" value="Palavras_Inapropriadas">3
-        <br>
-        Palavras Incompreensíveis<input type="radio" name="jb" value="Palavras_Incompreensiveis">2
-        <br>
-        Nenhuma<input type="radio" name="jb" value="Nenhuma">1
-        <h5>Resposta Motora</h5>
-        Obedece Comandos<input type="radio" name="kb" value="Obedece_Comandos">6
-        <br>
-        Localiza Dor<input type="radio" name="kb" value="Localiza_Dor">5
-        <br>
-        Movimento de Retirada<input type="radio" name="kb" value="Movimento_de_Retirada">4
-        <br>
-        Flexão Anormal<input type="radio" name="kb" value="Flexao_Anormal">3
-        <br>
-        Extensão Anormal<input type="radio" name="kb" value="Extensao_Anormal">2
-        <br>
-        Nenhuma<input type="radio" name="kb" value="Nenhuma">1
+        <div class="form-group">
+            <label>bertura Ocular:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Resposta Verbal:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Resposta Motora:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        {% endfor %}   
         <!--Localização dos Traumas-->
+        {% for row in corpo %}
         <h2>Localização dos Traumas</h2>
         <button class="frente" id="frente" onclick="meuFrente()" type="button">Frente</button> <button class="costas" id="costas" onclick="meuCostas()" type="button">Costas</button>
         <style>
-
-        .frente {
-            cursor: pointer;
-        }
-
-        .costas  {
-            cursor: pointer;
-        }
 
         .human-body {
         width: 207px;
@@ -403,12 +419,6 @@
         padding-top: 240px;
         height: 260px;
         display: block;
-        }
-        .human-body svg:hover {
-        cursor: pointer;
-        }
-        .human-body svg path:hover {
-        fill: #a80000;
         }
         
         .human-body svg {
@@ -651,7 +661,9 @@
         <input type="text"  id="corpoLado" placeholder="Lado">
         <input type="text"  id="corpoFace" placeholder="Face">
         <input type="text"  id="corpoTipo" placeholder="Tipo">
-        <br><br>
+        <br>
+        {% endfor %}   
+        <br>
         <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
             <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
