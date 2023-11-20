@@ -657,13 +657,30 @@
         </svg>
         </div>
         </div>
-        <input type="text"  id="corpoLocal" placeholder="Local">
-        <input type="text"  id="corpoLado" placeholder="Lado">
-        <input type="text"  id="corpoFace" placeholder="Face">
-        <input type="text"  id="corpoTipo" placeholder="Tipo">
+        <div class="form-group">
+            <label>Adulto ou Criança:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Local:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Lado:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Face</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tipo:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
         <br>
         {% endfor %}   
         <br>
+        {% for row in queimadura %}
         <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
             <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
@@ -676,6 +693,7 @@
             <tr><td>M.S.D.</td> <td><input type="radio" name="p8" value="msd_1"></td> <td><input type="radio" name="p8" value="msd_2"></td> <td><input type="radio" name="p8" value="msd_3"></td></tr>
             <tr><td>M.S.E.</td> <td><input type="radio" name="p9" value="mse_1"></td> <td><input type="radio" name="p9" value="mse_2"></td> <td><input type="radio" name="p9" value="mse_3"></td></tr>
          </table>
+         {% endfor %} 
         <!--SINAIS VITAIS-->
         <h2>Sinais Vitais</h2>
         <input type="number" name="d1">x<input type="number" name="d12">mmHG

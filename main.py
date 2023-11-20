@@ -171,6 +171,7 @@ def enviar():
         ib = request.form.get('ib', 'Não')
         jb = request.form.get('jb', 'Não')
         kb = request.form.get('kb', 'Não')
+        veio = request.form.get('veio', 'Não')
         z1 = request.form.get('z1', 'Não')
         z2 = request.form.get('z2', 'Não')
         z3 = request.form.get('z3', 'Não')
@@ -420,7 +421,7 @@ def enviar():
         cursor.execute(f"INSERT INTO avaliacaopaciente (fk_ocorrencia, fk_sos, abertura_ocular, resposta_verbal, resposta_motora, abertura_ocular_menor, resposta_verbal_menor, resposta_motora_menor) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{ia}', '{ja}', '{ka}', '{ib}', '{jb}', '{kb}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO corpo (fk_ocorrencia ,fk_sos, local, lado, FrenteOuCostas, tipo) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{z1}', '{z2}', '{z3}', '{z4}')")
+        cursor.execute(f"INSERT INTO corpo (fk_ocorrencia ,fk_sos, AdultoOuCrianca, local, lado, FrenteOuCostas, tipo) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{veio}', '{z1}', '{z2}', '{z3}', '{z4}')")
         mysql.connection.commit()
 
         cursor.execute(f"INSERT INTO queimadura (fk_ocorrencia, fk_sos, cabeca_p, cabeca_s, cabeca_t, pescoco_p, pescoco_s, pescoco_t, tant_p, tant_s, tant_t, tpos_p, tpos_s, tpos_t, genit_p, genit_s, genit_t, mid_p, mid_s, mid_t, mie_p, mie_s, mie_t, msd_p, msd_s, msd_t, mse_p, mse_s, mse_t) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{p1}', '{p2}', '{p3}', '{p4}', '{p5}', '{p6}', '{p7}', '{p8}', '{p9}', '{p10}', '{p11}', '{p12}', '{p13}', '{p14}', '{p15}', '{p16}', '{p17}', '{p18}', '{p19}', '{p20}', '{p21}', '{p22}', '{p23}', '{p24}', '{p25}', '{p26}', '{p27}')")
@@ -497,8 +498,10 @@ def ver1(id):
             avali = cursor.fetchall()
             cursor.execute(f"SELECT * FROM corpo WHERE fk_ocorrencia = {id}")
             corpo = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM queimadura WHERE fk_ocorrencia = {id}")
+            quei = cursor.fetchall()
             cursor.close()
-            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo) 
+            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei) 
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
