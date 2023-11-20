@@ -829,3 +829,7 @@ function aparecerCanula() {
       textCanula.style.display = "none";
     }
 }
+
+function aparecerAside() {
+  document.getElementsByClassName('aside').style.background-color ='#fff';
+}

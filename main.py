@@ -232,6 +232,7 @@ def enviar():
         g4 = request.form.get('g4', 'Não')
         g5 = request.form.get('g5', 'Não')
         g6 = request.form.get('g6', 'Não')
+        g7 = request.form.get('g7', 'Não')
         h1 = request.form.get('h1', 'Não')
         h2 = request.form.get('h2', 'Não')
         h3 = request.form.get('h3', 'Não')
@@ -440,6 +441,9 @@ def enviar():
         cursor.execute(f"INSERT INTO equipeatendimento (fk_ocorrencia, fk_sos, m, s1, s2, s3, equipe, demandante) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{g1}', '{g2}', '{g3}', '{g4}', '{g5}', '{g6}' )")
         mysql.connection.commit()
 
+        cursor.execute(f"INSERT INTO objetos (fk_ocorrencia, fk_sos, obj) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{g7}')")
+        mysql.connection.commit()
+
         cursor.execute(f"INSERT INTO informaçõesocorrência (fk_ocorrencia ,fk_sos, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}')")
         mysql.connection.commit()
 
@@ -487,12 +491,17 @@ def ver1(id):
             tip = cursor.fetchall()
             cursor.execute(f"SELECT * FROM problemasencontrados WHERE fk_ocorrencia = {id}")
             prob = cursor.fetchall()
-            cursor.execute(f"SELECT * FROM problemasencontrados WHERE fk_ocorrencia = {id}")
-            prob = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM sinaissintomas WHERE fk_ocorrencia = {id}")
+            sint = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM avaliacaopaciente WHERE fk_ocorrencia = {id}")
+            avali = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM corpo WHERE fk_ocorrencia = {id}")
+            corpo = cursor.fetchall()
             cursor.close()
-            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob)
+            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo) 
         return redirect(url_for("index"))
     return redirect(url_for("index"))
+
 @app.route('/enviarPerfilImagem', methods=["POST" , "GET"])
 def enviarPerfilImagem():
     if 'logado' in session:
