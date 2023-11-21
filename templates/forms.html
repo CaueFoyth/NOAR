@@ -601,15 +601,15 @@
         <center>
         <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
-            <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
-            <tr><td>Pescoço</td> <td><input type="radio" name="p2" value="pescoco_1"></td> <td><input type="radio" name="p2" value="pescoco_2"></td> <td><input type="radio" name="p2" value="pescoco_3"></td></tr>
-            <tr><td>T. Ant.</td> <td><input type="radio" name="p3" value="ant_1"></td> <td><input type="radio" name="p3" value="ant_2"></td> <td><input type="radio" name="p3" value="ant_3"></td></tr>
-            <tr><td>T. Post.</td> <td><input type="radio" name="p4" value="post_1"></td> <td><input type="radio" name="p4" value="post_2"></td> <td><input type="radio" name="p4" value="post_3"></td></tr>
-            <tr><td>Genital</td> <td><input type="radio" name="p5" value="genital_1"></td> <td><input type="radio" name="p5" value="genital_2"></td> <td><input type="radio" name="p5" value="genital_3"></td></tr>
-            <tr><td>M.I.D.</td> <td><input type="radio" name="p6" value="mid_1"></td> <td><input type="radio" name="p6" value="mid_2"></td> <td><input type="radio" name="p6" value="mid_3"></td></tr>
-            <tr><td>M.I.E.</td> <td><input type="radio" name="p7" value="mie_1"></td> <td><input type="radio" name="p7" value="mie_2"></td> <td><input type="radio" name="p7" value="mie_3"></td></tr>
-            <tr><td>M.S.D.</td> <td><input type="radio" name="p8" value="msd_1"></td> <td><input type="radio" name="p8" value="msd_2"></td> <td><input type="radio" name="p8" value="msd_3"></td></tr>
-            <tr><td>M.S.E.</td> <td><input type="radio" name="p9" value="mse_1"></td> <td><input type="radio" name="p9" value="mse_2"></td> <td><input type="radio" name="p9" value="mse_3"></td></tr>
+            <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="1°Grau"></td> <td><input type="radio" name="p1" value="2°Grau"></td> <td><input type="radio" name="p1" value="3°Grau"></td></tr>
+            <tr><td>Pescoço</td> <td><input type="radio" name="p2" value="1°Grau"></td> <td><input type="radio" name="p2" value="2°Grau"></td> <td><input type="radio" name="p2" value="3°Grau"></td></tr>
+            <tr><td>T. Ant.</td> <td><input type="radio" name="p3" value="1°Grau"></td> <td><input type="radio" name="p3" value="2°Grau"></td> <td><input type="radio" name="p3" value="3°Grau"></td></tr>
+            <tr><td>T. Post.</td> <td><input type="radio" name="p4" value="1°Grau"></td> <td><input type="radio" name="p4" value="2°Grau"></td> <td><input type="radio" name="p4" value="3°Grau"></td></tr>
+            <tr><td>Genital</td> <td><input type="radio" name="p5" value="1°Grau"></td> <td><input type="radio" name="p5" value="2°Grau"></td> <td><input type="radio" name="p5" value="3°Grau"></td></tr>
+            <tr><td>M.I.D.</td> <td><input type="radio" name="p6" value="1°Grau"></td> <td><input type="radio" name="p6" value="2°Grau"></td> <td><input type="radio" name="p6" value="3°Grau"></td></tr>
+            <tr><td>M.I.E.</td> <td><input type="radio" name="p7" value="1°Grau"></td> <td><input type="radio" name="p7" value="2°Grau"></td> <td><input type="radio" name="p7" value="3°Grau"></td></tr>
+            <tr><td>M.S.D.</td> <td><input type="radio" name="p8" value="1°Grau"></td> <td><input type="radio" name="p8" value="2°Grau"></td> <td><input type="radio" name="p8" value="3°Grau"></td></tr>
+            <tr><td>M.S.E.</td> <td><input type="radio" name="p9" value="1°Grau"></td> <td><input type="radio" name="p9" value="2°Grau"></td> <td><input type="radio" name="p9" value="3°Grau"></td></tr>
          </table>
         </center>
         <!--SINAIS VITAIS-->
@@ -631,10 +631,10 @@
             <input type="number" name="d6" placeholder="Temperatura °C">
             <br>
             <h4>Perfusão</h4>
-            <input type="radio" name="d7a" value="sim">
+            <input type="radio" name="d7a" value="Maior que 2seg">
             <label for="&gt;2seg.">Maior que 2seg.</label>
             <br>
-            <input type="radio" name="d7a" value="sim">
+            <input type="radio" name="d7a" value="Menor que 2seg">
             <label for="&lt;2seg.">Menor que 2seg.</label>
         </div>
         <!--Forma de condução-->
@@ -789,7 +789,7 @@
             <input type="checkbox"  name="j34" value="Sim">Uso de Cânula
             <br>
             <input type="checkbox"  id="usocolar" onclick="usoColar()" name="j35">Uso Colar
-            <input type="text" name="j35" id="usocolar1" placeholder="Tamanho">
+            <input type="text" name="j35a" id="usocolar1" placeholder="Tamanho">
             <br>
             <input type="checkbox"  name="j36" value="Sim">Uso KED
             <br>
@@ -829,7 +829,7 @@
             <br>
             <input type="checkbox"  name="j47" value="Sim">CIT
             <br>
-            <input type="text" name="j48" placeholder="Outros">
+            <input type="text" name="j48" placeholder="Outros procedimentos">
             <br>
         </div>
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
@@ -988,12 +988,14 @@
             <input type="text" name="m13" id="parto" placeholder="Hora do nascimento">
             <br>
             <h4 id="parto1">Sexo do bebe</h4>
-            <input  id="parto4" type="radio"  name="m14" value="MASC">
+            <input  id="parto4" type="radio"  name="m14" value="Masculino">
             <label id="parto5" for="MASC">MASC</label>
-            <input id="parto2" type="radio"  name="m14" value="FEM">
+            <input id="parto2" type="radio"  name="m14" value="Feminino">
             <label id="parto3" for="FEM">FEM</label><br>
             <input id="parto6" type="text" name="m15" placeholder="Nome do bebe">
         </div>
+
+        
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <div class="fundo">
         <center><h2 id="avaliacaoCinematica">Avaliação da Cinemática</h2></center>
