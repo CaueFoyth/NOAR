@@ -10,6 +10,14 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 <body> 
+    <style>
+        .human-body svg:hover {
+            cursor: pointer;
+            }
+            .human-body svg path:hover {
+            fill: #a80000;
+            }
+    </style>
     <form action="/enviar" enctype="multipart/form-data" method="post"> 
         <label class="burger" for="burger">
             <input type="checkbox" id="burger" onclick="aparecerAside()">
@@ -40,9 +48,9 @@
             <h2 class="asideTextos" onclick="divulgarImprensa()">Divulgar para a imprensa</h2>
         </div>
         <!--DADOS DA VÍTIMA-->
-        <h1>Nova Ocorrência</h1>
+        <center><h1>Nova Ocorrência</h1></center>
         <div class="fundo">
-            <h2 id="dadosDaVitima">Dados da vítima</h2>
+            <center><h2 id="dadosDaVitima">Dados da vítima</h2></center>
             <input type="date" id="data" name="data" required>
             <br><br>
             <input type="radio" name="sexo" value="Masculino">
@@ -59,19 +67,19 @@
             <br>
         </div>
         <div class="fundo">
-            <h2>Há acompanhante?</h2>
+        <center><h2>Há acompanhante?</h2>
             <input type="radio"  name="acompanhante" value="sim" id="apareceracompanhante" onclick="aparecerAcompanhante()">
             <label for="sim">Sim</label><br>
             <input type="radio"  name="acompanhante" value="nao" id="naoapareceracompanhante" onclick="naoaparecerAcompanhante()">
-            <label for="nao">Não</label>
+            <label for="nao">Não</label></center>
             <br>
-            <h2 id="acompanhante">Dados do acompanhante</h2>
+        <center><h2 id="acompanhante">Dados do acompanhante</h2></center>
             <br>
             <input type="text" name="nomeAcompanhante" id="acompanhante1" placeholder="Nome do acompanhante">
             <br>
             <input type="text" name="idadeAcompanhante" id="acompanhante2" placeholder="Idade do acompanhante">
             <input type="text" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante" onkeyup="ValidarCPF();">
-            <br>
+            <br><br>
             <input type="radio"  name="sexoAcompanhante" id="acompanhante4" value="Masculino">
             <label for="sexo-m" id="acompanhante5">Masculino</label><br>
             <input type="radio"  name="sexoAcompanhante" id="acompanhante6" value="Feminino">
@@ -80,7 +88,7 @@
         </div>
         <!--TIPO DE OCORRÊNCIA-->
         <div class="fundo">
-            <h2 id="tipoDeOcorrencia">Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
+        <center><h2 id="tipoDeOcorrencia">Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4></center>
             <br>
             <input type="checkbox" name="a1" value="Sim">Causado por animais
             <br>
@@ -124,9 +132,10 @@
         </div>
         <!--Problemas encontrados-->
         <div class="fundo">
-            <h2 id="problemasEncontrados">Problemas encontrados</h2>
+        <center><h2 id="problemasEncontrados">Problemas encontrados</h2></center>
             <br>
             <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
+            <br>
             <input type="radio" name="b1a" id="respiratorio" value="DPOC">
             <label for="DPOC" id="respiratorio1">DPOC</label>
             <br>
@@ -134,8 +143,10 @@
             <label for="inalacao" id="respiratorio3">Inalação de fumaça</label>
             <br>
             <input type="checkbox"  id="aparecerdiabetes" onclick="aparecerDiabetes()" name="b2">Diabetes
+            <br>
             <input type="radio" name="b2a" id="diabetes" value="Hiperglicemia">
             <label for="Hiperglicemia" id="diabetes1">Hiperglicemia</label>
+            <br>
             <input type="radio" name="b2a" id="diabetes2" value="Hipoglicemia">
             <label for="Hipoglicemia" id="diabetes3">Hipoglicemia</label>
             <br>
@@ -148,16 +159,20 @@
             <input type="checkbox"  name="b3c" value="Sim">Hemor. Excessiva
             <br>
             <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4">Transporte
+            <br>
             <input type="radio" id="transporte" name="b4a" value="Clínico">
             <label for="clinico" id="transporte1">Clínico</label>
             <input type="radio" id="transporte2" name="b4a" value="Aéreo">
             <label for="aereo" id="transporte3">Aéreo</label>
             <input type="radio" id="transporte4" name="b4a" value="Emergencial">
             <label for="emergencial" id="transporte5">Emergencial</label>
+            <br>
             <input type="radio" id="transporte6" name="b4a" value="Pós-Trauma">
             <label for="postrauma" id="transporte7">Pós-Trauma</label>
+            <br>
             <input type="radio" id="transporte8" name="b4a" value="Samu">
             <label for="samu" id="transporte9">Samu</label>
+            <br>
             <input type="radio" id="transporte10" name="b4a" value="Sem remoção">
             <label for="semremocao" id="transporte11">Sem remoção</label>
             <br>
@@ -165,7 +180,7 @@
         </div>
         <!--SINAIS E SINTOMAS-->
         <div class="fundo">
-            <h2 id="sinaisESintomas">Sinais e Sintomas</h2>
+        <center><h2 id="sinaisESintomas">Sinais e Sintomas</h2></center>
             <input type="checkbox"  name="c1" value="Sim">Abdômen sensível ou rígido
             <br>
             <input type="checkbox"  name="c2" value="Sim">Afundamento de crânio
@@ -284,8 +299,8 @@
         </div>
         <!--AVALIAÇÃO DO PACIENTE-->
         <div class="fundo">
-            <h2 id="avaliacaoDoPaciente">Avaliação do Paciente</h2>
-            <h2>Nível de consciência</h2>
+        <center><h2 id="avaliacaoDoPaciente">Avaliação do Paciente</h2></center>
+    <center><h2>Nível de consciência</h2></center>
             <h4>Maiores de 5 anos</h4>
             <h5>Abertura Ocular</h5>
             Espontânea<input type="radio" name="ia" value="Espontanea">4
@@ -351,8 +366,8 @@
         </div>
         <!--Localização dos Traumas-->
         <div class="fundo">
-            <h2 id="localizacaoDosTraumas">Localização dos Traumas</h2>
-            <button class="frente" id="frente" onclick="meuFrente()" type="button">Frente</button> <button class="costas" id="costas" onclick="meuCostas()" type="button">Costas</button>
+        <center><h2 id="localizacaoDosTraumas">Localização dos Traumas</h2></center>
+    <center><button class="frente" id="frente" onclick="meuFrente()" type="button">Frente</button> <button class="costas" id="costas" onclick="meuCostas()" type="button">Costas</button></center>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
             <script src="../static/forms.js"></script>
             <center>
@@ -562,18 +577,19 @@
                         style="opacity:1"
                         class="costasCorpo"
                         d="m 42.200945,16.586495 -1.57473,1.56517 -0.81404,2.06905 -0.38603,2.52859 1.83679,-1.23927 2.76223,-1.15538 1.84691,3.4342 1.13679,5.49715 0.0767,5.8593 4.07066,1.10938 -0.10355,-7.94098 -1.94107,-4.90022 -5.04395,-8.19334 z"
-                        id="back-left" />
-
+                        id="back-left" />        
             <path
                 style="opacity:1"
                 class="costasCorpo"
                 d="m 49.625175,14.629325 0.063,-2.62462 -0.71441,1.15181 -4.37994,1.49796 4.97857,8.36746 1.83043,5.08188 -0.21949,-13.55362 z"
                 id="clavicule-left" />
+            </center>
         </svg>
         </div>
         </div>
         <input type="radio" name="veio" value="Adulto">
         <label for="adulto">Adulto</label>
+        <br>
         <input type="radio" name="veio" value="Criança">
         <label for="crianca">Criança</label>
         <br>
@@ -582,6 +598,7 @@
         <input type="text" name="z3"  id="corpoFace" placeholder="Face">
         <input type="text" name="z4"  id="corpoTipo" placeholder="Tipo">
         <br><br>
+        <center>
         <table border="1" class="tabela">
             <tr><td></td> <td>1°Grau</td> <td>2°Grau</td> <td>3°Grau</td></tr>
             <tr><td>Cabeça</td> <td><input type="radio" name="p1" value="cabeca_1"></td> <td><input type="radio" name="p1" value="cabeca_2"></td> <td><input type="radio" name="p1" value="cabeca_3"></td></tr>
@@ -594,13 +611,15 @@
             <tr><td>M.S.D.</td> <td><input type="radio" name="p8" value="msd_1"></td> <td><input type="radio" name="p8" value="msd_2"></td> <td><input type="radio" name="p8" value="msd_3"></td></tr>
             <tr><td>M.S.E.</td> <td><input type="radio" name="p9" value="mse_1"></td> <td><input type="radio" name="p9" value="mse_2"></td> <td><input type="radio" name="p9" value="mse_3"></td></tr>
          </table>
+        </center>
         <!--SINAIS VITAIS-->
         <div class="fundo">
-            <h2 id="sinaisVitais">Sinais Vitais</h2>
+        <center><h2 id="sinaisVitais">Sinais Vitais</h2></center>
             <input type="number" name="d1">x<input type="number" name="d12">mmHG
             <br>
             <input type="radio" name="d2" value="Normal">
             <label for="Normal">Normal</label>
+            <br>
             <input type="radio" name="d2" value="Anormal">
             <label for="Anormal">Anormal</label>
             <br>
@@ -620,7 +639,7 @@
         </div>
         <!--Forma de condução-->
         <div class="fundo">
-            <h2 id="formaDeConducao">Forma de condução</h2>
+        <center><h2 id="formaDeConducao">Forma de condução</h2></center>
             <input type="checkbox"  name="e1a" value="Deitada">Deitada
             <br>
             <input type="checkbox"  name="e1b" value="Semi-sentada">Semi-Sentada
@@ -649,7 +668,7 @@
         </div>
         <!--Decisão Transporte-->
         <div class="fundo">
-            <h2 id="decisaoTransporte">Decisão Transporte</h2>
+        <center><h2 id="decisaoTransporte">Decisão Transporte</h2></center>
             <input type="radio" name="f1" value="Estavel">
             <label for="Estavel">Estável</label>
             <br>
@@ -664,7 +683,7 @@
         </div>
         <!--Equipe de atendimento-->
         <div class="fundo">
-            <h2 id="equipeDeAtendimento">Equipe de atendimento</h2>
+        <center><h2 id="equipeDeAtendimento">Equipe de atendimento</h2></center>
             <input type="text" name="g1" placeholder="M">
             <br>
             <input type="text" name="g2" placeholder="S1">
@@ -681,7 +700,7 @@
         </div>
         <!--Informações da Ocorrência-->
         <div class="fundo">
-            <h2 id="informacoesDaOcorrencia">Informações da Ocorrência</h2>
+        <center><h2 id="informacoesDaOcorrencia">Informações da Ocorrência</h2></center>
             <input type="text" name="h1" placeholder="N° USB">
             <input type="text" name="h2" placeholder="CÓD. IR">
             <br>
@@ -700,7 +719,7 @@
         <!--HISTÓRICO DA OCORRÊNCIA-->
         <!--PROCEDIMENTOS EFETUADOS-->
         <div class="fundo">
-            <h2 id="procedimentosEfetuados">Procedimentos Efetuados</h2>
+        <center><h2 id="procedimentosEfetuados">Procedimentos Efetuados</h2></center>
             <input type="checkbox"  name="j1" value="Sim">Aspiração
             <br>
             <input type="checkbox"  name="j2" value="Sim">Avaliação Inicial
@@ -815,7 +834,7 @@
         </div>
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
         <div class="fundo">
-            <h2 id="materiaisUtilizadosDescartavel">Materiais Utilizados Descartável</h2>
+        <center><h2 id="materiaisUtilizadosDescartavel">Materiais Utilizados Descartável</h2></center>
             <input type="checkbox"  name="k1" id="apareceratadura" onclick="aparecerAtadura()" value="Sim">Ataduras
             <input type="checkbox"  name="k1a" id="atadura" value="Sim"><e id="atadura4">8</e>
             <input type="checkbox"  name="k1b" id="atadura1" value="Sim"><e id="atadura5">12</e>
@@ -842,7 +861,7 @@
         </div>
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <div class="fundo">
-            <h2 id="materiaisHospital">Materiais Utilizados deixados no hospital</h2>
+        <center><h2 id="materiaisHospital">Materiais Utilizados deixados no hospital</h2></center>
             <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
             <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
             <br><br>
@@ -884,7 +903,7 @@
         </div>
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <div class="fundo">
-            <h2 id="anamneseEmergencia">Anamnese da Emergência Médica</h2>
+        <center><h2 id="anamneseEmergencia">Anamnese da Emergência Médica</h2></center>
             <input type="text" name="l1" placeholder="O que aconteceu (Sinais e Sintomas)">
             <br>
             <h4>Aconteceu outras vezes?</h4>
@@ -921,7 +940,7 @@
         </div>
         <!--ANAMNESE GESTACIONAL-->
         <div class="fundo">
-            <h2 id="anamneseGestacional">Anamnese Gestacional</h2>
+        <center><h2 id="anamneseGestacional">Anamnese Gestacional</h2></center>
             <input type="text" name="m1" placeholder="Período da gestação">
             <h4>Fez Pré-Natal</h4>
             <input type="radio" id="prenatal" onclick="preNatal()" name="m2" value="sim">
@@ -977,7 +996,7 @@
         </div>
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <div class="fundo">
-            <h2 id="avaliacaoCinematica">Avaliação da Cinemática</h2>
+        <center><h2 id="avaliacaoCinematica">Avaliação da Cinemática</h2></center>
             <h4>Distúrbio de comportamento?</h4>
             <input type="radio"  name="n1" value="sim">
             <label for="sim">sim</label><br>
@@ -1016,12 +1035,12 @@
         </div>
         <!--OBSERVAÇÕES IMPORTANTES-->
         <div class="fundo">
-            <h2 id="observacoesImportantes">Observações Importantes</h2>
+        <center><h2 id="observacoesImportantes">Observações Importantes</h2></center>
             <input type="text"  name="o1">
         </div>
         <!--TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE-->
         <div class="fundo">
-            <h2 id="termoDeRecusa">Termo de recusa de atendimento e/ou transporte</h2>
+        <center><h2 id="termoDeRecusa">Termo de recusa de atendimento e/ou transporte</h2></center>
             <p class="termo_recusa">EU <input type="text" name="o2"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o3"> INSCRITO NO CPF SOB N°<input type="text" name="o4"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
             <br>
             <input type="text"  name="o5" placeholder="Assinatura">
@@ -1037,11 +1056,11 @@
         </div>
         <!--DIVULGAR PARA A IMPRENSA-->
         <div class="fundo">
-            <h2 id="divulgarImprensa">Divulgar para a imprensa</h2>
+        <center><h2 id="divulgarImprensa">Divulgar para a imprensa</h2>
             <input type="radio"  name="q1" value="sim">
             <label for="sim">sim</label><br>
             <input type="radio"  name="q1" value="nao">
-            <label for="nao">nao</label>
+            <label for="nao">nao</label></center>
         </div>
         <br>
         <br>
@@ -1051,11 +1070,10 @@
             <input type="file" name="files[]" id="fileInput" multiple>
         </div>
         <br>
-        <br>
-        <button onclick="return confirm('Enviar ocorrencia?')" type="submit">ENVIAR</button>
+    <center><button onclick="return confirm('Enviar ocorrencia?')" type="submit">ENVIAR</button></center>
+    <br>  
+    <br>  
     </form>
-    <br>  
-    <br>  
 </body>
 <script>
     $(document).ready(function(){

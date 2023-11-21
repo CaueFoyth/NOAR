@@ -4,7 +4,7 @@ html {
   width: 100%;
   display: flex;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 
 body {
@@ -17,14 +17,14 @@ body {
   display: flex;
   margin: 0;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 
 .aside {
   left: 0;
   display: none;
   position: fixed;
-  background-color: #d7d5d5;
+  background-color: #efefef;
   width: 300px;
   height: 100%;
   z-index: 1;
@@ -37,6 +37,7 @@ body {
   font-size: 10px;
   display: flex;
   color: #33338D;
+  cursor: pointer;
 }
 
 .burger {
@@ -47,7 +48,7 @@ body {
   cursor: pointer;
   display: block;
   margin-top: 6%;
-  margin-left: 70%;
+  margin-left: 75%;
   z-index: 2;
 }
 
@@ -103,12 +104,13 @@ body {
 }
 
 form {
+  background-color: #fff;
   z-index: 0;
-  width: 80%;
+  width: 90%;
 }
 
 h1 {
-  background-color: #efefef;
+  background-color: #fff;
   border-radius: 5%;
 }
 
@@ -121,14 +123,14 @@ h1, h2, h3, h4 {
 }
 
 .fundo {
-  background-color: #efefef;
+  background-color: #fff;
   border-radius: 1%;
-  padding: 10%;
-  margin-bottom: 20%;
+  padding: 5%;
 }
 
 svg {
-  margin-left: 45px;
+  margin-left: 50px;
+  width: 230px;
 }
 
 h4 {
@@ -150,14 +152,18 @@ input[type=text] {
   height: 24px;
   border: none;
   border-bottom: solid 1px;
+  border-color: #333;
+  background-color: #fff;
 }
 
 input[type=text]::-moz-placeholder {
   font-size: 20px;
+  color: #333;
 }
 
 input[type=text]::placeholder {
   font-size: 20px;
+  color: #333;
 }
 
 input[type=text]:active {
@@ -169,19 +175,23 @@ input[type=number] {
   height: 24px;
   border: none;
   border-bottom: solid 1px;
+  background-color: #fff;
 }
 
 input[type=number]::-moz-placeholder {
   font-size: 20px;
+  color: #333;
 }
 
 input[type=number]::placeholder {
   font-size: 20px;
+  color: #333;
 }
 
 input[type=date] {
-  width: 40%;
+  width: 90%;
   height: 24px;
+  background-color: #fff;
 }
 
 .tabela, th, td {
@@ -199,8 +209,9 @@ button {
   width: 90px;
   height: 40px;
   border: none;
-  background-color: #d7d5d5;
-  color: rgb(255, 0, 0);
+  background-color: #efefef;
+  cursor: pointer;
+  color: #33338D;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
@@ -230,7 +241,7 @@ button:active {
   display: block;
 }
 
-#area #data {
+#area #burguer {
   color: black;
 }
 

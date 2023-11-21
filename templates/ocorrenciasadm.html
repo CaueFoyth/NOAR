@@ -16,14 +16,14 @@
     <header class="header">
         <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
         <section class="options">
-            <form action="/alterarOc"><a onclick="Redirecionar()"><button class="button-open" id="open">Cadastrar novas ocorrências</button></a></form>
+            <form action="/AddOcorrencia"><a onclick="Redirecionar()"><button class="button-open" id="open">Cadastrar novas ocorrências</button></a></form>
             <form action="/adm"><a onclick="RedirecionarADM()" class="button-redirect">Gerenciar Usuários</a></form>
 
             <script>
                 
                 function Redirecionar()
                 {
-                    window.location.replace("/alterarOc")
+                    window.location.replace("/AddOcorrencia")
                 }
 
                 function RedirecionarADM()
