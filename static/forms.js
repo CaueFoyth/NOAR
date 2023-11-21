@@ -838,82 +838,125 @@ function aparecerAside() {
   }
 }
 
+var burger = document.getElementById("burger");
 function dadosDaVitima() {
   window.location.replace("#dadosDaVitima")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
+
+
 }
 
 function tipoDeOcorrencia() {
   window.location.replace("#tipoDeOcorrencia")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function problemasEncontrados() {
   window.location.replace("#problemasEncontrados")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function sinaisESintomas() {
   window.location.replace("#sinaisESintomas")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function avaliacaoDoPaciente() {
   window.location.replace("#avaliacaoDoPaciente")
-}localizacaoDosTraumas
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
+}
 
 function localizacaoDosTraumas() {
   window.location.replace("#localizacaoDosTraumas")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function sinaisVitais() {
   window.location.replace("#sinaisVitais")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function formaDeConducao() {
   window.location.replace("#formaDeConducao")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function decisaoTransporte() {
   window.location.replace("#decisaoTransporte")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function equipeDeAtendimento() {
   window.location.replace("#equipeDeAtendimento")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function informacoesDaOcorrencia() {
   window.location.replace("#informacoesDaOcorrencia")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function procedimentosEfetuados() {
   window.location.replace("#procedimentosEfetuados")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function materiaisUtilizadosDescartavel() {
   window.location.replace("#materiaisUtilizadosDescartavel")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function materiaisHospital() {
   window.location.replace("#materiaisHospital")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function anamneseEmergencia() {
   window.location.replace("#anamneseEmergencia")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function anamneseGestacional() {
   window.location.replace("#anamneseGestacional")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function avaliacaoCinematica() {
   window.location.replace("#avaliacaoCinematica")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function observacoesImportantes() {
   window.location.replace("#observacoesImportantes")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function termoDeRecusa() {
   window.location.replace("#termoDeRecusa")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
 
 function divulgarImprensa() {
   window.location.replace("#divulgarImprensa")
+  document.getElementById("aside").style.display = "none";
+  burger.checked = false;
 }
