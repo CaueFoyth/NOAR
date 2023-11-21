@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
+$primaria: #33338D;
+
 html{
     width: 100%;
     display: flex;
@@ -9,9 +11,10 @@ html{
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #fff;
     color: #333;
     font-size: 22px;
-    width: 90%;
+    width: 100%;
     align-items: center;
     display: flex;
     margin: 0;
@@ -21,11 +24,21 @@ body {
 
 .aside {
     left: 0;
-    display: flex;
+    display: none;
     position: fixed;
-    background-color: transparent;
+    background-color: #efefef;
     width: 300px;
     height: 100%;
+    z-index: 1;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.aside .asideTextos {
+    font-size: 10px;
+    display: flex;
+    color: $primaria;
 }
 
 .burger {
@@ -37,6 +50,7 @@ body {
     display: block;
     margin-top: 6%;
     margin-left: 70%;
+    z-index: 2;
   }
   
   .burger input {
@@ -48,7 +62,7 @@ body {
     position: absolute;
     height: 4px;
     width: 100%;
-    background: black;
+    background: $primaria ;
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -91,7 +105,28 @@ body {
   }
 
 form {
+    z-index: 0;
     width: 80%;
+}
+
+h1 {
+    background-color: #efefef;
+    border-radius: 5%;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h1, h2, h3, h4 {
+    color: $primaria;
+}
+
+.fundo {
+    background-color: #efefef;
+    border-radius: 1%;
+    padding: 10%;
+    margin-bottom: 20%;
 }
 
 svg {
@@ -157,7 +192,7 @@ button {
     width: 90px;
     height: 40px;
     border: none;
-    background-color: none;
+    background-color: #d7d5d5;
     color: rgb(255, 0, 0);
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
