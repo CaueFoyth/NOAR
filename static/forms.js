@@ -831,5 +831,9 @@ function aparecerCanula() {
 }
 
 function aparecerAside() {
-  document.getElementsByClassName('aside').style.background ='#fff';
+  if(document.getElementById("aside").style.display == "flex") {
+  document.getElementById("aside").style.display = "none";
+  } else {
+    document.getElementById("aside").style.display = "flex"
+  }
 }
