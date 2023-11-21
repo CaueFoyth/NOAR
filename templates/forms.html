@@ -18,31 +18,31 @@
             <span></span>
         </label>
         <div class="aside" id="aside">
-            <h2 class="asideTextos">Dados da vítima</h2>
-            <h2 class="asideTextos">Tipo de Ocorrência</h2>
-            <h2 class="asideTextos">Problemas encontrados</h2>
-            <h2 class="asideTextos">Sinais e Sintomas</h2>
-            <h2 class="asideTextos">Avaliação do Paciente</h2>
-            <h2 class="asideTextos">Localização dos Traumas</h2>
-            <h2 class="asideTextos">Sinais Vitais</h2>
-            <h2 class="asideTextos">Forma de condução</h2>
-            <h2 class="asideTextos">Decisão Transporte</h2>
-            <h2 class="asideTextos">Equipe de atendimento</h2>
-            <h2 class="asideTextos">Informações da Ocorrência</h2>
-            <h2 class="asideTextos">Procedimentos Efetuados</h2>
-            <h2 class="asideTextos">Materiais Utilizados Descartável</h2>
-            <h2 class="asideTextos">Materiais Utilizados deixados no hospital</h2>
-            <h2 class="asideTextos">Anamnese da Emergência Médica</h2>
-            <h2 class="asideTextos">Anamnese Gestacional</h2>
-            <h2 class="asideTextos">Avaliação da Cinemática</h2>
-            <h2 class="asideTextos">Observações Importantes</h2>
-            <h2 class="asideTextos">Termo de recusa de atendimento e/ou transporte</h2>
-            <h2 class="asideTextos">Divulgar para a imprensa</h2>
+            <h2 class="asideTextos" onclick="dadosDaVitima()">Dados da vítima</h2>
+            <h2 class="asideTextos" onclick="tipoDeOcorrencia()">Tipo de Ocorrência</h2>
+            <h2 class="asideTextos" onclick="problemasEncontrados()">Problemas encontrados</h2>
+            <h2 class="asideTextos" onclick="sinaisESintomas()">Sinais e Sintomas</h2>
+            <h2 class="asideTextos" onclick="avaliacaoDoPaciente()">Avaliação do Paciente</h2>
+            <h2 class="asideTextos" onclick="localizacaoDosTraumas()">Localização dos Traumas</h2>
+            <h2 class="asideTextos" onclick="sinaisVitais()">Sinais Vitais</h2>
+            <h2 class="asideTextos" onclick="formaDeConducao()">Forma de condução</h2>
+            <h2 class="asideTextos" onclick="decisaoTransporte()">Decisão Transporte</h2>
+            <h2 class="asideTextos" onclick="equipeDeAtendimento()">Equipe de atendimento</h2>
+            <h2 class="asideTextos" onclick="informacoesDaOcorrencia()">Informações da Ocorrência</h2>
+            <h2 class="asideTextos" onclick="procedimentosEfetuados()">Procedimentos Efetuados</h2>
+            <h2 class="asideTextos" onclick="materiaisUtilizadosDescartavel()">Materiais Utilizados Descartável</h2>
+            <h2 class="asideTextos" onclick="materiaisHospital()">Materiais Utilizados deixados no hospital</h2>
+            <h2 class="asideTextos" onclick="anamneseEmergencia()">Anamnese da Emergência Médica</h2>
+            <h2 class="asideTextos" onclick="anamneseGestacional()">Anamnese Gestacional</h2>
+            <h2 class="asideTextos" onclick="avaliacaoCinematica()">Avaliação da Cinemática</h2>
+            <h2 class="asideTextos" onclick="observacoesImportantes()">Observações Importantes</h2>
+            <h2 class="asideTextos" onclick="termoDeRecusa()">Termo de recusa de atendimento e/ou transporte</h2>
+            <h2 class="asideTextos" onclick="divulgarImprensa()">Divulgar para a imprensa</h2>
         </div>
         <!--DADOS DA VÍTIMA-->
         <h1>Nova Ocorrência</h1>
         <div class="fundo">
-            <h2>Dados da vítima</h2>
+            <h2 id="dadosDaVitima">Dados da vítima</h2>
             <input type="date" id="data" name="data" required>
             <br><br>
             <input type="radio" name="sexo" value="Masculino">
@@ -80,7 +80,7 @@
         </div>
         <!--TIPO DE OCORRÊNCIA-->
         <div class="fundo">
-            <h2>Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
+            <h2 id="tipoDeOcorrencia">Tipo de Ocorrência</h2><h4>Pré-Hospitalar</h4>
             <br>
             <input type="checkbox" name="a1" value="Sim">Causado por animais
             <br>
@@ -124,7 +124,7 @@
         </div>
         <!--Problemas encontrados-->
         <div class="fundo">
-            <h2>Problemas encontrados</h2>
+            <h2 id="problemasEncontrados">Problemas encontrados</h2>
             <br>
             <input type="checkbox"  name="b1" value="Sim" id="aparecerrespiratorio" onclick="aparecerRespiratorio();">Respiratório
             <input type="radio" name="b1a" id="respiratorio" value="DPOC">
@@ -165,7 +165,7 @@
         </div>
         <!--SINAIS E SINTOMAS-->
         <div class="fundo">
-            <h2>Sinais e Sintomas</h2>
+            <h2 id="sinaisESintomas">Sinais e Sintomas</h2>
             <input type="checkbox"  name="c1" value="Sim">Abdômen sensível ou rígido
             <br>
             <input type="checkbox"  name="c2" value="Sim">Afundamento de crânio
@@ -284,7 +284,7 @@
         </div>
         <!--AVALIAÇÃO DO PACIENTE-->
         <div class="fundo">
-            <h2>Avaliação do Paciente</h2>
+            <h2 id="avaliacaoDoPaciente">Avaliação do Paciente</h2>
             <h2>Nível de consciência</h2>
             <h4>Maiores de 5 anos</h4>
             <h5>Abertura Ocular</h5>
@@ -351,7 +351,7 @@
         </div>
         <!--Localização dos Traumas-->
         <div class="fundo">
-            <h2>Localização dos Traumas</h2>
+            <h2 id="localizacaoDosTraumas">Localização dos Traumas</h2>
             <button class="frente" id="frente" onclick="meuFrente()" type="button">Frente</button> <button class="costas" id="costas" onclick="meuCostas()" type="button">Costas</button>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
             <script src="../static/forms.js"></script>
@@ -598,7 +598,7 @@
         </div>
         <!--SINAIS VITAIS-->
         <div class="fundo">
-            <h2>Sinais Vitais</h2>
+            <h2 id="sinaisVitais">Sinais Vitais</h2>
             <input type="number" name="d1">x<input type="number" name="d12">mmHG
             <br>
             <input type="radio" name="d2" value="Normal">
@@ -622,7 +622,7 @@
         </div>
         <!--Forma de condução-->
         <div class="fundo">
-            <h2>Forma de condução</h2>
+            <h2 id="formaDeConducao">Forma de condução</h2>
             <input type="checkbox"  name="e1a" value="Deitada">Deitada
             <br>
             <input type="checkbox"  name="e1b" value="Semi-sentada">Semi-Sentada
@@ -651,7 +651,7 @@
         </div>
         <!--Decisão Transporte-->
         <div class="fundo">
-            <h2>Decisão Transporte</h2>
+            <h2 id="decisaoTransporte">Decisão Transporte</h2>
             <input type="radio" name="f1" value="Estavel">
             <label for="Estavel">Estável</label>
             <br>
@@ -666,7 +666,7 @@
         </div>
         <!--Equipe de atendimento-->
         <div class="fundo">
-            <h2>Equipe de atendimento</h2>
+            <h2 id="equipeDeAtendimento">Equipe de atendimento</h2>
             <input type="text" name="g1" placeholder="M">
             <br>
             <input type="text" name="g2" placeholder="S1">
@@ -683,7 +683,7 @@
         </div>
         <!--Informações da Ocorrência-->
         <div class="fundo">
-            <h2>Informações da Ocorrência</h2>
+            <h2 id="informacoesDaOcorrencia">Informações da Ocorrência</h2>
             <input type="text" name="h1" placeholder="N° USB">
             <input type="text" name="h2" placeholder="CÓD. IR">
             <br>
@@ -702,7 +702,7 @@
         <!--HISTÓRICO DA OCORRÊNCIA-->
         <!--PROCEDIMENTOS EFETUADOS-->
         <div class="fundo">
-            <h2>Procedimentos Efetuados</h2>
+            <h2 id="procedimentosEfetuados">Procedimentos Efetuados</h2>
             <input type="checkbox"  name="j1" value="Sim">Aspiração
             <br>
             <input type="checkbox"  name="j2" value="Sim">Avaliação Inicial
@@ -817,7 +817,7 @@
         </div>
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
         <div class="fundo">
-            <h2>Materiais Utilizados Descartável</h2>
+            <h2 id="materiaisUtilizadosDescartavel">Materiais Utilizados Descartável</h2>
             <input type="checkbox"  name="k1" id="apareceratadura" onclick="aparecerAtadura()" value="Sim">Ataduras
             <input type="checkbox"  name="k1a" id="atadura" value="Sim"><e id="atadura4">8</e>
             <input type="checkbox"  name="k1b" id="atadura1" value="Sim"><e id="atadura5">12</e>
@@ -844,7 +844,7 @@
         </div>
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <div class="fundo">
-            <h2>Materiais Utilizados deixados no hospital</h2>
+            <h2 id="materiaisHospital">Materiais Utilizados deixados no hospital</h2>
             <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
             <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
             <br><br>
@@ -886,7 +886,7 @@
         </div>
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <div class="fundo">
-            <h2>Anamnese da Emergência Médica</h2>
+            <h2 id="anamneseEmergencia">Anamnese da Emergência Médica</h2>
             <input type="text" name="l1" placeholder="O que aconteceu (Sinais e Sintomas)">
             <br>
             <h4>Aconteceu outras vezes?</h4>
@@ -923,7 +923,7 @@
         </div>
         <!--ANAMNESE GESTACIONAL-->
         <div class="fundo">
-            <h2>Anamnese Gestacional</h2>
+            <h2 id="anamneseGestacional">Anamnese Gestacional</h2>
             <input type="text" name="m1" placeholder="Período da gestação">
             <h4>Fez Pré-Natal</h4>
             <input type="radio" id="prenatal" onclick="preNatal()" name="m2" value="sim">
@@ -979,7 +979,7 @@
         </div>
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <div class="fundo">
-            <h2>Avaliação da Cinemática</h2>
+            <h2 id="avaliacaoCinematica">Avaliação da Cinemática</h2>
             <h4>Distúrbio de comportamento?</h4>
             <input type="radio"  name="n1" value="sim">
             <label for="sim">sim</label><br>
@@ -1018,12 +1018,12 @@
         </div>
         <!--OBSERVAÇÕES IMPORTANTES-->
         <div class="fundo">
-            <h2>Observações Importantes</h2>
+            <h2 id="observacoesImportantes">Observações Importantes</h2>
             <input type="text"  name="o1">
         </div>
         <!--TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE-->
         <div class="fundo">
-            <h2>Termo de recusa de atendimento e/ou transporte</h2>
+            <h2 id="termoDeRecusa">Termo de recusa de atendimento e/ou transporte</h2>
             <p class="termo_recusa">EU <input type="text" name="o2"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o3"> INSCRITO NO CPF SOB N°<input type="text" name="o4"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
             <br>
             <input type="text"  name="o5" placeholder="Assinatura">
@@ -1039,7 +1039,7 @@
         </div>
         <!--DIVULGAR PARA A IMPRENSA-->
         <div class="fundo">
-            <h2>Divulgar para a imprensa</h2>
+            <h2 id="divulgarImprensa">Divulgar para a imprensa</h2>
             <input type="radio"  name="q1" value="sim">
             <label for="sim">sim</label><br>
             <input type="radio"  name="q1" value="nao">

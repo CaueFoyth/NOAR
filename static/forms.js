@@ -837,3 +837,83 @@ function aparecerAside() {
     document.getElementById("aside").style.display = "flex"
   }
 }
+
+function dadosDaVitima() {
+  window.location.replace("#dadosDaVitima")
+}
+
+function tipoDeOcorrencia() {
+  window.location.replace("#tipoDeOcorrencia")
+}
+
+function problemasEncontrados() {
+  window.location.replace("#problemasEncontrados")
+}
+
+function sinaisESintomas() {
+  window.location.replace("#sinaisESintomas")
+}
+
+function avaliacaoDoPaciente() {
+  window.location.replace("#avaliacaoDoPaciente")
+}localizacaoDosTraumas
+
+function localizacaoDosTraumas() {
+  window.location.replace("#localizacaoDosTraumas")
+}
+
+function sinaisVitais() {
+  window.location.replace("#sinaisVitais")
+}
+
+function formaDeConducao() {
+  window.location.replace("#formaDeConducao")
+}
+
+function decisaoTransporte() {
+  window.location.replace("#decisaoTransporte")
+}
+
+function equipeDeAtendimento() {
+  window.location.replace("#equipeDeAtendimento")
+}
+
+function informacoesDaOcorrencia() {
+  window.location.replace("#informacoesDaOcorrencia")
+}
+
+function procedimentosEfetuados() {
+  window.location.replace("#procedimentosEfetuados")
+}
+
+function materiaisUtilizadosDescartavel() {
+  window.location.replace("#materiaisUtilizadosDescartavel")
+}
+
+function materiaisHospital() {
+  window.location.replace("#materiaisHospital")
+}
+
+function anamneseEmergencia() {
+  window.location.replace("#anamneseEmergencia")
+}
+
+function anamneseGestacional() {
+  window.location.replace("#anamneseGestacional")
+}
+
+function avaliacaoCinematica() {
+  window.location.replace("#avaliacaoCinematica")
+}
+
+function observacoesImportantes() {
+  window.location.replace("#observacoesImportantes")
+}
+
+function termoDeRecusa() {
+  window.location.replace("#termoDeRecusa")
+}
+
+function divulgarImprensa() {
+  window.location.replace("#divulgarImprensa")
+}
