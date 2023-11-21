@@ -670,6 +670,41 @@ def ocorrenciasADM():
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
+@app.route('/filtrosADM', methods = ['POST', 'GET'])
+def filtrosADM():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            if request.method == "POST":
+                p1 = request.form.get("form_select")
+                p2 = request.form['filter_text']
+                p3 = request.form.get("sinais_oco")
+                p4 = request.form.get("tipos_oco")
+                p5 = request.form.get("problemas_oco")
+                p6 = request.form.get("vitimas_oco")
+                if p1 != 'sinais_oco' and p1 != 'tipos_oco' and p1 != 'problemas_oco' and p1 != 'vitimas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima WHERE {p1} = '{p2}'")
+                    data = cursor.fetchall()
+                if p1 == 'sinais_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN sinaissintomas ON sinaissintomas.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p3} = '{p2}'")
+                    data = cursor.fetchall()
+                if p1 == 'tipos_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN tipodeocorrencia ON tipodeocorrencia.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p4} = '{p2}'")
+                    data = cursor.fetchall()  
+                if p1 == 'problemas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN problemasencontrados ON problemasencontrados.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p5} = '{p2}'")
+                    data = cursor.fetchall()    
+                if p1 == 'vitimas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN vitimaera ON vitimaera.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p6} = '{p2}'")
+                    data = cursor.fetchall()    
+                return render_template("ocorrenciasadm.html", dadosdavitima = data)
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
 @app.route('/alterar2', methods = ['POST', 'GET'])
 def alterar2():
     if request.method == "POST":
