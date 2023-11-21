@@ -108,26 +108,14 @@
         <input type="text" style="display: inline-flex;" name="cpfAcompanhante" id="acompanhante3" placeholder="Cpf do acompanhante" value="{{row.5}}">
         <br>
 
-        {% if row.6 == 'Não': %}
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino">
-        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino">
-        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
-        {% else %}
-        {% if row.6 == 'Masculino': %}
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino" checked>
-        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino">
-        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
-        {% else %}
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino">
-        <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
-        <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino" checked>
-        <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        
+        {% if row.6 != 'Não': %}
+    <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante4" value="Masculino"{% if row.6 == 'Masculino': %} checked{% endif %}>
+    <label for="sexo-m" style="display: inline-flex;" id="acompanhante5">Masculino</label><br>
+    <input type="radio" style="display: inline-flex;" name="sexoAcompanhante" id="acompanhante6" value="Feminino"{% if row.6 == 'Feminino': %} checked{% endif %}>
+    <label for="sexo-f" style="display: inline-flex;" id="acompanhante7">Feminino</label>
+{% endif %}
+{% endif %}
+
         <br>
         {% endfor %}
         <!--TIPO DE OCORRÊNCIA-->
@@ -342,28 +330,48 @@
         {% endif %}
         <br>
 
-        <input type="checkbox"  name="b3b" value="Sim">Gestante
+        <input type="checkbox"  name="b3b" value="Sim"{% if row.6 != 'Não': %} checked {% endif %}>Gestante
         <br>
-        <input type="checkbox"  name="b3c" value="Sim">Hemor. Excessiva
+
+        <input type="checkbox"  name="b3c" value="Sim" {% if row.7 != 'Não': %} checked {% endif %}>Hemor. Excessiva
         <br>
+
+        {% if row.8 != 'Não': %}
+        <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4" {% if row.8 != 'Não': %} checked {% endif %}>Transporte
+        <input style="display: inline-flex;" type="radio" id="transporte" name="b4a" value="Clínico" {% if row.8 == 'Clínico': %} checked {% endif %}>
+        <label style="display: inline-flex;" for="clinico" id="transporte1">Clínico</label>
+        <input style="display: inline-flex;" type="radio" id="transporte2" name="b4a" value="Aéreo" {% if row.8 == 'Aéreo': %} checked {% endif %}>
+        <label style="display: inline-flex;" for="aereo" id="transporte3">Aéreo</label>
+        <input style="display: inline-flex;" type="radio" id="transporte4" name="b4a" value="Emergencial" {% if row.8 == 'Emergencial': %} checked {% endif %}>
+        <label style="display: inline-flex;" for="emergencial" id="transporte5">Emergencial</label>
+        <input style="display: inline-flex;" type="radio" id="transporte6" name="b4a" value="Pós-Trauma" {% if row.8 == 'Pós-Trauma': %} checked {% endif %}>
+        <label style="display: inline-flex;" for="postrauma" id="transporte7">Pós-Trauma</label>
+        <input style="display: inline-flex;" type="radio" id="transporte8" name="b4a" value="Samu">
+        <label style="display: inline-flex;" for="samu" id="transporte9">Samu</label>
+        <input style="display: inline-flex;" type="radio" id="transporte10" name="b4a" value="Sem remoção">
+        <label style="display: inline-flex;" for="semremocao" id="transporte11">Sem remoção</label>
+        <br>
+        <input style="display: inline-flex;" type="text" name="b5" value="{{row.9}}" placeholder="Outros">
+        {% else %}
         <input type="checkbox"  id="aparecertransporte" onclick="aparecerTransporte()" name="b4">Transporte
-        <input type="radio" id="transporte" name="b4a" value="Sim">
+        <input type="radio" id="transporte" name="b4a" value="Clínico">
         <label for="clinico" id="transporte1">Clínico</label>
-        <input type="radio" id="transporte2" name="b4a" value="Sim">
+        <input type="radio" id="transporte2" name="b4a" value="Aéreo">
         <label for="aereo" id="transporte3">Aéreo</label>
-        <input type="radio" id="transporte4" name="b4a" value="Sim">
+        <input type="radio" id="transporte4" name="b4a" value="Emergencial">
         <label for="emergencial" id="transporte5">Emergencial</label>
-        <input type="radio" id="transporte6" name="b4a" value="Sim">
+        <input type="radio" id="transporte6" name="b4a" value="Pós-Trauma">
         <label for="postrauma" id="transporte7">Pós-Trauma</label>
-        <input type="radio" id="transporte8" name="b4a" value="Sim">
+        <input type="radio" id="transporte8" name="b4a" value="Samu">
         <label for="samu" id="transporte9">Samu</label>
-        <input type="radio" id="transporte10" name="b4a" value="Sim">
+        <input type="radio" id="transporte10" name="b4a" value="Sem remoção">
         <label for="semremocao" id="transporte11">Sem remoção</label>
-        <input type="text" id="transporte12" name="b4a" placeholder="Outros">
         <br>
         <input type="text" name="b5" placeholder="Outros">
+        {% endif %}
         {% endfor %}
         <!--SINAIS E SINTOMAS-->
+        {% for row in sinaissintomas %}
         <h2>Sinais e Sintomas</h2>
         <br>
         <input type="checkbox"  name="c1" value="Sim">Abdômen sensível ou rígido
@@ -489,6 +497,7 @@
         <input type="checkbox"  name="c43" value="Sim">Tontura
         <br>
         <input type="text" name="c44" placeholder="Outros">
+        {% endfor %}
         <!--AVALIAÇÃO DO PACIENTE-->
         <h2>Avaliação do Paciente</h2>
         <h2>Nível de consciência</h2>
