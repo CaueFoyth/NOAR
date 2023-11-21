@@ -66,7 +66,7 @@ function meuCostas(){
     document.getElementById("back-left").style.display = "block";
     document.getElementById("clavicule-left").style.display = "block";
 
-    document.getElementById("app").style.marginLeft = "-275px";
+    document.getElementById("app").style.marginLeft = "-249px";
     
     //DESABILITAR FRENTE
     document.getElementById("Cabeça").style.display = "none";

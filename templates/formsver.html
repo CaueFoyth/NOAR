@@ -409,7 +409,7 @@
         {% endfor %}   
         <!--Localização dos Traumas-->
         {% for row in corpo %}
-        <h2>Localização dos Traumas</h2>
+        <h2>Localização dos Traumas:</h2>
         <button class="frente" id="frente" onclick="meuFrente()" type="button">Frente</button> <button class="costas" id="costas" onclick="meuCostas()" type="button">Costas</button>
         <style>
 
@@ -681,7 +681,7 @@
         {% endfor %}   
         <br>
         {% for row in queimadura %}
-        <h2>Queimaduras</h2>
+        <h2>Queimaduras:</h2>
         <div class="form-group">
             <label>Queimadura na cabeça:</label>
             <label class="read_data"> &nbsp; {{row.2}}</label>
@@ -691,461 +691,822 @@
             <label class="read_data"> &nbsp; {{row.3}}</label>
         </div>
         <div class="form-group">
-            <label>T. Ant.:</label>
+            <label>Queimadura no T. Ant.:</label>
             <label class="read_data"> &nbsp; {{row.4}}</label>
         </div>
         <div class="form-group">
-            <label>T. Post:</label>
+            <label>Queimadura no T. Post:</label>
             <label class="read_data"> &nbsp; {{row.5}}</label>
         </div>
         <div class="form-group">
-            <label>Genital:</label>
+            <label>Queimadura na Genital:</label>
             <label class="read_data"> &nbsp; {{row.6}}</label>
         </div>
         <div class="form-group">
-            <label>M.I.D.:</label>
+            <label>Queimadura no M.I.D.:</label>
             <label class="read_data"> &nbsp; {{row.7}}</label>
         </div>
         <div class="form-group">
-            <label>M.I.E.:</label>
+            <label>Queimadura no M.I.E.:</label>
             <label class="read_data"> &nbsp; {{row.8}}</label>
         </div>
         <div class="form-group">
-            <label>M.S.D.:</label>
+            <label>Queimadura no M.S.D.:</label>
             <label class="read_data"> &nbsp; {{row.9}}</label>
         </div>
         <div class="form-group">
-            <label>M.S.E.</label>
+            <label>Queimadura no M.S.E.</label>
             <label class="read_data"> &nbsp; {{row.10}}</label>
         </div>
-         {% endfor %} 
+        {% endfor %} 
+
+        {% for row in sinaisvitais %}
         <!--SINAIS VITAIS-->
-        <h2>Sinais Vitais</h2>
-        <input type="number" name="d1">x<input type="number" name="d12">mmHG
-        <br>
-        <input type="radio" name="d2" value="Normal">
-        <label for="Normal">Normal</label>
-        <input type="radio" name="d2" value="Anormal">
-        <label for="Anormal">Anormal</label>
-        <br>
-        <input type="number" name="d3" placeholder="Pulso">B.C.P.M
-        <br>
-        <input type="number" name="d4" placeholder="Respiração">M.R.M
-        <br>
-        <input type="number" name="d5" placeholder="Saturação %">
-        <input type="number" name="d6" placeholder="Temperatura °C">
-        <br>
-        <h4>Perfusão</h4>
-        <input type="radio" name="d7a" value="sim">
-        <label for="&gt;2seg.">Maior que 2seg.</label>
-        <br>
-        <input type="radio" name="d7a" value="sim">
-        <label for="&lt;2seg.">Menor que 2seg.</label>
+        <h2>Sinais Vitais:</h2>
+        <div class="form-group">
+            <label>mmHG:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pressão:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pulso(B.C.P.M):</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Respiração(M.R.M):</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Saturação(%):</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Temperatura (°C):</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Perfusão:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        {% endfor %} 
+
+        {% for row in formadecondução %}
         <!--Forma de condução-->
-        <h2>Forma de condução</h2>
-        <input type="checkbox"  name="e1a" value="Deitada">Deitada
         <br>
-        <input type="checkbox"  name="e1b" value="Semi-sentada">Semi-Sentada
+        <div class="form-group">
+            <h4>Forma de condução:</h4>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
         <br>
-        <input type="checkbox"  name="e1c" value="Sentada">Sentada
-        <h4>Vítima era</h4>
-        <input type="checkbox"  name="e2a" value="Sim">Ciclista
-        <br>
-        <input type="checkbox"  name="e2b" value="Sim">Condutor Moto
-        <br>
-        <input type="checkbox"  name="e2c" value="Sim">Gestante
-        <br>
-        <input type="checkbox"  name="e2d" value="Sim">Pas. Ban. Frente
-        <br>
-        <input type="checkbox"  name="e2e" value="Sim">Pas. Moto
-        <br>
-        <input type="checkbox"  name="e2f" value="Sim">Condutor Carro
-        <br>
-        <input type="checkbox"  name="e2g" value="Sim">Clínico
-        <br>
-        <input type="checkbox"  name="e2h" value="Sim">Trauma
-        <br>
-        <input type="checkbox"  name="e2i" value="Sim">Pas. Ban. Trás
-        <br>
-        <input type="checkbox"  name="e2j" value="Sim">Pedestre
+        {% endfor %} 
+
+        {% for row in vitimaera %}
+        <h3>Vítima era:</h3>
+        <div class="form-group">
+            <label>Ciclista:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Condutor Moto:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Gestante:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pas. Ban. Frente:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pas. Moto:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Condutor Carro:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Clínico:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Trauma:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pas. Ban. Trás:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Pedestre:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in decisaotransporte %}
         <!--Decisão Transporte-->
-        <h2>Decisão Transporte</h2>
-        <input type="radio" name="f1" value="Estavel">
-        <label for="Estavel">Estável</label>
-        <br>
-        <input type="radio" name="f1" value="Potencialmente_Instavel">
-        <label for="Potencialmente_Instavel">Potencialmente instável</label>
-        <br>
-        <input type="radio" name="f1" value="Instavel">
-        <label for="Instavel">Instável</label>
-        <br>
-        <input type="radio" name="f1" value="Critico">
-        <label for="Critico">Crítico</label>
+        <br><br>
+        <h3>Decisão Transporte:</h3>
+        <div class="form-group">
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <br><br>
+        {% endfor %}
+
+        {% for row in equipeatendimento %}
         <!--Equipe de atendimento-->
         <h2>Equipe de atendimento</h2>
-        <input type="text" name="g1" placeholder="M">
-        <br>
-        <input type="text" name="g2" placeholder="S1">
-        <br>
-        <input type="text" name="g3" placeholder="S2">
-        <br>
-        <input type="text" name="g4" placeholder="S3">
-        <br>
-        <input type="text" name="g5" placeholder="Equipe">
-        <br>
-        <input type="text" name="g6" placeholder="Demandante">
+        <div class="form-group">
+            <label>M:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>S1:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>S2:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>S3:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Equipe:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Demandante:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in objetos %}
         <h4>Objetos recolhidos</h4>
-        <input type="text" name="g7">
+        <div class="form-group">
+            <label>Objetos:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in informaçõesocorrência %}
         <!--Informações da Ocorrência-->
         <h2>Informações da Ocorrência</h2>
-        <input type="text" name="h1" placeholder="N° USB">
-        <input type="text" name="h2" placeholder="CÓD. IR">
-        <br>
-        <input type="text" name="h3" placeholder="N° Ocorrência">
-        <input type="text" name="h4" placeholder="CÓD. PS">
-        <br>
-        <input type="text" name="h5" placeholder="Desp.">
-        <br>
-        <input type="text" name="h6" placeholder="H. CH.">
-        <br>
-        <input type="text" name="h7" placeholder="KM Final">
-        <br>
-        <input type="text" name="h8" placeholder="CÓD. SIA/SUS">
-        <br>
+        <div class="form-group">
+            <label>N° USB:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>CÓD. IR:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>N° Ocorrência:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>CÓD. PS:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Desp.:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>H. CH.:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>KM Final:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>CÓD. SIA/SUS:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        {% endfor %}
+
         <!--HISTÓRICO DA OCORRÊNCIA-->
+
+        {% for row in procedimentosefetuados %}
         <!--PROCEDIMENTOS EFETUADOS-->
         <h2>Procedimentos Efetuados</h2>
-        <input type="checkbox"  name="j1" value="Sim">Aspiração
+        <div class="form-group">
+            <label>Aspiração:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Avaliação Inicial:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Avaliação Dirigida:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Avaliação Continuada:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Chave de Rautek:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cânula de Guedel:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Desobstração de V.A:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Emprego do D.E.A:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Gerenciamento de riscos:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Limpeza de ferimentos:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        <div class="form-group">
+            <label>Curativos:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Compressivo:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Encravamento:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Ocular:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <div class="form-group">
+            <label>Queimadura:</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        <div class="form-group">
+            <label>Simples:</label>
+            <label class="read_data"> &nbsp; {{row.17}}</label>
+        </div>
+        <div class="form-group">
+            <label>3 Pontas:</label>
+            <label class="read_data"> &nbsp; {{row.18}}</label>
+        </div>
+        <div class="form-group">
+            <label>Imobilizações:</label>
+            <label class="read_data"> &nbsp; {{row.19}}</label>
+        </div>
+        <div class="form-group">
+            <label>Membro INF. DIR.:</label>
+            <label class="read_data"> &nbsp; {{row.20}}</label>
+        </div>
+        <div class="form-group">
+            <label>Membro INF. ESQ.:</label>
+            <label class="read_data"> &nbsp; {{row.21}}</label>
+        </div>
+        <div class="form-group">
+            <label>Membro SUP. DIR.:</label>
+            <label class="read_data"> &nbsp; {{row.22}}</label>
+        </div>
+        <div class="form-group">
+            <label>Membro SUP. ESQ.:</label>
+            <label class="read_data"> &nbsp; {{row.23}}</label>
+        </div>
+        <div class="form-group">
+            <label>Quadril:</label>
+            <label class="read_data"> &nbsp; {{row.24}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cervical:</label>
+            <label class="read_data"> &nbsp; {{row.25}}</label>
+        </div>
+        <div class="form-group">
+            <label>Maca sobre rodas:</label>
+            <label class="read_data"> &nbsp; {{row.26}}</label>
+        </div>
+        <div class="form-group">
+            <label>Maca rígida:</label>
+            <label class="read_data"> &nbsp; {{row.27}}</label>
+        </div>
+        <div class="form-group">
+            <label>Ponte:</label>
+            <label class="read_data"> &nbsp; {{row.28}}</label>
+        </div>
+        <div class="form-group">
+            <label>Retirado Capacete:</label>
+            <label class="read_data"> &nbsp; {{row.29}}</label>
+        </div>
+        <div class="form-group">
+            <label>R.C.P:</label>
+            <label class="read_data"> &nbsp; {{row.30}}</label>
+        </div>
+        <div class="form-group">
+            <label>Rolamento 90°:</label>
+            <label class="read_data"> &nbsp; {{row.31}}</label>
+        </div>
+        <div class="form-group">
+            <label>Rolamento 180°:</label>
+            <label class="read_data"> &nbsp; {{row.32}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tomada decisão:</label>
+            <label class="read_data"> &nbsp; {{row.33}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tratado choque:</label>
+            <label class="read_data"> &nbsp; {{row.34}}</label>
+        </div>
+        <div class="form-group">
+            <label>Uso de Cânula:</label>
+            <label class="read_data"> &nbsp; {{row.35}}</label>
+        </div>
+        <div class="form-group">
+            <label>Uso Colar(tamanho):</label>
+            <label class="read_data"> &nbsp; {{row.36}}</label>
+        </div>
+        <div class="form-group">
+            <label>Uso KED:</label>
+            <label class="read_data"> &nbsp; {{row.37}}</label>
+        </div>
+        <div class="form-group">
+            <label>Uso TTF:</label>
+            <label class="read_data"> &nbsp; {{row.38}}</label>
+        </div>
+        <div class="form-group">
+            <label>Ventilação Suporte:</label>
+            <label class="read_data"> &nbsp; {{row.39}}</label>
+        </div>
+        <div class="form-group">
+            <label>Oxigenioterapia(LPM):</label>
+            <label class="read_data"> &nbsp; {{row.40}}</label>
+        </div>
+        <div class="form-group">
+            <label>REANIMADOR(LPM):</label>
+            <label class="read_data"> &nbsp; {{row.41}}</label>
+        </div>
+        <div class="form-group">
+            <label>Meios Auxiliares:</label>
+            <label class="read_data"> &nbsp; {{row.42}}</label>
+        </div>
+        <div class="form-group">
+            <label>Celesc:</label>
+            <label class="read_data"> &nbsp; {{row.43}}</label>
+        </div>
+        <div class="form-group">
+            <label>DEF. CÍVIL:</label>
+            <label class="read_data"> &nbsp; {{row.44}}</label>
+        </div>
+        <div class="form-group">
+            <label>IGP / PC:</label>
+            <label class="read_data"> &nbsp; {{row.45}}</label>
+        </div>
+        <div class="form-group">
+            <label>Polícia:</label>
+            <label class="read_data"> &nbsp; {{row.46}}</label>
+        </div>
+        <div class="form-group">
+            <label>SAMU:</label>
+            <label class="read_data"> &nbsp; {{row.47}}</label>
+        </div>
+        <div class="form-group">
+            <label>CIT:</label>
+            <label class="read_data"> &nbsp; {{row.48}}</label>
+        </div>
+        <div class="form-group">
+            <label>Outros procedimentos:</label>
+            <label class="read_data"> &nbsp; {{row.49}}</label>
+        </div>
         <br>
-        <input type="checkbox"  name="j2" value="Sim">Avaliação Inicial
-        <br>
-        <input type="checkbox"  name="j3" value="Sim">Avaliação Dirigida
-        <br>
-        <input type="checkbox"  name="j4" value="Sim">Avaliação Continuada
-        <br>
-        <input type="checkbox"  name="j5" value="Sim">Chave de Rautek
-        <br>
-        <input type="checkbox"  name="j6" value="Sim">Cânula de Guedel
-        <br>
-        <input type="checkbox"  name="j7" value="Sim">Desobstração de V.A
-        <br>
-        <input type="checkbox"  name="j8" value="Sim">Emprego do D.E.A
-        <br>
-        <input type="checkbox"  name="j9" value="Sim">Gerenciamento de riscos
-        <br>
-        <input type="checkbox"  name="j10" value="Sim">Limpeza de ferimentos
-        <br>
-        <input type="checkbox"  name="j11" value="Sim">Curativos
-        <br>
-        <input type="checkbox"  name="j12" value="Sim">Compressivo
-        <br>
-        <input type="checkbox"  name="j13" value="Sim">Encravamento
-        <br>
-        <input type="checkbox"  name="j14" value="Sim">Ocular
-        <br>
-        <input type="checkbox"  name="j15" value="Sim">Queimadura
-        <br>
-        <input type="checkbox"  name="j16" value="Sim">Simples
-        <br>
-        <input type="checkbox"  name="j17" value="Sim">3 Pontas
-        <br>
-        <input type="checkbox"  name="j18" value="Sim">Imobilizações
-        <br>
-        <input type="checkbox"  name="j19" value="Sim">Membro INF. DIR.
-        <br>
-        <input type="checkbox"  name="j20" value="Sim">Membro INF. ESQ.
-        <br>
-        <input type="checkbox"  name="j21" value="Sim">Membro SUP. DIR.
-        <br>
-        <input type="checkbox"  name="j22" value="Sim">Membro SUP. ESQ.
-        <br>
-        <input type="checkbox"  name="j23" value="Sim">Quadril 
-        <br>
-        <input type="checkbox"  name="j24" value="Sim">Cervical 
-        <br>
-        <input type="checkbox"  name="j25" value="Sim">Maca sobre rodas 
-        <br>
-        <input type="checkbox"  name="j26" value="Sim">Maca rígida 
-        <br>
-        <input type="checkbox"  name="j27" value="Sim">Ponte
-        <br>
-        <input type="checkbox"  name="j28" value="Sim">Retirado Capacete
-        <br>
-        <input type="checkbox"  name="j29" value="Sim">R.C.P
-        <br>
-        <input type="checkbox"  name="j30" value="Sim">Rolamento 90°
-        <br>
-        <input type="checkbox"  name="j31" value="Sim">Rolamento 180°
-        <br>
-        <input type="checkbox"  name="j32" value="Sim">Tomada decisão
-        <br>
-        <input type="checkbox"  name="j33" value="Sim">Tratado choque
-        <br>
-        <input type="checkbox"  name="j34" value="Sim">Uso de Cânula
-        <br>
-        <input type="checkbox"  id="usocolar" onclick="usoColar()" name="j35">Uso Colar
-        <input type="text" name="j35" id="usocolar1" placeholder="Tamanho">
-        <br>
-        <input type="checkbox"  name="j36" value="Sim">Uso KED
-        <br>
-        <input type="checkbox"  name="j37" value="Sim">Uso TTF
-        <br>
-        <input type="checkbox"  name="j38" value="Sim">Ventilação Suporte
-        <br>
-        <input type="checkbox" id="usaroxigenioterapia" onclick="usarOxigenioterapia()" name="j39">Oxigenioterapia
-        <input type="text" id="oxigenioterapia" name="j39a" placeholder="LPM">
-        <br>
-        <input type="checkbox" id="usarreanimador" onclick="usarReanimador()" name="j40">REANIMADOR
-        <input type="text" id="reanimador" name="j40a" placeholder="LPM">
-        <br>
-        <input type="checkbox"  name="j41" value="Sim">Meios Auxiliares
-        <br>
-        <input type="checkbox"  name="j42" value="Sim">Celesc
-        <br>
-        <input type="checkbox"  name="j43" value="Sim">DEF. CÍVIL
-        <br>
-        <input type="checkbox"  name="j44" value="Sim">IGP / PC
-        <br>
-        <input type="checkbox"  id="aparecerpolicia" onclick="aparecerPolicia()" name="j45">Polícia
-        <input type="radio"  id="policia" name="j45a" value="Civil">
-        <label for="Civil" id="policia1">Civil</label><br>
-        <input type="radio"  name="j45a" id="policia2" value="Militar">
-        <label for="Militar" id="policia3">Militar</label>
-        <input type="radio"  name="j45a" id="policia4" value="PRE">
-        <label for="PRE" id="policia5">PRE</label><br>
-        <input type="radio"  name="j45a" id="policia6" value="PRF">
-        <label for="PRF" id="policia7">PRF</label>
-        <br>
-        <input type="checkbox"  id="aparecersamu" onclick="aparecerSamu()" name="j46">SAMU
-        <input type="radio" id="samu" name="j46a" value="USA">
-        <label for="USA" id="samu1">USA</label><br>
-        <input type="radio" id="samu2" name="j46a" value="USB">
-        <label for="USB" id="samu3">USB</label>
-        <br>
-        <input type="checkbox"  name="j47" value="Sim">CIT
-        <br>
-        <input type="text" name="j48" placeholder="Outros">
-        <br>
+        {% endfor %}
+
+        {% for row in materiaisdescartável %}
         <!--MATERIAIS UTILIZADOS DESCARTÁVEL-->
         <h2>Materiais Utilizados Descartável</h2>
-        <input type="checkbox"  name="k1" id="apareceratadura" onclick="aparecerAtadura()" value="Sim">Ataduras
-        <input type="checkbox"  name="k1a" id="atadura" value="Sim"><e id="atadura4">8</e>
-        <input type="checkbox"  name="k1b" id="atadura1" value="Sim"><e id="atadura5">12</e>
-        <input type="checkbox"  name="k1c" id="atadura2" value="Sim"><e id="atadura6">20</e>
-        <input type="text" name="k1qtd" id="atadura3" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k2" id="aparecercateter" onclick="aparecerCateter()" value="Sim">Cateter TP. ÓCULOS
-        <input type="text" name="k2qtd" id="cateter" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k3" id="aparecercompressa" onclick="aparecerCompressa()" value="Sim">Compressa Comum
-        <input type="text" name="k3qtd" id="compressa" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k4" id="aparecerkit" onclick="aparecerKit()" value="Sim">Kit's
-        <input type="checkbox"  name="k4a" id="kit" value="Sim"><e id="kit4">H</e>
-        <input type="checkbox"  name="k4b" id="kit1" value="Sim"><e id="kit5">P</e>
-        <input type="checkbox"  name="k4c" id="kit2" value="Sim"><e id="kit6">Q</e>
-        <input type="text" name="k4qtd" id="kit3" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k5" id="aparecerluva" onclick="aparecerLuva()" value="Sim">Luvas DESC. (Pares)
-        <input type="text" name="k5qtd" id="luva" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k6" id="aparecermascara" onclick="aparecerMascara()" value="Sim">Máscara DESC.
-        <input type="text" name="k6qtd" id="mascara" placeholder="Quantidade">
+        <div class="form-group">
+            <label>atadura:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>atadura 8:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>atadura 12:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>atadura 20:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>atadura quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Cateter TP. ÓCULOS:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cateter quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Compressa Comum:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Compressa quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Kit's:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
+        <div class="form-group">
+            <label>Kit's (H):</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Kit's (P):</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Kit's (Q):</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Kit's quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Luvas DESC. (Pares):</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        <div class="form-group">
+            <label>Luvas quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.17}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Máscara DESC.:</label>
+            <label class="read_data"> &nbsp; {{row.18}}</label>
+        </div>
+        <div class="form-group">
+            <label>Máscara quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.19}}</label>
+        </div>
+        <br>
+        {% endfor %}
+
+        {% for row in materiaisdeixadoshospital %}
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h2>Materiais Utilizados deixados no hospital</h2>
-        <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
-        <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k8" id="aparecercolar" onclick="aparecerColar()" value="Sim">Colar
-        <input type="checkbox"  name="k8a" id="colar" value="Sim"><e id="colar7">N</e>
-        <input type="checkbox"  name="k8b" id="colar1" value="Sim"><e id="colar8">PP</e>
-        <input type="checkbox"  name="k8c" id="colar2" value="Sim"><e id="colar9">P</e>
-        <input type="checkbox"  name="k8d" id="colar3" value="Sim"><e id="colar10">M</e>
-        <input type="checkbox"  name="k8e" id="colar4" value="Sim"><e id="colar11">G</e>
-        <input type="text" name="k8f" id="colar5" placeholder="Tamanho alternativo">
-        <input type="text" name="k8qtd" id="colar6" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox" id="aparecercoxin" onclick="aparecerCoxin()" name="k9" value="Sim">Coxins Estabiliza
-        <input type="text" name="k9qtd" id="coxin" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox" id="aparecerked" onclick="aparecerKed()" name="k10" value="Sim">KED
-        <input type="checkbox"  name="k10a" id="ked" value="Sim"><e id="ked3">ADUL.</e>
-        <input type="checkbox"  name="k10b" id="ked1" value="Sim"><e id="ked4">INFAN.</e>
-        <input type="text" name="k10qtd" id="ked2" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rígida
-        <input type="text" name="k11qtd" id="maca" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox" id="aparecerttf" onclick="aparecerTtf()" name="k12" value="Sim">T.T.F
-        <input type="checkbox" id="ttf" name="k12a" value="Sim"><e id="ttf3">ADUL.</e>
-        <input type="checkbox" id="ttf1" name="k12b" value="Sim"><e id="ttf4">INFAN.</e>
-        <input type="text" id="ttf2" name="k12qtd" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k13" id="apareceraranha" onclick="aparecerAranha()" value="Sim">Tirante Aranha
-        <input type="text" name="k13qtd" id="aranha" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox"  name="k14" id="aparecercabeca" onclick="aparecerCabeca()" value="Sim">Tirante de Cabeça
-        <input type="text" name="k14qtd" id="cabeca" placeholder="Quantidade">
-        <br><br>
-        <input type="checkbox" id="aparecercanula" onclick="aparecerCanula()" name="k15" value="Sim">Cânula
+        <div class="form-group">
+            <label>Base do Estabiliza:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div> 
+        <div class="form-group">
+            <label>Base quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
         <br>
-        <input type="text" name="k15qtd" id="canula" placeholder="Quantidade">
+        <div class="form-group">
+            <label>Colar:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar (N):</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar (PP):</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar (P):</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar (M):</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar (G):</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar tamanho alternativo:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        <div class="form-group">
+            <label>Colar quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
         <br>
+        <div class="form-group">
+            <label>Coxins Estabiliza:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
+        <div class="form-group">
+            <label>Coxins quatidade:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>KED:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>KED adulto:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <div class="form-group">
+            <label>KED infatil:</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        <div class="form-group">
+            <label>KED quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.17}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Maca Rígida:</label>
+            <label class="read_data"> &nbsp; {{row.18}}</label>
+        </div>
+        <div class="form-group">
+            <label>Maca quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.19}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>T.T.F :</label>
+            <label class="read_data"> &nbsp; {{row.20}}</label>
+        </div>
+        <div class="form-group">
+            <label>T.T.F adulto:</label>
+            <label class="read_data"> &nbsp; {{row.21}}</label>
+        </div>
+        <div class="form-group">
+            <label>T.T.F intantil:</label>
+            <label class="read_data"> &nbsp; {{row.22}}</label>
+        </div>
+        <div class="form-group">
+            <label>T.T.F quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.23}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Tirante Aranha:</label>
+            <label class="read_data"> &nbsp; {{row.24}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tirante Aranha quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.25}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Tirante de Cabeça:</label>
+            <label class="read_data"> &nbsp; {{row.26}}</label>
+        </div>
+        <div class="form-group">
+            <label>Tirante de Cabeça quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.27}}</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Cânula:</label>
+            <label class="read_data"> &nbsp; {{row.28}}</label>
+        </div>
+        <div class="form-group">
+            <label>Cânula quantidade:</label>
+            <label class="read_data"> &nbsp; {{row.29}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in anamneseemergência %}
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <h2>Anamnese da Emergência Médica</h2>
-        <input type="text" name="l1" placeholder="O que aconteceu (Sinais e Sintomas)">
+        <div class="form-group">
+            <label>O que aconteceu (Sinais e Sintomas):</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
         <br>
-        <h4>Aconteceu outras vezes?</h4>
-        <input type="radio" id="aconteceuoutras" onclick="aconteceuOutras()" name="l2" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoaconteceuoutras" onclick="naoAconteceuOutras()" name="l2" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Aconteceu outras vezes?:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>A quanto tempo isso ocorreu?:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
         <br>
-        <input type="text" name="l3" id="aconteceuoutras1" placeholder="A quanto tempo isso ocorreu?">
+        <div class="form-group">
+            <label>Possui algum problema de saúde?:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Quais?:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
         <br>
-        <h4>Possui algum problema de saúde</h4>
-        <input type="radio" id="problemasaude" onclick="problemaSaude()" name="l4" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoproblemasaude" onclick="naoProblemaSaude()" name="l4" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Alérgico a alguma coisa:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Alérgico a que?:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
         <br>
-        <input type="text" id="problemasaude1" name="l4a" placeholder="Quais?">
-        <br>
-        <h4>Alérgico a alguma coisa</h4>
-        <input type="radio" id="alergicocoisa" onclick="alergicoCoisa()" name="l5" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoalergicocoisa" onclick="naoAlergicoCoisa()" name="l5" value="nao">
-        <label for="nao">não</label>
-        <br>
-        <input type="text" name="l5a" id="alergicocoisa1" placeholder="Se sim, especifique">
-        <br>
-        <h4>Ingeriu algum alimento ou líquido >= 6 horas</h4>
-        <input type="radio" id="algumalimento" onclick="algumAlimento()" name="l6" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoalgumalimento" onclick="naoAlgumAlimento()" name="l6" value="nao">
-        <label for="nao">não</label>
-        <input type="text" name="l6a" id="algumalimento1" placeholder="Que horas?">
-        <br>
+        <div class="form-group">
+            <label>Ingeriu algum alimento ou líquido >= 6 horas:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
+        <div class="form-group">
+            <label>Que horas?:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in anamnesegestacional %}
         <!--ANAMNESE GESTACIONAL-->
         <h2>Anamnese Gestacional</h2>
-        <input type="text" name="m1" placeholder="Período da gestação">
-        <h4>Fez Pré-Natal</h4>
-        <input type="radio" id="prenatal" onclick="preNatal()" name="m2" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoprenatal" onclick="naoPreNatal()" name="m2" value="nao">
-        <label for="nao">não</label>
-        <input type="text" id="prenatal1" name="m3" placeholder="Nome do médico">
+        <div class="form-group">
+            <label>Período da gestação:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
         <br>
-        <h4>É o primeiro filho?</h4>
-        <input type="radio" id="primeirofilho" onclick="primeiroFilho()" name="m4" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoprimeirofilho" onclick="naoPrimeiroFilho()" name="m4" value="nao">
-        <label for="nao">não</label>
-        <input type="text" name="m5" id="primeirofilho1" placeholder="Quantos?">
+        <div class="form-group">
+            <label>Fez Pré-Natal:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Nome do médico:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
         <br>
-        <input type="text" name="m6" id="primeirofilho2" placeholder="Que horas iniciaram as contrações?">
+        <div class="form-group">
+            <label>É o primeiro filho?:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Quantos?:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Que horas iniciaram as contrações?:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
         <br>
         <h4>Tempo das contrações</h4>
-        <input type="text" name="m7" placeholder="Duração">
-        <input type="text" name="m8" placeholder="Intervalo">
+        <div class="form-group">
+            <label>Duração:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        <div class="form-group">
+            <label>Intervalo:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
         <br>
-        <h4>Sente pressão na região do quadril ou vontade de evacuar?</h4>
-        <input type="radio"  name="m9" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="m9" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Sente pressão na região do quadril ou vontade de evacuar?:</label>
+            <label class="read_data"> &nbsp; {{row.10}}</label>
+        </div>
         <br>
-        <h4>Já houve ruptura da bolsa?</h4>
-        <input type="radio"  name="m10" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="m10" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Já houve ruptura da bolsa?:</label>
+            <label class="read_data"> &nbsp; {{row.11}}</label>
+        </div>
         <br>
-        <h4>Foi feito inspeção visual?</h4>
-        <input type="radio"  name="m11" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="m11" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Foi feito inspeção visual?:</label>
+            <label class="read_data"> &nbsp; {{row.12}}</label>
+        </div>
         <br>
-        <h4>Parto realizado?</h4>
-        <input type="radio" id="aparecerparto" onclick="aparecerParto()" name="m12" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio" id="naoaparecerparto" onclick="naoAparecerParto()" name="m12" value="nao">
-        <label for="nao">não</label>
-        <input type="text" name="m13" id="parto" placeholder="Hora do nascimento">
-        <br>
-        <h4 id="parto1">Sexo do bebe</h4>
-        <input  id="parto4" type="radio"  name="m14" value="MASC">
-        <label id="parto5" for="MASC">MASC</label>
-        <input id="parto2" type="radio"  name="m14" value="FEM">
-        <label id="parto3" for="FEM">FEM</label><br>
-        <input id="parto6" type="text" name="m15" placeholder="Nome do bebe">
+        <div class="form-group">
+            <label>Parto realizado?:</label>
+            <label class="read_data"> &nbsp; {{row.13}}</label>
+        </div>
+        <div class="form-group">
+            <label>Hora no nascimento:</label>
+            <label class="read_data"> &nbsp; {{row.14}}</label>
+        </div>
+        <div class="form-group">
+            <label>Sexo do bebe:</label>
+            <label class="read_data"> &nbsp; {{row.15}}</label>
+        </div>
+        <div class="form-group">
+            <label>Nome do bebe:</label>
+            <label class="read_data"> &nbsp; {{row.16}}</label>
+        </div>
+        {% endfor %}
+
+        {% for row in avaliacaocinematica %}
         <!--AVALIAÇÃO DA CINEMÁTICA-->
         <h2>Avaliação da Cinemática</h2>
-        <h4>Distúrbio de comportamento?</h4>
-        <input type="radio"  name="n1" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n1" value="nao">
-        <label for="nao">não</label>
-        <h4>Encontrado de capacete?</h4>
-        <input type="radio"  name="n2" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n2" value="nao">
-        <label for="nao">não</label>
-        <h4>Encontrado de cinto?</h4>
-        <input type="radio"  name="n3" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n3" value="nao">
-        <label for="nao">não</label>
-        <h4>Para-Brisas Avariado?</h4>
-        <input type="radio"  name="n4" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n4" value="nao">
-        <label for="nao">não</label>
-        <h4>Caminhando na cena?</h4>
-        <input type="radio"  name="n5" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n5" value="nao">
-        <label for="nao">não</label>
-        <h4>Painel Avariado?</h4>
-        <input type="radio"  name="n6" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n6" value="nao">
-        <label for="nao">não</label>
-        <h4>Volante Torcido?</h4>
-        <input type="radio"  name="n7" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="n7" value="nao">
-        <label for="nao">não</label>
+        <div class="form-group">
+            <label>Distúrbio de comportamento?:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <div class="form-group">
+            <label>Encontrado de capacete?:</label>
+            <label class="read_data"> &nbsp; {{row.3}}</label>
+        </div>
+        <div class="form-group">
+            <label>Encontrado de cinto?:</label>
+            <label class="read_data"> &nbsp; {{row.4}}</label>
+        </div>
+        <div class="form-group">
+            <label>Para-Brisas Avariado?:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
+        <div class="form-group">
+            <label>Caminhando na cena?:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
+        <div class="form-group">
+            <label>Painel Avariado?:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <div class="form-group">
+            <label>Volante Torcido?:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
+        {% endfor %}
+        <br><br>
+        {% for row in observacoesimportantes %}
         <!--OBSERVAÇÕES IMPORTANTES-->
-        <h2>Observações Importantes</h2>
-        <input type="text"  name="o1">
+        <h2>Observações Importantes:</h2>
+        <div class="form-group">
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <br><br>
+        {% endfor %}
+
+        {% for row in termoderecusa %}
         <!--TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE-->
         <h2>Termo de recusa de atendimento e/ou transporte</h2>
-        <p class="termo_recusa">EU <input type="text" name="o2"> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<input type="text" name="o3"> INSCRITO NO CPF SOB N°<input type="text" name="o4"> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
+        <p class="termo_recusa">EU <label class="read_data"> &nbsp; <b>{{row.2}}</b></label> PORTADOR DA CARTEIRA DE IDENTIDADE RG N°<label class="read_data"> &nbsp; <b>{{row.3}}</b></label> INSCRITO NO CPF SOB N°<label class="read_data"> &nbsp; <b>{{row.4}}</b></label> NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUÊNCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.</p>
         <br>
-        <input type="text"  name="o5" placeholder="Assinatura">
+        <div class="form-group">
+            <label>Assinatura:</label>
+            <label class="read_data"> &nbsp; {{row.5}}</label>
+        </div>
         <br>
-        <input type="text"  name="o6" placeholder="Testemunha">
+        <div class="form-group">
+            <label>Testemunha:</label>
+            <label class="read_data"> &nbsp; {{row.6}}</label>
+        </div>
         <br>
-        <input type="text"  name="o7" placeholder="Doc">
+        <div class="form-group">
+            <label>Documento:</label>
+            <label class="read_data"> &nbsp; {{row.7}}</label>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label>Testemunha:</label>
+            <label class="read_data"> &nbsp; {{row.8}}</label>
+        </div>
         <br>
-        <input type="text"  name="o8" placeholder="Testemunha">
+        <div class="form-group">
+            <label>Documento:</label>
+            <label class="read_data"> &nbsp; {{row.9}}</label>
+        </div>
         <br>
-        <input type="text"  name="o9" placeholder="Doc">
-        <p class="termo_recusa">GUARAMIRIM <input type="text" name="o10" style="width: 30px;"> DE <input type="text" name="o11" style="width: 30px;"> DE <input type="text"  name="o12" style="width: 30px;"></p>
+        <p class="termo_recusa">GUARAMIRIM <label class="read_data"> {{row.10}}</label> DE <label class="read_data">{{row.11}}</label> DE <label class="read_data"> {{row.12}}</label></p>
+        {% endfor %}
+        <br>
+        {% for row in divulgarparaimprensa %}
         <!--DIVULGAR PARA A IMPRENSA-->
-        <h2>Divulgar para a imprensa</h2>
-        <input type="radio"  name="q1" value="sim">
-        <label for="sim">sim</label><br>
-        <input type="radio"  name="q1" value="nao">
-        <label for="nao">nao</label>
-        <br>
+        <h2>Divulgar para a imprensaw</h2>
+        <div class="form-group">
+            <label>Divulgar:</label>
+            <label class="read_data"> &nbsp; {{row.2}}</label>
+        </div>
+        <br><br>
+        {% endfor %}
+
         <label>Insira a imagens da ocorrência: </label>
         <br>
         <input type="file" name="files[]" id="fileInput" multiple >
         <br>
-        <button type="submit">ENVIAR</button>
+
     </form>   
     {% endblock %}
 </body>

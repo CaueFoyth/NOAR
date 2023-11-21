@@ -258,7 +258,7 @@ def enviar():
         j32 = request.form.get('j32', 'Não')
         j33 = request.form.get('j33', 'Não')
         j34 = request.form.get('j34', 'Não')
-        j35 = request.form.get('j35', 'Não')
+        j35a = request.form.get('j35a', 'Não')
         j36 = request.form.get('j36', 'Não')
         j37 = request.form.get('j37', 'Não')
         j38 = request.form.get('j38', 'Não')
@@ -409,7 +409,7 @@ def enviar():
         cursor.execute(f"INSERT INTO queimadura (fk_ocorrencia, fk_sos, cabeca, pescoco, tante, tpost, 	genital, mid, mie, msd, mse) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{p1}', '{p2}', '{p3}', '{p4}', '{p5}', '{p6}', '{p7}', '{p8}', '{p9}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO sinaisvitais (fk_ocorrencia, fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perf_menor, perf_maior) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7}', '{d7a}')")
+        cursor.execute(f"INSERT INTO sinaisvitais (fk_ocorrencia, fk_sos, pressao_arterial, normal_anormal, pulso, respiracao, saturacao, temperatura, perfusao) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{d_1_2}', '{d2}', '{d3}', '{d4}', '{d5}', '{d6}', '{d7a}')")
         mysql.connection.commit()
 
         cursor.execute(f"INSERT INTO formadecondução (fk_ocorrencia, fk_sos, forma_conducao) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{e1}')")
@@ -430,7 +430,7 @@ def enviar():
         cursor.execute(f"INSERT INTO informaçõesocorrência (fk_ocorrencia ,fk_sos, n_usb, cod_ir, n_ocorrencia, cod_ps, desp, hch, km_final, cod_sias_sus) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{h1}', '{h2}', '{h3}', '{h4}', '{h5}', '{h6}', '{h7}', '{h8}')")
         mysql.connection.commit()
 
-        cursor.execute(f"INSERT INTO procedimentosefetuados (fk_ocorrencia ,fk_sos, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, procedimentos_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35}', '{j36}', '{j37}', '{j38}', '{j39a}', '{j40a}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45a}', '{j46a}', '{j47}', '{j48}')")
+        cursor.execute(f"INSERT INTO procedimentosefetuados (fk_ocorrencia ,fk_sos, aspiracao, avaliacao_inicial, avaliacao_dirigida, avaliacao_continuada, chave_rautek, candula_guedel, desobstracao_va, emprego_dea, gerenciamento_riscos, limpeza_ferimentos, curativos, compressivo, encravamento, ocular, queimadura, simples, tres_pontas, imobilizacoes, membro_inf_dir, membro_inf_esq, membro_sup_dir, membro_sup_esq, quadril, cervical, maca_rodas, maca_rigida, ponte, retirado_capacete, rcp, rolamento_noventa, rolamento_cento_oitenta, tomada_decisao, tomada_choque, uso_candula, colar_tamanho, uso_ked, uso_ttf, ventilacao_suporte, oxigenioterapia, reanimador, meios_auxiliares, celesc, def_civil, igp_pc, policia, samu, cit, procedimentos_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{j1}', '{j2}', '{j3}', '{j4}', '{j5}', '{j6}', '{j7}', '{j8}', '{j9}', '{j10}', '{j11}', '{j12}', '{j13}', '{j14}', '{j15}', '{j16}', '{j17}', '{j18}', '{j19}', '{j20}', '{j21}', '{j22}', '{j23}', '{j24}', '{j25}', '{j26}', '{j27}', '{j28}', '{j29}', '{j30}', '{j31}', '{j32}', '{j33}', '{j34}', '{j35a}', '{j36}', '{j37}', '{j38}', '{j39a}', '{j40a}', '{j41}', '{j42}', '{j43}', '{j44}', '{j45a}', '{j46a}', '{j47}', '{j48}')")
         mysql.connection.commit()
 
         cursor.execute(f"INSERT INTO materiaisdescartável (fk_ocorrencia ,fk_sos, atadura, atadura_oito, atadura_doze, atadura_vinte, atadura_qtd, cateter, cateter_qtd, compressa, compressa_qtd, kits, kits_h, kits_p, kits_q, kits_qtd, luvas, luvas_qtd, mascara, mascara_qtd) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{k1}', '{k1a}', '{k1b}', '{k1c}', '{k1qtd}', '{k2}', '{k2qtd}', '{k3}', '{k3qtd}', '{k4}', '{k4a}', '{k4b}', '{k4c}', '{k4qtd}', '{k5}', '{k5qtd}', '{k6}', '{k6qtd}')")
@@ -482,8 +482,40 @@ def ver1(id):
             corpo = cursor.fetchall()
             cursor.execute(f"SELECT * FROM queimadura WHERE fk_ocorrencia = {id}")
             quei = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM sinaisvitais WHERE fk_ocorrencia = {id}")
+            vit = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM formadecondução WHERE fk_ocorrencia = {id}")
+            cond = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM vitimaera WHERE fk_ocorrencia = {id}")
+            era = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM decisaotransporte WHERE fk_ocorrencia = {id}")
+            deci = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM equipeatendimento WHERE fk_ocorrencia = {id}")
+            atend = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM objetos WHERE fk_ocorrencia = {id}")
+            obj = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM informaçõesocorrência WHERE fk_ocorrencia = {id}")
+            infoco = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM procedimentosefetuados WHERE fk_ocorrencia = {id}")
+            proefe = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM materiaisdescartável WHERE fk_ocorrencia = {id}")
+            matdesc = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM materiaisdeixadoshospital WHERE fk_ocorrencia = {id}")
+            matdeihos = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM anamneseemergência WHERE fk_ocorrencia = {id}")
+            anaeme = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM anamnesegestacional WHERE fk_ocorrencia = {id}")
+            anages = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM avaliacaocinematica WHERE fk_ocorrencia = {id}")
+            avacin = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM observacoesimportantes WHERE fk_ocorrencia = {id}")
+            obsimp = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM termoderecusa WHERE fk_ocorrencia = {id}")
+            terrec = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM divulgarparaimprensa WHERE fk_ocorrencia = {id}")
+            divparimp = cursor.fetchall()
             cursor.close()
-            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei) 
+            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp) 
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
@@ -635,6 +667,41 @@ def ocorrenciasADM():
             data = cursor.fetchall()
             cursor.close()
             return render_template("ocorrenciasadm.html", dadosdavitima = data)
+        return redirect(url_for("index"))
+    return redirect(url_for("index"))
+
+@app.route('/filtrosADM', methods = ['POST', 'GET'])
+def filtrosADM():
+    if 'logado' in session:
+        if session['adm'] == 1:
+            if request.method == "POST":
+                p1 = request.form.get("form_select")
+                p2 = request.form['filter_text']
+                p3 = request.form.get("sinais_oco")
+                p4 = request.form.get("tipos_oco")
+                p5 = request.form.get("problemas_oco")
+                p6 = request.form.get("vitimas_oco")
+                if p1 != 'sinais_oco' and p1 != 'tipos_oco' and p1 != 'problemas_oco' and p1 != 'vitimas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima WHERE {p1} = '{p2}'")
+                    data = cursor.fetchall()
+                if p1 == 'sinais_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN sinaissintomas ON sinaissintomas.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p3} = '{p2}'")
+                    data = cursor.fetchall()
+                if p1 == 'tipos_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN tipodeocorrencia ON tipodeocorrencia.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p4} = '{p2}'")
+                    data = cursor.fetchall()  
+                if p1 == 'problemas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN problemasencontrados ON problemasencontrados.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p5} = '{p2}'")
+                    data = cursor.fetchall()    
+                if p1 == 'vitimas_oco':
+                    cursor = mysql.connection.cursor()
+                    cursor.execute(f"SELECT * FROM dadosdavitima INNER JOIN vitimaera ON vitimaera.fk_ocorrencia = dadosdavitima.id_ocorrencia WHERE {p6} = '{p2}'")
+                    data = cursor.fetchall()    
+                return render_template("ocorrenciasadm.html", dadosdavitima = data)
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
