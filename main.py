@@ -26,7 +26,6 @@ app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
 app.config['MYSQL_PASSWORD'] =  ''
 app.config['MYSQL_DB'] =  'noar'
-app.config['MYSQL_PORT'] = '3306'
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
   
@@ -51,7 +50,7 @@ def login():
         senha_veri = sha256(senha.encode()).hexdigest()
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
+        cursor.execute(f'SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
         user = cursor.fetchone()
         if user:
             session['logado'] = True
@@ -73,6 +72,7 @@ def sair():
     if request.method == "POST":
         session.clear()
         return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 
 @app.route('/gerenciar', methods =['GET', 'POST'])
