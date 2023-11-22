@@ -43,7 +43,7 @@
                             <label class="custum-file-upload" for="fileInput" style="width: 200px; font-size: 18px;">Insira a sua foto de perfil:</label>
                              <br>
                              <input type="file" name="files[]" id="fileInput" onchange="this.form.submit()" style="display: none;">
-                             <label class="botao" for="fileInput">AAA</label>
+                             <label class="botao" for="fileInput">Insira sua foto de Perfil</label>
                              <br>   
                         </form>
                     </div>
@@ -85,11 +85,15 @@
                             </div>
 
                             <button href="/alterar/{{row.0}}" class="edit_profile" id="alterar" data-toggle="modal" data-target="#modaledit{{row.0}}">Alterar</button>
-
                         {% endfor %}
-
                     </form>
+
+                    <form action="/sair" method="POST">
+                    <button type="submit" class="edit_profile" id="sair">Sair da conta</button>
+                    </form>
+
                 </main>
+
             
         {% endblock %}
         
