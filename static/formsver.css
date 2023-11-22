@@ -237,3 +237,9 @@ input[type=date] {
 #canula {
   display: none;
 }/*# sourceMappingURL=forms.css.map */
+
+.file-upload-form
+{
+  max-width: 256px;
+  max-height: 256px;
+}

@@ -1494,7 +1494,7 @@
         <br>
         {% for row in divulgarparaimprensa %}
         <!--DIVULGAR PARA A IMPRENSA-->
-        <h2>Divulgar para a imprensaw</h2>
+        <h2>Divulgar para a imprensa</h2>
         <div class="form-group">
             <label>Divulgar:</label>
             <label class="read_data"> &nbsp; {{row.2}}</label>
@@ -1502,10 +1502,11 @@
         <br><br>
         {% endfor %}
 
-        <label>Insira a imagens da ocorrência: </label>
+        {% for row in images %}
+        <label>imagens da ocorrência:</label>
         <br>
-        <input type="file" name="files[]" id="fileInput" multiple >
-        <br>
+        <img class="file-upload-form" src="/static/uploads/{{row.2}}">
+        {% endfor %}
 
     </form>   
     {% endblock %}
