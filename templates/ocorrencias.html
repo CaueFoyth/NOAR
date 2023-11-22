@@ -4,45 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOAR</title>
     <link rel="stylesheet" href="../static/ocorrencias.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Ocorrências</title>
 </head>
-<center class="header">
-    <img onclick="Retorna()" id="retorna" class="seta" src="../static/img/seta.png" style="scale: 10%;">
-    <img class="logo" src="static/img/logo_pequena.png" style="scale: 35%"> 
-    <script>
-        function Retorna()
-            {
-                window.location.replace("/mainpage")
-            }
-    </script>
-</center>
+
+
 
 
 <body>  
 {% block body %}
-    <center>
-            <main class="estrutura">
-                <div class="wrap">
-                    <div class="search">
-                       <input type="text" class="searchTerm" placeholder="Pesquisar Ocorrências">
-                       <button type="submit" class="searchButton">
-                        <ion-icon class="search-icon" name="search-outline"></ion-icon>
-                      </button>
-                    </div>
-                 </div>
 
-                {% for row in ocorrencias %} 
+    <center>
+        <main class="background">
+         
+            <header class="header">
+                <!-- Cabeçalho contendo as opções que o ADM poderá utilizar -->
+                <section class="options">
+                    <form action="/ocorrencias"><button onclick="Redirecionar()" class="button-redirect">Página Inicial</button></form>
+        
+                    <script>
+                        function Redirecionar()
+                        {
+                            window.location.replace("/mainpage")
+                        }
+                        
+                    </script>
+        
+                </section>
+        
+                <section class="headerlogo">
+                    <!-- Logo da NOAR exibida na canto superior esquerdo da tela -->
+                        <img src="../static/img/logo_pequena.png" class="logo">
+                </section>
+                
+                </header>
+
+            <div class="estrutura" style="overflow-y:scroll;"> 
+                <br>
+                <br>
+            
                 <div class="content">
                     <div class="left-ret"></div>
                     <!-- Texto em baixo da div ("left-ret") -->
-                    {{row.1}}
-                    |
-                    {{row.5}}
-                    |
-                    {{row.2}}
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
                     <div class="buttons-content">
 
                     <button onclick="Ver()" class="button-read">Visualizar</button>
@@ -67,12 +75,546 @@
     
                     </script>
 
+                    
+
                     </div>
                 </div>
-                {% endfor %}
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
 
                 
-              </main>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+                                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <div class="content">
+                    <div class="left-ret"></div>
+                    <!-- Texto em baixo da div ("left-ret") -->
+                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    
+
+                    <div class="buttons-content">
+
+                    <button onclick="Ver()" class="button-read">Visualizar</button>
+
+                    <script>
+
+                    function Ver()
+                    {
+                        window.location.replace("/ver")
+                    }
+
+                    </script>
+
+                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
+
+                    <script>
+
+                        function AlterarOc()
+                        {
+                            window.location.replace("/alterarOc")
+                        }
+    
+                    </script>
+
+                    
+
+                
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+        </main>
+
+        
     </center>
 {% endblock %}
 </body>
