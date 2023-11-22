@@ -26,7 +26,6 @@ app.config['MYSQL_HOST'] =  'localhost'
 app.config['MYSQL_USER'] =  'root'
 app.config['MYSQL_PASSWORD'] =  ''
 app.config['MYSQL_DB'] =  'noar'
-app.config['MYSQL_PORT'] = '3306'
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
   
@@ -51,7 +50,7 @@ def login():
         senha_veri = sha256(senha.encode()).hexdigest()
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
+        cursor.execute(f'SELECT * FROM login WHERE cpf = % s AND senha = % s', (cpf,senha_veri))
         user = cursor.fetchone()
         if user:
             session['logado'] = True
@@ -73,6 +72,7 @@ def sair():
     if request.method == "POST":
         session.clear()
         return redirect(url_for("index"))
+    return redirect(url_for("index"))
 
 
 @app.route('/gerenciar', methods =['GET', 'POST'])
@@ -466,7 +466,9 @@ def enviar():
         cursor.execute(f"INSERT INTO divulgarparaimprensa (fk_ocorrencia ,fk_sos, divulgar_imprensa) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{q1}' )")
         mysql.connection.commit()
 
-    return redirect(url_for("AddOcorrencia"))
+    if session['adm'] == 1:
+        return redirect(url_for("adm"))
+    return redirect(url_for("mainpage"))
 
 #     @app.route('/alteraroco3', methods =['GET', 'POST'])
 # def alteraroco3():
@@ -957,8 +959,40 @@ def alterarOc(id):
             corpo = cursor.fetchall()
             cursor.execute(f"SELECT * FROM queimadura WHERE fk_ocorrencia = {id}")
             quei = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM sinaisvitais WHERE fk_ocorrencia = {id}")
+            vit = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM formadecondução WHERE fk_ocorrencia = {id}")
+            cond = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM vitimaera WHERE fk_ocorrencia = {id}")
+            era = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM decisaotransporte WHERE fk_ocorrencia = {id}")
+            deci = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM equipeatendimento WHERE fk_ocorrencia = {id}")
+            atend = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM objetos WHERE fk_ocorrencia = {id}")
+            obj = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM informaçõesocorrência WHERE fk_ocorrencia = {id}")
+            infoco = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM procedimentosefetuados WHERE fk_ocorrencia = {id}")
+            proefe = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM materiaisdescartável WHERE fk_ocorrencia = {id}")
+            matdesc = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM materiaisdeixadoshospital WHERE fk_ocorrencia = {id}")
+            matdeihos = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM anamneseemergência WHERE fk_ocorrencia = {id}")
+            anaeme = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM anamnesegestacional WHERE fk_ocorrencia = {id}")
+            anages = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM avaliacaocinematica WHERE fk_ocorrencia = {id}")
+            avacin = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM observacoesimportantes WHERE fk_ocorrencia = {id}")
+            obsimp = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM termoderecusa WHERE fk_ocorrencia = {id}")
+            terrec = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM divulgarparaimprensa WHERE fk_ocorrencia = {id}")
+            divparimp = cursor.fetchall()
             cursor.close()
-            return render_template("formAlterar.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei)
+            return render_template("formAlterar.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp)
         return redirect(url_for("index"))  
     return redirect(url_for("index"))    
 
