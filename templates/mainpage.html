@@ -38,11 +38,11 @@
             <div class="estrutura">
                 <br>
                 <br>
-            
+                {% for row in dadosdavitima %}
                 <div class="content">
                     <div class="left-ret"></div>
                     <!-- Texto em baixo da div ("left-ret") -->
-                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
+                    &nbsp; {{row.4}} | {{row.7}}
                     
 
                     <div class="buttons-content">
@@ -68,126 +68,40 @@
                         }
     
                     </script>
-
-                    
-
                     </div>
                 </div>
-                <br>
-                <br>
-
-                <div class="content">
-                    <div class="left-ret"></div>
-                    <!-- Texto em baixo da div ("left-ret") -->
-                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
-                    
-
-                    <div class="buttons-content">
-
-                    <button onclick="Ver()" class="button-read">Visualizar</button>
-
-                    <script>
-
-                    function Ver()
-                    {
-                        window.location.replace("/ver")
-                    }
-
-                    </script>
-
-                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
-
-                    <script>
-
-                        function AlterarOc()
-                        {
-                            window.location.replace("/alterarOc")
-                        }
-    
-                    </script>
-
-                    
-
-                    </div>
-                </div>
-                <br>
-                <br>
-
-                <div class="content">
-                    <div class="left-ret"></div>
-                    <!-- Texto em baixo da div ("left-ret") -->
-                    &nbsp; Gabriel Moratelli Camargo Gomes | 138.599.289-10 
-                    
-
-                    <div class="buttons-content">
-
-                    <button onclick="Ver()" class="button-read">Visualizar</button>
-
-                    <script>
-
-                    function Ver()
-                    {
-                        window.location.replace("/ver")
-                    }
-
-                    </script>
-
-                    <button onclick="AlterarOc()" class="button-edit">Alterar</button>
-
-                    <script>
-
-                        function AlterarOc()
-                        {
-                            window.location.replace("/alterarOc")
-                        }
-    
-                    </script>
-
-                
-                    </div>
-                </div>
-                <br>
-                <br>
-
-                </div>
-
-                <Br>
-                <Br>
-
-                </div>
-
-                <Br>
-                <Br>
-
-                
-                <div class="gerenciar_ocorrencias">
-
-                    <button onclick="Ocorrencias()" class="see_all">Ver todas as Ocorrências</button>
-
-                    
-
-                    <script>
-
-                        function Ocorrencias()
-                        {
-                            window.location.replace("/ocorrencias")
-                        }
-
-                    </script>
-
-                    <button onclick="NovaOcorrencia()" class="new_register_button">Registrar nova Ocorrência</button>
-
-                    <script>
-
-                        function NovaOcorrencia()
-                        {
-                            window.location.replace("/AddOcorrencia")
-                        }
-
-                    </script>
-
-                </div>
+                {% endfor %}
             </div>
+
+
+            <div class="gerenciar_ocorrencias" style="margin-top: 70px">
+
+                <button onclick="Ocorrencias()" class="see_all">Ver todas as Ocorrências</button>
+
+                
+
+                <script>
+
+                    function Ocorrencias()
+                    {
+                        window.location.replace("/ocorrencias")
+                    }
+
+                </script>
+
+                <button onclick="NovaOcorrencia()" class="new_register_button">Registrar nova Ocorrência</button>
+
+                <script>
+
+                    function NovaOcorrencia()
+                    {
+                        window.location.replace("/AddOcorrencia")
+                    }
+
+                </script>
+
+            </div>
+
         </main>
 
         
