@@ -85,11 +85,15 @@
                             </div>
 
                             <button href="/alterar/{{row.0}}" class="edit_profile" id="alterar" data-toggle="modal" data-target="#modaledit{{row.0}}">Alterar</button>
-
                         {% endfor %}
-
                     </form>
+
+                    <form action="/sair" method="POST">
+                    <button type="submit" class="edit_profile" id="sair">Sair da conta</button>
+                    </form>
+
                 </main>
+
             
         {% endblock %}
         

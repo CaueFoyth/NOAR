@@ -68,6 +68,13 @@ def login():
             mesage = 'Senha ou cpf incorreto'
             return render_template('index.html', message = mesage)
 
+@app.route('/sair', methods = ['POST', 'GET'])
+def sair():
+    if request.method == "POST":
+        session.clear()
+        return redirect(url_for("index"))
+
+
 @app.route('/gerenciar', methods =['GET', 'POST'])
 def gerenciar():
     if 'logado' in session:
@@ -515,8 +522,10 @@ def ver1(id):
             terrec = cursor.fetchall()
             cursor.execute(f"SELECT * FROM divulgarparaimprensa WHERE fk_ocorrencia = {id}")
             divparimp = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM images WHERE fk_ocorrencia = {id}")
+            img = cursor.fetchall()
             cursor.close()
-            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp) 
+            return render_template("formsver.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp, images = img) 
         return redirect(url_for("index"))
     return redirect(url_for("index"))
 
@@ -723,6 +732,8 @@ def alterar2():
             cursor.execute("UPDATE login SET cpf=%s, nome=%s, email=%s, telefone=%s WHERE id_sos=%s", (cpf_alterar, nome_alterar, email_alterar, telefone_alterar, id_alterar))
             mysql.connection.commit()
             return redirect(url_for("perfil"))
+    
+
 @app.route('/alterar', methods = ['POST', 'GET'])
 def alterar():
     if request.method == "POST":
