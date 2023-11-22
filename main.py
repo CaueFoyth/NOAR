@@ -766,7 +766,7 @@ def alteraroco3():
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 
-        cursor.execute(f"UPDATE dadosdavitima SET (fk_sos, data_oco, sexo_vit, nome_vit, idade_vit, cpf_vit, local_oco) VALUES ({session['id_sos']}, '{data}', '{sexo}', '{nome_vit}', '{idade}', '{cpf3}', '{localizacaoDaOcorrencia}')")
+        cursor.execute(f"UPDATE dadosdavitima SET fk_sos = {session['id_sos']}, data_oco = '{data}', sexo_vit = '{sexo}', nome_vit = '{nome_vit}', idade_vit = '{idade}', cpf_vit = '{cpf3}', local_oco ='{localizacaoDaOcorrencia}'")
         mysql.connection.commit()
 
         cursor.execute('SELECT id_ocorrencia FROM dadosdavitima ORDER BY id_ocorrencia DESC LIMIT 1')
@@ -786,11 +786,11 @@ def alteraroco3():
         cursor.execute(f"UPDATE acompanhante SET fk_ocorrencia = '{id_ocorrencia}', fk_sos = {session['id_sos']}, acompanhante = '{acompanhante}', nome_acomp = '{nomeAcompanhante}', idade_acomp = '{idadeAcompanhante}', cpf_acomp = '{cpfAcompanhante}',  sexo_acomp = '{sexoAcompanhante}'") 
         mysql.connection.commit()
 
-        cursor.execute(f"UPDATE tipodeocorrencia SET (fk_ocorrencia = '({id_ocorrencia}', fk_sos = {session['id_sos']}, causado_animais = '{a1}', com_transporte = '{a2}', deslizamento = '{a3}', emergencia_medica = '{a4}', queda_2m = '{a5}', tentativa_suicidio = '{a6}', queda_propria_altura = '{a7}', afogamento = '{a8}', agressao = '{a9}', atropelamento = '{a10}', choque_eletrico = '{a11}', desabamento = '{a12}', domestico = '{a13}', esportivo = '{a14}' ,xicacao = '{a15}', queda_bicicleta = '{a16}', queda_moto = '{a17}', queda_menos2 = '{a18}', trabalho = '{a19}',transferencia = '{a20}'))")
-        mysql.connection.commit()
+        # cursor.execute(f"UPDATE tipodeocorrencia SET (fk_ocorrencia = '({id_ocorrencia}', fk_sos = {session['id_sos']}, causado_animais = '{a1}', com_transporte = '{a2}', deslizamento = '{a3}', emergencia_medica = '{a4}', queda_2m = '{a5}', tentativa_suicidio = '{a6}', queda_propria_altura = '{a7}', afogamento = '{a8}', agressao = '{a9}', atropelamento = '{a10}', choque_eletrico = '{a11}', desabamento = '{a12}', domestico = '{a13}', esportivo = '{a14}' ,xicacao = '{a15}', queda_bicicleta = '{a16}', queda_moto = '{a17}', queda_menos2 = '{a18}', trabalho = '{a19}',transferencia = '{a20}'))")
+        # mysql.connection.commit()
  
-        cursor.execute(f"UPDATE problemasencontrados SET (fk_ocorrencia, fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transporte, problema_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b5}')")
-        mysql.connection.commit()
+        # cursor.execute(f"UPDATE problemasencontrados SET (fk_ocorrencia, fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transporte, problema_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b5}')")
+        # mysql.connection.commit()
  
         # cursor.execute(f"UPDATE sinaismas SET (fk_ocorrencia, fk_sos, abs_r_s, afundamento_cranio, agitacao, amnesia, angina_peito, apineia, bradicardia, bradipneia, bronco_aspirando, cefaleia, cianose, convulsao, decorticacao, deformidade, descerebracao, desmaio, desvio_traqueia, dispneia, dor_local, edema, enfisema_subcutaneo, estase_jugular, face_palida, hemorragia, hipertensao, hipotensao, nausea_vomito, nasoragia, obito, otorreia, otorragia, ovace, parada, priaprismo, prurido_pele, pupilas, sede, sinal_battle, sinal_guaxinim, sudorese, taquipneia, taquicardia, tontura, outros_mas) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{c1}', '{c2}', '{c3}', '{c4}', '{c5}', '{c6}', '{c7}', '{c8}', '{c9}', '{c10}', '{c11a}', '{c12}', '{c13}', '{c14}', '{c15}', '{c16}', '{c17}', '{c18}', '{c19}', '{c20a}', '{c21}', '{c22}', '{c23}', '{c24a}', '{c25}', '{c26}', '{c27}', '{c28}', '{c29}', '{c30}', '{c31}', '{c32}', '{c33a}', '{c34}', '{c35}', '{c36a}', '{c37}', '{c38}', '{c39}', '{c40}', '{c41}', '{c42}', '{c43}', '{c44}')")
         # mysql.connection.commit()
@@ -1213,5 +1213,5 @@ def perfil():
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
-    app.run(debug=False)
+    app.run(debug=True)
 
