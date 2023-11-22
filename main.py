@@ -1211,5 +1211,5 @@ def perfil():
 
 if __name__ == '__main__':
     #Para atualizar automaticamente no localhost coloque debug=True dentro do run
-    app.run(debug=True)
+    app.run(debug=False)
 
