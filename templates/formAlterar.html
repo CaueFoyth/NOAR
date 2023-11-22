@@ -1202,59 +1202,65 @@
         <input type="text" name="k3qtd" id="compressa" placeholder="Quantidade" value="{{row.8}}" {% if row.7 != '': %} style="display: inline-flex;" {% endif %}>
         <br><br>
 
-        <input type="checkbox"  name="k4" id="aparecerkit" onclick="aparecerKit()" value="Sim">Kit's
-        <input type="checkbox"  name="k4a" id="kit" value="Sim"><e id="kit4">H</e>
-        <input type="checkbox"  name="k4b" id="kit1" value="Sim"><e id="kit5">P</e>
-        <input type="checkbox"  name="k4c" id="kit2" value="Sim"><e id="kit6">Q</e>
-        <input type="text" name="k4qtd" id="kit3" placeholder="Quantidade">
-        
+        <input type="checkbox"  name="k4" id="aparecerkit" onclick="aparecerKit()" value="Sim" onclick="aparecerAtadura()" value="Sim" {% if row.9 == 'Sim': %} checked {% endif %}>Kit's
+        <input type="checkbox"  name="k4a" id="kit" value="Sim" {% if row.10 == 'Sim': %} style="display: inline-flex;" checked {% endif %}><e id="kit4" {% if row.9 == 'Sim': %} style="display: inline-flex;" {% endif %}>H</e>
+        <input type="checkbox"  name="k4b" id="kit1" value="Sim" {% if row.11 == 'Sim': %} style="display: inline-flex;" checked {% endif %}><e id="kit5" {% if row.9 == 'Sim': %} style="display: inline-flex;" {% endif %}>P</e>
+        <input type="checkbox"  name="k4c" id="kit2" value="Sim" {% if row.12 == 'Sim': %} style="display: inline-flex;" checked {% endif %}><e id="kit6" {% if row.9 == 'Sim': %} style="display: inline-flex;" {% endif %}>Q</e>
+        <input type="text" name="k4qtd" id="kit3" placeholder="Quantidade" value="{{row.13}}" {% if row.9 == 'Sim': %} style="display: inline-flex;" {% endif %}>
+
         <br><br>
-        <input type="checkbox"  name="k5" id="aparecerluva" onclick="aparecerLuva()" value="Sim">Luvas DESC. (Pares)
-        <input type="text" name="k5qtd" id="luva" placeholder="Quantidade">
+
+        <input type="checkbox"  name="k5" id="aparecerluva" onclick="aparecerLuva()" value="Sim" {% if row.14 == 'Sim': %} style="display: inline-flex;" checked {% endif %}>Luvas DESC. (Pares)
+        <input type="text" name="k5qtd" id="luva" value="{{row.15}}" {% if row.14 == 'Sim': %} style="display: inline-flex;" {% endif %} placeholder="Quantidade">
+
         <br><br>
-        <input type="checkbox"  name="k6" id="aparecermascara" onclick="aparecerMascara()" value="Sim">Máscara DESC.
-        <input type="text" name="k6qtd" id="mascara" placeholder="Quantidade">
+        <input type="checkbox"  name="k6" id="aparecermascara" onclick="aparecerMascara()" value="Sim" 
+        {% if row.16 == 'Sim': %} style="display: inline-flex;" checked {% endif %}>Máscara DESC.
+        <input type="text" name="k6qtd" id="mascara" placeholder="Quantidade" value="{{row.17}}" {% if row.16 == 'Sim': %} style="display: inline-flex;" {% endif %}>
         {% endfor %}
         <!--MATERIAIS UTILIZADOS DEIXADOs NO HOSPITAL-->
         <h2>Materiais Utilizados deixados no hospital</h2>
-        <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim">Base do Estabiliza    
-        <input type="text" name="k7qtd" id="base" placeholder="Quantidade">
+        {% for row in materiaisdeixadoshospital %}
+        <input type="checkbox"  id="aparecerbase" onclick="aparecerBase()" name="k7" value="Sim" {% if row.2 == 'Sim': %} checked {% endif %}>Base do Estabiliza    
+        <input type="text" value="{{row.3}}" style="display: inline-flex;" name="k7qtd" id="base" placeholder="Quantidade">
         <br><br>
-        <input type="checkbox"  name="k8" id="aparecercolar" onclick="aparecerColar()" value="Sim">Colar
-        <input type="checkbox"  name="k8a" id="colar" value="Sim"><e id="colar7">N</e>
-        <input type="checkbox"  name="k8b" id="colar1" value="Sim"><e id="colar8">PP</e>
-        <input type="checkbox"  name="k8c" id="colar2" value="Sim"><e id="colar9">P</e>
-        <input type="checkbox"  name="k8d" id="colar3" value="Sim"><e id="colar10">M</e>
-        <input type="checkbox"  name="k8e" id="colar4" value="Sim"><e id="colar11">G</e>
-        <input type="text" name="k8f" id="colar5" placeholder="Tamanho alternativo">
-        <input type="text" name="k8qtd" id="colar6" placeholder="Quantidade">
+
+        <input type="checkbox" style="display: inline-flex;" name="k8" id="aparecercolar" onclick="aparecerColar()" value="Sim" {% if row.4 == 'Sim': %} checked {% endif %}>Colar
+        <input type="checkbox" style="display: inline-flex;" {% if row.5 == 'Sim': %} checked {% endif %} name="k8a" id="colar" value="Sim"><e id="colar7" style="display: inline-flex;">N</e>
+        <input type="checkbox" style="display: inline-flex;" {% if row.6 == 'Sim': %} checked {% endif %} name="k8b" id="colar1" value="Sim"><e id="colar8" style="display: inline-flex;">PP</e>
+        <input type="checkbox" style="display: inline-flex;" {% if row.7 == 'Sim': %} checked {% endif %} name="k8c" id="colar2" value="Sim"><e id="colar9" style="display: inline-flex;">P</e>
+        <input type="checkbox" style="display: inline-flex;" {% if row.8 == 'Sim': %} checked {% endif %} name="k8d" id="colar3" value="Sim"><e id="colar10" style="display: inline-flex;">M</e>
+        <input type="checkbox" style="display: inline-flex;" {% if row.9 == 'Sim': %} checked {% endif %} name="k8e" id="colar4" value="Sim"><e id="colar11" style="display: inline-flex;">G</e>
+        <input type="text" name="k8f" style="display: inline-flex;" value="{{row.10}}" id="colar5" placeholder="Tamanho alternativo">
+        <input type="text" name="k8qtd" style="display: inline-flex;" value="{{row.11}}" id="colar6" placeholder="Quantidade">
         <br><br>
         <input type="checkbox" id="aparecercoxin" onclick="aparecerCoxin()" name="k9" value="Sim">Coxins Estabiliza
-        <input type="text" name="k9qtd" id="coxin" placeholder="Quantidade">
+        <input type="text" style="display: inline-flex;" name="k9qtd" id="coxin" placeholder="Quantidade">
         <br><br>
-        <input type="checkbox" id="aparecerked" onclick="aparecerKed()" name="k10" value="Sim">KED
-        <input type="checkbox"  name="k10a" id="ked" value="Sim"><e id="ked3">ADUL.</e>
-        <input type="checkbox"  name="k10b" id="ked1" value="Sim"><e id="ked4">INFAN.</e>
-        <input type="text" name="k10qtd" id="ked2" placeholder="Quantidade">
+        <input type="checkbox" style="display: inline-flex;" id="aparecerked" onclick="aparecerKed()" name="k10" value="Sim">KED
+        <input type="checkbox" style="display: inline-flex;" name="k10a" id="ked" value="Sim"><e id="ked3">ADUL.</e>
+        <input type="checkbox" style="display: inline-flex;" name="k10b" id="ked1" value="Sim"><e id="ked4">INFAN.</e>
+        <input type="text" name="k10qtd" style="display: inline-flex;" id="ked2" placeholder="Quantidade">
         <br><br>
-        <input type="checkbox"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rígida
-        <input type="text" name="k11qtd" id="maca" placeholder="Quantidade">
+        <input type="checkbox" style="display: inline-flex;"  name="k11" id="aparecermaca" onclick="aparecerMaca()" value="Sim">Maca Rígida
+        <input type="text" style="display: inline-flex;" name="k11qtd" id="maca" placeholder="Quantidade">
         <br><br>
-        <input type="checkbox" id="aparecerttf" onclick="aparecerTtf()" name="k12" value="Sim">T.T.F
-        <input type="checkbox" id="ttf" name="k12a" value="Sim"><e id="ttf3">ADUL.</e>
-        <input type="checkbox" id="ttf1" name="k12b" value="Sim"><e id="ttf4">INFAN.</e>
-        <input type="text" id="ttf2" name="k12qtd" placeholder="Quantidade">
+        <input type="checkbox" style="display: inline-flex;" id="aparecerttf" onclick="aparecerTtf()" name="k12" value="Sim">T.T.F
+        <input type="checkbox" style="display: inline-flex;" id="ttf" name="k12a" value="Sim"><e id="ttf3">ADUL.</e>
+        <input type="checkbox" style="display: inline-flex;" id="ttf1" name="k12b" value="Sim"><e id="ttf4">INFAN.</e>
+        <input type="text" id="ttf2" style="display: inline-flex;" name="k12qtd" placeholder="Quantidade">
         <br><br>
         <input type="checkbox"  name="k13" id="apareceraranha" onclick="aparecerAranha()" value="Sim">Tirante Aranha
-        <input type="text" name="k13qtd" id="aranha" placeholder="Quantidade">
+        <input type="text" style="display: inline-flex;" name="k13qtd" id="aranha" placeholder="Quantidade">
         <br><br>
-        <input type="checkbox"  name="k14" id="aparecercabeca" onclick="aparecerCabeca()" value="Sim">Tirante de Cabeça
-        <input type="text" name="k14qtd" id="cabeca" placeholder="Quantidade">
+        <input type="checkbox" style="display: inline-flex;" name="k14" id="aparecercabeca" onclick="aparecerCabeca()" value="Sim">Tirante de Cabeça
+        <input type="text" style="display: inline-flex;" name="k14qtd" id="cabeca" placeholder="Quantidade">
         <br><br>
         <input type="checkbox" id="aparecercanula" onclick="aparecerCanula()" name="k15" value="Sim">Cânula
         <br>
-        <input type="text" name="k15qtd" id="canula" placeholder="Quantidade">
+        <input type="text" style="display: inline-flex;" name="k15qtd" id="canula" placeholder="Quantidade">
         <br>
+        {% endfor %}
         <!--ANAMNESE DA EMERGÊNCIA MÉDICA-->
         <h2>Anamnese da Emergência Médica</h2>
         <input type="text" name="l1" placeholder="O que aconteceu (Sinais e Sintomas)">
@@ -1405,10 +1411,12 @@
         <input type="radio"  name="q1" value="nao">
         <label for="nao">nao</label>
         <br>
-        <label>Insira a imagens da ocorrência: </label>
+        <!-- <label>Insira a imagens da ocorrência: </label>
         <br>
-        <input type="file" name="files[]" id="fileInput" multiple >
-        <br>
+        {% for row in images %}
+        <input type="file" name="files[]" id="fileInput" value="{{row.2}}">
+        {% endfor %}
+        <br> -->
         <button type="submit">ENVIAR</button>
     </form>
     {% endblock %}   

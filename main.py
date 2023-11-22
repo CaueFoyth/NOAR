@@ -601,8 +601,10 @@ def alterarOc(id):
             terrec = cursor.fetchall()
             cursor.execute(f"SELECT * FROM divulgarparaimprensa WHERE fk_ocorrencia = {id}")
             divparimp = cursor.fetchall()
+            cursor.execute(f"SELECT * FROM images WHERE fk_ocorrencia = {id}")
+            img = cursor.fetchall()
             cursor.close()
-            return render_template("formAlterar.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp)
+            return render_template("formAlterar.html", dadosdavitima = data, acompanhante = acomp, tipodeocorrencia = tip, problemasencontrados = prob, sinaissintomas = sint, avaliacaopaciente = avali, corpo = corpo, queimadura = quei, sinaisvitais = vit, formadecondução = cond, vitimaera = era, decisaotransporte = deci, equipeatendimento = atend, objetos = obj, informaçõesocorrência = infoco, procedimentosefetuados = proefe, materiaisdescartável = matdesc, materiaisdeixadoshospital = matdeihos, anamneseemergência = anaeme, anamnesegestacional = anages, avaliacaocinematica = avacin, observacoesimportantes = obsimp, termoderecusa = terrec, divulgarparaimprensa = divparimp, images = img)
         return redirect(url_for("index"))  
     return redirect(url_for("index"))    
 
