@@ -724,9 +724,11 @@ def AddOcorrencia   ():
 @app.route('/mainpage', methods=["POST" , "GET"])
 def mainpage():
     if 'logado' in session:
-        if session['adm'] == 1:
-            return render_template("mainpage.html")
-        return redirect(url_for("index"))
+                cursor = mysql.connection.cursor()
+                cursor.execute(f"SELECT * FROM dadosdavitima WHERE fk_sos = {session['id_sos']} LIMIT 3")
+                data = cursor.fetchall()
+                cursor.close()
+                return render_template("mainpage.html", dadosdavitima = data)
     return redirect(url_for("index"))
 
 @app.route('/perfil', methods=["POST" , "GET"])
