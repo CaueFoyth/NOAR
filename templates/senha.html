@@ -35,11 +35,20 @@
                  <p class="errado"> {{ errado }}</p>
             {% endif %}
 
-            <button type="submit" class="button" style="width: 25%; height: 50px;" > Confirmar </button>
+            <a type="submit" class="button" style="width: 25%; height: 50px;" > Confirmar </a>
         </form>
     </center>
+
+    <a href="/erro">.</a>
+    
 </body>
 <script>
+
+function sexo()
+  {
+    window.location.replace("erro.html")
+  }
+
     function ValidarCPF()
     {
         //ACESSE O SITE regex101.com
