@@ -1084,13 +1084,11 @@ def deletarOc(id):
 @app.route('/ocorrencias', methods = ['POST', 'GET'])
 def ocorrencias():
     if 'logado' in session:
-        if session['adm'] == 1:
             cursor = mysql.connection.cursor()
             cursor.execute("SELECT * FROM ocorrencias")
             data = cursor.fetchall()
             cursor.close()
             return render_template("ocorrencias.html", ocorrencias = data)
-        return redirect(url_for("index"))
     return redirect(url_for("index"))
 
 @app.route('/ocorrenciasADM', methods = ['POST', 'GET'])
@@ -1185,9 +1183,7 @@ def confirmpage():
 @app.route('/AddOcorrencia', methods=["POST" , "GET"])
 def AddOcorrencia   ():
     if 'logado' in session:
-        if session['adm'] == 1:
             return render_template("forms.html")
-        return redirect(url_for("index"))
     return redirect(url_for("index"))
 
 @app.route('/mainpage', methods=["POST" , "GET"])
