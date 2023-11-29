@@ -13,12 +13,13 @@
   height: 60vh;
   display: flex;
   position: absolute;
-  top: 75px;
-  right: 500px;
+  top: 200px;
+  right: 800px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  padding-top: 13px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3019607843);
   background-color: #Ffffff;
 }

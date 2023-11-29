@@ -45,12 +45,6 @@ main input::placeholder {
   font-size: 20px;
 }
 
-.sexo
-{
-    width: 5px;
-    height: 5px;
-}
-
 .glass {
   background: rgba(105, 99, 99, 0.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1019607843);
