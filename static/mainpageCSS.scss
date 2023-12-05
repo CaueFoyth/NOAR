@@ -258,7 +258,10 @@ body
       font-size: 10px;
     }
     .new_register_button{
-      height: 50px;
+      font-size: 9px;
+    }
+    .see_all{
+      font-size: 9px;
     }
   }
 
@@ -269,7 +272,6 @@ body
     margin: 0;
     height: 50px;
     color: $secundaria;
-    font-size: 15px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -298,7 +300,6 @@ body
     margin: 0;
     width: 40%;
     color: $secundaria;
-    font-size: 15px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
