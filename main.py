@@ -472,6 +472,7 @@ def enviar():
 @app.route('/alteraroco3', methods =['GET', 'POST'])
 def alteraroco3():
     if request.method == "POST":
+        id_oco2 = request.form.get('id', 'Não')
         data = request.form.get('data', 'Não')
         sexo = request.form.get('sexo', 'Não')
         nome_vit = request.form.get('nome', 'Não')
@@ -766,12 +767,12 @@ def alteraroco3():
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 
-        cursor.execute(f"UPDATE dadosdavitima SET fk_sos = {session['id_sos']}, data_oco = '{data}', sexo_vit = '{sexo}', nome_vit = '{nome_vit}', idade_vit = '{idade}', cpf_vit = '{cpf3}', local_oco ='{localizacaoDaOcorrencia}'")
+        cursor.execute(f"UPDATE dadosdavitima SET fk_sos = {session['id_sos']}, data_oco = '{data}', sexo_vit = '{sexo}', nome_vit = '{nome_vit}', idade_vit = '{idade}', cpf_vit = '{cpf3}', local_oco ='{localizacaoDaOcorrencia}' WHERE id_ocorrencia = {id_oco2}")
         mysql.connection.commit()
 
-        cursor.execute('SELECT id_ocorrencia FROM dadosdavitima ORDER BY id_ocorrencia DESC LIMIT 1')
-        oco = cursor.fetchone()
-        id_ocorrencia = oco['id_ocorrencia']
+        # cursor.execute('SELECT id_ocorrencia FROM dadosdavitima ORDER BY id_ocorrencia DESC LIMIT 1')
+        # oco = cursor.fetchone()
+        # id_ocorrencia = oco['id_ocorrencia']
     
         files = request.files.getlist('files[]')
         #print(files)
@@ -779,11 +780,11 @@ def alteraroco3():
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                cursor.execute(f"UPDATE images SET (fk_ocorrencia, fk_sos, file_name) VALUES ({id_ocorrencia} ,{session['id_sos']} ,'{filename}')")
+                cursor.execute(f"UPDATE images SET (fk_sos, file_name) VALUES ({session['id_sos']} ,'{filename}') WHERE id_ocorrencia = {id_oco2}")
                 mysql.connection.commit()
             print(file)
 
-        cursor.execute(f"UPDATE acompanhante SET fk_ocorrencia = '{id_ocorrencia}', fk_sos = {session['id_sos']}, acompanhante = '{acompanhante}', nome_acomp = '{nomeAcompanhante}', idade_acomp = '{idadeAcompanhante}', cpf_acomp = '{cpfAcompanhante}',  sexo_acomp = '{sexoAcompanhante}'") 
+        cursor.execute(f"UPDATE acompanhante SET fk_sos = {session['id_sos']}, acompanhante = '{acompanhante}', nome_acomp = '{nomeAcompanhante}', idade_acomp = '{idadeAcompanhante}', cpf_acomp = '{cpfAcompanhante}',  sexo_acomp = '{sexoAcompanhante}' WHERE id_ocorrencia = {id_oco2}") 
         mysql.connection.commit()
 
         # cursor.execute(f"UPDATE tipodeocorrencia SET (fk_ocorrencia = '({id_ocorrencia}', fk_sos = {session['id_sos']}, causado_animais = '{a1}', com_transporte = '{a2}', deslizamento = '{a3}', emergencia_medica = '{a4}', queda_2m = '{a5}', tentativa_suicidio = '{a6}', queda_propria_altura = '{a7}', afogamento = '{a8}', agressao = '{a9}', atropelamento = '{a10}', choque_eletrico = '{a11}', desabamento = '{a12}', domestico = '{a13}', esportivo = '{a14}' ,xicacao = '{a15}', queda_bicicleta = '{a16}', queda_moto = '{a17}', queda_menos2 = '{a18}', trabalho = '{a19}',transferencia = '{a20}'))")

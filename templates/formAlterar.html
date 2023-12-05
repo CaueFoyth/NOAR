@@ -11,15 +11,16 @@
 </head>
 <body>
     {% block body %}
+    {% for row in dadosdavitima %}
     <form action="/alteraroco3" enctype="multipart/form-data" method="POST"> 
         <!--DADOS DA VÍTIMA-->
         
-        {% for row in dadosdavitima %}
+        
         <h1>Ocorrência {{row.2}}</h1>
         <h2>Dados da vítima</h2>
+        <input type="number" name="id" value="{{row.0}}" hidden>
         <input type="date" id="data" name="data" value="{{row.2}}" required>
         <br><br>
-
         {% if row.4 == 'Não': %}
         <input type="radio" name="sexo" value="Masculino">
         <label for="sexo-m">Masculino</label><br>
