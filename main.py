@@ -1086,10 +1086,10 @@ def deletarOc(id):
 def ocorrencias():
     if 'logado' in session:
             cursor = mysql.connection.cursor()
-            cursor.execute("SELECT * FROM ocorrencias")
+            cursor.execute("SELECT * FROM dadosdavitima")
             data = cursor.fetchall()
             cursor.close()
-            return render_template("ocorrencias.html", ocorrencias = data)
+            return render_template("ocorrencias.html", dadosdavitima = data)
     return redirect(url_for("index"))
 
 @app.route('/ocorrenciasADM', methods = ['POST', 'GET'])
