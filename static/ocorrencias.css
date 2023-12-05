@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  border: 0;
   overflow: hidden;
 }
 
@@ -14,8 +15,7 @@ body {
   width: 100%;
   border-radius: 0px 0px 15px 15px;
   color: #Ffffff;
-  margin-bottom: 20px;
-  height: 10%;
+  height: 14%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,6 @@ body {
   line-height: normal;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  margin-right: 1350px;
 }
 
 .logo {
@@ -44,7 +43,9 @@ body {
 
 .background {
   width: 100%;
-  height: 95vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -54,6 +55,9 @@ body {
   backdrop-filter: blur(9.8px);
   -webkit-backdrop-filter: blur(9.8px);
   border: 1px solid rgba(51, 51, 141, 0.3019607843);
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
 }
 
 .user {
@@ -66,7 +70,7 @@ body {
 }
 
 .seta {
-  position: abs olute;
+  position: absolute;
   right: 1300px;
   width: -moz-fit-content;
   width: fit-content;
@@ -93,6 +97,7 @@ body {
   align-items: center;
   flex-direction: column;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5568627451);
+  margin-bottom: 20px;
 }
 
 .content {

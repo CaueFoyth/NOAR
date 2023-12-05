@@ -20,7 +20,6 @@
     background-size: cover;
     background-image: url(/static/img/fundo1.jpg);
   }
-
   h1
   {
     color: #33338d;
@@ -190,35 +189,11 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  @media (max-width: 1000px) 
-  {
-    
-  }
 
-  @media (max-width: 950px) 
+  @media (max-width: 400px) 
   {
-    .meio {
-      width: 55%;
-    }
-  }
-
-  @media (max-width: 520px) 
-  {
-    .meio {
-      width: 85%;
-    }
-  }
-
-  @media (max-width: 350px) 
-  {
-    .meio {
-      width: 90%;
-    }
-  }
-
-  @media (max-width: 280px) 
-  {
-    .meio {
-      width: 90%;
+    .mainpagedirect {
+      width: 95%;
+      font-size: 1.5rem;
     }
   }
