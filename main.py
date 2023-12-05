@@ -784,11 +784,11 @@ def alteraroco3():
                 mysql.connection.commit()
             print(file)
 
-        cursor.execute(f"UPDATE acompanhante SET fk_sos = {session['id_sos']}, acompanhante = '{acompanhante}', nome_acomp = '{nomeAcompanhante}', idade_acomp = '{idadeAcompanhante}', cpf_acomp = '{cpfAcompanhante}',  sexo_acomp = '{sexoAcompanhante}' WHERE id_ocorrencia = {id_oco2}") 
+        cursor.execute(f"UPDATE acompanhante SET fk_sos = {session['id_sos']}, acompanhante = '{acompanhante}', nome_acomp = '{nomeAcompanhante}', idade_acomp = '{idadeAcompanhante}', cpf_acomp = '{cpfAcompanhante}',  sexo_acomp = '{sexoAcompanhante}' WHERE fk_ocorrencia = {id_oco2}") 
         mysql.connection.commit()
 
-        # cursor.execute(f"UPDATE tipodeocorrencia SET (fk_ocorrencia = '({id_ocorrencia}', fk_sos = {session['id_sos']}, causado_animais = '{a1}', com_transporte = '{a2}', deslizamento = '{a3}', emergencia_medica = '{a4}', queda_2m = '{a5}', tentativa_suicidio = '{a6}', queda_propria_altura = '{a7}', afogamento = '{a8}', agressao = '{a9}', atropelamento = '{a10}', choque_eletrico = '{a11}', desabamento = '{a12}', domestico = '{a13}', esportivo = '{a14}' ,xicacao = '{a15}', queda_bicicleta = '{a16}', queda_moto = '{a17}', queda_menos2 = '{a18}', trabalho = '{a19}',transferencia = '{a20}'))")
-        # mysql.connection.commit()
+        cursor.execute(f"UPDATE tipodeocorrencia SET fk_sos = {session['id_sos']}, causado_animais = '{a1}', com_transporte = '{a2}', deslizamento = '{a3}', emergencia_medica = '{a4}', queda_2m = '{a5}', tentativa_suicidio = '{a6}', queda_propria_altura = '{a7}', afogamento = '{a8}', agressao = '{a9}', atropelamento = '{a10}', choque_eletrico = '{a11}', desabamento = '{a12}', domestico = '{a13}', esportivo = '{a14}' ,intoxicacao = '{a15}', queda_bicicleta = '{a16}', queda_moto = '{a17}', queda_menos2 = '{a18}', trabalho = '{a19}',transferencia = '{a20}' WHERE fk_ocorrencia = {id_oco2}")
+        mysql.connection.commit()
  
         # cursor.execute(f"UPDATE problemasencontrados SET (fk_ocorrencia, fk_sos, respiratorio, diabetes, obstetrico, parto_emergencial, gestante, hemo_excessiva, transporte, problema_outros) VALUES ({id_ocorrencia} ,{session['id_sos']}, '{b1a}', '{b2a}', '{b3}', '{b3a}', '{b3b}', '{b3c}', '{b4a}', '{b5}')")
         # mysql.connection.commit()
