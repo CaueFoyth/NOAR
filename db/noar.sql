@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/11/2023 às 03:44
+-- Tempo de geração: 05-Dez-2023 às 12:18
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `acompanhante`
+-- Estrutura da tabela `acompanhante`
 --
 
 CREATE TABLE `acompanhante` (
@@ -37,10 +37,18 @@ CREATE TABLE `acompanhante` (
   `sexo_acomp` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `acompanhante`
+--
+
+INSERT INTO `acompanhante` (`fk_ocorrencia`, `fk_sos`, `acompanhante`, `nome_acomp`, `idade_acomp`, `cpf_acomp`, `sexo_acomp`) VALUES
+(1, 1, 'nao', '', 0, '', 'Não'),
+(2, 1, 'sim', 'Jonatas Rombas', 22, '152.623.957-12', 'Masculino');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamneseemergência`
+-- Estrutura da tabela `anamneseemergência`
 --
 
 CREATE TABLE `anamneseemergência` (
@@ -57,10 +65,18 @@ CREATE TABLE `anamneseemergência` (
   `alimento_horas` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `anamneseemergência`
+--
+
+INSERT INTO `anamneseemergência` (`fk_ocorrencia`, `fk_sos`, `anamnese_emergencia`, `aconteceu_outra_vez`, `aconteceu_tempo`, `possui_problema`, `qual_problema`, `alergico_algo`, `alergico_oque`, `alimento_liquido`, `alimento_horas`) VALUES
+(1, 1, '', 'Não', '', 'Não', '', 'Não', '', 'Não', ''),
+(2, 1, '', 'Não', '', 'Não', '', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnesegestacional`
+-- Estrutura da tabela `anamnesegestacional`
 --
 
 CREATE TABLE `anamnesegestacional` (
@@ -83,10 +99,18 @@ CREATE TABLE `anamnesegestacional` (
   `nome_bebe` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `anamnesegestacional`
+--
+
+INSERT INTO `anamnesegestacional` (`fk_ocorrencia`, `fk_sos`, `anamnese_gestacional`, `pre_natal`, `nome_pre_natal`, `primeiro_filho`, `quantos_filhos`, `horas_contracao`, `duracao_contracao`, `intervalo_contracao`, `pressao_quadril`, `ruptura_bolsa`, `inspecao_visusal`, `parto_realizado`, `hora_nascimento`, `sexo_bebe`, `nome_bebe`) VALUES
+(1, 1, '', 'Não', '', 'Não', '', '', '', '', 'Não', 'Não', 'Não', 'Não', '', 'Não', ''),
+(2, 1, '', 'Não', '', 'Não', '', '', '', '', 'Não', 'Não', 'Não', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacaocinematica`
+-- Estrutura da tabela `avaliacaocinematica`
 --
 
 CREATE TABLE `avaliacaocinematica` (
@@ -101,10 +125,18 @@ CREATE TABLE `avaliacaocinematica` (
   `volante_torcido` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `avaliacaocinematica`
+--
+
+INSERT INTO `avaliacaocinematica` (`fk_ocorrencia`, `fk_sos`, `disturbio_comport`, `encontrado_capacete`, `encontrado_cinto`, `para_brisa`, `caminhando_cena`, `painel_avariado`, `volante_torcido`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(2, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacaopaciente`
+-- Estrutura da tabela `avaliacaopaciente`
 --
 
 CREATE TABLE `avaliacaopaciente` (
@@ -118,10 +150,18 @@ CREATE TABLE `avaliacaopaciente` (
   `resposta_motora_menor` varchar(23) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `avaliacaopaciente`
+--
+
+INSERT INTO `avaliacaopaciente` (`fk_ocorrencia`, `fk_sos`, `abertura_ocular`, `resposta_verbal`, `resposta_motora`, `abertura_ocular_menor`, `resposta_verbal_menor`, `resposta_motora_menor`) VALUES
+(1, 1, 'Comando_Verbal', 'confuso', 'Movimento_de_Retirada', 'Não', 'Não', 'Não'),
+(2, 1, 'Espontanea', 'Orientado', 'Obedece_Comandos', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `corpo`
+-- Estrutura da tabela `corpo`
 --
 
 CREATE TABLE `corpo` (
@@ -134,10 +174,18 @@ CREATE TABLE `corpo` (
   `tipo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `corpo`
+--
+
+INSERT INTO `corpo` (`fk_ocorrencia`, `fk_sos`, `AdultoOuCrianca`, `FrenteOuCostas`, `local`, `lado`, `tipo`) VALUES
+(1, 1, 'Adulto', 'Frente', 'Braço', 'Esquerdo', 'Fratura exposta'),
+(2, 1, 'Não', '', '', '', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dadosdavitima`
+-- Estrutura da tabela `dadosdavitima`
 --
 
 CREATE TABLE `dadosdavitima` (
@@ -151,10 +199,18 @@ CREATE TABLE `dadosdavitima` (
   `local_oco` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `dadosdavitima`
+--
+
+INSERT INTO `dadosdavitima` (`id_ocorrencia`, `fk_sos`, `data_oco`, `nome_vit`, `sexo_vit`, `idade_vit`, `cpf_vit`, `local_oco`) VALUES
+(1, 1, '2023-12-14', 'Pedro Augusto Portele', 'Masculino', 28, '', 'Rua Alfredo Wagner'),
+(2, 1, '2023-12-01', 'Edenise Berenice Mayer', 'Masculino', 48, '', 'Rua Egon Tanner 180');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisaotransporte`
+-- Estrutura da tabela `decisaotransporte`
 --
 
 CREATE TABLE `decisaotransporte` (
@@ -163,10 +219,18 @@ CREATE TABLE `decisaotransporte` (
   `decisao_transporte` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `decisaotransporte`
+--
+
+INSERT INTO `decisaotransporte` (`fk_ocorrencia`, `fk_sos`, `decisao_transporte`) VALUES
+(1, 1, 'Potencialmente_Instavel'),
+(2, 1, 'Potencialmente_Instavel');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `divulgarparaimprensa`
+-- Estrutura da tabela `divulgarparaimprensa`
 --
 
 CREATE TABLE `divulgarparaimprensa` (
@@ -175,10 +239,18 @@ CREATE TABLE `divulgarparaimprensa` (
   `divulgar_imprensa` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `divulgarparaimprensa`
+--
+
+INSERT INTO `divulgarparaimprensa` (`fk_ocorrencia`, `fk_sos`, `divulgar_imprensa`) VALUES
+(1, 1, 'sim'),
+(2, 1, 'sim');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `equipeatendimento`
+-- Estrutura da tabela `equipeatendimento`
 --
 
 CREATE TABLE `equipeatendimento` (
@@ -192,10 +264,18 @@ CREATE TABLE `equipeatendimento` (
   `demandante` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `equipeatendimento`
+--
+
+INSERT INTO `equipeatendimento` (`fk_ocorrencia`, `fk_sos`, `m`, `s1`, `s2`, `s3`, `equipe`, `demandante`) VALUES
+(1, 1, 'Jonatas Felipe', 'Georges Marchi', 'Rosemar Pereira', 'Anita Camargo', '32', 'Maicol Peterson'),
+(2, 1, 'Lucas', 'Jorge', 'Kaua', 'Otavio', 'Maicol', 'Peterson');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `formadecondução`
+-- Estrutura da tabela `formadecondução`
 --
 
 CREATE TABLE `formadecondução` (
@@ -204,10 +284,18 @@ CREATE TABLE `formadecondução` (
   `forma_conducao` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `formadecondução`
+--
+
+INSERT INTO `formadecondução` (`fk_ocorrencia`, `fk_sos`, `forma_conducao`) VALUES
+(1, 1, 'Deitada  '),
+(2, 1, 'Deitada  ');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `images`
+-- Estrutura da tabela `images`
 --
 
 CREATE TABLE `images` (
@@ -216,10 +304,18 @@ CREATE TABLE `images` (
   `file_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Extraindo dados da tabela `images`
+--
+
+INSERT INTO `images` (`fk_ocorrencia`, `fk_sos`, `file_name`) VALUES
+(1, 1, 'acidente-cafe-filho-3_1.jpeg'),
+(2, 1, 'download.jpeg');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `informaçõesocorrência`
+-- Estrutura da tabela `informaçõesocorrência`
 --
 
 CREATE TABLE `informaçõesocorrência` (
@@ -235,10 +331,18 @@ CREATE TABLE `informaçõesocorrência` (
   `cod_sias_sus` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `informaçõesocorrência`
+--
+
+INSERT INTO `informaçõesocorrência` (`fk_ocorrencia`, `fk_sos`, `n_usb`, `cod_ir`, `n_ocorrencia`, `cod_ps`, `desp`, `hch`, `km_final`, `cod_sias_sus`) VALUES
+(1, 1, '12', '13', '2', '42', '13b5', '5ft2', '62', '180'),
+(2, 1, '46', '57456', '456435', '34523', '123', '123', '45', '123');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `login`
+-- Estrutura da tabela `login`
 --
 
 CREATE TABLE `login` (
@@ -253,7 +357,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `login`
+-- Extraindo dados da tabela `login`
 --
 
 INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone`, `perfil`) VALUES
@@ -263,7 +367,7 @@ INSERT INTO `login` (`id_sos`, `cpf`, `senha`, `adm`, `nome`, `email`, `telefone
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `materiaisdeixadoshospital`
+-- Estrutura da tabela `materiaisdeixadoshospital`
 --
 
 CREATE TABLE `materiaisdeixadoshospital` (
@@ -299,10 +403,18 @@ CREATE TABLE `materiaisdeixadoshospital` (
   `canula_qtd` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `materiaisdeixadoshospital`
+--
+
+INSERT INTO `materiaisdeixadoshospital` (`fk_ocorrencia`, `fk_sos`, `base_estabilizada`, `base_qtd`, `colar`, `colar_n`, `colar_pp`, `colar_p`, `colar_m`, `colar_g`, `colar_outros`, `colar_qtd`, `coxins`, `coxins_qtd`, `ked`, `ked_adul`, `ked_infan`, `ked_qtd`, `maca_rigida_deixada`, `maca_qtd`, `ttf`, `ttf_adul`, `ttf_infan`, `ttf_qtd`, `tirante_aranha`, `tirante_aqtd`, `tirante_cabeca`, `tirante_cqtd`, `canula`, `canula_qtd`) VALUES
+(1, 1, 'Não', '', 'Sim', 'Não', 'Não', 'Não', 'Sim', 'Não', '', '1', 'Não', '', 'Não', 'Não', 'Não', '', 'Sim', '1', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '', 'Não', ''),
+(2, 1, 'Não', '', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', '', 'Não', '', 'Não', 'Não', 'Não', '', 'Sim', '1', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `materiaisdescartável`
+-- Estrutura da tabela `materiaisdescartável`
 --
 
 CREATE TABLE `materiaisdescartável` (
@@ -328,10 +440,18 @@ CREATE TABLE `materiaisdescartável` (
   `mascara_qtd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `materiaisdescartável`
+--
+
+INSERT INTO `materiaisdescartável` (`fk_ocorrencia`, `fk_sos`, `atadura`, `atadura_oito`, `atadura_doze`, `atadura_vinte`, `atadura_qtd`, `cateter`, `cateter_qtd`, `compressa`, `compressa_qtd`, `kits`, `kits_h`, `kits_p`, `kits_q`, `kits_qtd`, `luvas`, `luvas_qtd`, `mascara`, `mascara_qtd`) VALUES
+(1, 1, 'Sim', 'Sim', 'Não', 'Não', '2', 'Não', '', 'Sim', '2', 'Não', 'Não', 'Não', 'Não', '', 'Sim', '3', 'Sim', '2'),
+(2, 1, 'Não', 'Não', 'Não', 'Não', '', 'Não', '', 'Não', '', 'Não', 'Não', 'Não', 'Não', '', 'Sim', '4', 'Sim', '4');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos`
+-- Estrutura da tabela `objetos`
 --
 
 CREATE TABLE `objetos` (
@@ -340,10 +460,18 @@ CREATE TABLE `objetos` (
   `obj` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `objetos`
+--
+
+INSERT INTO `objetos` (`fk_ocorrencia`, `fk_sos`, `obj`) VALUES
+(1, 1, 'Celular da vítima, identidade de testemunha.'),
+(2, 1, '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `observacoesimportantes`
+-- Estrutura da tabela `observacoesimportantes`
 --
 
 CREATE TABLE `observacoesimportantes` (
@@ -352,10 +480,18 @@ CREATE TABLE `observacoesimportantes` (
   `observacao_importante` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `observacoesimportantes`
+--
+
+INSERT INTO `observacoesimportantes` (`fk_ocorrencia`, `fk_sos`, `observacao_importante`) VALUES
+(1, 1, ''),
+(2, 1, '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `problemasencontrados`
+-- Estrutura da tabela `problemasencontrados`
 --
 
 CREATE TABLE `problemasencontrados` (
@@ -371,10 +507,18 @@ CREATE TABLE `problemasencontrados` (
   `problema_outros` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `problemasencontrados`
+--
+
+INSERT INTO `problemasencontrados` (`fk_ocorrencia`, `fk_sos`, `respiratorio`, `diabetes`, `obstetrico`, `parto_emergencial`, `gestante`, `hemo_excessiva`, `transporte`, `problema_outros`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', ''),
+(2, 1, 'inalação de fumaça', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `procedimentosefetuados`
+-- Estrutura da tabela `procedimentosefetuados`
 --
 
 CREATE TABLE `procedimentosefetuados` (
@@ -430,10 +574,18 @@ CREATE TABLE `procedimentosefetuados` (
   `procedimentos_outros` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `procedimentosefetuados`
+--
+
+INSERT INTO `procedimentosefetuados` (`fk_ocorrencia`, `fk_sos`, `aspiracao`, `avaliacao_inicial`, `avaliacao_dirigida`, `avaliacao_continuada`, `chave_rautek`, `candula_guedel`, `desobstracao_va`, `emprego_dea`, `gerenciamento_riscos`, `limpeza_ferimentos`, `curativos`, `compressivo`, `encravamento`, `ocular`, `queimadura`, `simples`, `tres_pontas`, `imobilizacoes`, `membro_inf_dir`, `membro_inf_esq`, `membro_sup_dir`, `membro_sup_esq`, `quadril`, `cervical`, `maca_rodas`, `maca_rigida`, `ponte`, `retirado_capacete`, `rcp`, `rolamento_noventa`, `rolamento_cento_oitenta`, `tomada_decisao`, `tomada_choque`, `uso_candula`, `colar_tamanho`, `uso_ked`, `uso_ttf`, `ventilacao_suporte`, `oxigenioterapia`, `reanimador`, `meios_auxiliares`, `celesc`, `def_civil`, `igp_pc`, `policia`, `samu`, `cit`, `procedimentos_outros`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Sim', 'Sim', 'Não', 'Não', 'Sim', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'M', 'Não', 'Não', 'Não', '', '', 'Não', 'Não', 'Não', 'Não', 'Civil', 'USA', 'Não', ''),
+(2, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '', 'Não', 'Não', 'Não', '', '', 'Não', 'Não', 'Não', 'Não', 'Civil', 'USA', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `queimadura`
+-- Estrutura da tabela `queimadura`
 --
 
 CREATE TABLE `queimadura` (
@@ -450,10 +602,18 @@ CREATE TABLE `queimadura` (
   `mse` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `queimadura`
+--
+
+INSERT INTO `queimadura` (`fk_ocorrencia`, `fk_sos`, `cabeca`, `pescoco`, `tante`, `tpost`, `genital`, `mid`, `mie`, `msd`, `mse`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(2, 1, '1°Grau', '1°Grau', '1°Grau', '1°Grau', '1°Grau', '3°Grau', '2°Grau', '3°Grau', '2°Grau');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinaissintomas`
+-- Estrutura da tabela `sinaissintomas`
 --
 
 CREATE TABLE `sinaissintomas` (
@@ -505,10 +665,18 @@ CREATE TABLE `sinaissintomas` (
   `outros_sintomas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `sinaissintomas`
+--
+
+INSERT INTO `sinaissintomas` (`fk_ocorrencia`, `fk_sos`, `abs_r_s`, `afundamento_cranio`, `agitacao`, `amnesia`, `angina_peito`, `apineia`, `bradicardia`, `bradipneia`, `bronco_aspirando`, `cefaleia`, `cianose`, `convulsao`, `decorticacao`, `deformidade`, `descerebracao`, `desmaio`, `desvio_traqueia`, `dispneia`, `dor_local`, `edema`, `enfisema_subcutaneo`, `estase_jugular`, `face_palida`, `hemorragia`, `hipertensao`, `hipotensao`, `nausea_vomito`, `nasoragia`, `obito`, `otorreia`, `otorragia`, `ovace`, `parada`, `priaprismo`, `prurido_pele`, `pupilas`, `sede`, `sinal_battle`, `sinal_guaxinim`, `sudorese`, `taquipneia`, `taquicardia`, `tontura`, `outros_sintomas`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Respiratória', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', ''),
+(2, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinaisvitais`
+-- Estrutura da tabela `sinaisvitais`
 --
 
 CREATE TABLE `sinaisvitais` (
@@ -523,10 +691,18 @@ CREATE TABLE `sinaisvitais` (
   `perfusao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `sinaisvitais`
+--
+
+INSERT INTO `sinaisvitais` (`fk_ocorrencia`, `fk_sos`, `pressao_arterial`, `normal_anormal`, `pulso`, `respiracao`, `saturacao`, `temperatura`, `perfusao`) VALUES
+(1, 1, '/', 'Não', '', '', '', '', 'Não'),
+(2, 1, '/', 'Não', '', '', '', '', 'Não');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `termoderecusa`
+-- Estrutura da tabela `termoderecusa`
 --
 
 CREATE TABLE `termoderecusa` (
@@ -545,10 +721,18 @@ CREATE TABLE `termoderecusa` (
   `guaramirim_ano` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `termoderecusa`
+--
+
+INSERT INTO `termoderecusa` (`fk_ocorrencia`, `fk_sos`, `eu_nome`, `rg_numero`, `cpf_numero`, `assinatura`, `testemunha`, `doc`, `testemunha_dois`, `doc_dois`, `guaramirim_dia`, `guaramirim_mes`, `guaramirim_ano`) VALUES
+(1, 1, '', '', '', '', '', '', '', '', '01', '12', '2023'),
+(2, 1, '', '', '', '', '', '', '', '', '02', '12', '2023');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipodeocorrencia`
+-- Estrutura da tabela `tipodeocorrencia`
 --
 
 CREATE TABLE `tipodeocorrencia` (
@@ -576,10 +760,18 @@ CREATE TABLE `tipodeocorrencia` (
   `transferencia` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `tipodeocorrencia`
+--
+
+INSERT INTO `tipodeocorrencia` (`fk_ocorrencia`, `fk_sos`, `causado_animais`, `com_transporte`, `deslizamento`, `emergencia_medica`, `queda_2m`, `tentativa_suicidio`, `queda_propria_altura`, `afogamento`, `agressao`, `atropelamento`, `choque_eletrico`, `desabamento`, `domestico`, `esportivo`, `intoxicacao`, `queda_bicicleta`, `queda_moto`, `queda_menos2`, `trabalho`, `transferencia`) VALUES
+(1, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não'),
+(2, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vitimaera`
+-- Estrutura da tabela `vitimaera`
 --
 
 CREATE TABLE `vitimaera` (
@@ -598,366 +790,374 @@ CREATE TABLE `vitimaera` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Extraindo dados da tabela `vitimaera`
+--
+
+INSERT INTO `vitimaera` (`fk_ocorrencia`, `fk_sos`, `Ciclista`, `CondutorMoto`, `Gestante`, `PasBanFrente`, `PasMoto`, `CondutorCarro`, `Clinico`, `Trauma`, `PasBanTras`, `Pedestre`) VALUES
+(1, 1, 'Não', 'Sim', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não'),
+(2, 1, 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não', 'Não');
+
+--
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `acompanhante`
+-- Índices para tabela `acompanhante`
 --
 ALTER TABLE `acompanhante`
   ADD KEY `sos` (`fk_sos`),
   ADD KEY `oco` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `anamneseemergência`
+-- Índices para tabela `anamneseemergência`
 --
 ALTER TABLE `anamneseemergência`
   ADD KEY `fksos` (`fk_sos`),
   ADD KEY `fkocorrencia` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `anamnesegestacional`
+-- Índices para tabela `anamnesegestacional`
 --
 ALTER TABLE `anamnesegestacional`
   ADD KEY `sos1` (`fk_sos`),
   ADD KEY `ocorrencia1` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `avaliacaocinematica`
+-- Índices para tabela `avaliacaocinematica`
 --
 ALTER TABLE `avaliacaocinematica`
   ADD KEY `sos2` (`fk_sos`),
   ADD KEY `ocorrencia2` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `avaliacaopaciente`
+-- Índices para tabela `avaliacaopaciente`
 --
 ALTER TABLE `avaliacaopaciente`
   ADD KEY `sos3` (`fk_sos`),
   ADD KEY `ocorrencia3` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `corpo`
+-- Índices para tabela `corpo`
 --
 ALTER TABLE `corpo`
   ADD KEY `sos4` (`fk_sos`),
   ADD KEY `ocorrencia4` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `dadosdavitima`
+-- Índices para tabela `dadosdavitima`
 --
 ALTER TABLE `dadosdavitima`
   ADD PRIMARY KEY (`id_ocorrencia`),
   ADD KEY `fk_sos` (`fk_sos`);
 
 --
--- Índices de tabela `decisaotransporte`
+-- Índices para tabela `decisaotransporte`
 --
 ALTER TABLE `decisaotransporte`
   ADD KEY `sos5` (`fk_sos`),
   ADD KEY `ocorrencia5` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `divulgarparaimprensa`
+-- Índices para tabela `divulgarparaimprensa`
 --
 ALTER TABLE `divulgarparaimprensa`
   ADD KEY `sos6` (`fk_sos`),
   ADD KEY `ocorrencia6` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `equipeatendimento`
+-- Índices para tabela `equipeatendimento`
 --
 ALTER TABLE `equipeatendimento`
   ADD KEY `sos7` (`fk_sos`),
   ADD KEY `ocorrencia7` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `formadecondução`
+-- Índices para tabela `formadecondução`
 --
 ALTER TABLE `formadecondução`
   ADD KEY `sos8` (`fk_sos`),
   ADD KEY `ocorrencia8` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `images`
+-- Índices para tabela `images`
 --
 ALTER TABLE `images`
   ADD KEY `sos15` (`fk_sos`),
   ADD KEY `ocorrencia15` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `informaçõesocorrência`
+-- Índices para tabela `informaçõesocorrência`
 --
 ALTER TABLE `informaçõesocorrência`
   ADD KEY `sos9` (`fk_sos`),
   ADD KEY `ocorrencia9` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `login`
+-- Índices para tabela `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_sos`);
 
 --
--- Índices de tabela `materiaisdeixadoshospital`
+-- Índices para tabela `materiaisdeixadoshospital`
 --
 ALTER TABLE `materiaisdeixadoshospital`
   ADD KEY `sos10` (`fk_sos`),
   ADD KEY `ocorrencia10` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `materiaisdescartável`
+-- Índices para tabela `materiaisdescartável`
 --
 ALTER TABLE `materiaisdescartável`
   ADD KEY `sos11` (`fk_sos`),
   ADD KEY `ocorrencia11` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `objetos`
+-- Índices para tabela `objetos`
 --
 ALTER TABLE `objetos`
   ADD KEY `sos13` (`fk_sos`),
   ADD KEY `ocorrencia13` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `observacoesimportantes`
+-- Índices para tabela `observacoesimportantes`
 --
 ALTER TABLE `observacoesimportantes`
   ADD KEY `sos14` (`fk_sos`),
   ADD KEY `ocorrencia14` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `problemasencontrados`
+-- Índices para tabela `problemasencontrados`
 --
 ALTER TABLE `problemasencontrados`
   ADD KEY `sos16` (`fk_sos`),
   ADD KEY `ocorrencia16` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `procedimentosefetuados`
+-- Índices para tabela `procedimentosefetuados`
 --
 ALTER TABLE `procedimentosefetuados`
   ADD KEY `sos17` (`fk_sos`),
   ADD KEY `ocorrencia17` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `queimadura`
+-- Índices para tabela `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD KEY `sos18` (`fk_sos`),
   ADD KEY `ocorrencia18` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `sinaissintomas`
+-- Índices para tabela `sinaissintomas`
 --
 ALTER TABLE `sinaissintomas`
   ADD KEY `sos19` (`fk_sos`),
   ADD KEY `ocorrencia19` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `sinaisvitais`
+-- Índices para tabela `sinaisvitais`
 --
 ALTER TABLE `sinaisvitais`
   ADD KEY `sos20` (`fk_sos`),
   ADD KEY `ocorrencia20` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `termoderecusa`
+-- Índices para tabela `termoderecusa`
 --
 ALTER TABLE `termoderecusa`
   ADD KEY `sos21` (`fk_sos`),
   ADD KEY `ocorrencia21` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `tipodeocorrencia`
+-- Índices para tabela `tipodeocorrencia`
 --
 ALTER TABLE `tipodeocorrencia`
   ADD KEY `sos22` (`fk_sos`),
   ADD KEY `ocorrencia22` (`fk_ocorrencia`);
 
 --
--- Índices de tabela `vitimaera`
+-- Índices para tabela `vitimaera`
 --
 ALTER TABLE `vitimaera`
   ADD KEY `sos23` (`fk_sos`),
   ADD KEY `ocorrencia23` (`fk_ocorrencia`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `dadosdavitima`
 --
 ALTER TABLE `dadosdavitima`
-  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ocorrencia` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `anamneseemergência`
+-- Limitadores para a tabela `anamneseemergência`
 --
 ALTER TABLE `anamneseemergência`
   ADD CONSTRAINT `fkocorrencia` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `fksos` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `anamnesegestacional`
+-- Limitadores para a tabela `anamnesegestacional`
 --
 ALTER TABLE `anamnesegestacional`
   ADD CONSTRAINT `ocorrencia1` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos1` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `avaliacaocinematica`
+-- Limitadores para a tabela `avaliacaocinematica`
 --
 ALTER TABLE `avaliacaocinematica`
   ADD CONSTRAINT `ocorrencia2` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos2` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `avaliacaopaciente`
+-- Limitadores para a tabela `avaliacaopaciente`
 --
 ALTER TABLE `avaliacaopaciente`
   ADD CONSTRAINT `ocorrencia3` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos3` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `corpo`
+-- Limitadores para a tabela `corpo`
 --
 ALTER TABLE `corpo`
   ADD CONSTRAINT `ocorrencia4` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos4` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `dadosdavitima`
+-- Limitadores para a tabela `dadosdavitima`
 --
 ALTER TABLE `dadosdavitima`
   ADD CONSTRAINT `fk_sos` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `decisaotransporte`
+-- Limitadores para a tabela `decisaotransporte`
 --
 ALTER TABLE `decisaotransporte`
   ADD CONSTRAINT `ocorrencia5` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos5` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `divulgarparaimprensa`
+-- Limitadores para a tabela `divulgarparaimprensa`
 --
 ALTER TABLE `divulgarparaimprensa`
   ADD CONSTRAINT `ocorrencia6` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos6` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `equipeatendimento`
+-- Limitadores para a tabela `equipeatendimento`
 --
 ALTER TABLE `equipeatendimento`
   ADD CONSTRAINT `ocorrencia7` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos7` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `formadecondução`
+-- Limitadores para a tabela `formadecondução`
 --
 ALTER TABLE `formadecondução`
   ADD CONSTRAINT `ocorrencia8` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos8` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `images`
+-- Limitadores para a tabela `images`
 --
 ALTER TABLE `images`
   ADD CONSTRAINT `ocorrencia15` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos15` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `informaçõesocorrência`
+-- Limitadores para a tabela `informaçõesocorrência`
 --
 ALTER TABLE `informaçõesocorrência`
   ADD CONSTRAINT `ocorrencia9` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos9` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `materiaisdeixadoshospital`
+-- Limitadores para a tabela `materiaisdeixadoshospital`
 --
 ALTER TABLE `materiaisdeixadoshospital`
   ADD CONSTRAINT `ocorrencia10` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos10` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `materiaisdescartável`
+-- Limitadores para a tabela `materiaisdescartável`
 --
 ALTER TABLE `materiaisdescartável`
   ADD CONSTRAINT `ocorrencia11` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos11` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `objetos`
+-- Limitadores para a tabela `objetos`
 --
 ALTER TABLE `objetos`
   ADD CONSTRAINT `ocorrencia13` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos13` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `observacoesimportantes`
+-- Limitadores para a tabela `observacoesimportantes`
 --
 ALTER TABLE `observacoesimportantes`
   ADD CONSTRAINT `ocorrencia14` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos14` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `problemasencontrados`
+-- Limitadores para a tabela `problemasencontrados`
 --
 ALTER TABLE `problemasencontrados`
   ADD CONSTRAINT `ocorrencia16` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos16` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `procedimentosefetuados`
+-- Limitadores para a tabela `procedimentosefetuados`
 --
 ALTER TABLE `procedimentosefetuados`
   ADD CONSTRAINT `ocorrencia17` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos17` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `queimadura`
+-- Limitadores para a tabela `queimadura`
 --
 ALTER TABLE `queimadura`
   ADD CONSTRAINT `ocorrencia18` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos18` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `sinaissintomas`
+-- Limitadores para a tabela `sinaissintomas`
 --
 ALTER TABLE `sinaissintomas`
   ADD CONSTRAINT `ocorrencia19` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos19` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `sinaisvitais`
+-- Limitadores para a tabela `sinaisvitais`
 --
 ALTER TABLE `sinaisvitais`
   ADD CONSTRAINT `ocorrencia20` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos20` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `termoderecusa`
+-- Limitadores para a tabela `termoderecusa`
 --
 ALTER TABLE `termoderecusa`
   ADD CONSTRAINT `ocorrencia21` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos21` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `tipodeocorrencia`
+-- Limitadores para a tabela `tipodeocorrencia`
 --
 ALTER TABLE `tipodeocorrencia`
   ADD CONSTRAINT `ocorrencia22` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
   ADD CONSTRAINT `sos22` FOREIGN KEY (`fk_sos`) REFERENCES `login` (`id_sos`);
 
 --
--- Restrições para tabelas `vitimaera`
+-- Limitadores para a tabela `vitimaera`
 --
 ALTER TABLE `vitimaera`
   ADD CONSTRAINT `ocorrencia23` FOREIGN KEY (`fk_ocorrencia`) REFERENCES `dadosdavitima` (`id_ocorrencia`),
